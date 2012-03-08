@@ -1,4 +1,1 @@
 target
-*.log
-.ant-targets-build.xml
-/.settings/
