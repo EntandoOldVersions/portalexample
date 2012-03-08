@@ -96,7 +96,8 @@
 		<test.database.password>agile</test.database.password>
 		<test.database.basename>entando-core-engine</test.database.basename>
 		<test.database.basepath>${project.build.directory}/test/sql</test.database.basepath>
-		<skipDerby>true</skipDerby>	
+		<skipDerby>true</skipDerby>
+		<entando.version>3.0.0-SNAPSHOT</entando.version>
 	</properties>
 	<build>
 		<finalName>portalexample</finalName>
@@ -173,7 +174,7 @@
 							<overWriteReleases>false</overWriteReleases>
 							<overWriteSnapshots>false</overWriteSnapshots>
 							<appendOutput>true</appendOutput>
-							<includeGroupIds>org.entando.entando.plugins</includeGroupIds>
+							<includeGroupIds>org.entando.entando.plugins,org.entando.entando.bundles</includeGroupIds>
 							<includeClassifiers>misc</includeClassifiers>
 							<excludeTypes>war,jar</excludeTypes>
 							<includeTypes>zip</includeTypes>
@@ -221,7 +222,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.5</version>
 				<executions>
 					<execution>
 						<id>prepare-config-test</id>
@@ -240,6 +241,27 @@
 							</resources>
 						</configuration>
 					</execution>
+					<execution>
+						<id>prepare-config-test-override-config</id>
+						<phase>process-test-classes</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/test/conf</outputDirectory>
+							<encoding>UTF-8</encoding>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>src/test/config</directory>
+									<includes>
+										<include>contextTestParams.properties</include>
+									</includes>									
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>					
 					<execution>
 						<id>copy-resources-conf</id>
 						<!-- here the phase you need -->
@@ -811,7 +833,7 @@
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
 						<version>5.1.18</version>
-					</dependency>
+					</dependency>					
 					<dependency>
 						<groupId>commons-dbcp</groupId>
 						<artifactId>commons-dbcp</artifactId>
@@ -929,27 +951,27 @@
 		<dependency>
 			<groupId>org.entando.entando</groupId>
 			<artifactId>entando-core-webapp</artifactId>
-			<version>2.4.0.1</version>
+			<version>${entando.version}</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
 			<groupId>org.entando.entando</groupId>
 			<artifactId>entando-core-engine</artifactId>
-			<version>2.4.0.1</version>
+			<version>${entando.version}</version>
 			<type>jar</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.entando.entando</groupId>
 			<artifactId>entando-core-engine</artifactId>
-			<version>2.4.0.1</version>
+			<version>${entando.version}</version>
 			<type>test-jar</type>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.entando.entando</groupId>
 			<artifactId>entando-core-engine</artifactId>
-			<version>2.4.0.1</version>
+			<version>${entando.version}</version>
 			<type>zip</type>
 			<classifier>misc-test</classifier>
 			<scope>test</scope>
@@ -969,7 +991,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>3.0.5.RELEASE</version>
+			<version>3.0.6.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Started on 2011-11-26 22:33:20 CET
+-- Started on 2012-03-09 00:36:16 CET
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = off;
@@ -13,8 +13,8 @@ SET escape_string_warning = off;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 1823 (class 0 OID 3403189)
--- Dependencies: 1503
+-- TOC entry 1839 (class 0 OID 143517)
+-- Dependencies: 127
 -- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -84,8 +84,8 @@ INSERT INTO categories (catcode, parentcode, titles) VALUES ('tributi', 'moduli'
 
 
 --
--- TOC entry 1824 (class 0 OID 3403195)
--- Dependencies: 1504
+-- TOC entry 1840 (class 0 OID 143523)
+-- Dependencies: 128
 -- Data for Name: contentmodels; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -278,8 +278,113 @@ INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUE
 
 
 --
--- TOC entry 1826 (class 0 OID 3403204)
--- Dependencies: 1506
+-- TOC entry 1841 (class 0 OID 143529)
+-- Dependencies: 129
+-- Data for Name: contentrelations; Type: TABLE DATA; Schema: public; Owner: agile
+--
+
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, 'CNG51', NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW27', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'moduli', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, '174', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG256', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG54', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG55', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG53', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG29', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG28', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG17', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG18', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG19', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG49', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG14', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG11', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG12', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG13', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG16', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, '143', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG146', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'anagrafe', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'moduli', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'autocertificazioni', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'autocertificazioni', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'tributi', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'moduli', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
+
+
+--
+-- TOC entry 1842 (class 0 OID 143532)
+-- Dependencies: 130
 -- Data for Name: contents; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -688,8 +793,8 @@ More specifically, Web accessibility means that people with disabilities can per
 
 
 --
--- TOC entry 1827 (class 0 OID 3403210)
--- Dependencies: 1507
+-- TOC entry 1843 (class 0 OID 143538)
+-- Dependencies: 131
 -- Data for Name: contentsearch; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -765,8 +870,8 @@ INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, 
 
 
 --
--- TOC entry 1828 (class 0 OID 3403213)
--- Dependencies: 1508
+-- TOC entry 1844 (class 0 OID 143541)
+-- Dependencies: 132
 -- Data for Name: localstrings; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -957,8 +1062,8 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jacms_LIST_VI
 
 
 --
--- TOC entry 1829 (class 0 OID 3403219)
--- Dependencies: 1509
+-- TOC entry 1845 (class 0 OID 143547)
+-- Dependencies: 133
 -- Data for Name: pagemodels; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -1102,8 +1207,8 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('mobile', 'Mobi
 
 
 --
--- TOC entry 1830 (class 0 OID 3403225)
--- Dependencies: 1510
+-- TOC entry 1846 (class 0 OID 143553)
+-- Dependencies: 134
 -- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -1453,16 +1558,16 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 
 
 --
--- TOC entry 1831 (class 0 OID 3403231)
--- Dependencies: 1511
+-- TOC entry 1847 (class 0 OID 143559)
+-- Dependencies: 135
 -- Data for Name: resourcerelations; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
 
 
 --
--- TOC entry 1832 (class 0 OID 3403234)
--- Dependencies: 1512
+-- TOC entry 1848 (class 0 OID 143562)
+-- Dependencies: 136
 -- Data for Name: resources; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -1532,8 +1637,8 @@ INSERT INTO resources (resid, restype, descr, maingroup, resourcexml, masterfile
 
 
 --
--- TOC entry 1833 (class 0 OID 3403240)
--- Dependencies: 1513
+-- TOC entry 1849 (class 0 OID 143568)
+-- Dependencies: 137
 -- Data for Name: showletcatalog; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -1646,8 +1751,8 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 
 
 --
--- TOC entry 1834 (class 0 OID 3403246)
--- Dependencies: 1514
+-- TOC entry 1850 (class 0 OID 143574)
+-- Dependencies: 138
 -- Data for Name: showletconfig; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -2237,8 +2342,8 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 
 
 --
--- TOC entry 1835 (class 0 OID 3403252)
--- Dependencies: 1515
+-- TOC entry 1851 (class 0 OID 143580)
+-- Dependencies: 139
 -- Data for Name: sysconfig; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -2457,8 +2562,8 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'cont
 
 
 --
--- TOC entry 1836 (class 0 OID 3403258)
--- Dependencies: 1516
+-- TOC entry 1852 (class 0 OID 143586)
+-- Dependencies: 140
 -- Data for Name: uniquekeys; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -2466,8 +2571,8 @@ INSERT INTO uniquekeys (id, keyvalue) VALUES (1, 260);
 
 
 --
--- TOC entry 1837 (class 0 OID 3403261)
--- Dependencies: 1517
+-- TOC entry 1853 (class 0 OID 143589)
+-- Dependencies: 141
 -- Data for Name: workcontentrelations; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -2494,8 +2599,8 @@ INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'modu
 
 
 --
--- TOC entry 1838 (class 0 OID 3403264)
--- Dependencies: 1518
+-- TOC entry 1854 (class 0 OID 143592)
+-- Dependencies: 142
 -- Data for Name: workcontentsearch; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
@@ -2570,113 +2675,7 @@ INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numval
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Oggetto', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
 
 
-
---
--- TOC entry 1825 (class 0 OID 3403201)
--- Dependencies: 1505
--- Data for Name: contentrelations; Type: TABLE DATA; Schema: public; Owner: agile
---
-
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, 'CNG51', NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW27', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'moduli', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, '174', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG256', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG54', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG55', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG53', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG29', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG28', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG17', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG18', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG19', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG49', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG14', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG11', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG12', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG13', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG16', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, '143', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG146', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'anagrafe', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'moduli', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'autocertificazioni', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'autocertificazioni', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'tributi', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'moduli', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
-
-
--- Completed on 2011-11-26 22:33:20 CET
+-- Completed on 2012-03-09 00:36:16 CET
 
 --
 -- PostgreSQL database dump complete
