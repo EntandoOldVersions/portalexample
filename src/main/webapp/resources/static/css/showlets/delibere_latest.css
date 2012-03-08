@@ -1,0 +1,8 @@
+.delibere_latest ul {
+	margin: 0 1em;
+	padding: 0;
+}
+
+.delibere_latest li h3, .delibere_latest li p {
+	font-size: 0.95em;
+}

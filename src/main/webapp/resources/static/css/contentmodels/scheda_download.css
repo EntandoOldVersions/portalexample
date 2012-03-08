@@ -1,0 +1,24 @@
+.scheda_download h2 {
+	border-top: 2px solid #0f4780;
+	border-bottom: 1px dashed #0f4780;
+	min-height: 48px;
+	line-height: 48px;
+}
+
+.scheda_download h2 a {
+	display: block;
+	padding: 0 0 0 0.5em;	
+	background-image: url("../../img/download.png");
+	background-position: 100% 50%;;
+	background-repeat: no-repeat;
+}
+
+.scheda_download h2 a:link, .scheda_download h2 a:visited {
+	text-decoration: none;
+	background-color: #e5ecfa;	
+}
+
+.scheda_download h2 a:hover, .scheda_download h2 a:active, .scheda_download h2 a:focus {
+	text-decoration: underline;
+	background-color: #ffffff;	
+}

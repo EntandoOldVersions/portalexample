@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+    
+    <package name="portalexample_do/FrontEnd/Card" namespace="/do/FrontEnd/Card" extends="japs-front-default">
+    	
+    	<global-results>
+            <result name="failure">/WEB-INF/portalexample/aps/jsp/internalServlet/card/error.jsp</result>
+    	</global-results>
+    	
+    	<action name="list" class="cardFinderAction">
+            <result type="dispatcher">/WEB-INF/portalexample/aps/jsp/internalServlet/card/frontendCardFinding.jsp</result>
+            <interceptor-ref name="japsFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="search" class="cardFinderAction">
+            <result type="dispatcher">/WEB-INF/portalexample/aps/jsp/internalServlet/card/frontendCardFinding.jsp</result>
+            <interceptor-ref name="japsFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="view" class="cardAction" method="view">
+            <result type="dispatcher">/WEB-INF/portalexample/aps/jsp/internalServlet/card/frontendCardView.jsp</result>
+            <interceptor-ref name="japsFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+    </package>
+    
+</struts>

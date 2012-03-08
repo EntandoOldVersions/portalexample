@@ -1,0 +1,26 @@
+.language_choose ul {
+	margin: 0;
+	padding: 0;
+}
+
+.language_choose ul li {
+	border-right: 1px solid #0f4780;
+	/*border-right: 1px solid #ff9900;*/
+	display: inline;
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0.5em;
+	/*color: #ffffff;*/
+	color: #0f4780;
+	text-transform: uppercase;
+}
+
+.language_choose ul li a:link, .language_choose ul li a:visited {
+	color: #0f4780;
+	/*color: #ff9900;*/
+	text-decoration: none;
+}
+
+.language_choose ul li a:hover, .language_choose ul li a:active, .language_choose ul li a:focus {
+	text-decoration: underline;
+}

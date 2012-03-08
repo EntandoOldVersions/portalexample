@@ -1,0 +1,46 @@
+#header {
+	/*background-color: blue;*/
+	min-height: 70px;
+	background-image: url("../../../img/mobile-img-header.jpg");
+	background-position: 100% 0;
+	background-repeat: no-repeat;
+	background-color: #e5ecfa;
+}
+
+#subheader1 {
+	background-color: #e5ecfa;
+	border-bottom: 2px solid #0f4780;
+}
+
+#subheader p, #footer p, #footer a {
+	color: #0f4780;
+}
+
+#subheader1 {
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+
+#subheader2 {
+	float: left;
+	width: 100%;
+	clear: both;
+	background-color: #e5ecfa;
+	border-bottom: 1px dashed #333333;
+	padding: 0.1em 0;
+}
+
+#main {
+	float: left;
+	width: 100%;
+	/*background-color: purple;*/
+}
+
+#footer {
+	clear: both;
+	background-color: #e5ecfa;
+	border-top: 2px solid #0f4780;
+	border-bottom: 2px solid #0f4780;
+	padding: 0.1em 0;
+}

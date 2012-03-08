@@ -1,0 +1,20 @@
+.login_form {
+	border-bottom: 2px solid #0f4780;
+	padding: 0 0 0.25em 0;
+}
+
+.login_form form {
+	text-align: right;
+}
+
+.login_form form p {
+	margin-right: 0.5em;
+}
+
+.login_form form input.text {
+	width: 10em;
+}
+
+.login_form p {
+	padding-left: 0.25em;
+}

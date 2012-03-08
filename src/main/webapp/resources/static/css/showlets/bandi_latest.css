@@ -1,0 +1,8 @@
+.bandi_latest ul {
+	margin: 0 1em;
+	padding: 0;
+}
+
+.bandi_latest li h3, .bandi_latest li p {
+	font-size: 0.95em;
+}
