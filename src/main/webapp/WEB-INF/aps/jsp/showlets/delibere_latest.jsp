@@ -16,7 +16,7 @@
 <h2 class="title"><wp:i18n key="LATEST_DELIBERE" /></h2>
 
 <jacms:contentList listName="contentList" contentType="DLB" >
-	<jacms:contentListFilter key="Data" attributeFilter="true" order="DESC" />
+	<jacms:contentListFilter key="Date" attributeFilter="true" order="DESC" />
 </jacms:contentList>
 
 <ul>

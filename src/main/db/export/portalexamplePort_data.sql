@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Started on 2012-03-09 00:36:16 CET
+-- Started on 2012-03-09 22:35:53 CET
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = off;
@@ -13,7 +13,7 @@ SET escape_string_warning = off;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 1839 (class 0 OID 143517)
+-- TOC entry 1839 (class 0 OID 144912)
 -- Dependencies: 127
 -- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -27,56 +27,56 @@ INSERT INTO categories (catcode, parentcode, titles) VALUES ('home', 'home', '<?
 ');
 INSERT INTO categories (catcode, parentcode, titles) VALUES ('delibere', 'home', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Delibere</property>
+<property key="en">Decisions</property>
 <property key="it">Delibere</property>
-</properties>
-
-');
-INSERT INTO categories (catcode, parentcode, titles) VALUES ('delibere_di_giunta', 'delibere', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Delibere di Giunta</property>
-<property key="it">Delibere di Giunta</property>
 </properties>
 
 ');
 INSERT INTO categories (catcode, parentcode, titles) VALUES ('delibere_di_consiglio', 'delibere', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Delibere di Consiglio</property>
+<property key="en">Council decisions</property>
 <property key="it">Delibere di Consiglio</property>
+</properties>
+
+');
+INSERT INTO categories (catcode, parentcode, titles) VALUES ('delibere_di_giunta', 'delibere', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Giunta decisions</property>
+<property key="it">Delibere di Giunta</property>
 </properties>
 
 ');
 INSERT INTO categories (catcode, parentcode, titles) VALUES ('scheda_download', 'home', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Scheda Download</property>
+<property key="en">Download</property>
 <property key="it">Scheda Download</property>
-</properties>
-
-');
-INSERT INTO categories (catcode, parentcode, titles) VALUES ('moduli', 'scheda_download', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Modulistica</property>
-<property key="it">Modulistica</property>
 </properties>
 
 ');
 INSERT INTO categories (catcode, parentcode, titles) VALUES ('autocertificazioni', 'scheda_download', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Autocertificazioni</property>
+<property key="en">Self Certification</property>
 <property key="it">Autocertificazioni</property>
+</properties>
+
+');
+INSERT INTO categories (catcode, parentcode, titles) VALUES ('moduli', 'scheda_download', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Documents</property>
+<property key="it">Modulistica</property>
 </properties>
 
 ');
 INSERT INTO categories (catcode, parentcode, titles) VALUES ('anagrafe', 'moduli', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Anagrafe</property>
+<property key="en">Citizen registry</property>
 <property key="it">Anagrafe</property>
 </properties>
 
 ');
 INSERT INTO categories (catcode, parentcode, titles) VALUES ('tributi', 'moduli', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Tributi</property>
+<property key="en">Tax</property>
 <property key="it">Tributi</property>
 </properties>
 
@@ -84,112 +84,56 @@ INSERT INTO categories (catcode, parentcode, titles) VALUES ('tributi', 'moduli'
 
 
 --
--- TOC entry 1840 (class 0 OID 143523)
+-- TOC entry 1840 (class 0 OID 144918)
 -- Dependencies: 128
 -- Data for Name: contentmodels; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (2, 'NEW', 'Completo - default', '<h2>$content.Data.getFormattedDate("dd/MM/yyyy") &mdash; $content.Titolo.text</h2>
-
-#if ( $content.CorpoTesto.text != "" )
-
-$content.CorpoTesto.getTextBeforeImage(0)
-
-#if ( $content.Immagine_1.imagePath("2") != "" )
-<a href="$content.Immagine_1.imagePath("0")"><img src="$content.Immagine_1.imagePath("2")" alt="$content.Immagine_1.text" class="right" /></a>
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (2, 'NEW', 'Complete - default', '<h2>$content.Date.getFormattedDate("dd/MM/yyyy") &mdash; $content.Title.text</h2>
+#if ( $content.TextBody.text != "" )
+$content.TextBody.getTextBeforeImage(0)
+#if ( $content.Image_1.imagePath("2") != "" )
+<a href="$content.Image_1.imagePath("0")"><img src="$content.Image_1.imagePath("2")" alt="$content.Image_1.text" class="right" /></a>
 #end 
-$content.CorpoTesto.getTextAfterImage(0)
+$content.TextBody.getTextAfterImage(0)
 #end
-
-#if ($content.Allegati && $content.Allegati.size() > 0)
-
+#if ($content.Documents && $content.Documents.size() > 0)
 <h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
 	<ul>
-		#foreach ($attach in $content.Allegati)
+		#foreach ($attach in $content.Documents)
 		<li><a href="$attach.attachPath">$attach.text</a></li>
 		#end	
 	</ul>
 #end
-
-#if ($content.Riferimenti && $content.Riferimenti.size() > 0)
-
+#if ($content.Links && $content.Links.size() > 0)
 <h3 class="clear">$i18n.getLabel(''LINKS'')</h3>
 	<ul>
-		#foreach ($link in $content.Riferimenti)
+		#foreach ($link in $content.Links)
 		<li><a href="$link.destination">$link.text</a></li>
 		#end	
 	</ul>
 #end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (21, 'NEW', 'per Liste', '<h3><a href="$content.contentLink">$content.Data.getFormattedDate("dd/MM/yyyy") &mdash; $content.Titolo.text</a></h3>
-#if ($content.Lancio.text != "")
-<p>$content.Lancio.text</p>
-#end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (31, 'DLB', 'per Liste', '<h3><a href="$content.contentLink">$content.Numero.value &mdash; $content.Data.getFormattedDate("dd/MM/yyyy")</a></h3>
-<p>$content.Oggetto.text</p>', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (51, 'SDL', 'per Liste', '<h3><a href="$content.contentLink">$content.Oggetto.text</a></h3>
-$content.DescrizioneBreve.text', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (41, 'BND', 'per Liste', '<h3><a href="$content.contentLink">$content.Oggetto.text</a></h3>
-<p>$content.DataInizio.getFormattedDate("dd/MM/yyyy") &mdash; $content.DataFine.getFormattedDate("dd/MM/yyyy")</p>', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (1, 'CNG', 'Completo - default', '<h2>$content.Titolo.text</h2>
-#if ( $content.CorpoTesto.text != "" )
-$content.CorpoTesto.getTextBeforeImage(0)
-#if ( $content.Immagine_1.imagePath("2") != "" )
-<a href="$content.Immagine_1.imagePath("0")"><img src="$content.Immagine_1.imagePath("2")" alt="$content.Immagine_1.text" class="right" /></a>
-#end 
-$content.CorpoTesto.getTextByRange(0,60)
-#if ( $content.Immagine_2.imagePath("3") != "" )
-<a href="$content.Immagine_2.imagePath("0")"><img src="$content.Immagine_2.imagePath("3")" alt="$content.Immagine_2.text" class="left" /></a>
-#end
-$content.CorpoTesto.getTextAfterImage(60)
-#end
-#if ($content.Allegati && $content.Allegati.size() > 0)
-<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
-	<ul>
-		#foreach ($attach in $content.Allegati)
-		<li><a href="$attach.attachPath">$attach.text</a></li>
-		#end	
-	</ul>
-#end
-#if ($content.Riferimenti && $content.Riferimenti.size() > 0)
-<h3 class="clear">$i18n.getLabel(''LINKS'')</h3>
-	<ul>
-		#foreach ($link in $content.Riferimenti)
-		<li><a href="$link.destination">$link.text</a></li>
-		#end	
-	</ul>
-#end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (11, 'CNG', 'per Liste', '<h3><a href="$content.contentLink">$content.Titolo.text</a></h3>
-#if ($content.Abstract.text != "")
-<p>$content.Abstract.text</p>
-#end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (3, 'DLB', 'Completo - default', '<h2>$content.Numero.value &mdash; $content.Data.getFormattedDate("dd/MM/yyyy")<br />
-$content.Oggetto.text</h2>
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (3, 'DLB', 'Complete - default', '<h2>$content.Number.value &mdash; $content.Date.getFormattedDate("dd/MM/yyyy")<br />
+$content.Title.text</h2>
 #if ($content.Abstract.text != "")
 $content.Abstract.text
 #end
-#if ($content.Allegati && $content.Allegati.size() > 0)
+#if ($content.Documents && $content.Documents.size() > 0)
 <h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
 	<ul>
-		#foreach ($attach in $content.Allegati)
+		#foreach ($attach in $content.Documents)
 		<li><a href="$attach.attachPath">$attach.text</a></li>
 		#end	
 	</ul>
 #end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (4, 'BND', 'Completo - default', '<h2>$content.Oggetto.text<br />
-$content.DataInizio.getFormattedDate("dd/MM/yyyy") &mdash; $content.DataFine.getFormattedDate("dd/MM/yyyy")</h2>
-#if ($content.Abstract.text != "")
-$content.Abstract.text
-#end
-#if ($content.Allegati && $content.Allegati.size() > 0)
-<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
-	<ul>
-		#foreach ($attach in $content.Allegati)
-		<li><a href="$attach.attachPath">$attach.text</a></li>
-		#end	
-	</ul>
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (41, 'BND', 'for List', '<h3><a href="$content.contentLink">$content.Title.text</a></h3>
+<p>$content.StartDate.getFormattedDate("dd/MM/yyyy") &mdash; $content.EndDate.getFormattedDate("dd/MM/yyyy")</p>', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (21, 'NEW', 'for List', '<h3><a href="$content.contentLink">$content.Date.getFormattedDate("dd/MM/yyyy") &mdash; $content.Title.text</a></h3>
+#if ($content.ShortText.text != "")
+<p>$content.ShortText.text</p>
 #end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (5, 'SDL', 'Completo - default', '<div class="scheda_download">
-<h2><a href="$content.File.attachPath" title="$i18n.getLabel(''DOWNLOAD_THIS'')">$content.Oggetto.text</a></h2>
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (5, 'SDL', 'Complete - default', '<div class="scheda_download">
+<h2><a href="$content.File.attachPath" title="$i18n.getLabel(''DOWNLOAD_THIS'')">$content.Title.text</a></h2>
 #if($content.categories.size() >= 1)
 #set ($first = "true")
 <p><span class="important">$i18n.getLabel(''CATEGORIES''):</span>
@@ -200,256 +144,285 @@ $categ.title
 #end
 </p>
 #end
-#if ( $content.DescrizioneLunga.text != "" )
-$content.DescrizioneLunga.getTextBeforeImage(0)
-#if ( $content.Immagine.imagePath("2") != "" )
-<img src="$content.Immagine.imagePath("2")" alt="$content.Immagine.text" class="left" />
+#if ( $content.LongDescr.text != "" )
+$content.LongDescr.getTextBeforeImage(0)
+#if ( $content.Image.imagePath("2") != "" )
+<img src="$content.Image.imagePath("2")" alt="$content.Image.text" class="left" />
 #end
-$content.DescrizioneLunga.getTextAfterImage(0)
+$content.LongDescr.getTextAfterImage(0)
 #end
-#if ($content.Riferimenti && $content.Riferimenti.size() > 0)
+#if ($content.Links && $content.Links.size() > 0)
 <h3 class="clear">$i18n.getLabel(''LINKS'')</h3>
-<ul>#foreach ($link in $content.Riferimenti)
+<ul>#foreach ($link in $content.Links)
 <li><a href="$link.destination">$link.text</a></li>
 #end</ul>
 #end
 </div>', 'contentmodels/scheda_download.css');
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (12, 'CNG', 'in Evidenza', '<div class="inEvidenza">
-<h2 class="title"><a href="$content.contentLink">$content.Titolo.text</a></h2>
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (23, 'NEW', 'for Mobile - Complete', '<h2>$content.Date.getFormattedDate("dd/MM/yyyy") &mdash; $content.Title.text</h2>
+#if ( $content.TextBody.text != "" )
+$content.TextBody.text
+#end
+#if ($content.Documents && $content.Documents.size() > 0)
+<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
+	<ul>
+		#foreach ($attach in $content.Documents)
+		<li><a href="$attach.attachPath">$attach.text</a></li>
+		#end	
+	</ul>
+#end', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (22, 'NEW', 'for Mobile - for List', '<h3><a href="mobile_contentview.wp?contentId=$content.id&amp;modelId=23">$content.Date.getFormattedDate("dd/MM/yyyy") &mdash; $content.Title.text</a></h3>
+#if ($content.ShortText.text != "")
+<p>$content.ShortText.text</p>
+#end', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (11, 'CNG', 'for List', '<h3><a href="$content.contentLink">$content.Title.text</a></h3>
 #if ($content.Abstract.text != "")
-<p>#if ( $content.Immagine_1.imagePath("2") != "" )
-<a href="$content.Immagine_1.imagePath("0")"><img src="$content.Immagine_1.imagePath("2")" alt="$content.Immagine_1.text" class="left" /></a>
+<p>$content.Abstract.text</p>
+#end', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (14, 'CNG', 'for Mobile - Home', '<div class="mobileInEvidenza">
+#if ( $content.Image_1.imagePath("1") != "" )
+<img src="$content.Image_1.imagePath("1")" alt="$content.Image_1.text" class="left" />
+#end
+<h2>$content.Title.text</h2>
+#if ($content.TextBody.text != "")
+<p>$content.TextBody.text</p>
+#end
+</div>', 'mobile/contentmodels/generic.css');
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (13, 'CNG', 'for Mobile - Complete', '<h2>$content.Title.text</h2>
+#if ( $content.TextBody.text != "" )
+$content.TextBody.text
+#end
+#if ($content.Documents && $content.Documents.size() > 0)
+<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
+	<ul>
+		#foreach ($attach in $content.Documents)
+		<li><a href="$attach.attachPath">$attach.text</a></li>
+		#end	
+	</ul>
+#end', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (42, 'BND', 'for Mobile - for List', '<h3><a href="mobile_contentview.wp?contentId=$content.id&amp;modelId=4">$content.StartDate.getFormattedDate("dd/MM/yyyy") &mdash; $content.EndDate.getFormattedDate("dd/MM/yyyy") &mdash; $content.Title.text</a></h3>
+', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (4, 'BND', 'Complete - default', '<h2>$content.Title.text<br />
+$content.StartDate.getFormattedDate("dd/MM/yyyy") &mdash; $content.EndDate.getFormattedDate("dd/MM/yyyy")</h2>
+#if ($content.Abstract.text != "")
+$content.Abstract.text
+#end
+#if ($content.Documents && $content.Documents.size() > 0)
+<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
+	<ul>
+		#foreach ($attach in $content.Documents)
+		<li><a href="$attach.attachPath">$attach.text</a></li>
+		#end	
+	</ul>
+#end', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (1, 'CNG', 'Complete - default', '<h2>$content.Title.text</h2>
+#if ( $content.TextBody.text != "" )
+$content.TextBody.getTextBeforeImage(0)
+#if ( $content.Image_1.imagePath("2") != "" )
+<a href="$content.Image_1.imagePath("0")"><img src="$content.Image_1.imagePath("2")" alt="$content.Image_1.text" class="right" /></a>
+#end 
+$content.TextBody.getTextByRange(0,60)
+#if ( $content.Image_2.imagePath("3") != "" )
+<a href="$content.Image_2.imagePath("0")"><img src="$content.Image_2.imagePath("3")" alt="$content.Image_2.text" class="left" /></a>
+#end
+$content.TextBody.getTextAfterImage(60)
+#end
+#if ($content.Documents && $content.Documents.size() > 0)
+<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
+	<ul>
+		#foreach ($attach in $content.Documents)
+		<li><a href="$attach.attachPath">$attach.text</a></li>
+		#end	
+	</ul>
+#end
+#if ($content.Links && $content.Links.size() > 0)
+<h3 class="clear">$i18n.getLabel(''LINKS'')</h3>
+	<ul>
+		#foreach ($link in $content.Links)
+		<li><a href="$link.destination">$link.text</a></li>
+		#end	
+	</ul>
+#end', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (31, 'DLB', 'for List', '<h3><a href="$content.contentLink">$content.Number.value &mdash; $content.Date.getFormattedDate("dd/MM/yyyy")</a></h3>
+<p>$content.Title.text</p>', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (12, 'CNG', 'in evidence', '<div class="inEvidenza">
+<h2 class="title"><a href="$content.contentLink">$content.Title.text</a></h2>
+#if ($content.Abstract.text != "")
+<p>#if ( $content.Image_1.imagePath("2") != "" )
+<a href="$content.Image_1.imagePath("0")"><img src="$content.Image_1.imagePath("2")" alt="$content.Image_1.text" class="left" /></a>
 #end 
 $content.Abstract.text</p>
 #end
 </div>', 'contentmodels/generic.css');
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (22, 'NEW', 'per Mobile - per Liste', '<h3><a href="mobile_contentview.wp?contentId=$content.id&amp;modelId=23">$content.Data.getFormattedDate("dd/MM/yyyy") &mdash; $content.Titolo.text</a></h3>
-#if ($content.Lancio.text != "")
-<p>$content.Lancio.text</p>
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (32, 'DLB', 'for Mobile - for List', '<h3><a href="mobile_contentview.wp?contentId=$content.id&amp;modelId=3">$content.Numero.value &mdash; $content.Date.getFormattedDate("dd/MM/yyyy")</a></h3>
+#if ($content.Title.text != "")
+<p>$content.Title.text</p>
 #end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (32, 'DLB', 'per Mobile - per Liste', '<h3><a href="mobile_contentview.wp?contentId=$content.id&amp;modelId=3">$content.Numero.value &mdash; $content.Data.getFormattedDate("dd/MM/yyyy")</a></h3>
-#if ($content.Oggetto.text != "")
-<p>$content.Oggetto.text</p>
-#end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (13, 'CNG', 'per Mobile - Completo', '<h2>$content.Titolo.text</h2>
-#if ( $content.CorpoTesto.text != "" )
-$content.CorpoTesto.text
-#end
-#if ($content.Allegati && $content.Allegati.size() > 0)
-<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
-	<ul>
-		#foreach ($attach in $content.Allegati)
-		<li><a href="$attach.attachPath">$attach.text</a></li>
-		#end	
-	</ul>
-#end', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (23, 'NEW', 'per Mobile - Completo', '<h2>$content.Data.getFormattedDate("dd/MM/yyyy") &mdash; $content.Titolo.text</h2>
-#if ( $content.CorpoTesto.text != "" )
-$content.CorpoTesto.text
-#end
-#if ($content.Allegati && $content.Allegati.size() > 0)
-<h3 class="clear">$i18n.getLabel(''ATTACHES'')</h3>
-	<ul>
-		#foreach ($attach in $content.Allegati)
-		<li><a href="$attach.attachPath">$attach.text</a></li>
-		#end	
-	</ul>
-#end
-', NULL);
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (14, 'CNG', 'per Mobile - per Home', '<div class="mobileInEvidenza">
-
-#if ( $content.Immagine_1.imagePath("1") != "" )
-
-<img src="$content.Immagine_1.imagePath("1")" alt="$content.Immagine_1.text" class="left" />
-
-#end
-
-<h2>$content.Titolo.text</h2>
-
-#if ($content.CorpoTesto.text != "")
-
-<p>$content.CorpoTesto.text</p>
-
-#end
-
-</div>', 'mobile/contentmodels/generic.css');
-INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (42, 'BND', 'per Mobile - per Liste', '<h3><a href="mobile_contentview.wp?contentId=$content.id&amp;modelId=4">$content.DataInizio.getFormattedDate("dd/MM/yyyy") &mdash; $content.DataFine.getFormattedDate("dd/MM/yyyy") &mdash; $content.Oggetto.text</a></h3>
-', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (51, 'SDL', 'for List', '<h3><a href="$content.contentLink">$content.Title.text</a></h3>
+$content.ShortDescr.text', NULL);
 
 
 --
--- TOC entry 1841 (class 0 OID 143529)
--- Dependencies: 129
--- Data for Name: contentrelations; Type: TABLE DATA; Schema: public; Owner: agile
---
-
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, 'CNG51', NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW27', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'moduli', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, '174', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG256', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG54', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG55', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG53', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG29', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG28', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG17', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG18', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG19', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG49', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG14', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG11', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG12', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG13', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG16', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, '143', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG146', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'anagrafe', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'moduli', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'autocertificazioni', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'autocertificazioni', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'scheda_download', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'tributi', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'moduli', NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
-
-
---
--- TOC entry 1842 (class 0 OID 143532)
+-- TOC entry 1842 (class 0 OID 144927)
 -- Dependencies: 130
 -- Data for Name: contents; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG20', 'CNG', 'Statuto', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG20" typecode="CNG" typedescr="Contenuto generico"><descr>Statuto</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Statuto</text><text lang="pt">Statuto Portoghese</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lo Statuto è il documento che definisce organi, compiti e modalità di funzionamento dell’Ente comunale.&#xD;
+Se desideri saperne di più sulle funzioni svolte dall’Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentatività democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</text><text lang="en">The Statute is the document that defines the Municipality council, functions and mode of operation.&#xD;
+&#xD;
+If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
+<p>Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
+<p>In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Villamarina</strong>.</p>
+<p>Scarica in Pdf il testo dello Statuto del Comune di Villamarina.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
+<p>If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</p>
+<p>In this section you can find the official text of Villamarina Municipality Statute.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="21" lang="it" /><resource resourcetype="Image" id="21" lang="en" /><text lang="it">Stemma</text><text lang="en">Statute</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="22" lang="it" /><resource resourcetype="Attach" id="22" lang="en" /><text lang="it">Statuto Villamarina</text><text lang="en">Statute</text></attribute></list></attributes><status>DRAFT</status></content>
+', '20090721120929', '20100201154934', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG20" typecode="CNG" typedescr="Contenuto generico"><descr>Statuto</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Statuto</text><text lang="pt">Statuto Portoghese</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lo Statuto è il documento che definisce organi, compiti e modalità di funzionamento dell’Ente comunale.&#xD;
+Se desideri saperne di più sulle funzioni svolte dall’Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentatività democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</text><text lang="en">The Statute is the document that defines the Municipality council, functions and mode of operation.&#xD;
+&#xD;
+If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
+<p>Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
+<p>In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Villamarina</strong>.</p>
+<p>Scarica in Pdf il testo dello Statuto del Comune di Villamarina.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
+<p>If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</p>
+<p>In this section you can find the official text of Villamarina Municipality Statute.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="21" lang="it" /><resource resourcetype="Image" id="21" lang="en" /><text lang="it">Stemma</text><text lang="en">Statute</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="22" lang="it" /><resource resourcetype="Attach" id="22" lang="en" /><text lang="it">Statuto Villamarina</text><text lang="en">Statute</text></attribute></list></attributes><status>DRAFT</status></content>
+', 'free', '1.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW3', 'NEW', 'Online il Portale del Comune di Villamarina', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW3" typecode="NEW" typedescr="Notizia"><descr>Online il Portale del Comune di Villamarina</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111121</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale del Comune di Villamarina</text><text lang="en">Online the Portal of Villamarina Municipality</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
+<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
+<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
+<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>
+<p>In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
+<p>The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="26" lang="it" /><resource resourcetype="Image" id="26" lang="en" /><text lang="it">Spiaggia</text><text lang="en">Villamarina</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>6.0</version></content>
+', '20090219163456', '20110119120025', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW3" typecode="NEW" typedescr="Notizia"><descr>Online il Portale del Comune di Villamarina</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111121</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale del Comune di Villamarina</text><text lang="en">Online the Portal of Villamarina Municipality</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
+<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
+<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
+<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>
+<p>In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
+<p>The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="26" lang="it" /><resource resourcetype="Image" id="26" lang="en" /><text lang="it">Spiaggia</text><text lang="en">Villamarina</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>6.0</version></content>
+', 'free', '6.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG16', 'CNG', 'Gestione Card Internal Servlet', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG16" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card Internal Servlet</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Internal Servlet</text><text lang="en">Internal Servlet</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;Pass ZTL&quot; con l''utilizzo della Showlet &quot;Internal Servlet&quot;..</p>
+<p>Tramite la showlet Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
+<p>In questo esempio, nel front-end vengono presentate le funzioni di ricerca PASS e visione dati singolo PASS. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>3.0</version></content>
+', '20090708180436', '20101118141922', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG16" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card Internal Servlet</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Internal Servlet</text><text lang="en">Internal Servlet</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;Pass ZTL&quot; con l''utilizzo della Showlet &quot;Internal Servlet&quot;..</p>
+<p>Tramite la showlet Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
+<p>In questo esempio, nel front-end vengono presentate le funzioni di ricerca PASS e visione dati singolo PASS. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>3.0</version></content>
+', 'free', '3.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL46', 'SDL', 'Modulo - richiesta rimborso ICI', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="SDL46" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta rimborso ICI</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="tributi" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Tributi - Richiesta rimborso ICI</text><text lang="en">Tax - Request ICI refund</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del rimborso ICI</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for ICI refund.</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del del rimborso ICI per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>&nbsp;Request Form for ICI refund, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="it" /><resource resourcetype="Attach" id="45" lang="en" /><text lang="it">Modulo richiesta rimborso ICI</text><text lang="en">Request Form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+', '20090722143535', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="SDL46" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta rimborso ICI</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="tributi" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Tributi - Richiesta rimborso ICI</text><text lang="en">Tax - Request ICI refund</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del rimborso ICI</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for ICI refund.</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del del rimborso ICI per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>&nbsp;Request Form for ICI refund, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="it" /><resource resourcetype="Attach" id="45" lang="en" /><text lang="it">Modulo richiesta rimborso ICI</text><text lang="en">Request Form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+', 'free', '1.0', NULL);
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG15', 'CNG', 'Gestione Card', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG15" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Esempio Servizio Applicativo</text><text lang="en">Application Service Example</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;<strong>Pass ZTL</strong>&quot;.</p>
+<p>In front-end vengono presentate le funzioni di erogazione lista per i PASS attraverso l''''utilizzo di un custom tag (CardListTag) e il paginatore di sistema. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
+<p>Il servizio &egrave; fruibile anche attraverso l''utilizzo della Showlet &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_int!#">accedi al servizio</a>.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot;.</p>
+<p>The service is available through the use of &quot;<a href="#!P;old_town_traffic_pass_int!#">Internal Servlet</a>&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>4.0</version></content>
+', '20090708175822', '20101120142520', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG15" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Esempio Servizio Applicativo</text><text lang="en">Application Service Example</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;<strong>Pass ZTL</strong>&quot;.</p>
+<p>In front-end vengono presentate le funzioni di erogazione lista per i PASS attraverso l''''utilizzo di un custom tag (CardListTag) e il paginatore di sistema. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
+<p>Il servizio &egrave; fruibile anche attraverso l''utilizzo della Showlet &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_int!#">accedi al servizio</a>.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot;.</p>
+<p>The service is available through the use of &quot;<a href="#!P;old_town_traffic_pass_int!#">Internal Servlet</a>&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>4.0</version></content>
+', 'free', '4.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG19', 'CNG', 'Consiglio Comunale', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG19" typecode="CNG" typedescr="Contenuto generico"><descr>Consiglio Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Consiglio Comunale</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Consiglio Comunale, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) è l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della Costituzione della Repubblica Italiana.</text><text lang="en">A Municipal Council is the local government of Villamarina municipality.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) &egrave; l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della <strong>Costituzione della Repubblica Italiana</strong>.</p>
+<p>Il Consiglio Comunale &egrave; composto dal Sindaco e da un numero variabile di consiglieri, in funzione del numero di abitanti del Comune.</p>
+<p>Il Consiglio comunale viene eletto direttamente dai <strong>cittadini</strong>, contestualmente all&rsquo;elezione del Sindaco, e resta in carica <strong>cinque anni</strong>.</p>
+<p>Il Consiglio Comunale &egrave; organo di indirizzo e di controllo <strong>politico-amministrativo</strong> del comune. La sua competenza si limita ad atti fondamentali indicati dalla legge: Statuto dell''ente e delle aziende speciali, programmi, piani finanziari, bilanci, conti consuntivi, convenzioni tra enti locali, costituzione di forme associative, etc.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Municipal Council</strong> is the local government of Villamarina municipality. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+', '20090721120259', '20100104120649', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG19" typecode="CNG" typedescr="Contenuto generico"><descr>Consiglio Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Consiglio Comunale</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Consiglio Comunale, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) è l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della Costituzione della Repubblica Italiana.</text><text lang="en">A Municipal Council is the local government of Villamarina municipality.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) &egrave; l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della <strong>Costituzione della Repubblica Italiana</strong>.</p>
+<p>Il Consiglio Comunale &egrave; composto dal Sindaco e da un numero variabile di consiglieri, in funzione del numero di abitanti del Comune.</p>
+<p>Il Consiglio comunale viene eletto direttamente dai <strong>cittadini</strong>, contestualmente all&rsquo;elezione del Sindaco, e resta in carica <strong>cinque anni</strong>.</p>
+<p>Il Consiglio Comunale &egrave; organo di indirizzo e di controllo <strong>politico-amministrativo</strong> del comune. La sua competenza si limita ad atti fondamentali indicati dalla legge: Statuto dell''ente e delle aziende speciali, programmi, piani finanziari, bilanci, conti consuntivi, convenzioni tra enti locali, costituzione di forme associative, etc.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Municipal Council</strong> is the local government of Villamarina municipality. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+', 'free', '1.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL7', 'SDL', 'Autocertificazione Residenza', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="SDL7" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Residenza</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Modulo Autocertificazione Residenza</text><text lang="en">Residence Self-certification Form</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza&nbsp;messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="40" lang="it" /><resource resourcetype="Attach" id="40" lang="en" /><text lang="it">Certificato di residenza</text><text lang="en">Residence Self-certification form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+', '20090219165640', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="SDL7" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Residenza</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Modulo Autocertificazione Residenza</text><text lang="en">Residence Self-certification Form</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza&nbsp;messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="40" lang="it" /><resource resourcetype="Attach" id="40" lang="en" /><text lang="it">Certificato di residenza</text><text lang="en">Residence Self-certification form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+', 'free', '1.0', NULL);
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW177', 'NEW', 'Online il Portale Mobile', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW177" typecode="NEW" typedescr="Notizia"><descr>Online il Portale Mobile</descr><groups mainGroup="free" /><categories><category id="newsletter_1" /><category id="newsletter_2" /><category id="tag2" /><category id="tag5" /><category id="tag1" /></categories><attributes><attribute name="Date" attributetype="Date"><date>20110615</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale Mobile</text><text lang="en">Online the Mobile Portal</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Mobile Portal of Villamarina Municipality.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
+<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
+<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
+<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Mobile Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Links" attributetype="Link"><link type="content"><contentdest>CNG51</contentdest></link><text lang="it">Scopri i dettagli</text><text lang="en">Discover More</text></attribute></list><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20110118183107</created><lastModified>20110524164633</lastModified></content>
+', '20110118183107', '20110524164633', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW177" typecode="NEW" typedescr="Notizia"><descr>Online il Portale Mobile</descr><groups mainGroup="free" /><categories><category id="newsletter_1" /><category id="newsletter_2" /><category id="tag2" /><category id="tag5" /><category id="tag1" /></categories><attributes><attribute name="Date" attributetype="Date"><date>20110615</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale Mobile</text><text lang="en">Online the Mobile Portal</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Mobile Portal of Villamarina Municipality.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
+<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
+<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
+<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Mobile Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Links" attributetype="Link"><link type="content"><contentdest>CNG51</contentdest></link><text lang="it">Scopri i dettagli</text><text lang="en">Discover More</text></attribute></list><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20110118183107</created><lastModified>20110524164633</lastModified></content>
+', 'free', '5.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL44', 'SDL', 'Autocertificazione Stato Civile', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="SDL44" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Stato Civile</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Modulo Autocertificazione Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione&nbsp;dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="43" lang="it" /><resource resourcetype="Attach" id="43" lang="en" /><text lang="it">Modulo Certificato Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+', '20090722143125', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="SDL44" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Stato Civile</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Modulo Autocertificazione Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione&nbsp;dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="43" lang="it" /><resource resourcetype="Attach" id="43" lang="en" /><text lang="it">Modulo Certificato Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+', 'free', '1.0', NULL);
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW23', 'NEW', 'Contributo canone di locazione 2010', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW23" typecode="NEW" typedescr="Notizia"><descr>Contributo canone di locazione 2010</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111021</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2011</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">E'' stato pubblicato l''avviso pubblico per l’attribuzione del contributo ad integrazione dei canoni di locazione 2011.</text><text lang="en">It has been published the public notice for the allocation of Ground Rent Contribution 2011.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>E'' stato pubblicato l''avviso pubblico per<strong> </strong>la presentazione delle domande per  l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2011,  di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.&nbsp;</p>
+<p>E'' possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
+<p>Le relative domande per accedere al bando devono essere presentate o spedite all''Ufficio Protocollo  entro il<strong>  giorno 11.12.2011</strong>.&nbsp;</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2011</strong>.</p>
+<p>You can download the application forms and the notice in this section.</p>
+<p>The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2011</strong>.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="24" lang="it" /><resource resourcetype="Attach" id="24" lang="en" /><text lang="it">Bando Locazione 2011</text><text lang="en">Notice</text></attribute><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="it" /><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
+', '20090721185336', '20110119121958', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW23" typecode="NEW" typedescr="Notizia"><descr>Contributo canone di locazione 2010</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111021</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2011</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">E'' stato pubblicato l''avviso pubblico per l’attribuzione del contributo ad integrazione dei canoni di locazione 2011.</text><text lang="en">It has been published the public notice for the allocation of Ground Rent Contribution 2011.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>E'' stato pubblicato l''avviso pubblico per<strong> </strong>la presentazione delle domande per  l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2011,  di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.&nbsp;</p>
+<p>E'' possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
+<p>Le relative domande per accedere al bando devono essere presentate o spedite all''Ufficio Protocollo  entro il<strong>  giorno 11.12.2011</strong>.&nbsp;</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2011</strong>.</p>
+<p>You can download the application forms and the notice in this section.</p>
+<p>The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2011</strong>.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="24" lang="it" /><resource resourcetype="Attach" id="24" lang="en" /><text lang="it">Bando Locazione 2011</text><text lang="en">Notice</text></attribute><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="it" /><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
+', 'free', '6.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG54', 'CNG', 'Intro Delibere Mobile', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG54" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Delibere</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle delibere.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG54" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Delibere</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle delibere.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', '20091015101844', '20091015101844', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG54" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Delibere</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle delibere.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG54" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Delibere</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle delibere.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG55', 'CNG', 'Intro Bandi Mobile', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG55" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Bandi</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista dei Bandi.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG55" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Bandi</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista dei Bandi.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', '20091015102100', '20091015102100', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG55" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Bandi</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista dei Bandi.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG55" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Bandi</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista dei Bandi.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG53', 'CNG', 'Intro Notizie Mobile', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG53" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Notizie</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle notizie.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG53" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Notizie</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle notizie.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', '20091015101654', '20091015102119', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG53" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Notizie</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle notizie.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG53" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Notizie</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione puoi trovare la lista delle notizie.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG29', 'CNG', 'Intro delibere di Consiglio', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG29" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Consiglio</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Elenco delle Delibere di Consiglio presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext" /><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG29" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Consiglio</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Elenco delle Delibere di Consiglio presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext" /><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', '20090721192226', '20090721192226', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG29" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Consiglio</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Elenco delle Delibere di Consiglio presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext" /><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG29" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Consiglio</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Elenco delle Delibere di Consiglio presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext" /><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG28', 'CNG', 'Intro delibere di Giunta', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG28" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Giunta</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Elenco delle Delibere di Giunta presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext" /><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG28" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Giunta</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Elenco delle Delibere di Giunta presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext" /><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', '20090721191954', '20090721191954', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG28" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Giunta</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Elenco delle Delibere di Giunta presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext" /><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<content id="CNG28" typecode="CNG" typedescr="Contenuto generico"><descr>Intro delibere di Giunta</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Elenco delle Delibere di Giunta presenti nel portale del Comune</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext" /><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG17', 'CNG', 'Il Sindaco', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG17" typecode="CNG" typedescr="Contenuto generico"><descr>Il Sindaco</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Sindaco è eletto direttamente dai cittadini ed è membro del Consiglio Comunale. È capo dell’amministrazione, ha la rappresentanza legale dell’ente ed è, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</text><text lang="en">Mayor is a modern title used in many countries for the highest ranking officer in a municipal government.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>
+<content id="CNG17" typecode="CNG" typedescr="Contenuto generico"><descr>Il Sindaco</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Sindaco è eletto direttamente dai cittadini ed è membro del Consiglio Comunale. È capo dell’amministrazione, ha la rappresentanza legale dell’ente ed è, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</text><text lang="en">Mayor is a modern title used in many countries for the highest ranking officer in a municipal government.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>
 <p>Nomina gli <strong>Assessori</strong>, convoca e presiede la <strong>Giunta comunale</strong>, assicurandone unit&agrave; di indirizzo; sovrintende al funzionamento degli uffici e dei servizi.</p>
 <p>Al Sindaco competono la nomina del segretario generale, del direttore generale e dei direttori di settore.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p><strong>Mayor</strong> is a modern title used in many countries for the highest ranking officer in a municipal government.</p>
-<p>The mayor is an elected politician who serves as chief executive officer and/or ceremonial official of Villamarina municipalities. </p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+<p>The mayor is an elected politician who serves as chief executive officer and/or ceremonial official of Villamarina municipalities. </p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
 ', '20090721112111', '20100104115812', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG17" typecode="CNG" typedescr="Contenuto generico"><descr>Il Sindaco</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Sindaco è eletto direttamente dai cittadini ed è membro del Consiglio Comunale. È capo dell’amministrazione, ha la rappresentanza legale dell’ente ed è, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</text><text lang="en">Mayor is a modern title used in many countries for the highest ranking officer in a municipal government.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>
+<content id="CNG17" typecode="CNG" typedescr="Contenuto generico"><descr>Il Sindaco</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Sindaco è eletto direttamente dai cittadini ed è membro del Consiglio Comunale. È capo dell’amministrazione, ha la rappresentanza legale dell’ente ed è, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</text><text lang="en">Mayor is a modern title used in many countries for the highest ranking officer in a municipal government.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>
 <p>Nomina gli <strong>Assessori</strong>, convoca e presiede la <strong>Giunta comunale</strong>, assicurandone unit&agrave; di indirizzo; sovrintende al funzionamento degli uffici e dei servizi.</p>
 <p>Al Sindaco competono la nomina del segretario generale, del direttore generale e dei direttori di settore.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p><strong>Mayor</strong> is a modern title used in many countries for the highest ranking officer in a municipal government.</p>
-<p>The mayor is an elected politician who serves as chief executive officer and/or ceremonial official of Villamarina municipalities. </p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG18', 'CNG', 'Giunta Comunale', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG18" typecode="CNG" typedescr="Contenuto generico"><descr>Giunta Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Giunta Comunale</text><text lang="en">Council</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">La Giunta del Comune è l''organo esecutivo composto dal Sindaco, che ne è anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</text><text lang="en">A Council is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>La <strong>Giunta comunale</strong> &egrave; l''organo esecutivo composto dal Sindaco, che ne &egrave; anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</p>
-<p>La Giunta comunale &egrave; responsabile dell&rsquo;<strong>attuazione delle linee programmatiche e degli indirizzi generali</strong> definiti nel piano di mandato, ossia nel documento con cui il Sindaco, all&rsquo;inizio del suo incarico quinquennale, presenta al Consiglio le linee programmatiche relative alle azioni e ai progetti da realizzare.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Council</strong> is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</p>
-<p>A municipality is often referred to as simply the Council without any further attempt by the speaker at making a size or scale designation, as in Council house. It is assumed the listener will already know the specific meaning of the word without further guidance.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
-', '20090721113802', '20100104120443', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG18" typecode="CNG" typedescr="Contenuto generico"><descr>Giunta Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Giunta Comunale</text><text lang="en">Council</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">La Giunta del Comune è l''organo esecutivo composto dal Sindaco, che ne è anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</text><text lang="en">A Council is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>La <strong>Giunta comunale</strong> &egrave; l''organo esecutivo composto dal Sindaco, che ne &egrave; anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</p>
-<p>La Giunta comunale &egrave; responsabile dell&rsquo;<strong>attuazione delle linee programmatiche e degli indirizzi generali</strong> definiti nel piano di mandato, ossia nel documento con cui il Sindaco, all&rsquo;inizio del suo incarico quinquennale, presenta al Consiglio le linee programmatiche relative alle azioni e ai progetti da realizzare.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Council</strong> is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</p>
-<p>A municipality is often referred to as simply the Council without any further attempt by the speaker at making a size or scale designation, as in Council house. It is assumed the listener will already know the specific meaning of the word without further guidance.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG19', 'CNG', 'Consiglio Comunale', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG19" typecode="CNG" typedescr="Contenuto generico"><descr>Consiglio Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Consiglio Comunale</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Consiglio Comunale, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) è l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della Costituzione della Repubblica Italiana.</text><text lang="en">A Municipal Council is the local government of Villamarina municipality.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) &egrave; l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della <strong>Costituzione della Repubblica Italiana</strong>.</p>
-<p>Il Consiglio Comunale &egrave; composto dal Sindaco e da un numero variabile di consiglieri, in funzione del numero di abitanti del Comune.</p>
-<p>Il Consiglio comunale viene eletto direttamente dai <strong>cittadini</strong>, contestualmente all&rsquo;elezione del Sindaco, e resta in carica <strong>cinque anni</strong>.</p>
-<p>Il Consiglio Comunale &egrave; organo di indirizzo e di controllo <strong>politico-amministrativo</strong> del comune. La sua competenza si limita ad atti fondamentali indicati dalla legge: Statuto dell''ente e delle aziende speciali, programmi, piani finanziari, bilanci, conti consuntivi, convenzioni tra enti locali, costituzione di forme associative, etc.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Municipal Council</strong> is the local government of Villamarina municipality. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
-', '20090721120259', '20100104120649', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG19" typecode="CNG" typedescr="Contenuto generico"><descr>Consiglio Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Consiglio Comunale</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il Consiglio Comunale, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) è l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della Costituzione della Repubblica Italiana.</text><text lang="en">A Municipal Council is the local government of Villamarina municipality.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull''ordinamento degli enti locali) &egrave; l''assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall''art. 114 della <strong>Costituzione della Repubblica Italiana</strong>.</p>
-<p>Il Consiglio Comunale &egrave; composto dal Sindaco e da un numero variabile di consiglieri, in funzione del numero di abitanti del Comune.</p>
-<p>Il Consiglio comunale viene eletto direttamente dai <strong>cittadini</strong>, contestualmente all&rsquo;elezione del Sindaco, e resta in carica <strong>cinque anni</strong>.</p>
-<p>Il Consiglio Comunale &egrave; organo di indirizzo e di controllo <strong>politico-amministrativo</strong> del comune. La sua competenza si limita ad atti fondamentali indicati dalla legge: Statuto dell''ente e delle aziende speciali, programmi, piani finanziari, bilanci, conti consuntivi, convenzioni tra enti locali, costituzione di forme associative, etc.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Municipal Council</strong> is the local government of Villamarina municipality. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+<p>The mayor is an elected politician who serves as chief executive officer and/or ceremonial official of Villamarina municipalities. </p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG49', 'CNG', 'URP - Ufficio Relazioni con il Pubblico', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG49" typecode="CNG" typedescr="Contenuto generico"><descr>URP - Ufficio Relazioni con il Pubblico</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>Sede</strong>: Palazzo Municipale - Via Villamarina, 1, Villamarina</p>
+<content id="CNG49" typecode="CNG" typedescr="Contenuto generico"><descr>URP - Ufficio Relazioni con il Pubblico</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>Sede</strong>: Palazzo Municipale - Via Villamarina, 1, Villamarina</p>
 <p><strong>Telefono</strong> 000.000.000 (numero verde)</p>
 <p><strong>Fax</strong>  	00.0000.000</p>
 <p><strong>E-mail</strong>  	urp@villamarina.it <br />
@@ -462,9 +435,9 @@ marted&igrave; e mercoled&igrave;: dalle 16.00 alle 17.00</p>]]></hypertext><hyp
 <p><strong>E-mail</strong> urp@villamarina.it</p>
 <p><strong>Opening hours</strong></p>
 <p>From Monday to Friday: from 9.00 a.m. to 12.30 a.m.<br />
-From Tuesday to Wednesday: from 16.00 p.m. to 17.00 p.m.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+From Tuesday to Wednesday: from 16.00 p.m. to 17.00 p.m.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
 ', '20090722171212', '20100104122227', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG49" typecode="CNG" typedescr="Contenuto generico"><descr>URP - Ufficio Relazioni con il Pubblico</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>Sede</strong>: Palazzo Municipale - Via Villamarina, 1, Villamarina</p>
+<content id="CNG49" typecode="CNG" typedescr="Contenuto generico"><descr>URP - Ufficio Relazioni con il Pubblico</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>Sede</strong>: Palazzo Municipale - Via Villamarina, 1, Villamarina</p>
 <p><strong>Telefono</strong> 000.000.000 (numero verde)</p>
 <p><strong>Fax</strong>  	00.0000.000</p>
 <p><strong>E-mail</strong>  	urp@villamarina.it <br />
@@ -477,194 +450,89 @@ marted&igrave; e mercoled&igrave;: dalle 16.00 alle 17.00</p>]]></hypertext><hyp
 <p><strong>E-mail</strong> urp@villamarina.it</p>
 <p><strong>Opening hours</strong></p>
 <p>From Monday to Friday: from 9.00 a.m. to 12.30 a.m.<br />
-From Tuesday to Wednesday: from 16.00 p.m. to 17.00 p.m.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+From Tuesday to Wednesday: from 16.00 p.m. to 17.00 p.m.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG14', 'CNG', 'Intro Download', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG14" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Download</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Modulistica</text><text lang="en">Documents Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</text><text lang="en">In this section are available for download the documents provided for the relationship between Citizens and Municipality.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available for download the documents provided for the relationship between Citizens and Municipality.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+<content id="CNG14" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Download</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Modulistica</text><text lang="en">Documents Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</text><text lang="en">In this section are available for download the documents provided for the relationship between Citizens and Municipality.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available for download the documents provided for the relationship between Citizens and Municipality.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
 ', '20090703113633', '20100104125122', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG14" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Download</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Modulistica</text><text lang="en">Documents Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</text><text lang="en">In this section are available for download the documents provided for the relationship between Citizens and Municipality.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available for download the documents provided for the relationship between Citizens and Municipality.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+<content id="CNG14" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Download</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Modulistica</text><text lang="en">Documents Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</text><text lang="en">In this section are available for download the documents provided for the relationship between Citizens and Municipality.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sono disponibili per il download i moduli predisposti per i diversi aspetti del rapporto tra il Cittadino ed il Comune.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available for download the documents provided for the relationship between Citizens and Municipality.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG11', 'CNG', 'Intro Bandi', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG11" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Bandi</text><text lang="en">Announcements Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicati i bandi, ordinati in base alla data di scadenza.</text><text lang="en">In this section are available Announcements of Villamarina Municipality, sorted by date.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicati i bandi del Comune di Villamarina, ordinati in base alla data di scadenza.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available<strong> Announcements</strong> of Villamarina Municipality, sorted by expiry date.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="CNG11" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Bandi</text><text lang="en">Announcements Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicati i bandi, ordinati in base alla data di scadenza.</text><text lang="en">In this section are available Announcements of Villamarina Municipality, sorted by date.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicati i bandi del Comune di Villamarina, ordinati in base alla data di scadenza.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available<strong> Announcements</strong> of Villamarina Municipality, sorted by expiry date.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', '20090703112842', '20100104125203', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG11" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Bandi</text><text lang="en">Announcements Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicati i bandi, ordinati in base alla data di scadenza.</text><text lang="en">In this section are available Announcements of Villamarina Municipality, sorted by date.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicati i bandi del Comune di Villamarina, ordinati in base alla data di scadenza.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available<strong> Announcements</strong> of Villamarina Municipality, sorted by expiry date.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="CNG11" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Bandi</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Bandi</text><text lang="en">Announcements Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicati i bandi, ordinati in base alla data di scadenza.</text><text lang="en">In this section are available Announcements of Villamarina Municipality, sorted by date.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicati i bandi del Comune di Villamarina, ordinati in base alla data di scadenza.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available<strong> Announcements</strong> of Villamarina Municipality, sorted by expiry date.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG12', 'CNG', 'Intro Notizie', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG12" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Notizie</text><text lang="en">News Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le notizie sul Comune di Villamarina, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available News about Villamarina Municipality, sorted by publication date.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione&nbsp; sono pubblicate le notizie del <strong>Comune di Villamarina</strong>, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are&nbsp;available <strong>News</strong> about Villamarina Municipality, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="CNG12" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Notizie</text><text lang="en">News Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le notizie sul Comune di Villamarina, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available News about Villamarina Municipality, sorted by publication date.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione&nbsp; sono pubblicate le notizie del <strong>Comune di Villamarina</strong>, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are&nbsp;available <strong>News</strong> about Villamarina Municipality, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', '20090703113055', '20100104125229', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG12" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Notizie</text><text lang="en">News Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le notizie sul Comune di Villamarina, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available News about Villamarina Municipality, sorted by publication date.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione&nbsp; sono pubblicate le notizie del <strong>Comune di Villamarina</strong>, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are&nbsp;available <strong>News</strong> about Villamarina Municipality, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="CNG12" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Notizie</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Notizie</text><text lang="en">News Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le notizie sul Comune di Villamarina, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available News about Villamarina Municipality, sorted by publication date.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione&nbsp; sono pubblicate le notizie del <strong>Comune di Villamarina</strong>, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are&nbsp;available <strong>News</strong> about Villamarina Municipality, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG13', 'CNG', 'Intro Delibere', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG13" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Delibere</text><text lang="en">Decisions Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available the Council decisions, sorted by publication date.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available the <strong>Council decisions</strong>, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="CNG13" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Delibere</text><text lang="en">Decisions Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available the Council decisions, sorted by publication date.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available the <strong>Council decisions</strong>, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', '20090703113229', '20100104125252', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG13" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Archivio Delibere</text><text lang="en">Decisions Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available the Council decisions, sorted by publication date.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available the <strong>Council decisions</strong>, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="CNG13" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Delibere</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Archivio Delibere</text><text lang="en">Decisions Archive</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</text><text lang="en">In this section are available the Council decisions, sorted by publication date.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>In questa sezione sono pubblicate le delibere di Giunta e di Consiglio, ordinate in base alla data di pubblicazione.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>In this section are available the <strong>Council decisions</strong>, sorted by publication date.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG2', 'CNG', 'Lorem Ipsum dolor sit amet', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG2" typecode="CNG" typedescr="Contenuto generico"><descr>Lorem Ipsum dolor sit amet</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Lorem Ipsum dolor sit amet</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere.Sed venenatis sapien sed purus.Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Aliquam convallis quam eget turpis.Donec aliquet lacus eget libero.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere. Duis augue. Fusce in justo sit amet urna egestas rutrum. Phasellus non turpis quis tortor gravida rutrum.</p>
+<content id="CNG2" typecode="CNG" typedescr="Contenuto generico"><descr>Lorem Ipsum dolor sit amet</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Lorem Ipsum dolor sit amet</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere.Sed venenatis sapien sed purus.Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Aliquam convallis quam eget turpis.Donec aliquet lacus eget libero.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere. Duis augue. Fusce in justo sit amet urna egestas rutrum. Phasellus non turpis quis tortor gravida rutrum.</p>
 <p>Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Aliquam convallis quam eget turpis.Donec aliquet lacus eget libero. Suspendisse nisi odio, luctus eget, pretium quis, placerat a, urna. Ut sed nulla non ante cursus convallis.</p>
-<p>Sed venenatis sapien sed purus. Maecenas felis massa, porta sed, semper sed, lobortis luctus, erat. Aliquam nec nunc sit amet diam pulvinar mattis. In at turpis eget dolor volutpat rutrum. Donec aliquet lacus eget libero. Suspendisse nisi odio, luctus eget, pretium quis, placerat a, urna. Ut sed nulla non ante cursus convallis.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="10" lang="it" /><resource resourcetype="Image" id="10" lang="en" /><text lang="it">prova</text><text lang="en">prova</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link"><attribute name="Riferimenti" attributetype="Link"><link type="external"><urldest>http://www.google.com/</urldest></link><text lang="it">Google</text><text lang="en">Google</text></attribute></list><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
+<p>Sed venenatis sapien sed purus. Maecenas felis massa, porta sed, semper sed, lobortis luctus, erat. Aliquam nec nunc sit amet diam pulvinar mattis. In at turpis eget dolor volutpat rutrum. Donec aliquet lacus eget libero. Suspendisse nisi odio, luctus eget, pretium quis, placerat a, urna. Ut sed nulla non ante cursus convallis.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="10" lang="it" /><resource resourcetype="Image" id="10" lang="en" /><text lang="it">prova</text><text lang="en">prova</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Links" attributetype="Link"><link type="external"><urldest>http://www.google.com/</urldest></link><text lang="it">Google</text><text lang="en">Google</text></attribute></list><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', '20090219102647', '20100201154934', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG2" typecode="CNG" typedescr="Contenuto generico"><descr>Lorem Ipsum dolor sit amet</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Lorem Ipsum dolor sit amet</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere.Sed venenatis sapien sed purus.Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Aliquam convallis quam eget turpis.Donec aliquet lacus eget libero.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere. Duis augue. Fusce in justo sit amet urna egestas rutrum. Phasellus non turpis quis tortor gravida rutrum.</p>
+<content id="CNG2" typecode="CNG" typedescr="Contenuto generico"><descr>Lorem Ipsum dolor sit amet</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Lorem Ipsum dolor sit amet</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere.Sed venenatis sapien sed purus.Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Aliquam convallis quam eget turpis.Donec aliquet lacus eget libero.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec est eu mi dignissim posuere. Duis augue. Fusce in justo sit amet urna egestas rutrum. Phasellus non turpis quis tortor gravida rutrum.</p>
 <p>Sed consequat, dolor sit amet porta interdum, leo nulla mollis nulla, quis congue sapien massa sed risus. Aliquam convallis quam eget turpis.Donec aliquet lacus eget libero. Suspendisse nisi odio, luctus eget, pretium quis, placerat a, urna. Ut sed nulla non ante cursus convallis.</p>
-<p>Sed venenatis sapien sed purus. Maecenas felis massa, porta sed, semper sed, lobortis luctus, erat. Aliquam nec nunc sit amet diam pulvinar mattis. In at turpis eget dolor volutpat rutrum. Donec aliquet lacus eget libero. Suspendisse nisi odio, luctus eget, pretium quis, placerat a, urna. Ut sed nulla non ante cursus convallis.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="10" lang="it" /><resource resourcetype="Image" id="10" lang="en" /><text lang="it">prova</text><text lang="en">prova</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link"><attribute name="Riferimenti" attributetype="Link"><link type="external"><urldest>http://www.google.com/</urldest></link><text lang="it">Google</text><text lang="en">Google</text></attribute></list><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG20', 'CNG', 'Statuto', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG20" typecode="CNG" typedescr="Contenuto generico"><descr>Statuto</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Statuto</text><text lang="pt">Statuto Portoghese</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lo Statuto è il documento che definisce organi, compiti e modalità di funzionamento dell’Ente comunale.&#xD;
-Se desideri saperne di più sulle funzioni svolte dall’Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentatività democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</text><text lang="en">The Statute is the document that defines the Municipality council, functions and mode of operation.&#xD;
-&#xD;
-If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
-<p>Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
-<p>In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Villamarina</strong>.</p>
-<p>Scarica in Pdf il testo dello Statuto del Comune di Villamarina.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
-<p>If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</p>
-<p>In this section you can find the official text of Villamarina Municipality Statute.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="21" lang="it" /><resource resourcetype="Image" id="21" lang="en" /><text lang="it">Stemma</text><text lang="en">Statute</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="22" lang="it" /><resource resourcetype="Attach" id="22" lang="en" /><text lang="it">Statuto Villamarina</text><text lang="en">Statute</text></attribute></list></attributes><status>DRAFT</status></content>
-', '20090721120929', '20100201154934', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG20" typecode="CNG" typedescr="Contenuto generico"><descr>Statuto</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Statuto</text><text lang="pt">Statuto Portoghese</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Lo Statuto è il documento che definisce organi, compiti e modalità di funzionamento dell’Ente comunale.&#xD;
-Se desideri saperne di più sulle funzioni svolte dall’Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentatività democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</text><text lang="en">The Statute is the document that defines the Municipality council, functions and mode of operation.&#xD;
-&#xD;
-If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
-<p>Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
-<p>In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Villamarina</strong>.</p>
-<p>Scarica in Pdf il testo dello Statuto del Comune di Villamarina.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
-<p>If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you''ll find lots of interesting information in the official status.</p>
-<p>In this section you can find the official text of Villamarina Municipality Statute.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="21" lang="it" /><resource resourcetype="Image" id="21" lang="en" /><text lang="it">Stemma</text><text lang="en">Statute</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="22" lang="it" /><resource resourcetype="Attach" id="22" lang="en" /><text lang="it">Statuto Villamarina</text><text lang="en">Statute</text></attribute></list></attributes><status>DRAFT</status></content>
+<p>Sed venenatis sapien sed purus. Maecenas felis massa, porta sed, semper sed, lobortis luctus, erat. Aliquam nec nunc sit amet diam pulvinar mattis. In at turpis eget dolor volutpat rutrum. Donec aliquet lacus eget libero. Suspendisse nisi odio, luctus eget, pretium quis, placerat a, urna. Ut sed nulla non ante cursus convallis.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="10" lang="it" /><resource resourcetype="Image" id="10" lang="en" /><text lang="it">prova</text><text lang="en">prova</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Links" attributetype="Link"><link type="external"><urldest>http://www.google.com/</urldest></link><text lang="it">Google</text><text lang="en">Google</text></attribute></list><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL42', 'SDL', 'Modulo - richiesta carta identità valida per espatrio', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL42" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta carta identità valida per espatrio</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="anagrafe" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Anagrafe - Richiesta Carta Identità valida per espatrio</text><text lang="en">Registry - Request Identity Card valid for foreign travel</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel.</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio, per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="41" lang="it" /><resource resourcetype="Attach" id="41" lang="en" /><text lang="it">Modulo richiesta Carta Identità valida per espatrio</text><text lang="en">Identity Card Request Form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
+<content id="SDL42" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta carta identità valida per espatrio</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="anagrafe" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Anagrafe - Richiesta Carta Identità valida per espatrio</text><text lang="en">Registry - Request Identity Card valid for foreign travel</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel.</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio, per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="41" lang="it" /><resource resourcetype="Attach" id="41" lang="en" /><text lang="it">Modulo richiesta Carta Identità valida per espatrio</text><text lang="en">Identity Card Request Form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', '20090722134145', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL42" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta carta identità valida per espatrio</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="anagrafe" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Anagrafe - Richiesta Carta Identità valida per espatrio</text><text lang="en">Registry - Request Identity Card valid for foreign travel</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel.</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio, per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="41" lang="it" /><resource resourcetype="Attach" id="41" lang="en" /><text lang="it">Modulo richiesta Carta Identità valida per espatrio</text><text lang="en">Identity Card Request Form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
-', 'free', '1.0', NULL);
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL44', 'SDL', 'Autocertificazione Stato Civile', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL44" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Stato Civile</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Modulo Autocertificazione Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione&nbsp;dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="43" lang="it" /><resource resourcetype="Attach" id="43" lang="en" /><text lang="it">Modulo Certificato Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
-', '20090722143125', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL44" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Stato Civile</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Modulo Autocertificazione Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione&nbsp;dello stato civile messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Civil Status Self Certification Form</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="43" lang="it" /><resource resourcetype="Attach" id="43" lang="en" /><text lang="it">Modulo Certificato Stato Civile</text><text lang="en">Civil Status Self Certification Form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
-', 'free', '1.0', NULL);
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL7', 'SDL', 'Autocertificazione Residenza', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL7" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Residenza</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Modulo Autocertificazione Residenza</text><text lang="en">Residence Self-certification Form</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza&nbsp;messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="40" lang="it" /><resource resourcetype="Attach" id="40" lang="en" /><text lang="it">Certificato di residenza</text><text lang="en">Residence Self-certification form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
-', '20090219165640', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL7" typecode="SDL" typedescr="Scheda Download"><descr>Autocertificazione Residenza</descr><groups mainGroup="free" /><categories><category id="autocertificazioni" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Modulo Autocertificazione Residenza</text><text lang="en">Residence Self-certification Form</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per l''autocertificazione di residenza&nbsp;messo a disposizione dal Comune di Villamarina, Ufficio Relazioni con il Pubblico.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Residence Self-certification form.</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="40" lang="it" /><resource resourcetype="Attach" id="40" lang="en" /><text lang="it">Certificato di residenza</text><text lang="en">Residence Self-certification form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
-', 'free', '1.0', NULL);
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('SDL46', 'SDL', 'Modulo - richiesta rimborso ICI', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL46" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta rimborso ICI</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="tributi" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Tributi - Richiesta rimborso ICI</text><text lang="en">Tax - Request ICI refund</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del rimborso ICI</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for ICI refund.</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del del rimborso ICI per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>&nbsp;Request Form for ICI refund, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="it" /><resource resourcetype="Attach" id="45" lang="en" /><text lang="it">Modulo richiesta rimborso ICI</text><text lang="en">Request Form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>1.0</versionId></content>
-', '20090722143535', '20100201154943', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="SDL46" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta rimborso ICI</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="tributi" /></categories><attributes><attribute name="Oggetto" attributetype="Text"><text lang="it">Tributi - Richiesta rimborso ICI</text><text lang="en">Tax - Request ICI refund</text></attribute><attribute name="DescrizioneBreve" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del rimborso ICI</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for ICI refund.</p>]]></hypertext></attribute><attribute name="DescrizioneLunga" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta del del rimborso ICI per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>&nbsp;Request Form for ICI refund, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Immagine" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="it" /><resource resourcetype="Attach" id="45" lang="en" /><text lang="it">Modulo richiesta rimborso ICI</text><text lang="en">Request Form</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+<content id="SDL42" typecode="SDL" typedescr="Scheda Download"><descr>Modulo - richiesta carta identità valida per espatrio</descr><groups mainGroup="free" /><categories><category id="moduli" /><category id="anagrafe" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Anagrafe - Richiesta Carta Identità valida per espatrio</text><text lang="en">Registry - Request Identity Card valid for foreign travel</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel.</p>]]></hypertext></attribute><attribute name="LongDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Modulo per la richiesta della carta identit&agrave; valida per espatrio, per i cittadini residenti nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Request Form for identity card valid for foreign travel, for Villamarina citizens.</p>]]></hypertext></attribute><attribute name="Image" attributetype="Image" /><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="41" lang="it" /><resource resourcetype="Attach" id="41" lang="en" /><text lang="it">Modulo richiesta Carta Identità valida per espatrio</text><text lang="en">Identity Card Request Form</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /></attributes><status>READY</status><versionId>2.0</versionId></content>
 ', 'free', '1.0', NULL);
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('BND39', 'BND', 'Bando Servizio Civile', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="BND39" typecode="BND" typedescr="Bando"><descr>Bando Servizio Civile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="DataInizio" attributetype="Date"><date>20110201</date></attribute><attribute name="DataFine" attributetype="Date"><date>20111130</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara&nbsp;per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for the selection of 10 volunteers for civil service projects.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="38" lang="it" /><resource resourcetype="Attach" id="38" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Civil Service Announcement</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
+<content id="BND39" typecode="BND" typedescr="Bando"><descr>Bando Servizio Civile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="StartDate" attributetype="Date"><date>20110201</date></attribute><attribute name="EndDate" attributetype="Date"><date>20111130</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara&nbsp;per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for the selection of 10 volunteers for civil service projects.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="38" lang="it" /><resource resourcetype="Attach" id="38" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Civil Service Announcement</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
 ', '20090722125552', '20101120102622', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="BND39" typecode="BND" typedescr="Bando"><descr>Bando Servizio Civile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="DataInizio" attributetype="Date"><date>20110201</date></attribute><attribute name="DataFine" attributetype="Date"><date>20111130</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara&nbsp;per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for the selection of 10 volunteers for civil service projects.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="38" lang="it" /><resource resourcetype="Attach" id="38" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Civil Service Announcement</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
+<content id="BND39" typecode="BND" typedescr="Bando"><descr>Bando Servizio Civile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="StartDate" attributetype="Date"><date>20110201</date></attribute><attribute name="EndDate" attributetype="Date"><date>20111130</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara&nbsp;per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Villamarina.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for the selection of 10 volunteers for civil service projects.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="38" lang="it" /><resource resourcetype="Attach" id="38" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Civil Service Announcement</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
 ', 'free', '6.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('BND48', 'BND', 'Bando fornitura cancelleria', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="BND48" typecode="BND" typedescr="Bando"><descr>Bando fornitura cancelleria</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Bando di gara per affidamento fornitura di cancelleria e accessori</text><text lang="en">Announcement for supply of stationery and accessories</text></attribute><attribute name="DataInizio" attributetype="Date"><date>20110228</date></attribute><attribute name="DataFine" attributetype="Date"><date>20111027</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Affidamento della fornitura di cancelleria e accessori per stampanti, fotocopiatori e fax ad uso degli uffici e servizi comunali.</p>
-<p>Appalto n. 4 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcements for the supply of stationery and accessories for printers, copiers and fax machines to use in Villamarina offices and services.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="47" lang="it" /><resource resourcetype="Attach" id="47" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Announcements for stationery supply</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
+<content id="BND48" typecode="BND" typedescr="Bando"><descr>Bando fornitura cancelleria</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per affidamento fornitura di cancelleria e accessori</text><text lang="en">Announcement for supply of stationery and accessories</text></attribute><attribute name="StartDate" attributetype="Date"><date>20110228</date></attribute><attribute name="EndDate" attributetype="Date"><date>20111027</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Affidamento della fornitura di cancelleria e accessori per stampanti, fotocopiatori e fax ad uso degli uffici e servizi comunali.</p>
+<p>Appalto n. 4 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcements for the supply of stationery and accessories for printers, copiers and fax machines to use in Villamarina offices and services.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="47" lang="it" /><resource resourcetype="Attach" id="47" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Announcements for stationery supply</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
 ', '20090722163604', '20101118105941', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="BND48" typecode="BND" typedescr="Bando"><descr>Bando fornitura cancelleria</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Bando di gara per affidamento fornitura di cancelleria e accessori</text><text lang="en">Announcement for supply of stationery and accessories</text></attribute><attribute name="DataInizio" attributetype="Date"><date>20110228</date></attribute><attribute name="DataFine" attributetype="Date"><date>20111027</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Affidamento della fornitura di cancelleria e accessori per stampanti, fotocopiatori e fax ad uso degli uffici e servizi comunali.</p>
-<p>Appalto n. 4 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcements for the supply of stationery and accessories for printers, copiers and fax machines to use in Villamarina offices and services.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="47" lang="it" /><resource resourcetype="Attach" id="47" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Announcements for stationery supply</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
+<content id="BND48" typecode="BND" typedescr="Bando"><descr>Bando fornitura cancelleria</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per affidamento fornitura di cancelleria e accessori</text><text lang="en">Announcement for supply of stationery and accessories</text></attribute><attribute name="StartDate" attributetype="Date"><date>20110228</date></attribute><attribute name="EndDate" attributetype="Date"><date>20111027</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Affidamento della fornitura di cancelleria e accessori per stampanti, fotocopiatori e fax ad uso degli uffici e servizi comunali.</p>
+<p>Appalto n. 4 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcements for the supply of stationery and accessories for printers, copiers and fax machines to use in Villamarina offices and services.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="47" lang="it" /><resource resourcetype="Attach" id="47" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Announcements for stationery supply</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
 ', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('BND5', 'BND', 'Bando Lavori Manutenzione Istituto Nautico', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="BND5" typecode="BND" typedescr="Bando"><descr>Bando Lavori Manutenzione Istituto Nautico</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Bando di gara per l''esecuzione dei Lavori per la manutenzione dell''Istituto Nautico</text><text lang="en">Announcement for special maintenance Nautical Institute.</text></attribute><attribute name="DataInizio" attributetype="Date"><date>20110303</date></attribute><attribute name="DataFine" attributetype="Date"><date>20111114</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara per l''esecuzione dei &quot;Lavori per la manutenzione straordinaria dell''Istituto Nautico, per la realizzazione di laboratorio informatico&quot;.</p>
-<p>Appalto n. 3 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="37" lang="it" /><resource resourcetype="Attach" id="37" lang="en" /><text lang="it">Bando</text><text lang="en">Announcement for maintenance Nautical Institute</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
+<content id="BND5" typecode="BND" typedescr="Bando"><descr>Bando Lavori Manutenzione Istituto Nautico</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per l''esecuzione dei Lavori per la manutenzione dell''Istituto Nautico</text><text lang="en">Announcement for special maintenance Nautical Institute.</text></attribute><attribute name="StartDate" attributetype="Date"><date>20110303</date></attribute><attribute name="EndDate" attributetype="Date"><date>20111114</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara per l''esecuzione dei &quot;Lavori per la manutenzione straordinaria dell''Istituto Nautico, per la realizzazione di laboratorio informatico&quot;.</p>
+<p>Appalto n. 3 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="37" lang="it" /><resource resourcetype="Attach" id="37" lang="en" /><text lang="it">Bando</text><text lang="en">Announcement for maintenance Nautical Institute</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
 ', '20090219165221', '20101118110039', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="BND5" typecode="BND" typedescr="Bando"><descr>Bando Lavori Manutenzione Istituto Nautico</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Bando di gara per l''esecuzione dei Lavori per la manutenzione dell''Istituto Nautico</text><text lang="en">Announcement for special maintenance Nautical Institute.</text></attribute><attribute name="DataInizio" attributetype="Date"><date>20110303</date></attribute><attribute name="DataFine" attributetype="Date"><date>20111114</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara per l''esecuzione dei &quot;Lavori per la manutenzione straordinaria dell''Istituto Nautico, per la realizzazione di laboratorio informatico&quot;.</p>
-<p>Appalto n. 3 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="37" lang="it" /><resource resourcetype="Attach" id="37" lang="en" /><text lang="it">Bando</text><text lang="en">Announcement for maintenance Nautical Institute</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
+<content id="BND5" typecode="BND" typedescr="Bando"><descr>Bando Lavori Manutenzione Istituto Nautico</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per l''esecuzione dei Lavori per la manutenzione dell''Istituto Nautico</text><text lang="en">Announcement for special maintenance Nautical Institute.</text></attribute><attribute name="StartDate" attributetype="Date"><date>20110303</date></attribute><attribute name="EndDate" attributetype="Date"><date>20111114</date></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Bando di gara per l''esecuzione dei &quot;Lavori per la manutenzione straordinaria dell''Istituto Nautico, per la realizzazione di laboratorio informatico&quot;.</p>
+<p>Appalto n. 3 anno 2009 - Procedura Aperta</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Announcement for special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="37" lang="it" /><resource resourcetype="Attach" id="37" lang="en" /><text lang="it">Bando</text><text lang="en">Announcement for maintenance Nautical Institute</text></attribute></list></attributes><status>READY</status><version>3.0</version></content>
 ', 'free', '3.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG16', 'CNG', 'Gestione Card Internal Servlet', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG16" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card Internal Servlet</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Internal Servlet</text><text lang="en">Internal Servlet</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;Pass ZTL&quot; con l''utilizzo della Showlet &quot;Internal Servlet&quot;..</p>
-<p>Tramite la showlet Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
-<p>In questo esempio, nel front-end vengono presentate le funzioni di ricerca PASS e visione dati singolo PASS. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>3.0</version></content>
-', '20090708180436', '20101118141922', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG16" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card Internal Servlet</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Internal Servlet</text><text lang="en">Internal Servlet</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;Pass ZTL&quot; con l''utilizzo della Showlet &quot;Internal Servlet&quot;..</p>
-<p>Tramite la showlet Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
-<p>In questo esempio, nel front-end vengono presentate le funzioni di ricerca PASS e visione dati singolo PASS. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>3.0</version></content>
-', 'free', '3.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG15', 'CNG', 'Gestione Card', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG15" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Esempio Servizio Applicativo</text><text lang="en">Application Service Example</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;<strong>Pass ZTL</strong>&quot;.</p>
-<p>In front-end vengono presentate le funzioni di erogazione lista per i PASS attraverso l''''utilizzo di un custom tag (CardListTag) e il paginatore di sistema. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
-<p>Il servizio &egrave; fruibile anche attraverso l''utilizzo della Showlet &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_int!#">accedi al servizio</a>.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot;.</p>
-<p>The service is available through the use of &quot;<a href="#!P;old_town_traffic_pass_int!#">Internal Servlet</a>&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>4.0</version></content>
-', '20090708175822', '20101120142520', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG15" typecode="CNG" typedescr="Contenuto generico"><descr>Gestione Card</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Esempio Servizio Applicativo</text><text lang="en">Application Service Example</text></attribute><attribute name="Abstract" attributetype="Longtext" /><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi jAPS&quot;) per la gestione dei &quot;<strong>Pass ZTL</strong>&quot;.</p>
-<p>In front-end vengono presentate le funzioni di erogazione lista per i PASS attraverso l''''utilizzo di un custom tag (CardListTag) e il paginatore di sistema. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
-<p>Il servizio &egrave; fruibile anche attraverso l''utilizzo della Showlet &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_int!#">accedi al servizio</a>.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>This is a simple example of a service application (written under the &quot;jAPS Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot;.</p>
-<p>The service is available through the use of &quot;<a href="#!P;old_town_traffic_pass_int!#">Internal Servlet</a>&quot; Showlet.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>4.0</version></content>
-', 'free', '4.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW3', 'NEW', 'Online il Portale del Comune di Villamarina', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW3" typecode="NEW" typedescr="Notizia"><descr>Online il Portale del Comune di Villamarina</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Data" attributetype="Date"><date>20111121</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Online il Portale del Comune di Villamarina</text><text lang="en">Online the Portal of Villamarina Municipality</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
-<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
-<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
-<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>
-<p>In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
-<p>The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="26" lang="it" /><resource resourcetype="Image" id="26" lang="en" /><text lang="it">Spiaggia</text><text lang="en">Villamarina</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>6.0</version></content>
-', '20090219163456', '20110119120025', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW3" typecode="NEW" typedescr="Notizia"><descr>Online il Portale del Comune di Villamarina</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Data" attributetype="Date"><date>20111121</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Online il Portale del Comune di Villamarina</text><text lang="en">Online the Portal of Villamarina Municipality</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
-<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
-<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
-<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>
-<p>In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
-<p>The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="26" lang="it" /><resource resourcetype="Image" id="26" lang="en" /><text lang="it">Spiaggia</text><text lang="en">Villamarina</text></attribute><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>6.0</version></content>
-', 'free', '6.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW27', 'NEW', 'Festival della canzone popolare', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW27" typecode="NEW" typedescr="Notizia"><descr>Festival della canzone popolare</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Data" attributetype="Date"><date>20110720</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">Si inaugura la III edizione del "Festival della canzone popolare"</text><text lang="en">It has been inaugurated the third edition of the "Folk Music Festival" to be held on July and August in the amphitheater of Villamarina.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Si inaugura la III edizione del &quot;Festival della <strong>canzone popolare&quot;</strong> che si svolger&agrave; durante i mesi di febbraio ed marzo nell''anfiteatro del lungo mare di Villamarina.</p>
-<p>Al centro della manifestazione &egrave; la canzone popolare. L''evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been inaugurated the third edition of the &quot;<strong>Folk Music Festival</strong>&quot; to be held on July and August in the amphitheater of Villamarina.</p>
-<p>At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>8.0</version></content>
-', '20090721191155', '20110119120211', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW27" typecode="NEW" typedescr="Notizia"><descr>Festival della canzone popolare</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Data" attributetype="Date"><date>20110720</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">Si inaugura la III edizione del "Festival della canzone popolare"</text><text lang="en">It has been inaugurated the third edition of the "Folk Music Festival" to be held on July and August in the amphitheater of Villamarina.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Si inaugura la III edizione del &quot;Festival della <strong>canzone popolare&quot;</strong> che si svolger&agrave; durante i mesi di febbraio ed marzo nell''anfiteatro del lungo mare di Villamarina.</p>
-<p>Al centro della manifestazione &egrave; la canzone popolare. L''evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been inaugurated the third edition of the &quot;<strong>Folk Music Festival</strong>&quot; to be held on July and August in the amphitheater of Villamarina.</p>
-<p>At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>8.0</version></content>
-', 'free', '8.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW23', 'NEW', 'Contributo canone di locazione 2010', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW23" typecode="NEW" typedescr="Notizia"><descr>Contributo canone di locazione 2010</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Data" attributetype="Date"><date>20111021</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Contributo canone di locazione 2011</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">E'' stato pubblicato l''avviso pubblico per l’attribuzione del contributo ad integrazione dei canoni di locazione 2011.</text><text lang="en">It has been published the public notice for the allocation of Ground Rent Contribution 2011.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>E'' stato pubblicato l''avviso pubblico per<strong> </strong>la presentazione delle domande per  l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2011,  di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.&nbsp;</p>
-<p>E'' possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
-<p>Le relative domande per accedere al bando devono essere presentate o spedite all''Ufficio Protocollo  entro il<strong>  giorno 11.12.2011</strong>.&nbsp;</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2011</strong>.</p>
-<p>You can download the application forms and the notice in this section.</p>
-<p>The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2011</strong>.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="24" lang="it" /><resource resourcetype="Attach" id="24" lang="en" /><text lang="it">Bando Locazione 2011</text><text lang="en">Notice</text></attribute><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="it" /><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
-', '20090721185336', '20110119121958', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW23" typecode="NEW" typedescr="Notizia"><descr>Contributo canone di locazione 2010</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Data" attributetype="Date"><date>20111021</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Contributo canone di locazione 2011</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">E'' stato pubblicato l''avviso pubblico per l’attribuzione del contributo ad integrazione dei canoni di locazione 2011.</text><text lang="en">It has been published the public notice for the allocation of Ground Rent Contribution 2011.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>E'' stato pubblicato l''avviso pubblico per<strong> </strong>la presentazione delle domande per  l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2011,  di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.&nbsp;</p>
-<p>E'' possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
-<p>Le relative domande per accedere al bando devono essere presentate o spedite all''Ufficio Protocollo  entro il<strong>  giorno 11.12.2011</strong>.&nbsp;</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2011</strong>.</p>
-<p>You can download the application forms and the notice in this section.</p>
-<p>The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2011</strong>.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="24" lang="it" /><resource resourcetype="Attach" id="24" lang="en" /><text lang="it">Bando Locazione 2011</text><text lang="en">Notice</text></attribute><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="it" /><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
-', 'free', '6.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('DLB4', 'DLB', 'Delibera 133', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB4" typecode="DLB" typedescr="Delibera"><descr>Delibera 133</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>133</number></attribute><attribute name="Data" attributetype="Date"><date>20110920</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell''istituto.</p>
+<content id="DLB4" typecode="DLB" typedescr="Delibera"><descr>Delibera 133</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /></categories><attributes><attribute name="Number" attributetype="Number"><number>133</number></attribute><attribute name="Date" attributetype="Date"><date>20110920</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell''istituto.</p>
 <p>Approvazione progetto definitivo - esecutivo.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>
-<p>Approval of final project.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="it" /><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Decision 133</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
+<p>Approval of final project.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="it" /><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Decision 133</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
 ', '20090219164216', '20110119120322', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB4" typecode="DLB" typedescr="Delibera"><descr>Delibera 133</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>133</number></attribute><attribute name="Data" attributetype="Date"><date>20110920</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell''istituto.</p>
+<content id="DLB4" typecode="DLB" typedescr="Delibera"><descr>Delibera 133</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /></categories><attributes><attribute name="Number" attributetype="Number"><number>133</number></attribute><attribute name="Date" attributetype="Date"><date>20110920</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell''istituto.</p>
 <p>Approvazione progetto definitivo - esecutivo.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>
-<p>Approval of final project.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="it" /><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Decision 133</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
+<p>Approval of final project.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="it" /><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Decision 133</text></attribute></list></attributes><status>READY</status><version>6.0</version></content>
 ', 'free', '6.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('DLB30', 'DLB', 'Delibera 20', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB30" typecode="DLB" typedescr="Delibera"><descr>Delibera 20</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>20</number></attribute><attribute name="Data" attributetype="Date"><date>20111004</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2011</text><text lang="en">Examination and approval of Villamarina Balance Sheet 2011</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Esame ed approvazione del Conto Consuntivo 2011</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Examination and approval of Villamarina Balance Sheet 2011</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="34" lang="it" /><resource resourcetype="Attach" id="34" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Decision 20</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
+<content id="DLB30" typecode="DLB" typedescr="Delibera"><descr>Delibera 20</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20111004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2011</text><text lang="en">Examination and approval of Villamarina Balance Sheet 2011</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Esame ed approvazione del Conto Consuntivo 2011</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Examination and approval of Villamarina Balance Sheet 2011</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="34" lang="it" /><resource resourcetype="Attach" id="34" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Decision 20</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
 ', '20090721192612', '20110119120451', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB30" typecode="DLB" typedescr="Delibera"><descr>Delibera 20</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>20</number></attribute><attribute name="Data" attributetype="Date"><date>20111004</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2011</text><text lang="en">Examination and approval of Villamarina Balance Sheet 2011</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Esame ed approvazione del Conto Consuntivo 2011</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Examination and approval of Villamarina Balance Sheet 2011</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="34" lang="it" /><resource resourcetype="Attach" id="34" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Decision 20</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
+<content id="DLB30" typecode="DLB" typedescr="Delibera"><descr>Delibera 20</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20111004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2011</text><text lang="en">Examination and approval of Villamarina Balance Sheet 2011</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Esame ed approvazione del Conto Consuntivo 2011</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Examination and approval of Villamarina Balance Sheet 2011</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="34" lang="it" /><resource resourcetype="Attach" id="34" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Decision 20</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
 ', 'free', '4.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('DLB32', 'DLB', 'Delibera 120', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB32" typecode="DLB" typedescr="Delibera"><descr>Delibera 120</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /><category id="moduli" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>120</number></attribute><attribute name="Data" attributetype="Date"><date>20110701</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Organization of the event &quot;<strong>Folk Music Festival</strong>&quot; III edition to be held in Villamarina in the months of August and September 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="33" lang="it" /><resource resourcetype="Attach" id="33" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2011</text><text lang="en">Decision 120</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
+<content id="DLB32" typecode="DLB" typedescr="Delibera"><descr>Delibera 120</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /><category id="moduli" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20110701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Organization of the event &quot;<strong>Folk Music Festival</strong>&quot; III edition to be held in Villamarina in the months of August and September 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="33" lang="it" /><resource resourcetype="Attach" id="33" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2011</text><text lang="en">Decision 120</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
 ', '20090722101353', '20110119120606', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB32" typecode="DLB" typedescr="Delibera"><descr>Delibera 120</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /><category id="moduli" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>120</number></attribute><attribute name="Data" attributetype="Date"><date>20110701</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Organization of the event &quot;<strong>Folk Music Festival</strong>&quot; III edition to be held in Villamarina in the months of August and September 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="33" lang="it" /><resource resourcetype="Attach" id="33" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2011</text><text lang="en">Decision 120</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
+<content id="DLB32" typecode="DLB" typedescr="Delibera"><descr>Delibera 120</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /><category id="moduli" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20110701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Organization of the event &quot;<strong>Folk Music Festival</strong>&quot; III edition to be held in Villamarina in the months of August and September 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="33" lang="it" /><resource resourcetype="Attach" id="33" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2011</text><text lang="en">Decision 120</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
 ', 'free', '4.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('DLB36', 'DLB', 'Delibera 15', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB36" typecode="DLB" typedescr="Delibera"><descr>Delibera 15</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /><category id="delibere" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>15</number></attribute><attribute name="Data" attributetype="Date"><date>20110716</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2011.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l''anno 2011.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Approval for charge of consultant program in tourism sector for 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="35" lang="it" /><resource resourcetype="Attach" id="35" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Decision 15</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
+<content id="DLB36" typecode="DLB" typedescr="Delibera"><descr>Delibera 15</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /><category id="delibere" /></categories><attributes><attribute name="Number" attributetype="Number"><number>15</number></attribute><attribute name="Date" attributetype="Date"><date>20110716</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2011.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l''anno 2011.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Approval for charge of consultant program in tourism sector for 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="35" lang="it" /><resource resourcetype="Attach" id="35" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Decision 15</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
 ', '20090722104739', '20110119120705', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="DLB36" typecode="DLB" typedescr="Delibera"><descr>Delibera 15</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /><category id="delibere" /></categories><attributes><attribute name="Numero" attributetype="Number"><number>15</number></attribute><attribute name="Data" attributetype="Date"><date>20110716</date></attribute><attribute name="Oggetto" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2011.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l''anno 2011.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Approval for charge of consultant program in tourism sector for 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Allegati" nestedtype="Attach"><attribute name="Allegati" attributetype="Attach"><resource resourcetype="Attach" id="35" lang="it" /><resource resourcetype="Attach" id="35" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Decision 15</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
+<content id="DLB36" typecode="DLB" typedescr="Delibera"><descr>Delibera 15</descr><groups mainGroup="free" /><categories><category id="delibere_di_consiglio" /><category id="delibere" /></categories><attributes><attribute name="Number" attributetype="Number"><number>15</number></attribute><attribute name="Date" attributetype="Date"><date>20110716</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2011.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l''anno 2011.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Approval for charge of consultant program in tourism sector for 2011.</p>]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="35" lang="it" /><resource resourcetype="Attach" id="35" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Decision 15</text></attribute></list></attributes><status>READY</status><version>4.0</version></content>
 ', 'free', '4.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG51', 'CNG', 'Intro Mobile', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG51" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Area Mobile</text><text lang="en">Mobile Area</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Online la versione MOBILE del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla navigazione su schermi di dimensioni ridotte. Il Portale Mobile è stato realizzato con la piattaforma jAPS 2.0.&#xD;
+<content id="CNG51" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Area Mobile</text><text lang="en">Mobile Area</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Online la versione MOBILE del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla navigazione su schermi di dimensioni ridotte. Il Portale Mobile è stato realizzato con la piattaforma jAPS 2.0.&#xD;
 &#xD;
 Il Portale Mobile rende disponibile le informazioni che risultano maggiormente utili a chi naviga sul web stando in movimento.&#xD;
 &#xD;
@@ -674,13 +542,13 @@ Il Portale Mobile rende disponibile le informazioni che risultano maggiormente u
 &#xD;
 The Mobile Portal is multi-languages: Italian, English.&#xD;
 &#xD;
-The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online la versione <a href="#!P;mobile_home!#">MOBILE</a> del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla &ldquo;navigazione&rdquo; su schermi di dimensioni ridotte. Il Portale Mobile &egrave; stato realizzato con la piattaforma jAPS 2.0.</p>
+The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online la versione <a href="#!P;mobile_home!#">MOBILE</a> del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla &ldquo;navigazione&rdquo; su schermi di dimensioni ridotte. Il Portale Mobile &egrave; stato realizzato con la piattaforma jAPS 2.0.</p>
 <p>Il Portale Mobile rende disponibile le informazioni che risultano maggiormente utili a chi naviga sul web stando in &ldquo;movimento&rdquo;.</p>
 <p>Il Portale Mobile &egrave; disponibile in modalit&agrave; multilingua: italiano, inglese.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>The <a href="#!P;mobile_home!#">MOBILE</a> portal version of Villamarina is OnLine. The Mobile Portal is designed with a new graphical interface, suitable for &quot;browsing&quot; on small screens. The mobile portal is built on jAPS 2.0 Platform.</p>
 <p>The Mobile Portal is multi-languages: Italian, English.</p>
-<p>The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="143" lang="en" /><text lang="it">Mobile</text><text lang="en">Mobile</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status><version>7.0</version></content>
+<p>The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="143" lang="en" /><text lang="it">Mobile</text><text lang="en">Mobile</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status><version>7.0</version></content>
 ', '20091014175142', '20110128101732', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG51" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Area Mobile</text><text lang="en">Mobile Area</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Online la versione MOBILE del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla navigazione su schermi di dimensioni ridotte. Il Portale Mobile è stato realizzato con la piattaforma jAPS 2.0.&#xD;
+<content id="CNG51" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Mobile</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Area Mobile</text><text lang="en">Mobile Area</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Online la versione MOBILE del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla navigazione su schermi di dimensioni ridotte. Il Portale Mobile è stato realizzato con la piattaforma jAPS 2.0.&#xD;
 &#xD;
 Il Portale Mobile rende disponibile le informazioni che risultano maggiormente utili a chi naviga sul web stando in movimento.&#xD;
 &#xD;
@@ -690,187 +558,198 @@ Il Portale Mobile rende disponibile le informazioni che risultano maggiormente u
 &#xD;
 The Mobile Portal is multi-languages: Italian, English.&#xD;
 &#xD;
-The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online la versione <a href="#!P;mobile_home!#">MOBILE</a> del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla &ldquo;navigazione&rdquo; su schermi di dimensioni ridotte. Il Portale Mobile &egrave; stato realizzato con la piattaforma jAPS 2.0.</p>
+The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online la versione <a href="#!P;mobile_home!#">MOBILE</a> del portale di Villamarina disegnata con una nuova interfaccia grafica, adatta alla &ldquo;navigazione&rdquo; su schermi di dimensioni ridotte. Il Portale Mobile &egrave; stato realizzato con la piattaforma jAPS 2.0.</p>
 <p>Il Portale Mobile rende disponibile le informazioni che risultano maggiormente utili a chi naviga sul web stando in &ldquo;movimento&rdquo;.</p>
 <p>Il Portale Mobile &egrave; disponibile in modalit&agrave; multilingua: italiano, inglese.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>The <a href="#!P;mobile_home!#">MOBILE</a> portal version of Villamarina is OnLine. The Mobile Portal is designed with a new graphical interface, suitable for &quot;browsing&quot; on small screens. The mobile portal is built on jAPS 2.0 Platform.</p>
 <p>The Mobile Portal is multi-languages: Italian, English.</p>
-<p>The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="143" lang="en" /><text lang="it">Mobile</text><text lang="en">Mobile</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status><version>7.0</version></content>
+<p>The Mobile Portal makes available the information most useful to users who surf the web being in the movement.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="143" lang="en" /><text lang="it">Mobile</text><text lang="en">Mobile</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status><version>7.0</version></content>
 ', 'free', '7.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG146', 'CNG', 'ePartecipation', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG146" typecode="CNG" typedescr="Contenuto generico"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
+<content id="CNG146" typecode="CNG" typedescr="Contenuto generico"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
 &#xD;
 Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</text><text lang="en">Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.&#xD;
 &#xD;
-eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
+eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
 <p>Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</p>
 <p>Il portale implementa il paradigma di partecipazione e collaborazione alla conoscenza e alla condivisione delle informazioni attraverso strumenti fortemente interattivi e accessibili. La piattaforma jAPS&nbsp; consente inoltre di erogare i servizi secondo una logica multicanale e multi-dispositivo e facilitare l&rsquo;accesso ai dati e alle informazioni.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.</p>
 <p>eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to  understand and follow through the use of new Information and Communication Technologies (ICTs).</p>
 <p><br />
 The portal implements the paradigm of participation and collaboration to knowledge and information sharing through highly interactive and accessible services.</p>
-<p>&nbsp;</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status><version>3.0</version></content>
+<p>&nbsp;</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status><version>3.0</version></content>
 ', '20110119121846', '20110128102040', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG146" typecode="CNG" typedescr="Contenuto generico"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
+<content id="CNG146" typecode="CNG" typedescr="Contenuto generico"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
 &#xD;
 Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</text><text lang="en">Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.&#xD;
 &#xD;
-eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
+eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
 <p>Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</p>
 <p>Il portale implementa il paradigma di partecipazione e collaborazione alla conoscenza e alla condivisione delle informazioni attraverso strumenti fortemente interattivi e accessibili. La piattaforma jAPS&nbsp; consente inoltre di erogare i servizi secondo una logica multicanale e multi-dispositivo e facilitare l&rsquo;accesso ai dati e alle informazioni.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.</p>
 <p>eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to  understand and follow through the use of new Information and Communication Technologies (ICTs).</p>
 <p><br />
 The portal implements the paradigm of participation and collaboration to knowledge and information sharing through highly interactive and accessible services.</p>
-<p>&nbsp;</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>DRAFT</status><version>3.0</version></content>
+<p>&nbsp;</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status><version>3.0</version></content>
 ', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG256', 'CNG', 'Intro Home per Credenziali', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG256" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Home per Credenziali</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Come loggarsi</text><text lang="en">How to sign in</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Cosa aspetti? Prova l''Area di Amministrazione!&#xD;
+<content id="CNG256" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Home per Credenziali</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Come loggarsi</text><text lang="en">How to sign in</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Cosa aspetti? Prova l''Area di Amministrazione!&#xD;
 Scegli il link "Avanzata" e scopri la nuova veste grafica.&#xD;
 Scopri quante cose puoi personalizzare, crea un nuovo contenuto, una nuova pagina o magari il tuo utente personale.&#xD;
 Entra con Username: admin e Password: adminadmin e poi fai quello che vuoi tu.</text><text lang="en">What are you waiting for? Try the Administration Area!&#xD;
 Choose the "Advanced" link and enjoy the new design.&#xD;
 Find out how many things you can customize, create new content, a new page or even your own user.&#xD;
-Sign in with Username: admin and Password: adminadmin and then do what you want.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Cosa aspetti? Prova l''Area di Amministrazione!</p>
+Sign in with Username: admin and Password: adminadmin and then do what you want.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Cosa aspetti? Prova l''Area di Amministrazione!</p>
 <p>Scegli il link &quot;Avanzata&quot; e scopri la nuova veste grafica.</p>
 <p>Scopri quante cose puoi personalizzare, crea un nuovo contenuto, una nuova pagina o magari il tuo utente personale.</p>
 <p>Entra con Username: <strong>admin</strong> e Password: <strong>adminadmin</strong> e poi fai quello che vuoi tu.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>What are you waiting for? Try the Administration Area!</p>
 <p>Choose the &quot;Advanced&quot; link and enjoy the new design.</p>
 <p>Find out how many things you can customize, create new content, a new page or even your own user.</p>
-<p>Sign in with Username: <strong>admin</strong> and Password: <strong>adminadmin</strong> and then do what you want.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20110415124748</created><lastModified>20110602194014</lastModified></content>
+<p>Sign in with Username: <strong>admin</strong> and Password: <strong>adminadmin</strong> and then do what you want.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20110415124748</created><lastModified>20110602194014</lastModified></content>
 ', '20110415124748', '20110602194014', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG256" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Home per Credenziali</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Come loggarsi</text><text lang="en">How to sign in</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Cosa aspetti? Prova l''Area di Amministrazione!&#xD;
+<content id="CNG256" typecode="CNG" typedescr="Contenuto generico"><descr>Intro Home per Credenziali</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Come loggarsi</text><text lang="en">How to sign in</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Cosa aspetti? Prova l''Area di Amministrazione!&#xD;
 Scegli il link "Avanzata" e scopri la nuova veste grafica.&#xD;
 Scopri quante cose puoi personalizzare, crea un nuovo contenuto, una nuova pagina o magari il tuo utente personale.&#xD;
 Entra con Username: admin e Password: adminadmin e poi fai quello che vuoi tu.</text><text lang="en">What are you waiting for? Try the Administration Area!&#xD;
 Choose the "Advanced" link and enjoy the new design.&#xD;
 Find out how many things you can customize, create new content, a new page or even your own user.&#xD;
-Sign in with Username: admin and Password: adminadmin and then do what you want.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Cosa aspetti? Prova l''Area di Amministrazione!</p>
+Sign in with Username: admin and Password: adminadmin and then do what you want.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Cosa aspetti? Prova l''Area di Amministrazione!</p>
 <p>Scegli il link &quot;Avanzata&quot; e scopri la nuova veste grafica.</p>
 <p>Scopri quante cose puoi personalizzare, crea un nuovo contenuto, una nuova pagina o magari il tuo utente personale.</p>
 <p>Entra con Username: <strong>admin</strong> e Password: <strong>adminadmin</strong> e poi fai quello che vuoi tu.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>What are you waiting for? Try the Administration Area!</p>
 <p>Choose the &quot;Advanced&quot; link and enjoy the new design.</p>
 <p>Find out how many things you can customize, create new content, a new page or even your own user.</p>
-<p>Sign in with Username: <strong>admin</strong> and Password: <strong>adminadmin</strong> and then do what you want.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20110415124748</created><lastModified>20110602194014</lastModified></content>
+<p>Sign in with Username: <strong>admin</strong> and Password: <strong>adminadmin</strong> and then do what you want.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20110415124748</created><lastModified>20110602194014</lastModified></content>
 ', 'free', '3.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW177', 'NEW', 'Online il Portale Mobile', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW177" typecode="NEW" typedescr="Notizia"><descr>Online il Portale Mobile</descr><groups mainGroup="free" /><categories><category id="newsletter_1" /><category id="newsletter_2" /><category id="tag2" /><category id="tag5" /><category id="tag1" /></categories><attributes><attribute name="Data" attributetype="Date"><date>20110615</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Online il Portale Mobile</text><text lang="en">Online the Mobile Portal</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Mobile Portal of Villamarina Municipality.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
-<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
-<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
-<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Mobile Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link"><attribute name="Riferimenti" attributetype="Link"><link type="content"><contentdest>CNG51</contentdest></link><text lang="it">Scopri i dettagli</text><text lang="en">Discover More</text></attribute></list><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20110118183107</created><lastModified>20110524164633</lastModified></content>
-', '20110118183107', '20110524164633', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NEW177" typecode="NEW" typedescr="Notizia"><descr>Online il Portale Mobile</descr><groups mainGroup="free" /><categories><category id="newsletter_1" /><category id="newsletter_2" /><category id="tag2" /><category id="tag5" /><category id="tag1" /></categories><attributes><attribute name="Data" attributetype="Date"><date>20110615</date></attribute><attribute name="Titolo" attributetype="Text"><text lang="it">Online il Portale Mobile</text><text lang="en">Online the Mobile Portal</text></attribute><attribute name="Lancio" attributetype="Longtext"><text lang="it">Online il Portale del Comune di Villamarina realizzato con la piattaforma jAPS 2.0.</text><text lang="en">Online the Mobile Portal of Villamarina Municipality.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Online<strong> il Portale del Comune di Villamarina, </strong>realizzato con la <strong>piattaforma jAPS 2.0</strong>.</p>
-<p>Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
-<p>Il nuovo portale &egrave; stato realizzato per dare una risposta all''altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull''amministrazione comunale.</p>
-<p>Il sito si presenta con una veste <strong>grafica minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
-<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Online the Mobile Portal of Villamarina Municipality, built with jAPS 2.0 Platform.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link"><attribute name="Riferimenti" attributetype="Link"><link type="content"><contentdest>CNG51</contentdest></link><text lang="it">Scopri i dettagli</text><text lang="en">Discover More</text></attribute></list><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20110118183107</created><lastModified>20110524164633</lastModified></content>
-', 'free', '5.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG18', 'CNG', 'Giunta Comunale', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG18" typecode="CNG" typedescr="Contenuto generico"><descr>Giunta Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Giunta Comunale</text><text lang="en">Council</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">La Giunta del Comune è l''organo esecutivo composto dal Sindaco, che ne è anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</text><text lang="en">A Council is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>La <strong>Giunta comunale</strong> &egrave; l''organo esecutivo composto dal Sindaco, che ne &egrave; anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</p>
+<p>La Giunta comunale &egrave; responsabile dell&rsquo;<strong>attuazione delle linee programmatiche e degli indirizzi generali</strong> definiti nel piano di mandato, ossia nel documento con cui il Sindaco, all&rsquo;inizio del suo incarico quinquennale, presenta al Consiglio le linee programmatiche relative alle azioni e ai progetti da realizzare.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Council</strong> is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</p>
+<p>A municipality is often referred to as simply the Council without any further attempt by the speaker at making a size or scale designation, as in Council house. It is assumed the listener will already know the specific meaning of the word without further guidance.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+', '20090721113802', '20100104120443', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG18" typecode="CNG" typedescr="Contenuto generico"><descr>Giunta Comunale</descr><groups mainGroup="free"><group name="free" /></groups><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Giunta Comunale</text><text lang="en">Council</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">La Giunta del Comune è l''organo esecutivo composto dal Sindaco, che ne è anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</text><text lang="en">A Council is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>La <strong>Giunta comunale</strong> &egrave; l''organo esecutivo composto dal Sindaco, che ne &egrave; anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</p>
+<p>La Giunta comunale &egrave; responsabile dell&rsquo;<strong>attuazione delle linee programmatiche e degli indirizzi generali</strong> definiti nel piano di mandato, ossia nel documento con cui il Sindaco, all&rsquo;inizio del suo incarico quinquennale, presenta al Consiglio le linee programmatiche relative alle azioni e ai progetti da realizzare.</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>A <strong>Council</strong> is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</p>
+<p>A municipality is often referred to as simply the Council without any further attempt by the speaker at making a size or scale designation, as in Council house. It is assumed the listener will already know the specific meaning of the word without further guidance.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><versionId>1.0</versionId></content>
+', 'free', '1.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NEW27', 'NEW', 'Festival della canzone popolare', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW27" typecode="NEW" typedescr="Notizia"><descr>Festival della canzone popolare</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20110720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">Si inaugura la III edizione del "Festival della canzone popolare"</text><text lang="en">It has been inaugurated the third edition of the "Folk Music Festival" to be held on July and August in the amphitheater of Villamarina.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Si inaugura la III edizione del &quot;Festival della <strong>canzone popolare&quot;</strong> che si svolger&agrave; durante i mesi di febbraio ed marzo nell''anfiteatro del lungo mare di Villamarina.</p>
+<p>Al centro della manifestazione &egrave; la canzone popolare. L''evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been inaugurated the third edition of the &quot;<strong>Folk Music Festival</strong>&quot; to be held on July and August in the amphitheater of Villamarina.</p>
+<p>At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>8.0</version></content>
+', '20090721191155', '20110119120211', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NEW27" typecode="NEW" typedescr="Notizia"><descr>Festival della canzone popolare</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20110720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="ShortText" attributetype="Longtext"><text lang="it">Si inaugura la III edizione del "Festival della canzone popolare"</text><text lang="en">It has been inaugurated the third edition of the "Folk Music Festival" to be held on July and August in the amphitheater of Villamarina.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Si inaugura la III edizione del &quot;Festival della <strong>canzone popolare&quot;</strong> che si svolger&agrave; durante i mesi di febbraio ed marzo nell''anfiteatro del lungo mare di Villamarina.</p>
+<p>Al centro della manifestazione &egrave; la canzone popolare. L''evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>It has been inaugurated the third edition of the &quot;<strong>Folk Music Festival</strong>&quot; to be held on July and August in the amphitheater of Villamarina.</p>
+<p>At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>8.0</version></content>
+', 'free', '8.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG173', 'CNG', 'Accessibilità', 'READY', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG173" typecode="CNG" typedescr="Contenuto generico"><descr>Accessibilità</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Accessibilità</text><text lang="en">Web Accessibility</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">eAccessibility indica la capacità di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilità.&#xD;
+<content id="CNG173" typecode="CNG" typedescr="Contenuto generico"><descr>Accessibilità</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Accessibilità</text><text lang="en">Web Accessibility</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">eAccessibility indica la capacità di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilità.&#xD;
 &#xD;
 In particolare, per accessibilità web si indica la capacità di un sito web di essere acceduto efficacemente in termini di navigazione, fruizione dei contenuti e dei servizi da tutti gli utenti senza nessuna esclusione.&#xD;
 A tali linee guida, ma soprattutto al principio democratico dell''eParticipation e eAccessibility, si è ispirato il portale.</text><text lang="en">eAccessibility is the ease use by people with disabilities of information and communication technologies.&#xD;
 &#xD;
-More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility also benefits others, including older people with changing abilities due to aging.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>eAccessibility</strong>  indica la capacit&agrave; di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilit&agrave;.</p>
+More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility also benefits others, including older people with changing abilities due to aging.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>eAccessibility</strong>  indica la capacit&agrave; di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilit&agrave;.</p>
 <p>In particolare, per accessibilit&agrave; web si indica la capacit&agrave; di un sito web di essere acceduto efficacemente  in termini di navigazione,  fruizione dei contenuti e dei servizi da tutti gli utenti senza nessuna esclusione.</p>
 <p>Rendere un sito web accessibile significa permettere l''accesso all''informazione contenuta nel sito anche a persone con disabilit&agrave; di diverso tipo, anziani ma non solo : significa anche consentire a tutti di poter partecipare, gestire, condividere le proprie informazioni. A tal proposito il concetto di accessibilit&agrave; &egrave; legato fortemente a quello di usabilit&agrave;: &egrave; fondamentale che un utente sia capace di accedere ad un''informazione in maniera semplice, efficace ed efficiente.</p>
 <p>A tali linee guida, ma soprattutto al principio democratico dell''<strong>eParticipation e eAccessibility</strong>, si &egrave; ispirato il portale.</p>
 <p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p><strong>eAccessibility</strong>  is the ease use by people with disabilities of information and communication technologies.</p>
 <p>More specifically<strong>, Web accessibility </strong>means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility also benefits others, including older people with changing abilities due to aging.</p>
-<p>The Portal is compatible with <strong>accessibility international standards</strong> like WCAG 2.0 and specific governments laws allowing <strong>citizen eParticipation</strong>.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="174" lang="en" /><text lang="it">Portale Villamarina</text><text lang="en">Villamarina Portal</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>7.0</version></content>
+<p>The Portal is compatible with <strong>accessibility international standards</strong> like WCAG 2.0 and specific governments laws allowing <strong>citizen eParticipation</strong>.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="174" lang="en" /><text lang="it">Portale Villamarina</text><text lang="en">Villamarina Portal</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>7.0</version></content>
 ', '20110118173705', '20110128142829', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG173" typecode="CNG" typedescr="Contenuto generico"><descr>Accessibilità</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Titolo" attributetype="Text"><text lang="it">Accessibilità</text><text lang="en">Web Accessibility</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">eAccessibility indica la capacità di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilità.&#xD;
+<content id="CNG173" typecode="CNG" typedescr="Contenuto generico"><descr>Accessibilità</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Accessibilità</text><text lang="en">Web Accessibility</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">eAccessibility indica la capacità di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilità.&#xD;
 &#xD;
 In particolare, per accessibilità web si indica la capacità di un sito web di essere acceduto efficacemente in termini di navigazione, fruizione dei contenuti e dei servizi da tutti gli utenti senza nessuna esclusione.&#xD;
 A tali linee guida, ma soprattutto al principio democratico dell''eParticipation e eAccessibility, si è ispirato il portale.</text><text lang="en">eAccessibility is the ease use by people with disabilities of information and communication technologies.&#xD;
 &#xD;
-More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility also benefits others, including older people with changing abilities due to aging.</text></attribute><attribute name="CorpoTesto" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>eAccessibility</strong>  indica la capacit&agrave; di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilit&agrave;.</p>
+More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility also benefits others, including older people with changing abilities due to aging.</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p><strong>eAccessibility</strong>  indica la capacit&agrave; di sistemi, servizi e applicazioni ICT di essere accessibili in maniera semplice da utenti con disabilit&agrave;.</p>
 <p>In particolare, per accessibilit&agrave; web si indica la capacit&agrave; di un sito web di essere acceduto efficacemente  in termini di navigazione,  fruizione dei contenuti e dei servizi da tutti gli utenti senza nessuna esclusione.</p>
 <p>Rendere un sito web accessibile significa permettere l''accesso all''informazione contenuta nel sito anche a persone con disabilit&agrave; di diverso tipo, anziani ma non solo : significa anche consentire a tutti di poter partecipare, gestire, condividere le proprie informazioni. A tal proposito il concetto di accessibilit&agrave; &egrave; legato fortemente a quello di usabilit&agrave;: &egrave; fondamentale che un utente sia capace di accedere ad un''informazione in maniera semplice, efficace ed efficiente.</p>
 <p>A tali linee guida, ma soprattutto al principio democratico dell''<strong>eParticipation e eAccessibility</strong>, si &egrave; ispirato il portale.</p>
 <p>&nbsp;</p>]]></hypertext><hypertext lang="en"><![CDATA[<p><strong>eAccessibility</strong>  is the ease use by people with disabilities of information and communication technologies.</p>
 <p>More specifically<strong>, Web accessibility </strong>means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility also benefits others, including older people with changing abilities due to aging.</p>
-<p>The Portal is compatible with <strong>accessibility international standards</strong> like WCAG 2.0 and specific governments laws allowing <strong>citizen eParticipation</strong>.</p>]]></hypertext></attribute><attribute name="Immagine_1" attributetype="Image"><resource resourcetype="Image" id="174" lang="en" /><text lang="it">Portale Villamarina</text><text lang="en">Villamarina Portal</text></attribute><attribute name="Immagine_2" attributetype="Image" /><list attributetype="Monolist" name="Riferimenti" nestedtype="Link" /><list attributetype="Monolist" name="Allegati" nestedtype="Attach" /></attributes><status>READY</status><version>7.0</version></content>
+<p>The Portal is compatible with <strong>accessibility international standards</strong> like WCAG 2.0 and specific governments laws allowing <strong>citizen eParticipation</strong>.</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="174" lang="en" /><text lang="it">Portale Villamarina</text><text lang="en">Villamarina Portal</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>READY</status><version>7.0</version></content>
 ', 'free', '7.0', 'admin');
 
 
 --
--- TOC entry 1843 (class 0 OID 143538)
+-- TOC entry 1843 (class 0 OID 144933)
 -- Dependencies: 131
 -- Data for Name: contentsearch; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Data', NULL, '2011-06-15', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Titolo', 'Online the Mobile Portal', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Titolo', 'Online il Portale Mobile', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Data', NULL, '2011-11-21', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Titolo', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Titolo', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Data', NULL, '2011-07-20', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Titolo', 'Folk Music Festival', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Titolo', 'Festival della canzone popolare', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Data', NULL, '2011-10-21', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Titolo', 'Ground Rent Contribution', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Titolo', 'Contributo canone di locazione 2011', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Numero', NULL, NULL, 133, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Data', NULL, '2011-09-20', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Numero', NULL, NULL, 20, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Data', NULL, '2011-10-04', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Numero', NULL, NULL, 120, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Data', NULL, '2011-07-01', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Numero', NULL, NULL, 15, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Data', NULL, '2011-07-16', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Titolo', 'Web Accessibility', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Titolo', 'Accessibilità', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Titolo', 'How to sign in', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Titolo', 'Come loggarsi', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG54', 'Titolo', 'Delibere', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG55', 'Titolo', 'Bandi', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG53', 'Titolo', 'Notizie', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Titolo', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG28', 'Titolo', 'Elenco delle Delibere di Giunta presenti nel portale del Comune', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Titolo', 'Mayor', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Titolo', 'Sindaco', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Titolo', 'Council', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Titolo', 'Giunta Comunale', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG19', 'Titolo', 'Consiglio Comunale', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Titolo', 'Public Relations Office', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Titolo', 'URP - Ufficio Relazioni con il Pubblico', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Titolo', 'Documents Archive', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Titolo', 'Archivio Modulistica', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Titolo', 'Announcements Archive', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Titolo', 'Archivio Bandi', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Titolo', 'News Archive', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Titolo', 'Archivio Notizie', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Titolo', 'Decisions Archive', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Titolo', 'Archivio Delibere', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG2', 'Titolo', 'Lorem Ipsum dolor sit amet', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Titolo', 'Statute', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Titolo', 'Statuto', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Titolo', 'Internal Servlet', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Titolo', 'Internal Servlet', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Titolo', 'Application Service Example', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Titolo', 'Esempio Servizio Applicativo', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Titolo', 'Mobile Area', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Titolo', 'Area Mobile', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Titolo', 'ePartecipation', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Titolo', 'ePartecipation', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'DataInizio', NULL, '2011-02-01', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'DataFine', NULL, '2011-11-30', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'DataInizio', NULL, '2011-02-28', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'DataFine', NULL, '2011-10-27', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'DataInizio', NULL, '2011-03-03', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'DataFine', NULL, '2011-11-14', NULL, NULL);
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Oggetto', 'Registry - Request Identity Card valid for foreign travel', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Oggetto', 'Anagrafe - Richiesta Carta Identità valida per espatrio', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Oggetto', 'Civil Status Self Certification Form', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Oggetto', 'Modulo Autocertificazione Stato Civile', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Oggetto', 'Residence Self-certification Form', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Oggetto', 'Modulo Autocertificazione Residenza', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Oggetto', 'Tax - Request ICI refund', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Oggetto', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Date', NULL, '2011-11-21', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Date', NULL, '2011-06-15', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online the Mobile Portal', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online il Portale Mobile', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Date', NULL, '2011-10-21', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Ground Rent Contribution', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Contributo canone di locazione 2011', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Date', NULL, '2011-07-20', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Folk Music Festival', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Festival della canzone popolare', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Number', NULL, NULL, 133, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Date', NULL, '2011-09-20', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Number', NULL, NULL, 20, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Date', NULL, '2011-10-04', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Number', NULL, NULL, 120, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Date', NULL, '2011-07-01', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Number', NULL, NULL, 15, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Date', NULL, '2011-07-16', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statute', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statuto', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Application Service Example', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Esempio Servizio Applicativo', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG19', 'Title', 'Consiglio Comunale', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG54', 'Title', 'Delibere', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG55', 'Title', 'Bandi', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG53', 'Title', 'Notizie', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Title', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG28', 'Title', 'Elenco delle Delibere di Giunta presenti nel portale del Comune', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Mayor', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Sindaco', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'Public Relations Office', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'URP - Ufficio Relazioni con il Pubblico', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Documents Archive', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Archivio Modulistica', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Announcements Archive', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Archivio Bandi', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'News Archive', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'Archivio Notizie', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Decisions Archive', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Archivio Delibere', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG2', 'Title', 'Lorem Ipsum dolor sit amet', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Mobile Area', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Area Mobile', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'How to sign in', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'Come loggarsi', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Council', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Giunta Comunale', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Web Accessibility', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Accessibilità', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'StartDate', NULL, '2011-02-01', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'EndDate', NULL, '2011-11-30', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'StartDate', NULL, '2011-02-28', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'EndDate', NULL, '2011-10-27', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'StartDate', NULL, '2011-03-03', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'EndDate', NULL, '2011-11-14', NULL, NULL);
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tax - Request ICI refund', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Residence Self-certification Form', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Modulo Autocertificazione Residenza', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Civil Status Self Certification Form', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Modulo Autocertificazione Stato Civile', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Registry - Request Identity Card valid for foreign travel', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Anagrafe - Richiesta Carta Identità valida per espatrio', NULL, NULL, 'it');
 
 
 --
--- TOC entry 1844 (class 0 OID 143541)
+-- TOC entry 1844 (class 0 OID 144936)
 -- Dependencies: 132
 -- Data for Name: localstrings; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1011,10 +890,6 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATIO
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATION_BASIC_GOTO', 'en', 'Go to the administration with normal client');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATION_MINT_GOTO', 'it', 'Accedi con client avanzato');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATION_MINT_GOTO', 'en', 'Go to the administration with advanced client');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'en', '<span lang="en">Copyright &copy; Tzente srl 2011</span>');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'it', '<span lang="en">Copyright &copy; Tzente srl 2011</span>');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CREDITS_POWERED_BY', 'en', '<span lang="en">Powered by </span><a href="http://www.japsportal.org/"><span lang="en">jAPS 2.0 entando &ndash; Java Agile Portal System, version 2.2</span></a>');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CREDITS_POWERED_BY', 'it', '<span lang="en">Powered by </span><a href="http://www.japsportal.org/"><span lang="en">jAPS 2.0 entando &ndash; Java Agile Portal System, version 2.2</span></a>');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_DETAILS', 'en', 'Page Details');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_DETAILS', 'it', 'Dettagli della Pagina');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('EDIT_THIS_PAGE', 'en', 'Manage this Page');
@@ -1059,10 +934,14 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jacms_LIST_VI
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jacms_LIST_VIEWER_INVALID_RANGE', 'it', 'ha un valore non coerente. Ricontrolla ed effettua una nuova ricerca.');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jacms_LIST_VIEWER_FIELD', 'en', 'The field');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jacms_LIST_VIEWER_FIELD', 'it', 'Il campo');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'en', '<span lang="en">Copyright &copy; Entando srl 2012</span>');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'it', '<span lang="en">Copyright &copy; Entando srl 2012</span>');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CREDITS_POWERED_BY', 'en', '<span lang="en">Powered by </span><a href="http://www.entando.com/"><span lang="en">Entando 3.0</span></a>');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CREDITS_POWERED_BY', 'it', '<span lang="en">Powered by </span><a href="http://www.entando.com/"><span lang="en">Entando 3.0</span></a>');
 
 
 --
--- TOC entry 1845 (class 0 OID 143547)
+-- TOC entry 1845 (class 0 OID 144942)
 -- Dependencies: 133
 -- Data for Name: pagemodels; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1207,7 +1086,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('mobile', 'Mobi
 
 
 --
--- TOC entry 1846 (class 0 OID 143553)
+-- TOC entry 1846 (class 0 OID 144948)
 -- Dependencies: 134
 -- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1251,20 +1130,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 <properties>
 <property key="en">Search Result</property>
 <property key="it">Risultati della Ricerca</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere_giunta', 'delibere', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Delibere di Giunta</property>
-<property key="it">Delibere di Giunta</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere_consiglio', 'delibere', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Delibere di Consiglio</property>
-<property key="it">Delibere di Consiglio</property>
 </properties>
 
 ', 'free', 1, NULL);
@@ -1555,10 +1420,34 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere_consiglio', 'delibere', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Council decisions</property>
+<property key="it">Delibere di Consiglio</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere_giunta', 'delibere', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Giunta Decisions</property>
+<property key="it">Delibere di Giunta</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
 
 
 --
--- TOC entry 1847 (class 0 OID 143559)
+-- TOC entry 1847 (class 0 OID 144954)
 -- Dependencies: 135
 -- Data for Name: resourcerelations; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1566,7 +1455,7 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 
 
 --
--- TOC entry 1848 (class 0 OID 143562)
+-- TOC entry 1848 (class 0 OID 144957)
 -- Dependencies: 136
 -- Data for Name: resources; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1637,7 +1526,7 @@ INSERT INTO resources (resid, restype, descr, maingroup, resourcexml, masterfile
 
 
 --
--- TOC entry 1849 (class 0 OID 143568)
+-- TOC entry 1849 (class 0 OID 144963)
 -- Dependencies: 137
 -- Data for Name: showletcatalog; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1659,16 +1548,6 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 <properties>
 <property key="en">News - Latest News</property>
 <property key="it">Notizie - Ultime Notizie</property>
-</properties>', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('bandi_latest', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Bandi - Latest "Bandi"</property>
-<property key="it">Bandi - Ultimi Bandi</property>
-</properties>', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('delibere_latest', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Delibere - Latest "Delibere"</property>
-<property key="it">Delibere - Ultime Delibere</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('language_choose', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1748,10 +1627,24 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 	<parameter name="linkDescr_{lang}">Link description in lang {lang}</parameter>
 	<action name="listViewerConfig"/>
 </config>', 'jacms', NULL, NULL, 1, NULL);
+INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('bandi_latest', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Announcements - Latest Announcements</property>
+<property key="it">Bandi - Ultimi Bandi</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 1, 'free');
+INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('delibere_latest', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Decisions - Latest Decisions</property>
+<property key="it">Delibere - Ultime Delibere</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 1, 'free');
 
 
 --
--- TOC entry 1850 (class 0 OID 143574)
+-- TOC entry 1850 (class 0 OID 144969)
 -- Dependencies: 138
 -- Data for Name: showletconfig; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1785,59 +1678,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', 'CNG12');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(delibere).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(delibere).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG28</property>
-</properties>
-
-', 'CNG28');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="filters">(order=ASC;attributeFilter=false;key=created)</property>
-<property key="category">delibere_di_giunta</property>
-<property key="modelId">31</property>
-<property key="contentType">DLB</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG29</property>
-</properties>
-
-', 'CNG29');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="filters">(order=ASC;attributeFilter=false;key=created)</property>
-<property key="category">delibere_di_consiglio</property>
-<property key="modelId">31</property>
-<property key="contentType">DLB</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 1, 'search_form', NULL, NULL);
@@ -1926,16 +1766,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', 'CNG14');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="filters">(order=ASC;attributeFilter=true;key=Oggetto)</property>
-<property key="category">moduli</property>
-<property key="modelId">51</property>
-<property key="contentType">SDL</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 1, 'search_form', NULL, NULL);
@@ -1947,24 +1777,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 
 ', 'CNG49');
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_notizie', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">5</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Data)</property>
-<property key="modelId">22</property>
-<property key="contentType">NEW</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_bandi', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">5</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=DataInizio)</property>
-<property key="modelId">42</property>
-<property key="contentType">BND</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 1, 'search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 2, 'navigation_breadcrumbs', NULL, NULL);
@@ -1975,16 +1787,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', 'CNG14');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="filters">(order=ASC;attributeFilter=true;key=Oggetto)</property>
-<property key="category">autocertificazioni</property>
-<property key="modelId">51</property>
-<property key="contentType">SDL</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 1, 'navigation_breadcrumbs', NULL, NULL);
@@ -2124,18 +1926,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(2)</property>
@@ -2143,6 +1933,24 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 
 ', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 7, 'card_list', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_bandi', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">5</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
+<property key="modelId">42</property>
+<property key="contentType">BND</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_notizie', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">5</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="modelId">22</property>
+<property key="contentType">NEW</property>
+</properties>
+
+', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass_int', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass_int', 1, 'search_form', NULL, NULL);
@@ -2223,36 +2031,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', 'CNG173');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Data;type=attribute)</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Data)</property>
-<property key="contentType">NEW</property>
-<property key="modelId">21</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Numero)+(attributeFilter=false;key=category)+(attributeFilter=true;key=Data)</property>
-<property key="filters">(attributeFilter=true;order=DESC;key=Numero)+(order=DESC;attributeFilter=true;key=Data)</property>
-<property key="contentType">DLB</property>
-<property key="modelId">31</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=DataInizio)+(attributeFilter=true;key=DataFine)</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=DataInizio)</property>
-<property key="contentType">BND</property>
-<property key="modelId">41</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('simview', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(2)</property>
@@ -2331,6 +2109,26 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Number)+(attributeFilter=false;key=category)+(attributeFilter=true;key=Date)</property>
+<property key="filters">(attributeFilter=true;order=DESC;key=Number)+(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="contentType">DLB</property>
+<property key="modelId">31</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Date;type=attribute)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="contentType">NEW</property>
+<property key="modelId">21</property>
+</properties>
+
+', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 2, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(mobile_comune).subtree(1) + code(mobile_trasparenza).subtree(1)</property>
@@ -2339,27 +2137,267 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 ', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 6, 'login_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 11, 'login_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
+<property key="category">autocertificazioni</property>
+<property key="modelId">51</property>
+<property key="contentType">SDL</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=StartDate)+(attributeFilter=true;key=EndDate)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
+<property key="contentType">BND</property>
+<property key="modelId">41</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
+<property key="category">moduli</property>
+<property key="modelId">51</property>
+<property key="contentType">SDL</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG29</property>
+</properties>
+
+', 'CNG29');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="category">delibere_di_consiglio</property>
+<property key="filters">(order=ASC;attributeFilter=false;key=created)</property>
+<property key="contentType">DLB</property>
+<property key="modelId">31</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(delibere).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG28</property>
+<property key="modelId">1</property>
+</properties>
+
+', 'CNG28');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="category">delibere_di_giunta</property>
+<property key="filters">(order=ASC;attributeFilter=false;key=created)</property>
+<property key="contentType">DLB</property>
+<property key="modelId">31</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(delibere).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 12, 'news_latest', NULL, NULL);
 
 
 --
--- TOC entry 1851 (class 0 OID 143580)
+-- TOC entry 1851 (class 0 OID 144975)
 -- Dependencies: 139
 -- Data for Name: sysconfig; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'langs', 'Definition of the system languages', '<?xml version="1.0" encoding="UTF-8"?>
-<Langs>
-  <Lang>
-    <code>it</code>
-    <descr>Italiano</descr>
-    <default>false</default>
-  </Lang>
-  <Lang>
-    <code>en</code>
-    <descr>English</descr>
-    <default>true</default>
-  </Lang>
-</Langs>
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'contentTypes', 'Definition of the Content Types', '<?xml version="1.0" encoding="UTF-8"?>
+<contenttypes>
+	<contenttype typecode="BND" typedescr="Announcement" viewpage="bandoview" listmodel="41" defaultmodel="4">
+		<attributes>
+			<attribute name="Title" attributetype="Longtext" indexingtype="TEXT">
+				<validations>
+					<required>true</required>
+				</validations>
+				<roles>
+					<role>jacms:title</role>
+				</roles>
+			</attribute>
+			<attribute name="StartDate" attributetype="Date" searcheable="true">
+				<validations>
+					<required>true</required>
+					<expression evalOnValuedAttribute="true">
+						<ognlexpression><![CDATA[#attribute.date.after(new java.util.Date())]]></ognlexpression>
+						<errormessage><![CDATA[The start date has to be after than today]]></errormessage>
+						<helpmessage><![CDATA[The start date has to be after than today]]></helpmessage>
+					</expression>
+				</validations>
+			</attribute>
+			<attribute name="EndDate" attributetype="Date" searcheable="true">
+				<validations>
+					<required>true</required>
+					<rangestart attribute="DataInizio" />
+				</validations>
+			</attribute>
+			<attribute name="Abstract" attributetype="Hypertext" indexingtype="text" />
+			<list name="Documents" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Documents" attributetype="Attach" />
+				</nestedtype>
+			</list>
+		</attributes>
+	</contenttype>
+	<contenttype typecode="CNG" typedescr="Generic content" viewpage="contentview" listmodel="11" defaultmodel="1">
+		<attributes>
+			<attribute name="Title" attributetype="Text" searcheable="true" indexingtype="TEXT">
+				<validations>
+					<required>true</required>
+				</validations>
+				<roles>
+					<role>jacms:title</role>
+				</roles>
+			</attribute>
+			<attribute name="Abstract" attributetype="Longtext" indexingtype="text" />
+			<attribute name="TextBody" attributetype="Hypertext" indexingtype="text" />
+			<attribute name="Image_1" attributetype="Image" />
+			<attribute name="Image_2" attributetype="Image">
+				<validations>
+					<expression evalOnValuedAttribute="true">
+						<ognlexpression><![CDATA[#entity.getAttribute(''Immagine_1'').resource != null]]></ognlexpression>
+						<errormessage key="CNG_Image2_OgnlErrorMessage" />
+						<helpmessage key="CNG_Image2_OgnlHelpMessage" />
+					</expression>
+				</validations>
+			</attribute>
+			<list name="Links" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Links" attributetype="Link" />
+				</nestedtype>
+			</list>
+			<list name="Documents" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Documents" attributetype="Attach" />
+				</nestedtype>
+			</list>
+		</attributes>
+	</contenttype>
+	<contenttype typecode="DLB" typedescr="Decision" viewpage="deliberaview" listmodel="31" defaultmodel="3">
+		<attributes>
+			<attribute name="Number" attributetype="Number" searcheable="true" indexingtype="number">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="Date" attributetype="Date" searcheable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="Title" attributetype="Longtext" indexingtype="TEXT">
+				<validations>
+					<required>true</required>
+				</validations>
+				<roles>
+					<role>jacms:title</role>
+				</roles>
+			</attribute>
+			<attribute name="Abstract" attributetype="Hypertext" indexingtype="text" />
+			<list name="Documents" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Documents" attributetype="Attach" />
+				</nestedtype>
+			</list>
+		</attributes>
+	</contenttype>
+	<contenttype typecode="NEW" typedescr="News" viewpage="newsview" listmodel="21" defaultmodel="2">
+		<attributes>
+			<attribute name="Date" attributetype="Date" searcheable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="Title" attributetype="Text" searcheable="true" indexingtype="TEXT">
+				<validations>
+					<required>true</required>
+				</validations>
+				<roles>
+					<role>jacms:title</role>
+				</roles>
+			</attribute>
+			<attribute name="ShortText" attributetype="Longtext" indexingtype="text" />
+			<attribute name="TextBody" attributetype="Hypertext" indexingtype="text" />
+			<attribute name="Image_1" attributetype="Image" />
+			<list name="Links" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Links" attributetype="Link" />
+				</nestedtype>
+			</list>
+			<list name="Documents" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Documents" attributetype="Attach" />
+				</nestedtype>
+			</list>
+		</attributes>
+	</contenttype>
+	<contenttype typecode="SDL" typedescr="Document" viewpage="dlview" listmodel="51" defaultmodel="5">
+		<attributes>
+			<attribute name="Title" attributetype="Text" searcheable="true" indexingtype="TEXT">
+				<validations>
+					<required>true</required>
+				</validations>
+				<roles>
+					<role>jacms:title</role>
+				</roles>
+			</attribute>
+			<attribute name="ShortDescr" attributetype="Hypertext" indexingtype="text">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="LongDescr" attributetype="Hypertext" indexingtype="text" />
+			<attribute name="Image" attributetype="Image" />
+			<attribute name="File" attributetype="Attach">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<list name="Links" attributetype="Monolist">
+				<nestedtype>
+					<attribute name="Riferimenti" attributetype="Link" />
+				</nestedtype>
+			</list>
+		</attributes>
+	</contenttype>
+</contenttypes>
 
 ');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'imageDimensions', 'Definition of the resized image dimensions', '<Dimensions>
@@ -2379,7 +2417,21 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'imag
 		<dimy>150</dimy>
 	</Dimension>
 </Dimensions>');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'indexdir');
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'langs', 'Definition of the system languages', '<?xml version="1.0" encoding="UTF-8"?>
+<Langs>
+  <Lang>
+    <code>it</code>
+    <descr>Italiano</descr>
+    <default>false</default>
+  </Lang>
+  <Lang>
+    <code>en</code>
+    <descr>English</descr>
+    <default>true</default>
+  </Lang>
+</Langs>
+
+');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'params', 'Configuration params. Tags other than "Param" are ignored', '<?xml version="1.0" encoding="UTF-8"?>
 <Params>
 	<Param name="urlStyle">classic</Param>
@@ -2399,170 +2451,11 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'para
 		<Param name="maxMonthsSinceLastPasswordChange">3</Param>        
 	</ExtendendPrivacyModule>
 </Params>');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'contentTypes', 'Definition of the Content Types', '<?xml version="1.0" encoding="UTF-8"?>
-<contenttypes>
-	<contenttype typecode="BND" typedescr="Bando" viewpage="bandoview" listmodel="41" defaultmodel="4">
-		<attributes>
-			<attribute name="Oggetto" attributetype="Longtext" indexingtype="TEXT">
-				<validations>
-					<required>true</required>
-				</validations>
-				<roles>
-					<role>jacms:title</role>
-				</roles>
-			</attribute>
-			<attribute name="DataInizio" attributetype="Date" searcheable="true">
-				<validations>
-					<required>true</required>
-					<expression evalOnValuedAttribute="true">
-						<ognlexpression><![CDATA[#attribute.date.after(new java.util.Date())]]></ognlexpression>
-						<errormessage><![CDATA[The start date has to be after than today]]></errormessage>
-						<helpmessage><![CDATA[The start date has to be after than today]]></helpmessage>
-					</expression>
-				</validations>
-			</attribute>
-			<attribute name="DataFine" attributetype="Date" searcheable="true">
-				<validations>
-					<required>true</required>
-					<rangestart attribute="DataInizio" />
-				</validations>
-			</attribute>
-			<attribute name="Abstract" attributetype="Hypertext" indexingtype="text" />
-			<list name="Allegati" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Allegati" attributetype="Attach" />
-				</nestedtype>
-			</list>
-		</attributes>
-	</contenttype>
-	<contenttype typecode="CNG" typedescr="Contenuto generico" viewpage="contentview" listmodel="11" defaultmodel="1">
-		<attributes>
-			<attribute name="Titolo" attributetype="Text" searcheable="true" indexingtype="TEXT">
-				<validations>
-					<required>true</required>
-				</validations>
-				<roles>
-					<role>jacms:title</role>
-				</roles>
-			</attribute>
-			<attribute name="Abstract" attributetype="Longtext" indexingtype="text" />
-			<attribute name="CorpoTesto" attributetype="Hypertext" indexingtype="text" />
-			<attribute name="Immagine_1" attributetype="Image" />
-			<attribute name="Immagine_2" attributetype="Image">
-				<validations>
-					<expression evalOnValuedAttribute="true">
-						<ognlexpression><![CDATA[#entity.getAttribute(''Immagine_1'').resource != null]]></ognlexpression>
-						<errormessage key="CNG_Image2_OgnlErrorMessage" />
-						<helpmessage key="CNG_Image2_OgnlHelpMessage" />
-					</expression>
-				</validations>
-			</attribute>
-			<list name="Riferimenti" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Riferimenti" attributetype="Link" />
-				</nestedtype>
-			</list>
-			<list name="Allegati" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Allegati" attributetype="Attach" />
-				</nestedtype>
-			</list>
-		</attributes>
-	</contenttype>
-	<contenttype typecode="DLB" typedescr="Delibera" viewpage="deliberaview" listmodel="31" defaultmodel="3">
-		<attributes>
-			<attribute name="Numero" attributetype="Number" searcheable="true" indexingtype="number">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="Data" attributetype="Date" searcheable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="Oggetto" attributetype="Longtext" indexingtype="TEXT">
-				<validations>
-					<required>true</required>
-				</validations>
-				<roles>
-					<role>jacms:title</role>
-				</roles>
-			</attribute>
-			<attribute name="Abstract" attributetype="Hypertext" indexingtype="text" />
-			<list name="Allegati" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Allegati" attributetype="Attach" />
-				</nestedtype>
-			</list>
-		</attributes>
-	</contenttype>
-	<contenttype typecode="NEW" typedescr="Notizia" viewpage="newsview" listmodel="21" defaultmodel="2">
-		<attributes>
-			<attribute name="Data" attributetype="Date" searcheable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="Titolo" attributetype="Text" searcheable="true" indexingtype="TEXT">
-				<validations>
-					<required>true</required>
-				</validations>
-				<roles>
-					<role>jacms:title</role>
-				</roles>
-			</attribute>
-			<attribute name="Lancio" attributetype="Longtext" indexingtype="text" />
-			<attribute name="CorpoTesto" attributetype="Hypertext" indexingtype="text" />
-			<attribute name="Immagine_1" attributetype="Image" />
-			<list name="Riferimenti" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Riferimenti" attributetype="Link" />
-				</nestedtype>
-			</list>
-			<list name="Allegati" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Allegati" attributetype="Attach" />
-				</nestedtype>
-			</list>
-		</attributes>
-	</contenttype>
-	<contenttype typecode="SDL" typedescr="Scheda Download" viewpage="dlview" listmodel="51" defaultmodel="5">
-		<attributes>
-			<attribute name="Oggetto" attributetype="Text" searcheable="true" indexingtype="TEXT">
-				<validations>
-					<required>true</required>
-				</validations>
-				<roles>
-					<role>jacms:title</role>
-				</roles>
-			</attribute>
-			<attribute name="DescrizioneBreve" attributetype="Hypertext" indexingtype="text">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="DescrizioneLunga" attributetype="Hypertext" indexingtype="text" />
-			<attribute name="Immagine" attributetype="Image" />
-			<attribute name="File" attributetype="Attach">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<list name="Riferimenti" attributetype="Monolist">
-				<nestedtype>
-					<attribute name="Riferimenti" attributetype="Link" />
-				</nestedtype>
-			</list>
-		</attributes>
-	</contenttype>
-</contenttypes>
-
-');
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'indexdir');
 
 
 --
--- TOC entry 1852 (class 0 OID 143586)
+-- TOC entry 1852 (class 0 OID 144981)
 -- Dependencies: 140
 -- Data for Name: uniquekeys; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -2571,7 +2464,7 @@ INSERT INTO uniquekeys (id, keyvalue) VALUES (1, 260);
 
 
 --
--- TOC entry 1853 (class 0 OID 143589)
+-- TOC entry 1853 (class 0 OID 144984)
 -- Dependencies: 141
 -- Data for Name: workcontentrelations; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -2586,96 +2479,201 @@ INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'modu
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'delibere_di_giunta');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB36', 'delibere');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB36', 'delibere_di_consiglio');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'anagrafe');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'moduli');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'autocertificazioni');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'autocertificazioni');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'scheda_download');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'tributi');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'moduli');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'autocertificazioni');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'autocertificazioni');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'anagrafe');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'moduli');
 
 
 --
--- TOC entry 1854 (class 0 OID 143592)
+-- TOC entry 1854 (class 0 OID 144987)
 -- Dependencies: 142
 -- Data for Name: workcontentsearch; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Data', NULL, '2011-06-15', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Titolo', 'Online the Mobile Portal', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Titolo', 'Online il Portale Mobile', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Data', NULL, '2011-11-21', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Titolo', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Titolo', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Data', NULL, '2011-07-20', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Titolo', 'Folk Music Festival', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Titolo', 'Festival della canzone popolare', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Data', NULL, '2011-10-21', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Titolo', 'Ground Rent Contribution', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Titolo', 'Contributo canone di locazione 2011', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Numero', NULL, NULL, 133, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Data', NULL, '2011-09-20', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Numero', NULL, NULL, 20, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Data', NULL, '2011-10-04', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Numero', NULL, NULL, 120, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Data', NULL, '2011-07-01', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Numero', NULL, NULL, 15, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Data', NULL, '2011-07-16', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Titolo', 'Web Accessibility', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Titolo', 'Accessibilità', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Titolo', 'How to sign in', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Titolo', 'Come loggarsi', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG54', 'Titolo', 'Delibere', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG55', 'Titolo', 'Bandi', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG53', 'Titolo', 'Notizie', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Titolo', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG28', 'Titolo', 'Elenco delle Delibere di Giunta presenti nel portale del Comune', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Titolo', 'Mayor', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Titolo', 'Sindaco', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Titolo', 'Council', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Titolo', 'Giunta Comunale', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG19', 'Titolo', 'Consiglio Comunale', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Titolo', 'Public Relations Office', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Titolo', 'URP - Ufficio Relazioni con il Pubblico', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Titolo', 'Documents Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Titolo', 'Archivio Modulistica', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Titolo', 'Announcements Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Titolo', 'Archivio Bandi', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Titolo', 'News Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Titolo', 'Archivio Notizie', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Titolo', 'Decisions Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Titolo', 'Archivio Delibere', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG2', 'Titolo', 'Lorem Ipsum dolor sit amet', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Titolo', 'Statute', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Titolo', 'Statuto', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Titolo', 'Internal Servlet', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Titolo', 'Internal Servlet', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Titolo', 'Application Service Example', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Titolo', 'Esempio Servizio Applicativo', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Titolo', 'Mobile Area', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Titolo', 'Area Mobile', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Titolo', 'ePartecipation', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Titolo', 'ePartecipation', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'DataInizio', NULL, '2011-02-01', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'DataFine', NULL, '2011-11-30', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'DataInizio', NULL, '2011-02-28', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'DataFine', NULL, '2011-10-27', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'DataInizio', NULL, '2011-03-03', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'DataFine', NULL, '2011-11-14', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Oggetto', 'Registry - Request Identity Card valid for foreign travel', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Oggetto', 'Anagrafe - Richiesta Carta Identità valida per espatrio', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Oggetto', 'Civil Status Self Certification Form', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Oggetto', 'Modulo Autocertificazione Stato Civile', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Oggetto', 'Residence Self-certification Form', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Oggetto', 'Modulo Autocertificazione Residenza', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Oggetto', 'Tax - Request ICI refund', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Oggetto', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Date', NULL, '2011-11-21', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Date', NULL, '2011-06-15', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online the Mobile Portal', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online il Portale Mobile', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Date', NULL, '2011-10-21', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Ground Rent Contribution', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Contributo canone di locazione 2011', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Date', NULL, '2011-07-20', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Folk Music Festival', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Festival della canzone popolare', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Number', NULL, NULL, 133, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Date', NULL, '2011-09-20', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Number', NULL, NULL, 20, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Date', NULL, '2011-10-04', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Number', NULL, NULL, 120, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Date', NULL, '2011-07-01', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Number', NULL, NULL, 15, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Date', NULL, '2011-07-16', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statute', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statuto', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Application Service Example', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Esempio Servizio Applicativo', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG19', 'Title', 'Consiglio Comunale', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG54', 'Title', 'Delibere', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG55', 'Title', 'Bandi', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG53', 'Title', 'Notizie', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Title', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG28', 'Title', 'Elenco delle Delibere di Giunta presenti nel portale del Comune', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Mayor', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Sindaco', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'Public Relations Office', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'URP - Ufficio Relazioni con il Pubblico', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Documents Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Archivio Modulistica', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Announcements Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Archivio Bandi', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'News Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'Archivio Notizie', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Decisions Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Archivio Delibere', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG2', 'Title', 'Lorem Ipsum dolor sit amet', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Mobile Area', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Area Mobile', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'How to sign in', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'Come loggarsi', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Council', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Giunta Comunale', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Web Accessibility', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Accessibilità', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'StartDate', NULL, '2011-02-01', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'EndDate', NULL, '2011-11-30', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'StartDate', NULL, '2011-02-28', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'EndDate', NULL, '2011-10-27', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'StartDate', NULL, '2011-03-03', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'EndDate', NULL, '2011-11-14', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tax - Request ICI refund', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Residence Self-certification Form', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Modulo Autocertificazione Residenza', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Civil Status Self Certification Form', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Modulo Autocertificazione Stato Civile', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Registry - Request Identity Card valid for foreign travel', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Anagrafe - Richiesta Carta Identità valida per espatrio', NULL, NULL, 'it');
 
 
--- Completed on 2012-03-09 00:36:16 CET
+--
+-- TOC entry 1841 (class 0 OID 144924)
+-- Dependencies: 129
+-- Data for Name: contentrelations; Type: TABLE DATA; Schema: public; Owner: agile
+--
+
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW3', NULL, NULL, '26', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, 'CNG51', NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '24', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW23', NULL, NULL, '25', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW27', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB4', NULL, NULL, '31', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB30', NULL, NULL, '34', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'moduli', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, 'delibere_di_giunta', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB32', NULL, NULL, '33', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, 'delibere_di_consiglio', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('DLB36', NULL, NULL, '35', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '21', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG20', NULL, NULL, '22', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG16', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG15', 'old_town_traffic_pass_int', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG19', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG54', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG55', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG53', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG29', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG28', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG17', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG49', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG14', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG11', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG12', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG13', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG2', NULL, NULL, '10', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', 'mobile_home', NULL, NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG51', NULL, NULL, '143', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG146', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG256', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG18', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, '174', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND39', NULL, NULL, '38', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND48', NULL, NULL, '47', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('BND5', NULL, NULL, '37', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'tributi', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, 'moduli', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL46', NULL, NULL, '45', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, 'autocertificazioni', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL7', NULL, NULL, '40', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, 'autocertificazioni', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL44', NULL, NULL, '43', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'scheda_download', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'anagrafe', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, 'moduli', NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, NULL, NULL, 'free');
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
+
+
+-- Completed on 2012-03-09 22:35:53 CET
 
 --
 -- PostgreSQL database dump complete

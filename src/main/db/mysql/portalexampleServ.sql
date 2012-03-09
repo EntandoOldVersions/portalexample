@@ -1,7 +1,7 @@
 -- MySQL Administrator dump 1.4
 --
 -- ------------------------------------------------------
--- Server version	5.1.58-1ubuntu1
+-- Server version	5.1.54-1ubuntu4
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -24,11 +24,11 @@ CREATE TABLE  `portalexampleServ`.`api_oauth_consumers` (
   `consumerkey` varchar(100) NOT NULL,
   `consumersecret` varchar(100) NOT NULL,
   `description` varchar(500) NOT NULL,
-  `callbackurl` varchar(500),
+  `callbackurl` varchar(500) DEFAULT NULL,
   `expirationdate` date DEFAULT NULL,
   PRIMARY KEY (`consumerkey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE TABLE  `portalexampleServ`.`api_oauth_consumers` (
+CREATE TABLE  `portalexampleServ`.`api_oauth_tokens` (
   `accesstoken` varchar(100) NOT NULL,
   `tokensecret` varchar(100) NOT NULL,
   `consumerkey` varchar(500) NOT NULL,
@@ -39,10 +39,10 @@ CREATE TABLE  `portalexampleServ`.`api_oauth_consumers` (
 CREATE TABLE  `portalexampleServ`.`apicatalog_methods` (
   `resource` varchar(100) NOT NULL,
   `httpmethod` varchar(6) NOT NULL,
-  `isactive` tinyint(4),
-  `authenticationrequired` tinyint(4),
-  `authorizationrequired` varchar(100),
-  PRIMARY KEY (`resource`, `httpmethod`)
+  `isactive` tinyint(4) DEFAULT NULL,
+  `authenticationrequired` tinyint(4) DEFAULT NULL,
+  `authorizationrequired` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`resource`,`httpmethod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE  `portalexampleServ`.`apicatalog_services` (
   `servicekey` varchar(100) NOT NULL,

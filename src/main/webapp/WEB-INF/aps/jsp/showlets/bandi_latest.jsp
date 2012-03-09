@@ -17,7 +17,7 @@
 <h2 class="title"><wp:i18n key="LATEST_BANDI" /></h2>
 
 <jacms:contentList listName="contentList" contentType="BND" >
-<jacms:contentListFilter key="DataFine" attributeFilter="true" order="DESC" />
+<jacms:contentListFilter key="StartDate" attributeFilter="true" order="DESC" />
 </jacms:contentList>
 
 <ul>
