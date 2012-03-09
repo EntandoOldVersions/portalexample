@@ -23,53 +23,52 @@ import com.agiletec.aps.system.exception.ApsSystemException;
 
 /**
  * Interfaccia base per i servizi gestori delle schede.
- * @version 1.0
  * @author E.Mezzano
  */
 public interface ICardManager {
-	
-	/**
-	 * Restituisce la List delle Card.
-	 * @return Una List di Card.
-	 * @throws ApsSystemException In caso di errori in accesso al db.
-	 */
-	public List<Card> getCards() throws ApsSystemException;
-	
-	/**
-	 * Restituisce la lista delle Card filtrate in base al titolare.
-	 * @param holder Il titolare.
-	 * @return La lista di Card.
-	 * @throws ApsSystemException In caso di errore.
-	 */
-	public List<Card> searchCards(String holder) throws ApsSystemException;
-	
-	/**
-	 * Restituisce la Card di id dato.
-	 * @param id L'identificativo della Card.
-	 * @return La Card richiesta.
-	 * @throws ApsSystemException In caso di errore.
-	 */
-	public Card getCard(int id) throws ApsSystemException;
-	
-	/**
-	 * Aggiunge una Card.
-	 * @param card La card da agiungere.
-	 * @throws ApsSystemException In caso di errore.
-	 */
-	public void addCard(Card card) throws ApsSystemException;
-	
-	/**
-	 * Aggiorna una Card.
-	 * @param card La Card da aggiornare.
-	 * @throws ApsSystemException In caso di errore.
-	 */
-	public void updateCard(Card card) throws ApsSystemException;
-	
-	/**
-	 * Cancella una Card.
-	 * @param id L'identificativo della Card da cancellare.
-	 * @throws ApsSystemException In caso di errore.
-	 */
-	public void deleteCard(int id) throws ApsSystemException;
-	
+    
+    /**
+     * Restituisce la List delle Card.
+     * @return Una List di Card.
+     * @throws ApsSystemException In caso di errori in accesso al db.
+     */
+    public List<Card> getCards() throws ApsSystemException;
+    
+    /**
+     * Restituisce la lista delle Card filtrate in base al titolare.
+     * @param holder Il titolare.
+     * @return La lista di Card.
+     * @throws ApsSystemException In caso di errore.
+     */
+    public List<Card> searchCards(String holder) throws ApsSystemException;
+    
+    /**
+     * Restituisce la Card di id dato.
+     * @param id L'identificativo della Card.
+     * @return La Card richiesta.
+     * @throws ApsSystemException In caso di errore.
+     */
+    public Card getCard(Integer id) throws ApsSystemException;
+    
+    /**
+     * Aggiunge una Card.
+     * @param card La card da agiungere.
+     * @throws ApsSystemException In caso di errore.
+     */
+    public void addCard(Card card) throws ApsSystemException;
+    
+    /**
+     * Aggiorna una Card.
+     * @param card La Card da aggiornare.
+     * @throws ApsSystemException In caso di errore.
+     */
+    public void updateCard(Card card) throws ApsSystemException;
+    
+    /**
+     * Cancella una Card.
+     * @param id L'identificativo della Card da cancellare.
+     * @throws ApsSystemException In caso di errore.
+     */
+    public void deleteCard(Integer id) throws ApsSystemException;
+    
 }

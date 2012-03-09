@@ -19,7 +19,6 @@ package org.entando.entando.portalexample.aps.system;
 
 /**
  * Interfaccia con le principali costanti del progetto demo.
- * @version 1.0
  * @author E.Mezzano
  */
 public interface DemoSystemConstants {
