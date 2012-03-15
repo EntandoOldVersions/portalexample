@@ -7,7 +7,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<wp:info key="currentLang" />">
 <head>
-	<title>jAPS Portal Example| <wp:currentPage param="title" /></title>
+	<title>Entando Portal Example| <wp:currentPage param="title" /></title>
 	
 	<link type="text/css" rel="stylesheet" href="<wp:cssURL/>PortalExample.css" />
 	<link type="text/css" rel="stylesheet" href="<wp:cssURL/>pagemodels/general.css" />

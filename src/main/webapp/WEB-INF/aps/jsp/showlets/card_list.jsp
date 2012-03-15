@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!-- TAG CARICATORE -->
+<!-- Loader Tag <vmr:cards> -->
 <vmr:cards listName="cardList" />
 
 <wp:headInfo type="CSS" info="showlets/card_list.css" />
-<!-- INIZIO BLOCCO FORM DI RICERCA -->
+<!-- search block //start -->
 <div class="card_list">
 <form id="searchForm" method="get" action="<wp:url />">
 	<fieldset><legend for="holder" class="text"><wp:i18n key="SEARCH_CARDS" /></legend>
@@ -19,11 +19,11 @@
 	</fieldset>
 </form>  
 </div>
-<!-- FINE BLOCCO FORM DI RICERCA -->
+<!-- search block //end -->
 
 <c:if test="${cardList != null}">
 	
-	<!-- TAG PAGINATORE -->
+	<!-- pager -->
 	<wp:pager listName="cardList" objectName="groupCard" pagerIdFromFrame="true" max="10" advanced="true" offset="5" >
 	<c:set var="group" value="${groupCard}" scope="request" />
 	
@@ -31,7 +31,7 @@
 		<wp:i18n key="CARDS_NUMBER" /> : <c:out value="${groupCard.size}" /> - <wp:i18n key="LABEL_PAGE" />: [<c:out value="${groupCard.currItem}" />/<c:out value="${groupCard.maxItem}" />]
 	</p>
 	
-	<!-- INIZIO BLOCCO EROGATORE -->
+	<!-- output data //start -->
 	<table class="generic" border="1" summary="<wp:i18n key="CARDS_LIST_SUMMARY" />">
 	<tr>
 		<th><wp:i18n key="CARD_HOLDER" /></th>
@@ -46,8 +46,9 @@
 		</tr>
 	</c:forEach>
 	</table>
-	<!-- FINE BLOCCO EROGATORE -->
+	<!-- output data //end -->
 	
+	<!-- pager -->
 	<c:import url="/WEB-INF/aps/jsp/showlets/inc/pagerBlock.jsp" />
 	
 	</wp:pager>

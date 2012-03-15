@@ -13,7 +13,7 @@
 <wp:headInfo type="CSS" info="showlets/delibere_latest.css" />
 
 <div class="delibere_latest">
-<h2 class="title"><wp:i18n key="LATEST_DELIBERE" /></h2>
+<h2 class="title"><wp:i18n key="LATEST_DECISIONS" /></h2>
 
 <jacms:contentList listName="contentList" contentType="DLB" >
 	<jacms:contentListFilter key="Date" attributeFilter="true" order="DESC" />

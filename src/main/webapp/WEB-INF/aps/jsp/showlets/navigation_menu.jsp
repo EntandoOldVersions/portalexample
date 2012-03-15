@@ -29,7 +29,7 @@
 			<c:when test="${!currentTarget.voidPage}">		
 				<c:choose>
 					<c:when test="${currentCode == currentViewCode}"><li><c:if test="${currentCode == 'homepage'}"><span class="noscreen"></c:if><span class="current"><c:out value="${currentTarget.title}" /></span><c:if test="${currentCode == 'homepage'}"></span></c:if></c:when>
-					<c:otherwise><li><c:if test="${currentCode == 'homepage'}"><span class="noscreen"></c:if><span><a href="<c:out value="${currentTarget.url}" />" title="<wp:i18n key="VAI_PAGINA" />: <c:out value="${currentTarget.title}" />"><c:out value="${currentTarget.title}" /></a></span><c:if test="${currentCode == 'homepage'}"></span></c:if></c:otherwise>
+					<c:otherwise><li><c:if test="${currentCode == 'homepage'}"><span class="noscreen"></c:if><span><a href="<c:out value="${currentTarget.url}" />" title="<wp:i18n key="GO_TO_PAGE" />: <c:out value="${currentTarget.title}" />"><c:out value="${currentTarget.title}" /></a></span><c:if test="${currentCode == 'homepage'}"></span></c:if></c:otherwise>
 				</c:choose>
 			</c:when>
 			<c:otherwise>

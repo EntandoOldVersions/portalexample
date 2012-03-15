@@ -5,7 +5,7 @@
 	<p class="centerText">
 		<c:if test="${'1' != group.currItem}">
 			<c:if test="${group.advanced}">
-				<%-- TORNA ALL'INIZIO --%>
+				<%-- go to the beginning --%>
 				<a href="<wp:url paramRepeat="true" ><wp:parameter name="${group.paramItemName}" >1</wp:parameter></wp:url>">|&lt;</a>
 				<%-- salta indietro dell'offset --%>
 				<c:if test="${1 != group.beginItemAnchor}">
@@ -23,11 +23,11 @@
 		<c:if test="${group.maxItem != group.currItem}">
 			<a href="<wp:url paramRepeat="true" ><wp:parameter name="${group.paramItemName}" ><c:out value="${group.nextItem}"/></wp:parameter></wp:url>"><wp:i18n key="NEXT" /></a>
 			<c:if test="${group.advanced}">
-				<%-- salta avanti dell'offset --%>
+				<%-- offset jump forward --%>
 				<c:if test="${group.maxItem != group.endItemAnchor}">
 					<a href="<wp:url paramRepeat="true" ><wp:parameter name="${group.paramItemName}" ><c:out value="${group.currItem + group.offset}" /></wp:parameter></wp:url>">&raquo;</a>
 				</c:if>
-				<%-- VAI ALLA FINE --%>
+				<%-- go to the end --%>
 				<a href="<wp:url paramRepeat="true" ><wp:parameter name="${group.paramItemName}" ><c:out value="${group.maxItem}" /></wp:parameter></wp:url>">&gt;|</a>
 			</c:if>
 		</c:if>

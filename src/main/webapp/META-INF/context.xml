@@ -2,7 +2,7 @@
 <Context path="/portalexample" docBase="./portalexample" debug="1" reloadable="true">
 	
 	<Environment name="logName" value="portalexample" type="java.lang.String" override="false" />
-	<Environment name="logFilePrefix" value="/home/eu/git/portalexample/target/log_portalexample" type="java.lang.String" override="false" />
+	<Environment name="logFilePrefix" value="/home/andrea/github/portalexample/target/log_portalexample" type="java.lang.String" override="false" />
 	<Environment name="logLevel" value="ALL" type="java.lang.String" override="false" />
 	<Environment name="logFileSize" value="200000" type="java.lang.String" override="false" />
 	<Environment name="logFilesCount" value="10" type="java.lang.String" override="false" />
@@ -13,12 +13,12 @@
 	<Environment name="resourceRootURL" value="/portalexample/resources/" type="java.lang.String" override="false" />
 	<Environment name="protectedResourceRootURL" value="/portalexample/protected/" type="java.lang.String" override="false" />
 	
-	<Environment name="resourceDiskRootFolder" value="/home/eu/git/portalexample/src/main/webapp/resources" type="java.lang.String" override="false" />
-	<Environment name="protectedResourceDiskRootFolder" value="/home/eu/git/portalexample/src/main/webapp/protected" type="java.lang.String" override="false" />
+	<Environment name="resourceDiskRootFolder" value="/home/andrea/github/portalexample/src/main/webapp/resources" type="java.lang.String" override="false" />
+	<Environment name="protectedResourceDiskRootFolder" value="/home/andrea/github/portalexample/src/main/webapp/protected" type="java.lang.String" override="false" />
 	
-	<Environment name="indexDiskRootFolder" value="/home/eu/git/portalexample/target/temp/indexdir" type="java.lang.String" override="false" />
+	<Environment name="indexDiskRootFolder" value="/home/andrea/github/portalexample/target/temp/indexdir" type="java.lang.String" override="false" />
 	
-	<Environment name="cacheDiskRootFolder" value="/home/eu/git/portalexample/target/temp/cache" type="java.lang.String" override="false" />
+	<Environment name="cacheDiskRootFolder" value="/home/andrea/github/portalexample/target/temp/cache" type="java.lang.String" override="false" />
 	
 	<Resource name="jdbc/portDataSource" auth="Container" 
 		type="javax.sql.DataSource" driverClassName="org.postgresql.Driver" 

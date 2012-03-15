@@ -8,14 +8,14 @@
 	
 	<tag>
 		<description>
-			Carica e restituisce la lista di Card definite nel sistema.
+			Loads and returns the list of the Cards available in the system.
 		</description>
 		<name>cards</name>
 		<tag-class>org.entando.entando.portalexample.aps.tags.CardListTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<description>
-				Nome con cui la lista di Card viene settata nel contesto di pagina.
+				The name of the variable setted in the pagecontext.
 			</description>
 			<name>listName</name>
 			<required>true</required>

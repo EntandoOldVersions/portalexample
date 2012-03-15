@@ -27,5 +27,5 @@
         </c:forEach>
 </c:if>        
 </ul>
-<h3 class="archivio"><a href="<wp:url page="notizie" />" title="<wp:i18n key="VAI_PAGINA"/>:<wp:i18n key="NEWS_ARCHIVE"/>"><wp:i18n key="NEWS_ARCHIVE"/></a></h3>
+<h3 class="archivio"><a href="<wp:url page="notizie" />" title="<wp:i18n key="GOT_TO_PAGE"/>:<wp:i18n key="NEWS_ARCHIVE"/>"><wp:i18n key="NEWS_ARCHIVE"/></a></h3>
 </div>
