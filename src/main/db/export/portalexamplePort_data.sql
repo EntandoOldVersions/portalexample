@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Started on 2012-03-09 22:35:53 CET
+-- Started on 2012-03-31 20:36:42 CEST
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = off;
@@ -13,7 +13,7 @@ SET escape_string_warning = off;
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 1839 (class 0 OID 144912)
+-- TOC entry 1839 (class 0 OID 582439)
 -- Dependencies: 127
 -- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -84,7 +84,7 @@ INSERT INTO categories (catcode, parentcode, titles) VALUES ('tributi', 'moduli'
 
 
 --
--- TOC entry 1840 (class 0 OID 144918)
+-- TOC entry 1840 (class 0 OID 582445)
 -- Dependencies: 128
 -- Data for Name: contentmodels; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -262,7 +262,7 @@ $content.ShortDescr.text', NULL);
 
 
 --
--- TOC entry 1842 (class 0 OID 144927)
+-- TOC entry 1842 (class 0 OID 582454)
 -- Dependencies: 130
 -- Data for Name: contents; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -672,7 +672,7 @@ More specifically, Web accessibility means that people with disabilities can per
 
 
 --
--- TOC entry 1843 (class 0 OID 144933)
+-- TOC entry 1843 (class 0 OID 582460)
 -- Dependencies: 131
 -- Data for Name: contentsearch; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -749,7 +749,7 @@ INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, 
 
 
 --
--- TOC entry 1844 (class 0 OID 144936)
+-- TOC entry 1844 (class 0 OID 582463)
 -- Dependencies: 132
 -- Data for Name: localstrings; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -802,8 +802,6 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_NEW', 
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_NEW', 'it', 'Ultime Notizie');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NEWS_ARCHIVE', 'en', 'Archive News');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NEWS_ARCHIVE', 'it', 'Archivio Notizie');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('VAI_PAGINA', 'en', 'Go to page');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('VAI_PAGINA', 'it', 'Vai alla pagina');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('RESERVED_AREA', 'en', 'Reserved area');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('RESERVED_AREA', 'it', 'Area riservata');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('DOWNLOAD_THIS', 'en', 'Download this');
@@ -858,10 +856,6 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CARD_NOTE', '
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CARD_NOTE', 'it', 'Note');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('BACK_TO_CARDS_LIST', 'en', 'Returned to the list');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('BACK_TO_CARDS_LIST', 'it', 'Torna alla lista');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_BANDI', 'en', 'Latest Announcements');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_BANDI', 'it', 'Ultimi Bandi');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_DELIBERE', 'en', 'Latest Decisions');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_DELIBERE', 'it', 'Ultime Delibere');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PASSWORD', 'en', 'password');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PASSWORD', 'it', 'password');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ATTACHES', 'en', 'Attachments');
@@ -938,10 +932,16 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', '
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'it', '<span lang="en">Copyright &copy; Entando srl 2012</span>');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CREDITS_POWERED_BY', 'en', '<span lang="en">Powered by </span><a href="http://www.entando.com/"><span lang="en">Entando 3.0</span></a>');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CREDITS_POWERED_BY', 'it', '<span lang="en">Powered by </span><a href="http://www.entando.com/"><span lang="en">Entando 3.0</span></a>');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_ANNOUNCEMENTS', 'en', 'Latest Announcements');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_ANNOUNCEMENTS', 'it', 'Ultimi Bandi');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GO_TO_PAGE', 'en', 'Go to page');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GO_TO_PAGE', 'it', 'Vai alla pagina');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_DECISIONS', 'en', 'Latest Decisions');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LATEST_DECISIONS', 'it', 'Ultime Delibere');
 
 
 --
--- TOC entry 1845 (class 0 OID 144942)
+-- TOC entry 1845 (class 0 OID 582469)
 -- Dependencies: 133
 -- Data for Name: pagemodels; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -999,62 +999,6 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('internal', 'In
 		<descr>Third Column: Box 3</descr>
 	</frame>		
 </frames>', NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('home', 'Home Page', '<frames>
-	<frame pos="0">
-		<descr>Choose Language</descr>
-		<defaultShowlet code="language_choose" />
-	</frame>
-	<frame pos="1">
-		<descr>Search Form</descr>
-		<defaultShowlet code="search_form" />
-	</frame>
-	<frame pos="2">
-		<descr>Breadcrumbs</descr>
-		<defaultShowlet code="navigation_breadcrumbs" />
-	</frame>
-	<frame pos="3">
-		<descr>First Column: Box 1</descr>
-		<defaultShowlet code="navigation_menu">
-			<properties>
-				<property key="navSpec">code(comune).subtree(1)+code(trasparenza).subtree(1)+code(servizi_online).subtree(1)</property>
-			</properties>
-		</defaultShowlet>		
-	</frame>
-	<frame pos="4">
-		<descr>First Column: Box 2</descr>
-	</frame>
-	<frame pos="5">
-		<descr>First Column: Box 3</descr>
-	</frame>
-	<frame pos="6">
-		<descr>Main Column: Box 1</descr>
-	</frame>
-	<frame pos="7">
-		<descr>Main Column: Box 2</descr>
-	</frame>
-	<frame pos="8">
-		<descr>Main Column: Box 3</descr>		
-	</frame>
-	<frame pos="9">
-		<descr>Main Column: Box 4</descr>
-		<defaultShowlet code="bandi_latest" />	
-	</frame>	
-	<frame pos="10">
-		<descr>Main Column: Box 5</descr>
-		<defaultShowlet code="delibere_latest" />
-	</frame>
-	<frame pos="11">
-		<descr>Third Column: Box 1</descr>
-		<defaultShowlet code="login_form" />
-	</frame>
-	<frame pos="12">
-		<descr>Third Column: Box 2</descr>
-		<defaultShowlet code="news_latest" />
-	</frame>
-	<frame pos="13">
-		<descr>Third Column: Box 3</descr>
-	</frame>		
-</frames>', NULL);
 INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('mobile', 'Mobile Page', '<frames>
 	<frame pos="0">
 		<descr>Choose Language</descr>
@@ -1083,10 +1027,66 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('mobile', 'Mobi
 		<descr>Main Column: Box 6</descr>
 	</frame>
 </frames>', NULL);
+INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('home', 'Home Page', '<frames>
+	<frame pos="0">
+		<descr>Choose Language</descr>
+		<defaultShowlet code="language_choose" />
+	</frame>
+	<frame pos="1">
+		<descr>Search Form</descr>
+		<defaultShowlet code="search_form" />
+	</frame>
+	<frame pos="2">
+		<descr>Breadcrumbs</descr>
+		<defaultShowlet code="navigation_breadcrumbs" />
+	</frame>
+	<frame pos="3">
+		<descr>First Column: Box 1</descr>
+		<defaultShowlet code="navigation_menu">
+			<properties>
+				<property key="navSpec">code(municipality).subtree(1)+code(transparency).subtree(1)+code(online_services).subtree(1)</property>
+			</properties>
+		</defaultShowlet>		
+	</frame>
+	<frame pos="4">
+		<descr>First Column: Box 2</descr>
+	</frame>
+	<frame pos="5">
+		<descr>First Column: Box 3</descr>
+	</frame>
+	<frame pos="6">
+		<descr>Main Column: Box 1</descr>
+	</frame>
+	<frame pos="7">
+		<descr>Main Column: Box 2</descr>
+	</frame>
+	<frame pos="8">
+		<descr>Main Column: Box 3</descr>		
+	</frame>
+	<frame pos="9">
+		<descr>Main Column: Box 4</descr>
+		<defaultShowlet code="announcements_latest" />	
+	</frame>	
+	<frame pos="10">
+		<descr>Main Column: Box 5</descr>
+		<defaultShowlet code="decisions_latest" />
+	</frame>
+	<frame pos="11">
+		<descr>Third Column: Box 1</descr>
+		<defaultShowlet code="login_form" />
+	</frame>
+	<frame pos="12">
+		<descr>Third Column: Box 2</descr>
+		<defaultShowlet code="news_latest" />
+	</frame>
+	<frame pos="13">
+		<descr>Third Column: Box 3</descr>
+	</frame>		
+</frames>', NULL);
 
 
 --
--- TOC entry 1846 (class 0 OID 144948)
+-- TOC entry 1846 (class 0 OID 582475)
 -- Dependencies: 134
 -- Data for Name: pages; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1095,13 +1095,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 <properties>
 <property key="en">Error page</property>
 <property key="it">Pagina di errore</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('servizi_online', 'homepage', 4, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Online Services</property>
-<property key="it">Servizi Online</property>
 </properties>
 
 ', 'free', 1, NULL);
@@ -1133,101 +1126,10 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </properties>
 
 ', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('notizie', 'trasparenza', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">News</property>
-<property key="it">Notizie</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('comune', 'homepage', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Municipality</property>
-<property key="it">Il Comune</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('trasparenza', 'homepage', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Information</property>
-<property key="it">Trasparenza</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('contatti', 'homepage', 5, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Contact</property>
-<property key="it">Contatti</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('sindaco', 'comune', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Mayor</property>
-<property key="it">Sindaco</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('giunta_comunale', 'comune', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Council</property>
-<property key="it">Giunta Comunale</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('statuto', 'comune', 4, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Statute</property>
-<property key="it">Statuto</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('consiglio_comunale', 'comune', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Municipal Council</property>
-<property key="it">Consiglio Comunale</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('bandi', 'trasparenza', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Announcements</property>
-<property key="it">Bandi</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere', 'trasparenza', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Decisions</property>
-<property key="it">Delibere</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('moduli', 'servizi_online', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Documents</property>
-<property key="it">Modulistica</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('urp', 'contatti', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Public Relations Office</property>
-<property key="it">URP - Ufficio Relazioni con il Pubblico</property>
-</properties>
-
-', 'free', 1, NULL);
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('login', 'service', 6, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Login</property>
 <property key="it">Pagina di login</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('autocertificazioni', 'servizi_online', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Self Certification</property>
-<property key="it">Certificazioni</property>
 </properties>
 
 ', 'free', 1, NULL);
@@ -1238,27 +1140,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </properties>
 
 ', 'free', 0, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_comune', 'mobile_home', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Council</property>
-<property key="it">Il Comune</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_sindaco', 'mobile_comune', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Mayor</property>
-<property key="it">Sindaco</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_trasparenza', 'mobile_home', 2, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Information</property>
-<property key="it">Trasparenza</property>
-</properties>
-
-', 'free', 1, NULL);
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_home', 'mobile', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Mobile Home</property>
@@ -1266,14 +1147,7 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </properties>
 
 ', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_giunta_comunale', 'mobile_comune', 2, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Council</property>
-<property key="it">Giunta Comunale</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('dlview', 'moduli', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('dlview', 'forms', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Document Details</property>
 <property key="it">Dettaglio Modulistica</property>
@@ -1285,7 +1159,7 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('newsview', 'notizie', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('newsview', 'news', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Read the news</property>
 <property key="it">Leggi la notizia</property>
@@ -1297,7 +1171,7 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('bandoview', 'bandi', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('bandoview', 'announcements', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Announcements Details</property>
 <property key="it">Dettagli del bando</property>
@@ -1309,34 +1183,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_consiglio_comunale', 'mobile_comune', 3, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Municipal Council</property>
-<property key="it">Consiglio Comunale</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_notizie', 'mobile_trasparenza', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">News</property>
-<property key="it">Notizie</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_delibere', 'mobile_trasparenza', 2, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Decision</property>
-<property key="it">Delibere</property>
-</properties>
-
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_bandi', 'mobile_trasparenza', 3, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Announcements</property>
-<property key="it">Bandi</property>
-</properties>
-
-', 'free', 1, NULL);
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_service', 'mobile_home', 3, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Service Pages</property>
@@ -1358,13 +1204,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </properties>
 
 ', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('old_town_traffic_pass', 'servizi_online', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Limited Traffic Zone Pass</property>
-<property key="it">Pass ZTL</property>
-</properties>
-
-', 'free', 1, NULL);
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('old_town_traffic_pass_int', 'old_town_traffic_pass', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Limited Traffic Zone Pass</property>
@@ -1379,18 +1218,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </properties>
 
 ', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
-<config>
-  <useextratitles>true</useextratitles>
-</config>
-
-');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('deliberaview', 'delibere', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Decision Details</property>
-<property key="it">Dettaglio della delibera</property>
-</properties>
-
-', 'free', 0, '<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>true</useextratitles>
 </config>
@@ -1420,22 +1247,204 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere_consiglio', 'delibere', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('municipality', 'homepage', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Council decisions</property>
-<property key="it">Delibere di Consiglio</property>
+<property key="en">Municipality</property>
+<property key="it">Il Comune</property>
 </properties>
 
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mayor', 'municipality', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Mayor</property>
+<property key="it">Sindaco</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('council', 'municipality', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Council</property>
+<property key="it">Giunta Comunale</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('municipal_council', 'municipality', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Municipal Council</property>
+<property key="it">Consiglio Comunale</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('statute', 'municipality', 4, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Statute</property>
+<property key="it">Statuto</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('contact', 'homepage', 5, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Contact</property>
+<property key="it">Contatti</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('pr', 'contact', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Public Relations Office</property>
+<property key="it">URP - Ufficio Relazioni con il Pubblico</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('transparency', 'homepage', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Information</property>
+<property key="it">Trasparenza</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('online_services', 'homepage', 4, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Online Services</property>
+<property key="it">Servizi Online</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('old_town_traffic_pass', 'online_services', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Limited Traffic Zone Pass</property>
+<property key="it">Pass ZTL</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_municipality', 'mobile_home', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Council</property>
+<property key="it">Il Comune</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_mayor', 'mobile_municipality', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Mayor</property>
+<property key="it">Sindaco</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_council', 'mobile_municipality', 2, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Council</property>
+<property key="it">Giunta Comunale</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_municipal_council', 'mobile_municipality', 3, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Municipal Council</property>
+<property key="it">Consiglio Comunale</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_transparency', 'mobile_home', 2, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Information</property>
+<property key="it">Trasparenza</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_news', 'mobile_transparency', 1, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News</property>
+<property key="it">Notizie</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_decisions', 'mobile_transparency', 2, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Decision</property>
+<property key="it">Delibere</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('mobile_announcements', 'mobile_transparency', 3, 'mobile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Announcements</property>
+<property key="it">Bandi</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('forms', 'online_services', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Documents</property>
+<property key="it">Modulistica</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('self_certifications', 'online_services', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Self Certification</property>
+<property key="it">Certificazioni</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('news', 'transparency', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News</property>
+<property key="it">Notizie</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('decisions', 'transparency', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Decisions</property>
+<property key="it">Delibere</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('announcements', 'transparency', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Announcements</property>
+<property key="it">Bandi</property>
+</properties>
+
+', 'free', 1, NULL);
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('decisionview', 'decisions', 1, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Decision Details</property>
+<property key="it">Dettaglio della delibera</property>
+</properties>
+
+', 'free', 0, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>true</useextratitles>
+</config>
+
+');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('council_decisions', 'decisions', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Council Decisions</property>
+<property key="it">Delibere di Giunta</property>
+</properties>
 ', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('delibere_giunta', 'delibere', 2, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('municipal_council_decisions', 'decisions', 3, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Giunta Decisions</property>
-<property key="it">Delibere di Giunta</property>
+<property key="en">Municipal Council Decisions</property>
+<property key="it">Delibere di Consiglio</property>
+</properties>', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('apis', 'online_services', 4, 'internal', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">APIs</property>
+<property key="it">APIs</property>
 </properties>
 
 ', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
@@ -1447,7 +1456,7 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 
 
 --
--- TOC entry 1847 (class 0 OID 144954)
+-- TOC entry 1847 (class 0 OID 582481)
 -- Dependencies: 135
 -- Data for Name: resourcerelations; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1455,7 +1464,7 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 
 
 --
--- TOC entry 1848 (class 0 OID 144957)
+-- TOC entry 1848 (class 0 OID 582484)
 -- Dependencies: 136
 -- Data for Name: resources; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1526,7 +1535,7 @@ INSERT INTO resources (resid, restype, descr, maingroup, resourcexml, masterfile
 
 
 --
--- TOC entry 1849 (class 0 OID 144963)
+-- TOC entry 1849 (class 0 OID 582490)
 -- Dependencies: 137
 -- Data for Name: showletcatalog; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1627,24 +1636,34 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 	<parameter name="linkDescr_{lang}">Link description in lang {lang}</parameter>
 	<action name="listViewerConfig"/>
 </config>', 'jacms', NULL, NULL, 1, NULL);
-INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('bandi_latest', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Announcements - Latest Announcements</property>
-<property key="it">Bandi - Ultimi Bandi</property>
-</properties>
-
-', NULL, NULL, NULL, NULL, 1, 'free');
-INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('delibere_latest', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('decisions_latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Decisions - Latest Decisions</property>
 <property key="it">Delibere - Ultime Delibere</property>
 </properties>
 
 ', NULL, NULL, NULL, NULL, 1, 'free');
+INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('announcements_latest', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Announcements - Latest Announcements</property>
+<property key="it">Bandi - Ultimi Bandi</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 1, 'free');
+INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando_apis', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">APIs</property>
+<property key="it">APIs</property>
+</properties>
+', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="actionPath">/ExtStr2/do/Front/Api/Resource/list.action</property>
+</properties>
+', 1, 'free');
 
 
 --
--- TOC entry 1850 (class 0 OID 144969)
+-- TOC entry 1850 (class 0 OID 582496)
 -- Dependencies: 138
 -- Data for Name: showletconfig; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -1659,199 +1678,153 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('search_result', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 1, 'search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 9, 'bandi_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 10, 'delibere_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 10, 'decisions_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 1, 'search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 2, 'navigation_breadcrumbs', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('search_result', 6, 'search_result', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG12</property>
-</properties>
-
-', 'CNG12');
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG17</property>
-</properties>
-
-', 'CNG17');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('giunta_comunale', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('giunta_comunale', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('giunta_comunale', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('giunta_comunale', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG18</property>
-</properties>
-
-', 'CNG18');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('giunta_comunale', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('consiglio_comunale', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('consiglio_comunale', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('consiglio_comunale', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('consiglio_comunale', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG19</property>
-</properties>
-
-', 'CNG19');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('consiglio_comunale', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statuto', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statuto', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statuto', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statuto', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG20</property>
-</properties>
-
-', 'CNG20');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statuto', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG11</property>
-</properties>
-
-', 'CNG11');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">1</property>
-<property key="contentId">CNG13</property>
-</properties>
-
-', 'CNG13');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(delibere).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 2, 'navigation_breadcrumbs', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(2)</property>
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_contentview', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_contentview', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_contentview', 2, 'content_viewer', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="modelId">1</property>
-<property key="contentId">CNG14</property>
+<property key="contentId">CNG18</property>
 </properties>
 
-', 'CNG14');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+', 'CNG18');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="modelId">1</property>
+<property key="contentId">CNG19</property>
+</properties>
+
+', 'CNG19');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="modelId">1</property>
+<property key="contentId">CNG20</property>
+</properties>
+
+', 'CNG20');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('pr', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('pr', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('pr', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('pr', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentId">CNG49</property>
 </properties>
 
 ', 'CNG49');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('pr', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_mayor', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_mayor', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_mayor', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG17</property>
+</properties>
+
+', 'CNG17');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_council', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_council', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_council', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG18</property>
+</properties>
+
+', 'CNG18');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_municipal_council', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_municipal_council', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_municipal_council', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG19</property>
+</properties>
+
+', 'CNG19');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_news', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_news', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_decisions', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_decisions', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_announcements', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_announcements', 1, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="modelId">1</property>
 <property key="contentId">CNG14</property>
 </properties>
 
 ', 'CNG14');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_sindaco', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_sindaco', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_giunta_comunale', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_giunta_comunale', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_consiglio_comunale', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_consiglio_comunale', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_notizie', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_notizie', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_delibere', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_delibere', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_bandi', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_bandi', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_sindaco', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG17</property>
-</properties>
-
-', 'CNG17');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_giunta_comunale', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG18</property>
-</properties>
-
-', 'CNG18');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_consiglio_comunale', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG19</property>
-</properties>
-
-', 'CNG19');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_contentview', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_contentview', 1, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_contentview', 2, 'content_viewer', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_notizie', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="modelId">1</property>
-<property key="contentId">CNG53</property>
+<property key="contentId">CNG12</property>
 </properties>
 
-', 'CNG53');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_delibere', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+', 'CNG12');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="modelId">1</property>
-<property key="contentId">CNG54</property>
+<property key="contentId">CNG13</property>
 </properties>
 
-', 'CNG54');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_delibere', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+', 'CNG13');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="maxElemForItem">5</property>
-<property key="modelId">32</property>
-<property key="contentType">DLB</property>
+<property key="navSpec">code(delibere).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_bandi', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="modelId">1</property>
-<property key="contentId">CNG55</property>
+<property key="contentId">CNG11</property>
 </properties>
 
-', 'CNG55');
+', 'CNG11');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisionview', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisionview', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisionview', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisionview', 6, 'content_viewer', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 6, 'messages_system', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 6, 'messages_system', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('simview', 0, 'language_choose', NULL, NULL);
@@ -1862,13 +1835,8 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 1, 'search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('sindaco', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('giunta_comunale', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisionview', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisionview', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(2)</property>
 </properties>
@@ -1884,48 +1852,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', 'CNG15');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('consiglio_comunale', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statuto', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('urp', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(2)</property>
@@ -1933,24 +1859,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 
 ', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 7, 'card_list', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_bandi', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">5</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
-<property key="modelId">42</property>
-<property key="contentType">BND</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_notizie', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">5</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
-<property key="modelId">22</property>
-<property key="contentType">NEW</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass_int', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass_int', 1, 'search_form', NULL, NULL);
@@ -1989,27 +1897,102 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('newsview', 2, 'navigation_breadcrumbs', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('newsview', 6, 'content_viewer', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('newsview', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('deliberaview', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('deliberaview', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('deliberaview', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('deliberaview', 6, 'content_viewer', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('deliberaview', 12, 'news_latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandoview', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandoview', 1, 'search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandoview', 2, 'navigation_breadcrumbs', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandoview', 6, 'content_viewer', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandoview', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('deliberaview', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('rssview', 0, 'language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('rssview', 1, 'search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('rssview', 2, 'navigation_breadcrumbs', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('rssview', 6, 'content_viewer', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('rssview', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('pr', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_news', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="modelId">1</property>
+<property key="contentId">CNG53</property>
+</properties>
+
+', 'CNG53');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_decisions', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="modelId">1</property>
+<property key="contentId">CNG54</property>
+</properties>
+
+', 'CNG54');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_decisions', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">5</property>
+<property key="modelId">32</property>
+<property key="contentType">DLB</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_announcements', 2, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="modelId">1</property>
+<property key="contentId">CNG55</property>
+</properties>
+
+', 'CNG55');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_announcements', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">5</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
+<property key="modelId">42</property>
+<property key="contentType">BND</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentId">CNG256</property>
@@ -2032,12 +2015,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 
 ', 'CNG173');
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('simview', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(2)</property>
 </properties>
@@ -2109,35 +2086,19 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Number)+(attributeFilter=false;key=category)+(attributeFilter=true;key=Date)</property>
-<property key="filters">(attributeFilter=true;order=DESC;key=Number)+(order=DESC;attributeFilter=true;key=Date)</property>
-<property key="contentType">DLB</property>
-<property key="modelId">31</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notizie', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Date;type=attribute)</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
-<property key="contentType">NEW</property>
-<property key="modelId">21</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_home', 2, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(mobile_comune).subtree(1) + code(mobile_trasparenza).subtree(1)</property>
+<property key="navSpec">code(mobile_municipality).subtree(1) + code(mobile_transparency).subtree(1)</property>
+</properties>', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 6, 'login_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 11, 'login_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 6, 'login_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 11, 'login_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('autocertificazioni', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="maxElemForItem">15</property>
 <property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
@@ -2147,7 +2108,27 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('bandi', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Date;type=attribute)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="contentType">NEW</property>
+<property key="modelId">21</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Number)+(attributeFilter=false;key=category)+(attributeFilter=true;key=Date)</property>
+<property key="filters">(attributeFilter=true;order=DESC;key=Number)+(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="contentType">DLB</property>
+<property key="modelId">31</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="maxElemForItem">15</property>
 <property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=StartDate)+(attributeFilter=true;key=EndDate)</property>
@@ -2157,7 +2138,63 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('moduli', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG29</property>
+</properties>
+
+', 'CNG29');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(decisions).subtree(1)</property>
+</properties>', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG17</property>
+</properties>
+
+', 'CNG17');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mobile_news', 3, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">5</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="modelId">22</property>
+<property key="contentType">NEW</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('forms', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="maxElemForItem">15</property>
 <property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
@@ -2167,55 +2204,22 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
+<property key="modelId">1</property>
+<property key="contentId">CNG14</property>
 </properties>
 
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG29</property>
-</properties>
-
-', 'CNG29');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="category">delibere_di_consiglio</property>
-<property key="filters">(order=ASC;attributeFilter=false;key=created)</property>
-<property key="contentType">DLB</property>
-<property key="modelId">31</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(delibere).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_consiglio', 12, 'news_latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 0, 'language_choose', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 1, 'search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 2, 'navigation_breadcrumbs', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage).subtree(2)</property>
-</properties>
-
-', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+', 'CNG14');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('decisions', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 6, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentId">CNG28</property>
 <property key="modelId">1</property>
 </properties>
 
 ', 'CNG28');
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="maxElemForItem">10</property>
 <property key="category">delibere_di_giunta</property>
@@ -2225,21 +2229,95 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 11, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(delibere).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('delibere_giunta', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council_decisions', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council_decisions', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="category">delibere_di_consiglio</property>
+<property key="filters">(order=ASC;attributeFilter=false;key=created)</property>
+<property key="contentType">DLB</property>
+<property key="modelId">31</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 9, 'announcements_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('apis', 0, 'language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('apis', 1, 'search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('apis', 2, 'navigation_breadcrumbs', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('apis', 3, 'navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(2)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('apis', 12, 'news_latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('apis', 6, 'entando_apis', NULL, NULL);
 
 
 --
--- TOC entry 1851 (class 0 OID 144975)
+-- TOC entry 1851 (class 0 OID 582502)
 -- Dependencies: 139
 -- Data for Name: sysconfig; Type: TABLE DATA; Schema: public; Owner: agile
 --
 
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'imageDimensions', 'Definition of the resized image dimensions', '<Dimensions>
+	<Dimension>
+		<id>1</id>
+		<dimx>90</dimx>
+		<dimy>90</dimy>
+	</Dimension>
+	<Dimension>
+		<id>2</id>
+		<dimx>130</dimx>
+		<dimy>130</dimy>
+	</Dimension>
+	<Dimension>
+		<id>3</id>
+		<dimx>150</dimx>
+		<dimy>150</dimy>
+	</Dimension>
+</Dimensions>');
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'langs', 'Definition of the system languages', '<?xml version="1.0" encoding="UTF-8"?>
+<Langs>
+  <Lang>
+    <code>it</code>
+    <descr>Italiano</descr>
+    <default>false</default>
+  </Lang>
+  <Lang>
+    <code>en</code>
+    <descr>English</descr>
+    <default>true</default>
+  </Lang>
+</Langs>
+
+');
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'params', 'Configuration params. Tags other than "Param" are ignored', '<?xml version="1.0" encoding="UTF-8"?>
+<Params>
+	<Param name="urlStyle">classic</Param>
+	<Param name="hypertextEditor">fckeditor</Param>
+	<Param name="treeStyle_page">classic</Param>
+	<Param name="treeStyle_category">classic</Param>
+	<Param name="startLangFromBrowser">false</Param>
+	<SpecialPages>
+		<Param name="notFoundPageCode">notfound</Param>
+		<Param name="homePageCode">homepage</Param>
+		<Param name="errorPageCode">errorpage</Param>
+		<Param name="loginPageCode">login</Param>
+	</SpecialPages>
+	<ExtendendPrivacyModule>
+		<Param name="extendedPrivacyModuleEnabled">false</Param>
+		<Param name="maxMonthsSinceLastAccess">6</Param>
+		<Param name="maxMonthsSinceLastPasswordChange">3</Param>        
+	</ExtendendPrivacyModule>
+</Params>');
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'indexdir');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'contentTypes', 'Definition of the Content Types', '<?xml version="1.0" encoding="UTF-8"?>
 <contenttypes>
 	<contenttype typecode="BND" typedescr="Announcement" viewpage="bandoview" listmodel="41" defaultmodel="4">
@@ -2310,7 +2388,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'cont
 			</list>
 		</attributes>
 	</contenttype>
-	<contenttype typecode="DLB" typedescr="Decision" viewpage="deliberaview" listmodel="31" defaultmodel="3">
+	<contenttype typecode="DLB" typedescr="Decision" viewpage="decisionview" listmodel="31" defaultmodel="3">
 		<attributes>
 			<attribute name="Number" attributetype="Number" searcheable="true" indexingtype="number">
 				<validations>
@@ -2397,65 +2475,11 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'cont
 			</list>
 		</attributes>
 	</contenttype>
-</contenttypes>
-
-');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'imageDimensions', 'Definition of the resized image dimensions', '<Dimensions>
-	<Dimension>
-		<id>1</id>
-		<dimx>90</dimx>
-		<dimy>90</dimy>
-	</Dimension>
-	<Dimension>
-		<id>2</id>
-		<dimx>130</dimx>
-		<dimy>130</dimy>
-	</Dimension>
-	<Dimension>
-		<id>3</id>
-		<dimx>150</dimx>
-		<dimy>150</dimy>
-	</Dimension>
-</Dimensions>');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'langs', 'Definition of the system languages', '<?xml version="1.0" encoding="UTF-8"?>
-<Langs>
-  <Lang>
-    <code>it</code>
-    <descr>Italiano</descr>
-    <default>false</default>
-  </Lang>
-  <Lang>
-    <code>en</code>
-    <descr>English</descr>
-    <default>true</default>
-  </Lang>
-</Langs>
-
-');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'params', 'Configuration params. Tags other than "Param" are ignored', '<?xml version="1.0" encoding="UTF-8"?>
-<Params>
-	<Param name="urlStyle">classic</Param>
-	<Param name="hypertextEditor">fckeditor</Param>
-	<Param name="treeStyle_page">classic</Param>
-	<Param name="treeStyle_category">classic</Param>
-	<Param name="startLangFromBrowser">false</Param>
-	<SpecialPages>
-		<Param name="notFoundPageCode">notfound</Param>
-		<Param name="homePageCode">homepage</Param>
-		<Param name="errorPageCode">errorpage</Param>
-		<Param name="loginPageCode">login</Param>
-	</SpecialPages>
-	<ExtendendPrivacyModule>
-		<Param name="extendedPrivacyModuleEnabled">false</Param>
-		<Param name="maxMonthsSinceLastAccess">6</Param>
-		<Param name="maxMonthsSinceLastPasswordChange">3</Param>        
-	</ExtendendPrivacyModule>
-</Params>');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'indexdir');
+</contenttypes>');
 
 
 --
--- TOC entry 1852 (class 0 OID 144981)
+-- TOC entry 1852 (class 0 OID 582508)
 -- Dependencies: 140
 -- Data for Name: uniquekeys; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -2464,112 +2488,7 @@ INSERT INTO uniquekeys (id, keyvalue) VALUES (1, 260);
 
 
 --
--- TOC entry 1853 (class 0 OID 144984)
--- Dependencies: 141
--- Data for Name: workcontentrelations; Type: TABLE DATA; Schema: public; Owner: agile
---
-
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB4', 'delibere');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB4', 'delibere_di_giunta');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB30', 'delibere');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB30', 'delibere_di_consiglio');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'delibere');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'moduli');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'delibere_di_giunta');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB36', 'delibere');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB36', 'delibere_di_consiglio');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'tributi');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'moduli');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'autocertificazioni');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'autocertificazioni');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'scheda_download');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'anagrafe');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'moduli');
-
-
---
--- TOC entry 1854 (class 0 OID 144987)
--- Dependencies: 142
--- Data for Name: workcontentsearch; Type: TABLE DATA; Schema: public; Owner: agile
---
-
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Date', NULL, '2011-11-21', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Date', NULL, '2011-06-15', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online the Mobile Portal', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online il Portale Mobile', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Date', NULL, '2011-10-21', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Ground Rent Contribution', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Contributo canone di locazione 2011', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Date', NULL, '2011-07-20', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Folk Music Festival', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Festival della canzone popolare', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Number', NULL, NULL, 133, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Date', NULL, '2011-09-20', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Number', NULL, NULL, 20, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Date', NULL, '2011-10-04', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Number', NULL, NULL, 120, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Date', NULL, '2011-07-01', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Number', NULL, NULL, 15, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Date', NULL, '2011-07-16', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statute', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statuto', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Application Service Example', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Esempio Servizio Applicativo', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG19', 'Title', 'Consiglio Comunale', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG54', 'Title', 'Delibere', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG55', 'Title', 'Bandi', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG53', 'Title', 'Notizie', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Title', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG28', 'Title', 'Elenco delle Delibere di Giunta presenti nel portale del Comune', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Mayor', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Sindaco', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'Public Relations Office', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'URP - Ufficio Relazioni con il Pubblico', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Documents Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Archivio Modulistica', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Announcements Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Archivio Bandi', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'News Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'Archivio Notizie', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Decisions Archive', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Archivio Delibere', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG2', 'Title', 'Lorem Ipsum dolor sit amet', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Mobile Area', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Area Mobile', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'How to sign in', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'Come loggarsi', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Council', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Giunta Comunale', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Web Accessibility', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Accessibilità', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'StartDate', NULL, '2011-02-01', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'EndDate', NULL, '2011-11-30', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'StartDate', NULL, '2011-02-28', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'EndDate', NULL, '2011-10-27', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'StartDate', NULL, '2011-03-03', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'EndDate', NULL, '2011-11-14', NULL, NULL);
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tax - Request ICI refund', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Residence Self-certification Form', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Modulo Autocertificazione Residenza', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Civil Status Self Certification Form', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Modulo Autocertificazione Stato Civile', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Registry - Request Identity Card valid for foreign travel', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Anagrafe - Richiesta Carta Identità valida per espatrio', NULL, NULL, 'it');
-
-
---
--- TOC entry 1841 (class 0 OID 144924)
+-- TOC entry 1841 (class 0 OID 582451)
 -- Dependencies: 129
 -- Data for Name: contentrelations; Type: TABLE DATA; Schema: public; Owner: agile
 --
@@ -2673,7 +2592,112 @@ INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refca
 INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('SDL42', NULL, NULL, '41', NULL, NULL);
 
 
--- Completed on 2012-03-09 22:35:53 CET
+--
+-- TOC entry 1853 (class 0 OID 582511)
+-- Dependencies: 141
+-- Data for Name: workcontentrelations; Type: TABLE DATA; Schema: public; Owner: agile
+--
+
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB4', 'delibere');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB4', 'delibere_di_giunta');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB30', 'delibere');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB30', 'delibere_di_consiglio');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'delibere');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'moduli');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB32', 'delibere_di_giunta');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB36', 'delibere');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLB36', 'delibere_di_consiglio');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'tributi');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL46', 'moduli');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL7', 'autocertificazioni');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL44', 'autocertificazioni');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'scheda_download');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'anagrafe');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('SDL42', 'moduli');
+
+
+--
+-- TOC entry 1854 (class 0 OID 582514)
+-- Dependencies: 142
+-- Data for Name: workcontentsearch; Type: TABLE DATA; Schema: public; Owner: agile
+--
+
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Date', NULL, '2011-11-21', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Date', NULL, '2011-06-15', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online the Mobile Portal', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW177', 'Title', 'Online il Portale Mobile', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Date', NULL, '2011-10-21', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Ground Rent Contribution', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW23', 'Title', 'Contributo canone di locazione 2011', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Date', NULL, '2011-07-20', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Folk Music Festival', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW27', 'Title', 'Festival della canzone popolare', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Number', NULL, NULL, 133, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB4', 'Date', NULL, '2011-09-20', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Number', NULL, NULL, 20, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB30', 'Date', NULL, '2011-10-04', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Number', NULL, NULL, 120, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB32', 'Date', NULL, '2011-07-01', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Number', NULL, NULL, 15, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('DLB36', 'Date', NULL, '2011-07-16', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statute', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statuto', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG16', 'Title', 'Internal Servlet', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Application Service Example', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG15', 'Title', 'Esempio Servizio Applicativo', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG19', 'Title', 'Consiglio Comunale', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG54', 'Title', 'Delibere', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG55', 'Title', 'Bandi', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG53', 'Title', 'Notizie', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Title', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG28', 'Title', 'Elenco delle Delibere di Giunta presenti nel portale del Comune', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Mayor', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG17', 'Title', 'Sindaco', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'Public Relations Office', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG49', 'Title', 'URP - Ufficio Relazioni con il Pubblico', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Documents Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Archivio Modulistica', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Announcements Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG11', 'Title', 'Archivio Bandi', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'News Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG12', 'Title', 'Archivio Notizie', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Decisions Archive', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG13', 'Title', 'Archivio Delibere', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG2', 'Title', 'Lorem Ipsum dolor sit amet', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Mobile Area', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Area Mobile', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'How to sign in', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG256', 'Title', 'Come loggarsi', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Council', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG18', 'Title', 'Giunta Comunale', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Web Accessibility', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG173', 'Title', 'Accessibilità', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'StartDate', NULL, '2011-02-01', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND39', 'EndDate', NULL, '2011-11-30', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'StartDate', NULL, '2011-02-28', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND48', 'EndDate', NULL, '2011-10-27', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'StartDate', NULL, '2011-03-03', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('BND5', 'EndDate', NULL, '2011-11-14', NULL, NULL);
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tax - Request ICI refund', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL46', 'Title', 'Tributi - Richiesta rimborso ICI', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Residence Self-certification Form', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL7', 'Title', 'Modulo Autocertificazione Residenza', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Civil Status Self Certification Form', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL44', 'Title', 'Modulo Autocertificazione Stato Civile', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Registry - Request Identity Card valid for foreign travel', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('SDL42', 'Title', 'Anagrafe - Richiesta Carta Identità valida per espatrio', NULL, NULL, 'it');
+
+
+-- Completed on 2012-03-31 20:36:42 CEST
 
 --
 -- PostgreSQL database dump complete
