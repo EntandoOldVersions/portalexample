@@ -20,6 +20,8 @@ package org.entando.entando.portalexample.aps.system.services.card;
 import java.util.List;
 import java.util.Properties;
 
+import javax.ws.rs.core.Response;
+
 import org.entando.entando.aps.system.services.api.IApiErrorCodes;
 import org.entando.entando.aps.system.services.api.model.ApiException;
 
@@ -48,11 +50,11 @@ public class CardManager extends AbstractService implements ICardManager {
         try {
             id = Integer.parseInt(idString);
         } catch (NumberFormatException e) {
-            throw new ApiException(IApiErrorCodes.API_PARAMETER_VALIDATION_ERROR, "Invalid number format for 'id' parameter - '" + idString + "'");
+            throw new ApiException(IApiErrorCodes.API_PARAMETER_VALIDATION_ERROR, "Invalid number format for 'id' parameter - '" + idString + "'", Response.Status.CONFLICT);
         }
         Card card = this.getCard(id);
         if (null == card) {
-            throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id '" + idString + "' does not exist");
+            throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id '" + idString + "' does not exist", Response.Status.CONFLICT);
         }
         return card;
     }
@@ -92,7 +94,7 @@ public class CardManager extends AbstractService implements ICardManager {
     
     public void addCardForApi(Card card) throws ApiException, ApsSystemException {
         if (null != this.getCard(card.getId())) {
-            throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id " + card.getId() + " already exists");
+            throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id " + card.getId() + " already exists", Response.Status.CONFLICT);
         }
         this.addCard(card);
     }
@@ -108,7 +110,7 @@ public class CardManager extends AbstractService implements ICardManager {
     
     public void updateCardForApi(Card card) throws ApiException, ApsSystemException {
         if (null == this.getCard(card.getId())) {
-            throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id " + card.getId() + " does not exist");
+            throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id " + card.getId() + " does not exist", Response.Status.CONFLICT);
         }
         this.updateCard(card);
     }
@@ -128,7 +130,7 @@ public class CardManager extends AbstractService implements ICardManager {
         try {
             idInteger = Integer.parseInt(id);
         } catch (NumberFormatException e) {
-            throw new ApiException(IApiErrorCodes.API_PARAMETER_VALIDATION_ERROR, "Invalid number format for 'id' parameter - '" + id + "'");
+            throw new ApiException(IApiErrorCodes.API_PARAMETER_VALIDATION_ERROR, "Invalid number format for 'id' parameter - '" + id + "'", Response.Status.CONFLICT);
         }
         this.deleteCard(idInteger);
     }
