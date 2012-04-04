@@ -38,6 +38,7 @@ public class PortalexampleApsBaseTestCase extends ApsAdminBaseTestCase {
             "struts-default.xml," +
             "struts-plugin.xml," +
             "struts.xml," +
+			"entando-struts-plugin.xml," +
             "japs-struts-plugin.xml," +
             "portalexample-struts-plugin.xml");
     }
