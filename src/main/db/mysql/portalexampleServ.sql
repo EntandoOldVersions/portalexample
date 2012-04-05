@@ -306,7 +306,7 @@ CREATE TABLE `authusers` (
 
 LOCK TABLES `authusers` WRITE;
 /*!40000 ALTER TABLE `authusers` DISABLE KEYS */;
-INSERT INTO `authusers` VALUES ('admin','adminadmin','2008-10-10','2011-06-02',NULL,1);
+INSERT INTO `authusers` VALUES ('admin','adminadmin','2008-10-10','2012-04-05',NULL,1);
 /*!40000 ALTER TABLE `authusers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,4 +343,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-03-15 10:53:30
+-- Dump completed on 2012-04-05 14:55:22
