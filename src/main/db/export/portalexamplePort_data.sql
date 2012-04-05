@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Started on 2012-04-05 16:02:35 CEST
+-- Started on 2012-04-05 16:59:01 CEST
 
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = off;
@@ -358,9 +358,9 @@ INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refca
 INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG173', NULL, NULL, '174', NULL, NULL);
 INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, NULL, NULL, NULL, 'free');
 INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('NEW177', NULL, 'CNG51', NULL, NULL, NULL);
+INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG146', NULL, NULL, NULL, NULL, 'free');
 INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG29', NULL, NULL, NULL, NULL, 'free');
 INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG14', NULL, NULL, NULL, NULL, 'free');
-INSERT INTO contentrelations (contentid, refpage, refcontent, refresource, refcategory, refgroup) VALUES ('CNG146', NULL, NULL, NULL, NULL, 'free');
 
 
 --
@@ -746,31 +746,6 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	Examination and approval of Villamarina Balance Sheet 2011</p>
 ]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="34" lang="it" /><resource resourcetype="Attach" id="34" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Decision 20</text></attribute></list></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20090721192612</created><lastModified>20120405143811</lastModified></content>
 ', 'free', '5.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG146', 'CNG', 'ePartecipation', 'DRAFT', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG146" typecode="CNG" typedescr="Contenuto generico"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
-&#xD;
-Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</text><text lang="en">Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.&#xD;
-&#xD;
-eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
-<p>Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</p>
-<p>Il portale implementa il paradigma di partecipazione e collaborazione alla conoscenza e alla condivisione delle informazioni attraverso strumenti fortemente interattivi e accessibili. La piattaforma jAPS&nbsp; consente inoltre di erogare i servizi secondo una logica multicanale e multi-dispositivo e facilitare l&rsquo;accesso ai dati e alle informazioni.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.</p>
-<p>eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to  understand and follow through the use of new Information and Communication Technologies (ICTs).</p>
-<p><br />
-The portal implements the paradigm of participation and collaboration to knowledge and information sharing through highly interactive and accessible services.</p>
-<p>&nbsp;</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status><version>3.0</version></content>
-', '20110119121846', '20110128102040', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG146" typecode="CNG" typedescr="Contenuto generico"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
-&#xD;
-Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</text><text lang="en">Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.&#xD;
-&#xD;
-eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
-<p>Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</p>
-<p>Il portale implementa il paradigma di partecipazione e collaborazione alla conoscenza e alla condivisione delle informazioni attraverso strumenti fortemente interattivi e accessibili. La piattaforma jAPS&nbsp; consente inoltre di erogare i servizi secondo una logica multicanale e multi-dispositivo e facilitare l&rsquo;accesso ai dati e alle informazioni.</p>]]></hypertext><hypertext lang="en"><![CDATA[<p>Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.</p>
-<p>eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to  understand and follow through the use of new Information and Communication Technologies (ICTs).</p>
-<p><br />
-The portal implements the paradigm of participation and collaboration to knowledge and information sharing through highly interactive and accessible services.</p>
-<p>&nbsp;</p>]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>DRAFT</status><version>3.0</version></content>
-', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('DLB32', 'DLB', 'Decision 120', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="DLB32" typecode="DLB" typedescr="Decision"><descr>Decision 120</descr><groups mainGroup="free" /><categories><category id="delibere_di_giunta" /><category id="moduli" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20110701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
@@ -1186,6 +1161,47 @@ More specifically, Web accessibility means that people with disabilities can per
 	The Portal is compatible with <strong>accessibility international standards</strong> like WCAG 2.0 and specific governments laws allowing <strong>citizen eParticipation</strong>.</p>
 ]]></hypertext></attribute><attribute name="Image_1" attributetype="Image"><resource resourcetype="Image" id="174" lang="en" /><text lang="it">Portale Villamarina</text><text lang="en">Villamarina Portal</text></attribute><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>8.0</version><lastEditor>admin</lastEditor><created>20110118173705</created><lastModified>20120405144230</lastModified></content>
 ', 'free', '8.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG146', 'CNG', 'ePartecipation', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG146" typecode="CNG" typedescr="Generic content"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
+&#xD;
+Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</text><text lang="en">Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.&#xD;
+&#xD;
+eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
+<p>
+	Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</p>
+<p>
+	Il portale implementa il paradigma di partecipazione e collaborazione alla conoscenza e alla condivisione delle informazioni attraverso strumenti fortemente interattivi e accessibili. La piattaforma Entando &nbsp;consente inoltre di erogare i servizi secondo una logica multicanale e multi-dispositivo e facilitare l&rsquo;accesso ai dati e alle informazioni.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.</p>
+<p>
+	eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</p>
+<p>
+	The portal implements the paradigm of participation and collaboration to knowledge and information sharing through highly interactive and accessible services.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>4.0</version><lastEditor>admin</lastEditor><created>20110119121846</created><lastModified>20120405165554</lastModified></content>
+', '20110119121846', '20120405165554', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG146" typecode="CNG" typedescr="Generic content"><descr>ePartecipation</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">ePartecipation</text><text lang="en">ePartecipation</text></attribute><attribute name="Abstract" attributetype="Longtext"><text lang="it">Il paradigma del Web 2.0 introduce le basi per una nuova modalità di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.&#xD;
+&#xD;
+Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</text><text lang="en">Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.&#xD;
+&#xD;
+eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</text></attribute><attribute name="TextBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Il paradigma del Web 2.0 introduce le basi per una nuova modalit&agrave; di partecipazione alla vita pubblica e di collaborazione tra gli utenti del web.</p>
+<p>
+	Gli strumenti di e-Participation e e-Collaboration diventano il mezzo attraverso cui rafforzare il grado di coinvolgimento dei cittadini e di interazione tra gli utenti anche nelle fasi che concorrono a determinare i processi decisionali della vita sociale.</p>
+<p>
+	Il portale implementa il paradigma di partecipazione e collaborazione alla conoscenza e alla condivisione delle informazioni attraverso strumenti fortemente interattivi e accessibili. La piattaforma Entando &nbsp;consente inoltre di erogare i servizi secondo una logica multicanale e multi-dispositivo e facilitare l&rsquo;accesso ai dati e alle informazioni.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Participation has become a highly political issue over the last few years, and that eParticipation is seen as a major factor in this development.</p>
+<p>
+	eParticipation is about reconnecting ordinary people with politics and policy-making and making the decision-making processes easier to understand and follow through the use of new Information and Communication Technologies (ICTs).</p>
+<p>
+	The portal implements the paradigm of participation and collaboration to knowledge and information sharing through highly interactive and accessible services.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext></attribute><attribute name="Image_1" attributetype="Image" /><attribute name="Image_2" attributetype="Image" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>4.0</version><lastEditor>admin</lastEditor><created>20110119121846</created><lastModified>20120405165554</lastModified></content>
+', 'free', '4.0', 'admin');
 
 
 --
@@ -1204,6 +1220,8 @@ INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, 
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Date', NULL, '2011-11-21', NULL, NULL);
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
+INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Mobile Area', NULL, NULL, 'en');
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Area Mobile', NULL, NULL, 'it');
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statute', NULL, NULL, 'en');
@@ -1265,8 +1283,6 @@ INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, 
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Title', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Documents Archive', NULL, NULL, 'en');
 INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Archivio Modulistica', NULL, NULL, 'it');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
-INSERT INTO contentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
 
 
 --
@@ -3120,6 +3136,8 @@ INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numval
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Date', NULL, '2011-11-21', NULL, NULL);
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online the Portal of Villamarina Municipality', NULL, NULL, 'en');
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('NEW3', 'Title', 'Online il Portale del Comune di Villamarina', NULL, NULL, 'it');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
+INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Mobile Area', NULL, NULL, 'en');
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG51', 'Title', 'Area Mobile', NULL, NULL, 'it');
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG20', 'Title', 'Statute', NULL, NULL, 'en');
@@ -3181,11 +3199,9 @@ INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numval
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG29', 'Title', 'Elenco delle Delibere di Consiglio presenti nel portale del Comune', NULL, NULL, 'it');
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Documents Archive', NULL, NULL, 'en');
 INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG14', 'Title', 'Archivio Modulistica', NULL, NULL, 'it');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'en');
-INSERT INTO workcontentsearch (contentid, attrname, textvalue, datevalue, numvalue, langcode) VALUES ('CNG146', 'Title', 'ePartecipation', NULL, NULL, 'it');
 
 
--- Completed on 2012-04-05 16:02:35 CEST
+-- Completed on 2012-04-05 16:59:01 CEST
 
 --
 -- PostgreSQL database dump complete
