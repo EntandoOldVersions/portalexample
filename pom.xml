@@ -151,7 +151,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>2.4</version>
 				<configuration>
 					<target>1.6</target>
 					<source>1.6</source>
@@ -362,7 +362,25 @@
 								</resource>
 							</resources>
 						</configuration>
-					</execution>					
+					</execution>
+					<execution>
+						<id>copy-resources-standalone</id>
+						<!-- here the phase you need -->
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/standalone</outputDirectory>
+							<encoding>UTF-8</encoding>
+							<resources>
+								<resource>
+									<directory>src/main/config/standalone</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>									
 				</executions>
 			</plugin>
 			<plugin>
@@ -794,20 +812,21 @@
 					</execution>														
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.4.3</version>
-				<configuration>
-					<forkMode>pertest</forkMode>
-					<argLine>-Xms512m -Xmx1024m</argLine>
-					<testFailureIgnore>false</testFailureIgnore>
-					<excludes>
-						<exclude>**/*BaseTestCase*</exclude>
-					</excludes>
-					<!-- <includes> <include>**/AllTests.java</include> </includes -->
-				</configuration>
-			</plugin>
+                        <plugin>                                               
+                                <groupId>org.apache.maven.plugins</groupId>
+                                <artifactId>maven-surefire-plugin</artifactId>
+                                <version>2.12</version>
+                                <configuration>
+                                        <argLine>-Xms512m -Xmx1024m</argLine>
+                                        <testFailureIgnore>false</testFailureIgnore>
+                                        <excludes>
+                                                <exclude>**/*BaseTestCase*</exclude>
+                                        </excludes>
+                                        <includes>
+                                                <include>**/AllTests.java</include>
+                                        </includes>
+                                </configuration>
+                        </plugin>	
 			<!-- mvn jetty:run (with hot-redeploy) -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>

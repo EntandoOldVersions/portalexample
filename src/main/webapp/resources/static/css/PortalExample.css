@@ -23,7 +23,7 @@ h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 
-p, li {
+p, li, dl {
 	font-size: 0.85em;
 }
 
@@ -31,9 +31,17 @@ li li, li p, li h3 {
 	font-size: 1em;
 }
 
-p {
+dl {
+	margin: 0 0 0.5em 0;
+}
+
+p, dt {
 	margin: 0;
 	padding: 0.5em 0;
+}
+
+dd {
+	padding-bottom: 0.5em;
 }
 
 ul {

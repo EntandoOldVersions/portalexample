@@ -17,32 +17,19 @@
 */
 package org.entando.entando.portalexample.aps.system.services.card.api;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlElement;
 
-import javax.xml.bind.annotation.XmlSeeAlso;
 import org.entando.entando.aps.system.services.api.model.AbstractApiResponseResult;
-import org.entando.entando.aps.system.services.api.model.ListResponse;
 import org.entando.entando.portalexample.aps.system.services.card.Card;
 
 /**
  * @author E.Santoboni
  */
-@XmlSeeAlso({Card.class})
-public class CardsResponseResult extends AbstractApiResponseResult {
+public class CardResponseResult extends AbstractApiResponseResult {
     
-    @XmlElement(name = "items", required = false)
-    public ListResponse<Card> getResult() {
-        if (this.getMainResult() instanceof Collection) {
-            List<Card> cards = new ArrayList<Card>();
-            cards.addAll((Collection<Card>) this.getMainResult());
-            ListResponse<Card> entity = new ListResponse<Card>(cards) {};
-            return entity;
-        }
-        return null;
+    @XmlElement(name = "item", required = false)
+    public Card getResult() {
+        return (Card) this.getMainResult();
     }
     
 }

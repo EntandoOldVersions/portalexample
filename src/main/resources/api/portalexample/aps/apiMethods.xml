@@ -18,7 +18,7 @@
         <method httpMethod="GET" active="true" canSpawnOthers="true">
             <description>Return a card by id</description>
             <springBean name="CardManager" method="getCardForApi" />
-            <responseClass>org.entando.entando.portalexample.aps.system.services.card.api.CardsResponse</responseClass>
+            <responseClass>org.entando.entando.portalexample.aps.system.services.card.api.CardResponse</responseClass>
             <parameters>
                 <parameter key="id" required="true">
                     <description>The id of the card to return</description>
