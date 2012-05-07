@@ -5,7 +5,7 @@
 	<groupId>org.entando.entando</groupId>
 	<artifactId>portalexample</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>3.0.0</version>
 	<name>portalexample</name>
 	<url>http://maven.apache.org/</url>
 	<repositories>
@@ -97,7 +97,7 @@
 		<test.database.basename>entando-core-engine</test.database.basename>
 		<test.database.basepath>${project.build.directory}/test/sql</test.database.basepath>
 		<skipDerby>true</skipDerby>
-		<entando.version>3.0.0-SNAPSHOT</entando.version>
+		<entando.version>3.0.0</entando.version>
 	</properties>
 	<build>
 		<finalName>portalexample</finalName>
