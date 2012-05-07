@@ -68,16 +68,6 @@ INSERT INTO authpermissions (permissionname, descr) VALUES ('manageCategories', 
 INSERT INTO authpermissions (permissionname, descr) VALUES ('validateContents', 'Supervision of Contents');
 INSERT INTO authpermissions (permissionname, descr) VALUES ('editContents', 'Content Editing');
 
-
---
--- TOC entry 1800 (class 0 OID 17418355)
--- Dependencies: 1494
--- Data for Name: authrolepermissions; Type: TABLE DATA; Schema: public; Owner: agile
---
-
-INSERT INTO authrolepermissions (rolename, permissionname) VALUES ('admin', 'superuser');
-
-
 --
 -- TOC entry 1801 (class 0 OID 17418358)
 -- Dependencies: 1495
@@ -86,6 +76,13 @@ INSERT INTO authrolepermissions (rolename, permissionname) VALUES ('admin', 'sup
 
 INSERT INTO authroles (rolename, descr) VALUES ('admin', 'Administrator');
 
+--
+-- TOC entry 1800 (class 0 OID 17418355)
+-- Dependencies: 1494
+-- Data for Name: authrolepermissions; Type: TABLE DATA; Schema: public; Owner: agile
+--
+
+INSERT INTO authrolepermissions (rolename, permissionname) VALUES ('admin', 'superuser');
 
 --
 -- TOC entry 1802 (class 0 OID 17418361)
