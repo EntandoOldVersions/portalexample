@@ -1,16 +1,20 @@
 <apiMethodDefinitions>
     
-    <method name="getCards" active="true" canSpawnOthers="false">
+	<resource name="cards">
+        <description>Return the cards</description>
         <source>portalexample</source>
-        <description>Return the cards by holder</description>
-        <springBean name="CardManager" method="getCardsForApi" />
-        <responseClass>org.entando.entando.portalexample.aps.system.services.card.api.CardsResponse</responseClass>
-        <parameters>
-            <parameter key="holder" required="false">
-                <description>The holder</description>
-            </parameter>
-        </parameters>
-    </method>
+		<method httpMethod="GET" active="true" canSpawnOthers="false">
+			<source>portalexample</source>
+			<description>Return the cards by holder</description>
+			<springBean name="CardManager" method="getCardsForApi" />
+			<responseClass>org.entando.entando.portalexample.aps.system.services.card.api.CardsResponse</responseClass>
+			<parameters>
+				<parameter key="holder" required="false">
+					<description>The holder</description>
+				</parameter>
+			</parameters>
+		</method>
+	</resource>
     
     <resource name="card">
         <description>The card</description>
