@@ -98,6 +98,8 @@
 		<test.database.basepath>${project.build.directory}/test/sql</test.database.basepath>
 		<skipDerby>true</skipDerby>
 		<entando.version>3.0.1-SNAPSHOT</entando.version>
+		<spring.version>3.0.6.RELEASE</spring.version>
+		<struts2.version>2.3.4.1</struts2.version>
 	</properties>
 	<build>
 		<finalName>portalexample</finalName>
@@ -1010,7 +1012,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>3.0.6.RELEASE</version>
+			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
