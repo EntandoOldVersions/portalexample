@@ -10,17 +10,17 @@
 	-->
 	
 	<property name="webappname" value="portalexample" />
-
+	
 	<property name="postgres.hostname" value="localhost" />
 	<property name="postgres.port" value="5432" />
 	<property name="postgres.username" value="agile" />
 	<property name="postgres.password" value="agile" />
-
+	
 	<property name="mysql.hostname" value="localhost" />
 	<property name="mysql.port" value="3306" />
 	<property name="mysql.username" value="agile" />
 	<property name="mysql.password" value="agile" />
-
+	
 	<!-- Properties definitions for Windows machines START -->
 	<!--
 	<property name="tomcat.home.path" value="C:\\tomcat6" />
@@ -60,5 +60,11 @@
 	<property name="test.marker" value="" />
 	<property name="tomcat.deploy.path" location="${tomcat.home.path}/webapps" />
 	<property name="project.src.branch" value="main" />
+
+	<!-- List here all the tables of the *Port db, ordered the way you want them to be restored with referential integrity -->
+	<property name="db.backup.tables.port" value="categories, contentmodels, contents, contentsearch, localstrings, pagemodels, pages, resources, resourcerelations, contentrelations, showletcatalog, showletconfig, sysconfig, uniquekeys, workcontentrelations, workcontentsearch" />
+
+	<!-- List here all the tables of the *Serv db, ordered the way you want them to be restored with referential integrity -->
+	<property name="db.backup.tables.serv" value="api_oauth_consumers, api_oauth_tokens, authgroups, authpermissions, authroles, authrolepermissions, authusers, authuserroles, authusergroups, authusershortcuts, apicatalog_methods, apicatalog_services" />	
 
 </project>
