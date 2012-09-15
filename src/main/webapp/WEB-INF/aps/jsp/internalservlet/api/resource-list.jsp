@@ -51,12 +51,10 @@
 					<tr>
 						<th><wp:i18n key="ENTANDO_API_RESOURCE" /></th>
 						<th><wp:i18n key="ENTANDO_API_DESCRIPTION" /></th>
-						<%--
 						<th>GET</th>
 						<th>POST</th>
 						<th>PUT</th>
 						<th>DELETE</th>
-						--%>
 					</tr>
 				</s:if>
 				<tr>
@@ -71,8 +69,8 @@
 					<%-- DESCRIPTION --%>
 					<td><s:property value="#resourceVar.description" /></td>
 					<%-- GET --%>
-					<%-- <td class="icon">
-						<s:if test="#resourceVar.getMethod != null && #resourceVar.getMethod.active" >
+					<td class="icon">
+						<s:if test="#resourceVar.getMethod != null && #resourceVar.getMethod.active && (!#resourceVar.getMethod.hidden)" >
 							<s:if test="#resourceVar.getMethod.requiredPermission != null" ><s:set var="icon" value="#icon_lock" /><s:set var="title" value="#title_lock" /></s:if>
 							<s:elseif test="#resourceVar.getMethod.requiredAuth" ><s:set var="icon" value="#icon_auth" /><s:set var="title" value="#title_auth" /></s:elseif>
 							<s:else><s:set var="icon" value="#icon_free" /><s:set var="title" value="#title_free" /></s:else>
@@ -81,10 +79,10 @@
 							</a>
 						</s:if>
 						<s:else><abbr title="<wp:i18n key="ENTANDO_API_METHOD_STATUS_NA" />">&ndash;</abbr></s:else>
-					</td> --%>
+					</td> 
 					<%-- POST --%>
-					<%-- <td class="icon">
-						<s:if test="#resourceVar.postMethod != null && #resourceVar.postMethod.active" >
+					<td class="icon">
+						<s:if test="#resourceVar.postMethod != null && #resourceVar.postMethod.active && (!#resourceVar.postMethod.hidden)" >
 							<s:if test="#resourceVar.postMethod.requiredPermission != null" ><s:set var="icon" value="#icon_lock" /><s:set var="title" value="#title_lock" /></s:if>
 							<s:elseif test="#resourceVar.postMethod.requiredAuth" ><s:set var="icon" value="#icon_auth" /><s:set var="title" value="#title_auth" /></s:elseif>
 							<s:else><s:set var="icon" value="#icon_free" /><s:set var="title" value="#title_free" /></s:else>
@@ -93,10 +91,10 @@
 							</a>
 						</s:if>
 						<s:else><abbr title="<wp:i18n key="ENTANDO_API_METHOD_STATUS_NA" />">&ndash;</abbr></s:else>
-					</td> --%>
+					</td>
 					<%-- PUT --%>
-					<%-- <td class="icon">
-						<s:if test="#resourceVar.putMethod != null && #resourceVar.putMethod.active" >
+					<td class="icon">
+						<s:if test="#resourceVar.putMethod != null && #resourceVar.putMethod.active && (!#resourceVar.putMethod.hidden)" >
 							<s:if test="#resourceVar.putMethod.requiredPermission != null" ><s:set var="icon" value="#icon_lock" /><s:set var="title" value="#title_lock" /></s:if>
 							<s:elseif test="#resourceVar.putMethod.requiredAuth" ><s:set var="icon" value="#icon_auth" /><s:set var="title" value="#title_auth" /></s:elseif>
 							<s:else><s:set var="icon" value="#icon_free" /><s:set var="title" value="#title_free" /></s:else>
@@ -105,10 +103,10 @@
 							</a>
 						</s:if>
 						<s:else><abbr title="<wp:i18n key="ENTANDO_API_METHOD_STATUS_NA" />">&ndash;</abbr></s:else>
-					</td> --%>
+					</td>
 					<%-- DELETE --%>
-					<%-- <td class="icon">
-						<s:if test="#resourceVar.deleteMethod != null && #resourceVar.deleteMethod.active" >
+					<td class="icon">
+						<s:if test="#resourceVar.deleteMethod != null && #resourceVar.deleteMethod.active && (!#resourceVar.deleteMethod.hidden)" >
 							<s:if test="#resourceVar.deleteMethod.requiredPermission != null" ><s:set var="icon" value="#icon_lock" /><s:set var="title" value="#title_lock" /></s:if>
 							<s:elseif test="#resourceVar.deleteMethod.requiredAuth" ><s:set var="icon" value="#icon_auth" /><s:set var="title" value="#title_auth" /></s:elseif>
 							<s:else><s:set var="icon" value="#icon_free" /><s:set var="title" value="#title_free" /></s:else>
@@ -117,7 +115,7 @@
 							</a>
 						</s:if>
 						<s:else><abbr title="<wp:i18n key="ENTANDO_API_METHOD_STATUS_NA" />">&ndash;</abbr></s:else>
-					</td> --%>
+					</td>
 				</tr>
 			</s:iterator>
 		</table>

@@ -90,6 +90,7 @@
 		</profile>
 	</profiles>
 	<properties>
+		<test.database.driver>org.postgresql.Driver</test.database.driver>
 		<test.database.hostname>localhost</test.database.hostname>
 		<test.database.port>5432</test.database.port>
 		<test.database.username>agile</test.database.username>
@@ -349,6 +350,27 @@
 						</configuration>
 					</execution>
 					<execution>
+						<id>copy-resources-tld</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>src/main/webapp/WEB-INF</outputDirectory>
+							<encoding>UTF-8</encoding>
+							<resources>
+								<resource>
+									<directory>src/main/tld</directory>
+									<includes>
+										<include>**/*.tld</include>
+									</includes>                                 
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution> 
+					<execution>
 						<id>derby-copy-sql</id>
 						<phase>prepare-package</phase>
 						<goals>
@@ -382,7 +404,7 @@
 								</resource>
 							</resources>
 						</configuration>
-					</execution>									
+					</execution>					
 				</executions>
 			</plugin>
 			<plugin>
@@ -391,6 +413,7 @@
 				<version>1.6</version><!--$NO-MVN-MAN-VER$ -->
 				<executions>
 					<execution>
+						<id>prepare-derby-db</id>
 						<phase>prepare-package</phase>
 						<configuration>
 							<target>
@@ -482,6 +505,14 @@
 										<replaceregexp byline="true">
 										  <regexp pattern="DEFAULT ''::LONG VARCHAR NOT NULL"/>
 										  <substitution expression="NOT NULL WITH DEFAULT ''"/>
+										  <fileset dir="${project.build.directory}/derby/sql">
+										    <include name="*.sql"/>
+										  </fileset>
+										</replaceregexp>										
+										
+										<replaceregexp byline="true">
+										  <regexp pattern='"char",'/>
+										  <substitution expression="CHAR(2),"/>
 										  <fileset dir="${project.build.directory}/derby/sql">
 										    <include name="*.sql"/>
 										  </fileset>
@@ -814,7 +845,7 @@
 					</execution>														
 				</executions>
 			</plugin>
-                        <plugin>                                               
+                        <plugin>
                                 <groupId>org.apache.maven.plugins</groupId>
                                 <artifactId>maven-surefire-plugin</artifactId>
                                 <version>2.12</version>
@@ -828,7 +859,7 @@
                                                 <include>**/AllTests.java</include>
                                         </includes>
                                 </configuration>
-                        </plugin>	
+                        </plugin>
 			<!-- mvn jetty:run (with hot-redeploy) -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -865,7 +896,7 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.0-SNAPSHOT</version>
+				<version>2.0</version>
 				<executions>
 					<execution>
 						<id>tomcat-run</id>
@@ -889,6 +920,14 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<packagingExcludes>WEB-INF/**.tld</packagingExcludes>
+				</configuration>
 			</plugin>
 		</plugins>
 		<pluginManagement>

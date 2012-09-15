@@ -1,40 +1,23 @@
--- from 2.4.0.1 to 3.0
+ALTER TABLE apicatalog_methods ALTER authorizationrequired TYPE character varying(30);
+ALTER TABLE apicatalog_methods
+  ADD CONSTRAINT apicatalog_methods_authorizationrequired_fkey FOREIGN KEY (authorizationrequired)
+      REFERENCES authpermissions (permissionname);
 
-CREATE TABLE api_oauth_consumers
-(
-  consumerkey character varying(100) NOT NULL,
-  consumersecret character varying(100) NOT NULL,
-  description character varying(500) NOT NULL,
-  callbackurl character varying(500),
-  expirationdate date,
-  CONSTRAINT api_oauth_consumers_pkey PRIMARY KEY (consumerkey)
-);
+ALTER TABLE apicatalog_methods ADD COLUMN ishidden smallint;
 
-CREATE TABLE api_oauth_tokens
-(
-  accesstoken character(100) NOT NULL,
-  tokensecret character varying(100) NOT NULL,
-  consumerkey character varying(100) NOT NULL,
-  lastaccess date NOT NULL,
-  username character varying(40) NOT NULL,
-  CONSTRAINT api_oauth_tokens_pkey PRIMARY KEY (accesstoken)
-);
+ALTER TABLE apicatalog_services ADD COLUMN authenticationrequired smallint;
 
+ALTER TABLE apicatalog_services ADD COLUMN requiredpermission character varying(30);
+ALTER TABLE apicatalog_services
+  ADD CONSTRAINT apicatalog_services_requiredpermission_fkey FOREIGN KEY (requiredpermission)
+      REFERENCES authpermissions (permissionname);
 
-ALTER TABLE apicatalog_status RENAME method TO resource;
-ALTER TABLE apicatalog_status ADD COLUMN httpmethod character varying(6);
-UPDATE apicatalog_status SET httpmethod = 'GET';
-ALTER TABLE apicatalog_status ALTER COLUMN httpmethod SET NOT NULL;
-ALTER TABLE apicatalog_status ADD COLUMN isactive_temp smallint;
-UPDATE apicatalog_status SET isactive_temp = isactive;
-ALTER TABLE apicatalog_status DROP COLUMN isactive;
-ALTER TABLE apicatalog_status RENAME isactive_temp TO isactive;
-ALTER TABLE apicatalog_status DROP CONSTRAINT apicatalog_status_pkey;
-ALTER TABLE apicatalog_status
-  ADD CONSTRAINT apicatalog_status_pkey PRIMARY KEY(resource, httpmethod);
-ALTER TABLE apicatalog_status ADD COLUMN authenticationrequired smallint;
-ALTER TABLE apicatalog_status ADD COLUMN authorizationrequired character varying(100);
+ALTER TABLE apicatalog_services ADD COLUMN requiredgroup character varying(20);
+ALTER TABLE apicatalog_services
+  ADD CONSTRAINT apicatalog_services_requiredgroup_fkey FOREIGN KEY (requiredgroup)
+      REFERENCES authgroups (groupname);
 
-ALTER TABLE apicatalog_status RENAME TO apicatalog_methods;
-
-ALTER TABLE apicatalog_services RENAME parentapi TO resource;
+ALTER TABLE apicatalog_services ADD COLUMN ishidden smallint;
+UPDATE apicatalog_services SET ishidden = 1 WHERE ispublic = 0;
+UPDATE apicatalog_services SET ishidden = 0 WHERE ispublic = 1;
+ALTER TABLE apicatalog_services DROP COLUMN ispublic;
