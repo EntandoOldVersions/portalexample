@@ -33,6 +33,11 @@
 </s:if>
 <!-- DESCRIPTION -->
 <p><s:property value="#apiResourceVar.description" /></p>
+
+<s:if test='%{#apiResourceVar.resourceName.equalsIgnoreCase("getService") || #apiResourceVar.resourceName.equalsIgnoreCase("getServices")}' >
+<a href="<wp:action path="/ExtStr2/do/Front/Api/Service/list.action" />"><wp:i18n key="ENTANDO_API_GOTO_SERVICE_LIST" /></a>
+</s:if>
+
 <!-- INFO -->
 <dl class="api-info">
 	<dt><wp:i18n key="ENTANDO_API_RESOURCE_NAME" /></dt>
