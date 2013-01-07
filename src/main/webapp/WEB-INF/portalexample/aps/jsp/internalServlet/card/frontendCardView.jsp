@@ -9,7 +9,7 @@
 
 <p><span class="bolded"><wp:i18n key="CARD_NOTE" />:</span><br /><s:property value="note" /></p>
 
-<p><span class="bolded"><wp:i18n key="CARD_CREATION_DATE" />:</span><br /><s:property value="date" /></p>
+<p><span class="bolded"><wp:i18n key="CARD_CREATION_DATE" />:</span><br /><s:date name="date" format="dd/MM/yyyy" /></p>
 
 <p class="rightText">
 	<a href="<wp:action path="/ExtStr2/do/FrontEnd/Card/list.action" />"><wp:i18n key="BACK_TO_CARDS_LIST" /></a>

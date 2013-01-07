@@ -127,7 +127,7 @@ public class TestCardDAO extends PortalexampleBaseTestCase {
 	 */
 	private void init() {
 		DataSource dataSource = (DataSource) this.getApplicationContext().getBean("servDataSource");
-		DummyCardDAO cardDAO = new DummyCardDAO();
+		CardDAO cardDAO = new CardDAO();
 		cardDAO.setDataSource(dataSource);
 		this._cardDAO = cardDAO;
 	}

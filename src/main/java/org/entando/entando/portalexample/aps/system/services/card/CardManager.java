@@ -35,6 +35,7 @@ import com.agiletec.aps.system.exception.ApsSystemException;
  */
 public class CardManager extends AbstractService implements ICardManager {
     
+	@Override
     public void init() throws Exception {
         ApsSystemUtils.getLogger().config(this.getClass().getName() + ": initialized ");
     }
@@ -59,6 +60,7 @@ public class CardManager extends AbstractService implements ICardManager {
         return card;
     }
     
+	@Override
     public List<Card> getCards() throws ApsSystemException {
         List<Card> cards = null;
         try {
@@ -69,7 +71,8 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         return cards;
     }
-
+	
+	@Override
     public List<Card> searchCards(String holder) throws ApsSystemException {
         List<Card> cards = null;
         try {
@@ -80,7 +83,8 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         return cards;
     }
-
+	
+	@Override
     public Card getCard(Integer id) throws ApsSystemException {
         Card card = null;
         try {
@@ -99,6 +103,7 @@ public class CardManager extends AbstractService implements ICardManager {
         this.addCard(card);
     }
     
+	@Override
     public void addCard(Card card) throws ApsSystemException {
         try {
             this.getCardDAO().addCard(card);
@@ -115,6 +120,7 @@ public class CardManager extends AbstractService implements ICardManager {
         this.updateCard(card);
     }
     
+	@Override
     public void updateCard(Card card) throws ApsSystemException {
         try {
             this.getCardDAO().updateCard(card);
@@ -135,6 +141,7 @@ public class CardManager extends AbstractService implements ICardManager {
         this.deleteCard(idInteger);
     }
     
+	@Override
     public void deleteCard(Integer id) throws ApsSystemException {
         try {
             this.getCardDAO().deleteCard(id);

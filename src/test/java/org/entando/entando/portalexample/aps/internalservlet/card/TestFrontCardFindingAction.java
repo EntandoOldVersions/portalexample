@@ -20,7 +20,7 @@ package org.entando.entando.portalexample.aps.internalservlet.card;
 import com.opensymphony.xwork2.Action;
 import org.entando.entando.portalexample.aps.system.services.card.Card;
 import org.entando.entando.portalexample.apsadmin.PortalexampleApsBaseTestCase;
-import org.entando.entando.portalexample.apsadmin.card.ICardFinderAction;
+import org.entando.entando.portalexample.apsadmin.card.CardFinderAction;
 
 /**
  * @author E.Santoboni
@@ -31,7 +31,7 @@ public class TestFrontCardFindingAction extends PortalexampleApsBaseTestCase {
 		this.initAction("/do/FrontEnd/Card", "list");
 		String result = this.executeAction();
 		assertEquals(Action.SUCCESS, result);
-		ICardFinderAction action = (ICardFinderAction) this.getAction();
+		CardFinderAction action = (CardFinderAction) this.getAction();
 		assertEquals(4, action.getCards().size());
 	}
 	
@@ -40,7 +40,7 @@ public class TestFrontCardFindingAction extends PortalexampleApsBaseTestCase {
 		this.addParameter("holder", "Marco");
 		String result = this.executeAction();
 		assertEquals(Action.SUCCESS, result);
-		ICardFinderAction action = (ICardFinderAction) this.getAction();
+		CardFinderAction action = (CardFinderAction) this.getAction();
 		assertEquals(1, action.getCards().size());
 	}
 	
@@ -49,7 +49,7 @@ public class TestFrontCardFindingAction extends PortalexampleApsBaseTestCase {
 		this.addParameter("holder", "anc");
 		String result = this.executeAction();
 		assertEquals(Action.SUCCESS, result);
-		ICardFinderAction action = (ICardFinderAction) this.getAction();
+		CardFinderAction action = (CardFinderAction) this.getAction();
 		assertEquals(1, action.getCards().size());
 		Card card = action.getCards().get(0);
 		assertEquals("Bianchi Marco", card.getHolder());

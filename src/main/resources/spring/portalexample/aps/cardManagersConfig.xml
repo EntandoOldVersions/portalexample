@@ -10,7 +10,7 @@
 	<bean id="CardManager" class="org.entando.entando.portalexample.aps.system.services.card.CardManager" 
 			parent="abstractService" >
 		<property name="cardDAO" >
-			<bean class="org.entando.entando.portalexample.aps.system.services.card.DummyCardDAO">
+			<bean class="org.entando.entando.portalexample.aps.system.services.card.CardDAO">
 				<property name="dataSource" ref="servDataSource" />
 			</bean>
 		</property>
