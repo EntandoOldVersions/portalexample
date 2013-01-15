@@ -76,7 +76,7 @@
 			<properties>
 				<env>exewar</env>
 			</properties>
-		</profile>		
+		</profile>
 		<profile>
 			<id>windows</id>
 			<activation>
@@ -90,7 +90,7 @@
 		</profile>
 	</profiles>
 	<properties>
-		
+
 		<!--
 		<test.database.driver>org.postgresql.Driver</test.database.driver>
 		<test.database.hostname>localhost</test.database.hostname>
@@ -109,7 +109,7 @@
 		<test.database.port.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</test.database.port.url>
 		<test.database.serv.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
 		-->
-		
+
 		<test.database.driver>org.apache.derby.jdbc.EmbeddedDriver</test.database.driver>
 		<test.database.hostname>localhost</test.database.hostname>
 		<test.database.port>1527</test.database.port>
@@ -117,7 +117,7 @@
 		<test.database.password>agile</test.database.password>
 		<test.database.port.url>jdbc:derby:${project.artifactId}testPort;create=true</test.database.port.url>
 		<test.database.serv.url>jdbc:derby:${project.artifactId}testServ;create=true</test.database.serv.url>
-		
+
 		<skipDerby>true</skipDerby>
 		<entando.version>experiment-components-SNAPSHOT</entando.version>
 		<spring.version>3.0.6.RELEASE</spring.version>
@@ -143,7 +143,7 @@
 				<includes>
 					<include>**/*.tld</include>
 				</includes>
-			</resource>			
+			</resource>
 		</resources>
 		<filters>
 			<filter>src/main/filters/filter-${env}.properties</filter>
@@ -210,6 +210,7 @@
 							<includes>WEB-INF/aps/jsp/internalservlet/api/**/*.jsp</includes>
 						</configuration>
 					</execution>
+					<!--
 					<execution>
 						<id>unpack-misc-dependencies</id>
 						<phase>process-resources</phase>
@@ -265,6 +266,7 @@
 							<includeScope>test</includeScope>
 						</configuration>
 					</execution>
+					-->
 				</executions>
 			</plugin>
 			<plugin>
@@ -304,12 +306,12 @@
 									<directory>src/test/config</directory>
 									<includes>
 										<include>contextTestParams.properties</include>
-									</includes>									
+									</includes>
 									<filtering>true</filtering>
 								</resource>
 							</resources>
 						</configuration>
-					</execution>					
+					</execution>
 					<execution>
 						<id>copy-resources-conf</id>
 						<phase>validate</phase>
@@ -404,31 +406,12 @@
 									<directory>src/main/tld</directory>
 									<includes>
 										<include>**/*.tld</include>
-									</includes>                                 
+									</includes>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
 						</configuration>
 					</execution>
-					<!--
-					<execution>
-						<id>derby-copy-sql</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/derby/sql</outputDirectory>
-							<encoding>UTF-8</encoding>
-							<resources>
-								<resource>
-									<directory>${basedir}/src/main/db/export/</directory>
-									<filtering>false</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					-->
 					<execution>
 						<id>copy-resources-standalone</id>
 						<phase>prepare-package</phase>
@@ -442,6 +425,27 @@
 								<resource>
 									<directory>src/main/config/standalone</directory>
 									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>lesscss-include-in-pagemodels</id>
+						<!-- here the phase you need -->
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/aps/jsp/models/inc/lesscss-active</outputDirectory>
+							<encoding>UTF-8</encoding>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/src/main/webapp/WEB-INF/aps/jsp/models/inc/lesscss-available/${env}</directory>
+									<includes>
+										<include>lesscss.jsp</include>
+									</includes>
 								</resource>
 							</resources>
 						</configuration>
@@ -499,216 +503,6 @@
 					</dependency>
 				</dependencies>
 				<executions>
-					<!--
-					<execution>
-						<id>drop-db-before-test-if-any-port</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/template1</url>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>
-							<autocommit>true</autocommit>
-							<sqlCommand>drop database "${project.artifactId}testPort"</sqlCommand>
-							<onError>continue</onError>
-						</configuration>
-					</execution>
-					<execution>
-						<id>drop-db-before-test-if-any-serv</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/template1</url>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>
-							<autocommit>true</autocommit>
-							<sqlCommand>drop database "${project.artifactId}testServ"</sqlCommand>
-							<onError>continue</onError>
-						</configuration>
-					</execution>
-					<execution>
-						<id>create-db-port</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/template1</url>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<autocommit>true</autocommit>
-							<sqlCommand>create database "${project.artifactId}testPort"</sqlCommand>
-						</configuration>
-					</execution>
-					<execution>
-						<id>create-db-serv</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/template1</url>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<autocommit>true</autocommit>
-							<sqlCommand>create database "${project.artifactId}testServ"</sqlCommand>
-						</configuration>
-					</execution>
-					-->
-					<!--
-					<execution>
-						<id>create-schema-port</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</url>
-							<onError>continue</onError>
-							<autocommit>true</autocommit>
-							<srcFiles>
-								<srcFile>${test.database.basepath}/${test.database.basename}testPort_schema.sql</srcFile>
-							</srcFiles>
-						</configuration>
-					</execution>
-					<execution>
-						<id>create-schema-serv</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</url>
-							<onError>continue</onError>
-							<autocommit>true</autocommit>
-							<srcFiles>
-								<srcFile>${test.database.basepath}/${test.database.basename}testServ_schema.sql</srcFile>
-							</srcFiles>
-						</configuration>
-					</execution>
-					<execution>
-						<id>create-data-port</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</url>
-							<escapeProcessing>false</escapeProcessing>
-							<enableBlockMode>true</enableBlockMode>
-							<printResultSet>true</printResultSet>
-							<outputFile />
-							<srcFiles>
-								<srcFile>${test.database.basepath}/${test.database.basename}testPort_data.sql</srcFile>
-							</srcFiles>
-						</configuration>
-					</execution>
-					<execution>
-						<id>create-data-serv</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</url>
-							<escapeProcessing>false</escapeProcessing>
-							<enableBlockMode>true</enableBlockMode>
-							<printResultSet>true</printResultSet>
-							<outputFile />
-							<srcFiles>
-								<srcFile>${test.database.basepath}/${test.database.basename}testServ_data.sql</srcFile>
-							</srcFiles>
-						</configuration>
-					</execution>
-					<execution>
-						<id>execute-plugin-query-dependencies-port</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</url>
-							<escapeProcessing>false</escapeProcessing>
-							<enableBlockMode>true</enableBlockMode>
-							<printResultSet>true</printResultSet>
-							<outputFile />
-							<onError>continue</onError>
-							<fileset>
-								<basedir>${project.build.directory}</basedir>
-								<includes>
-									<include>dependencies-unpacked/misc-test/**/sql/postgresql/port.sql</include>
-								</includes>
-							</fileset>
-						</configuration>
-					</execution>
-					<execution>
-						<id>execute-plugin-query-dependencies-serv</id>
-						<phase>process-test-classes</phase>
-						<goals>
-							<goal>execute</goal>
-						</goals>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>
-							<skip>${skipTests}</skip>
-							<keepFormat>false</keepFormat>						
-							<url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</url>
-							<escapeProcessing>false</escapeProcessing>
-							<enableBlockMode>true</enableBlockMode>
-							<printResultSet>true</printResultSet>
-							<outputFile />
-							<onError>continue</onError>
-							<fileset>
-								<basedir>${project.build.directory}</basedir>
-								<includes>
-									<include>dependencies-unpacked/misc-test/**/sql/postgresql/serv.sql</include>
-								</includes>
-							</fileset>
-						</configuration>
-					</execution>
-					-->
 					<!-- Derby, for Tomcat Executable War -->
 					<execution>
 						<id>derby-create-schema-port</id>
@@ -719,8 +513,8 @@
 						<configuration>
 							<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
 							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>							
-							<keepFormat>false</keepFormat>			
+							<password>${test.database.password}</password>
+							<keepFormat>false</keepFormat>
 							<url>jdbc:derby:${project.build.directory}/${project.artifactId}/WEB-INF/derby/${project.artifactId}Port;create=true</url>
 							<skip>${skipDerby}</skip>
 							<skipOnConnectionError>true</skipOnConnectionError>
@@ -740,10 +534,10 @@
 						<configuration>
 							<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
 							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>							
-							<keepFormat>false</keepFormat>			
+							<password>${test.database.password}</password>
+							<keepFormat>false</keepFormat>
 							<url>jdbc:derby:${project.build.directory}/${project.artifactId}/WEB-INF/derby/${project.artifactId}Port</url>
-							<skip>${skipDerby}</skip>							
+							<skip>${skipDerby}</skip>
 							<skipOnConnectionError>true</skipOnConnectionError>
 							<onError>abort</onError>
 							<autocommit>true</autocommit>
@@ -751,7 +545,7 @@
 								<srcFile>${project.build.directory}/derby/sql/${project.artifactId}Port_data.sql</srcFile>
 							</srcFiles>
 						</configuration>
-					</execution>					
+					</execution>
 					<execution>
 						<id>derby-create-schema-serv</id>
 						<phase>prepare-package</phase>
@@ -761,10 +555,10 @@
 						<configuration>
 							<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
 							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>							
-							<keepFormat>false</keepFormat>			
+							<password>${test.database.password}</password>
+							<keepFormat>false</keepFormat>
 							<url>jdbc:derby:${project.build.directory}/${project.artifactId}/WEB-INF/derby/${project.artifactId}Serv;create=true</url>
-							<skip>${skipDerby}</skip>							
+							<skip>${skipDerby}</skip>
 							<skipOnConnectionError>true</skipOnConnectionError>
 							<onError>abort</onError>
 							<autocommit>true</autocommit>
@@ -782,10 +576,10 @@
 						<configuration>
 							<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
 							<username>${test.database.username}</username>
-							<password>${test.database.password}</password>							
-							<keepFormat>false</keepFormat>			
+							<password>${test.database.password}</password>
+							<keepFormat>false</keepFormat>
 							<url>jdbc:derby:${project.build.directory}/${project.artifactId}/WEB-INF/derby/${project.artifactId}Serv</url>
-							<skip>${skipDerby}</skip>							
+							<skip>${skipDerby}</skip>
 							<skipOnConnectionError>true</skipOnConnectionError>
 							<onError>abort</onError>
 							<autocommit>true</autocommit>
@@ -793,24 +587,24 @@
 								<srcFile>${project.build.directory}/derby/sql/${project.artifactId}Serv_data.sql</srcFile>
 							</srcFiles>
 						</configuration>
-					</execution>														
+					</execution>
 				</executions>
 			</plugin>
-                        <plugin>
-                                <groupId>org.apache.maven.plugins</groupId>
-                                <artifactId>maven-surefire-plugin</artifactId>
-                                <version>2.12</version>
-                                <configuration>
-                                        <argLine>-Xms512m -Xmx1024m</argLine>
-                                        <testFailureIgnore>false</testFailureIgnore>
-                                        <excludes>
-                                                <exclude>**/*BaseTestCase*</exclude>
-                                        </excludes>
-                                        <includes>
-                                                <include>**/AllTests.java</include>
-                                        </includes>
-                                </configuration>
-                        </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12</version>
+				<configuration>
+					<argLine>-Xms512m -Xmx1024m</argLine>
+					<testFailureIgnore>false</testFailureIgnore>
+					<excludes>
+						<exclude>**/*BaseTestCase*</exclude>
+					</excludes>
+					<includes>
+						<include>**/AllTests.java</include>
+					</includes>
+				</configuration>
+			</plugin>
 			<!-- mvn jetty:run (with hot-redeploy) -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -868,7 +662,7 @@
 						<configuration>
 							<path>/${project.artifactId}</path>
 							<!-- Not working... waiting for the plugin...
-							<tomcatWebXml>${basedir}/src/main/config/tomcat-exewar-web.xml</tomcatWebXml> 
+							<tomcatWebXml>${basedir}/src/main/config/tomcat-exewar-web.xml</tomcatWebXml>
 							-->
 							<enableNaming>true</enableNaming>
 							<extraDependencies>
@@ -885,10 +679,41 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.1.1</version>
+				<version>2.2</version>
 				<configuration>
 					<packagingExcludes>WEB-INF/**.tld</packagingExcludes>
+					<!-- for future reference only
+					<warSourceExcludes>resources/static/entando-misc-bootstrap/**</warSourceExcludes>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp/resources/static/entando-misc-bootstrap</directory>
+							<targetPath>resources/static/entando-misc-bootstrap</targetPath>
+							<includes>
+								<include>bootstrap/**</include>
+							</includes>
+						</resource>
+					</webResources>
+					-->
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.lesscss</groupId>
+				<artifactId>lesscss-maven-plugin</artifactId>
+				<version>1.3.0</version>
+				<configuration>
+					<sourceDirectory>${project.basedir}/src/main/webapp/resources/static/less</sourceDirectory>
+					<outputDirectory>${project.build.directory}/${project.build.finalName}/resources/static/css</outputDirectory>
+					<compress>true</compress>
+				</configuration>
+				<executions>
+					<execution>
+						<id>build-lesscss-files</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -910,7 +735,7 @@
 						</filesets>
 					</configuration>
 				</plugin>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
+				<!--This plugin's configuration is used to store Eclipse m2e settings
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
@@ -987,6 +812,48 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>org.entando.entando.bundles.misc</groupId>
+			<artifactId>entando-misc-less</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.contents</groupId>
+			<artifactId>entando-content-announcement</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.contents</groupId>
+			<artifactId>entando-content-download</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.contents</groupId>
+			<artifactId>entando-content-news</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.contents</groupId>
+			<artifactId>entando-content-resolution</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.pages</groupId>
+			<artifactId>entando-page-bootstrap-hero</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.pages</groupId>
+			<artifactId>entando-page-2columns-left</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
 			<groupId>org.entando.entando</groupId>
 			<artifactId>entando-core-webapp</artifactId>
 			<version>${entando.version}</version>
@@ -1004,14 +871,6 @@
 			<artifactId>entando-core-engine</artifactId>
 			<version>${entando.version}</version>
 			<type>test-jar</type>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.entando.entando</groupId>
-			<artifactId>entando-core-engine</artifactId>
-			<version>${entando.version}</version>
-			<type>zip</type>
-			<classifier>misc-test</classifier>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
