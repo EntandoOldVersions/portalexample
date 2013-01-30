@@ -2873,35 +2873,6 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'cont
 	</contenttype>
 </contenttypes>');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'indexdir20120405123305');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'entandoComponentsReport', 'The component installation report', '<?xml version="1.0" encoding="UTF-8"?>
-<reports status="OK">
-	<creation>2012-11-08 23:23:34</creation>
-	<lastupdate>2012-11-08 23:23:34</lastupdate>
-	<components>
-		<component name="entandoCore" date="2012-11-08 23:23:34" status="OK">
-			<schema status="OK">
-				<datasource name="servDataSource" status="PORTING" />
-				<datasource name="portDataSource" status="PORTING" />
-			</schema>
-			<data status="OK">
-				<datasource name="servDataSource" status="PORTING" />
-				<datasource name="portDataSource" status="PORTING" />
-			</data>
-		</component>
-		<component name="jacms" date="2012-11-08 23:23:34" status="OK">
-			<schema status="OK">
-				<datasource name="servDataSource" status="NOT_AVAILABLE" />
-				<datasource name="portDataSource" status="PORTING" />
-			</schema>
-			<data status="OK">
-				<datasource name="servDataSource" status="PORTING" />
-				<datasource name="portDataSource" status="PORTING" />
-			</data>
-		</component>
-	</components>
-</reports>
-
-');
 
 
 

@@ -29,7 +29,7 @@ import org.entando.entando.portalexample.aps.PortalexampleBaseTestCase;
  */
 public class TestCardDAO extends PortalexampleBaseTestCase {
 	
-        @Override
+    @Override
 	protected void setUp() throws Exception {
 		super.setUp();
 		this.init();
@@ -69,23 +69,26 @@ public class TestCardDAO extends PortalexampleBaseTestCase {
 	/**
 	 * Esegue il test sul corretto funzionamento dei metodi 'addCard' e 'deleteCard' per l'aggiunta e la cancellazione di una scheda.
 	 */
-	public void testAddDeleteCard() {
+	public void testAddDeleteCard() throws Exception {
+		assertNull(this._cardDAO.loadCard(20));
 		Card newCard = new Card();
-		newCard.setHolder("Goofy Goof");
-		newCard.setDescr("I'm Mickey Mouse's best friend");
-		newCard.setDate(new Date());
-		newCard.setNote("Annotations");
-		
-		this._cardDAO.addCard(newCard);
-		
-		Card card = this._cardDAO.loadCard(5);
-		assertEquals("Goofy Goof", card.getHolder());
-		assertEquals("I'm Mickey Mouse's best friend", card.getDescr());
-		assertEquals("Annotations", card.getNote());
-		
-		this._cardDAO.deleteCard(16);
-		
-		assertNull(this._cardDAO.loadCard(16));
+		newCard.setId(20);
+		try {
+			newCard.setHolder("Goofy Goof");
+			newCard.setDescr("I'm Mickey Mouse's best friend");
+			newCard.setDate(new Date());
+			newCard.setNote("Annotations");
+			this._cardDAO.addCard(newCard);
+			Card card = this._cardDAO.loadCard(20);
+			assertEquals("Goofy Goof", card.getHolder());
+			assertEquals("I'm Mickey Mouse's best friend", card.getDescr());
+			assertEquals("Annotations", card.getNote());
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			this._cardDAO.deleteCard(20);
+		}
+		assertNull(this._cardDAO.loadCard(20));
 	}
 	
 	/**
