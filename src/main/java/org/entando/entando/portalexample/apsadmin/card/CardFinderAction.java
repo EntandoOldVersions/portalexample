@@ -29,9 +29,8 @@ import com.agiletec.apsadmin.system.BaseAction;
  * Classe Action per la gestione della ricerca e visualizzazione lista card.
  * @author E.Mezzano - E.Santoboni
  */
-public class CardFinderAction extends BaseAction implements ICardFinderAction {
+public class CardFinderAction extends BaseAction {
 	
-	@Override
 	public List<Card> getCards() {
 		List<Card> cards = null;
 		try {

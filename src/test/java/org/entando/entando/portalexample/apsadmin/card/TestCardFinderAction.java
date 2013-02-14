@@ -31,7 +31,7 @@ public class TestCardFinderAction extends PortalexampleApsBaseTestCase {
 		this.initAction("/do/Card", "list");
 		String result = this.executeAction();
 		assertEquals(Action.SUCCESS, result);
-		ICardFinderAction action = (ICardFinderAction) this.getAction();
+		CardFinderAction action = (CardFinderAction) this.getAction();
 		assertEquals(4, action.getCards().size());
 	}
 	
@@ -41,7 +41,7 @@ public class TestCardFinderAction extends PortalexampleApsBaseTestCase {
 		this.addParameter("holder", "Nicola");
 		String result = this.executeAction();
 		assertEquals(Action.SUCCESS, result);
-		ICardFinderAction action = (ICardFinderAction) this.getAction();
+		CardFinderAction action = (CardFinderAction) this.getAction();
 		assertEquals(1, action.getCards().size());
 	}
 	
@@ -51,7 +51,7 @@ public class TestCardFinderAction extends PortalexampleApsBaseTestCase {
 		this.addParameter("holder", "Anna");
 		String result = this.executeAction();
 		assertEquals(Action.SUCCESS, result);
-		ICardFinderAction action = (ICardFinderAction) this.getAction();
+		CardFinderAction action = (CardFinderAction) this.getAction();
 		assertEquals(1, action.getCards().size());
 		Card card = action.getCards().get(0);
 		assertEquals("Verdi Anna", card.getHolder());

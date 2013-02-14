@@ -53,7 +53,7 @@ public class TestCardAction extends PortalexampleApsBaseTestCase {
 		assertEquals(ApsAdminSystemConstants.EDIT, action.getStrutsAction());
 		assertEquals("Verdi Nicola", action.getHolder());
 		assertEquals("Fair", action.getDescr());
-		assertNull(action.getNote());
+		assertEquals("Lorem ipsum.", action.getNote());
 		assertEquals("25/01/2011", DateConverter.getFormattedDate(action.getDate(), "dd/MM/yyyy"));
 	}
 	
@@ -94,12 +94,14 @@ public class TestCardAction extends PortalexampleApsBaseTestCase {
 	}
 	
 	public void testDeleteCard() throws Throwable {
+		ICardManager cardManager = (ICardManager) this.getService(DemoSystemConstants.CARD_MANAGER);
+		assertNull(cardManager.getCard(70));
 		Card newCard = new Card();
+		newCard.setId(70);
 		newCard.setHolder("Goofy Goof");
 		newCard.setDescr("I'm Mickey Mouse's best friend");
 		newCard.setDate(new Date());
 		newCard.setNote("Annotations");
-		ICardManager cardManager = (ICardManager) this.getService(DemoSystemConstants.CARD_MANAGER);
 		try {
 			cardManager.addCard(newCard);
 			List<Card> cards = cardManager.searchCards("Goofy");
