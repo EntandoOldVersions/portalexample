@@ -20,7 +20,8 @@
 		<jsp:include page="inc/lesscss-active/lesscss.jsp" />
 		<jsp:include page="inc/models-common-utils.jsp" />
 
-		<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Droid+Sans:400,700|Lobster+Two:400" rel="stylesheet" type="text/css">
+		<!-- <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Droid+Sans:400,700|Lobster+Two:400" rel="stylesheet" type="text/css"> -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans|Rambla|Calligraffitti" rel="stylesheet" type="text/css">
 
 	</head>
 
