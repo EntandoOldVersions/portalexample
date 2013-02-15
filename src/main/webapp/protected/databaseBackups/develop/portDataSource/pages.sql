@@ -3,11 +3,18 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 <property key="it">Pagine di Servizio</property>
 <property key="en">Service</property>
 </properties>', 'free', 0, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('login', 'service', 6, 'service', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('login', 'service', 6, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="it">Pagina di login</property>
-<property key="en">Login</property>
-</properties>', 'free', 1, NULL);
+<property key="en">Sign In</property>
+<property key="it">Autenticazione</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('notfound', 'service', 4, 'service', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Page not found</property>
