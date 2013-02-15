@@ -172,12 +172,12 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', '
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('COPYRIGHT', 'it', 'Copyright &copy; Entando Srl 2012');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PORTAL_TITLE', 'en', 'Entando Town');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PORTAL_TITLE', 'it', 'Entando Town');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CNG_READ_MORE', 'en', 'View details →');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CNG_READ_MORE', 'it', 'Continua →');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'en', 'View details →');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'it', 'Continua →');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_READ_MORE', 'en', 'View details →');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_READ_MORE', 'it', 'Dettagli →');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CNG_READ_MORE', 'en', 'View details');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('CNG_READ_MORE', 'it', 'Continua');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'en', 'View details');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'it', 'Continua');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_READ_MORE', 'en', 'View details');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_READ_MORE', 'it', 'Dettagli');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('SEARCH', 'en', 'Search');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('SEARCH', 'it', 'Cerca');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('LIST_VIEWER_EMPTY', 'en', 'No result found. Broaden your search and try again!');

@@ -130,12 +130,12 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 <property key="maxElements">4</property>
 <property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
 <property key="title_it">Bandi</property>
-<property key="linkDescr_it">Archivio →</property>
+<property key="linkDescr_it">Archivio</property>
 <property key="pageLink">announcements</property>
 <property key="title_en">Announcements</property>
 <property key="contentType">ANN</property>
 <property key="modelId">10051</property>
-<property key="linkDescr_en">Archive →</property>
+<property key="linkDescr_en">Archive</property>
 </properties>
 
 ', 0, 'free');
@@ -150,12 +150,12 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 <property key="maxElements">4</property>
 <property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
 <property key="title_it">Notizie</property>
-<property key="linkDescr_it">Archivio →</property>
+<property key="linkDescr_it">Archivio</property>
 <property key="pageLink">news</property>
 <property key="title_en">News</property>
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
-<property key="linkDescr_en">Archive →</property>
+<property key="linkDescr_en">Archive</property>
 </properties>
 
 ', 0, 'free');
@@ -188,12 +188,12 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 <property key="maxElements">4</property>
 <property key="filters">(attributeFilter=true;order=DESC;key=Date)+(order=DESC;attributeFilter=true;key=Number)</property>
 <property key="title_it">Delibere</property>
-<property key="linkDescr_it">Archivio →</property>
+<property key="linkDescr_it">Archivio</property>
 <property key="pageLink">resolutions</property>
 <property key="title_en">Resolutions</property>
 <property key="contentType">RSL</property>
 <property key="modelId">10041</property>
-<property key="linkDescr_en">Archive →</property>
+<property key="linkDescr_en">Archive</property>
 </properties>
 
 ', 0, 'free');
