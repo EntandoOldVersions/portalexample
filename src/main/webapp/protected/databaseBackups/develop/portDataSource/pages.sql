@@ -15,20 +15,30 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('notfound', 'service', 4, 'service', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('notfound', 'service', 4, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Page not found</property>
 <property key="it">Pagina non trovata</property>
 </properties>
 
-', 'free', 1, NULL);
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('errorpage', 'service', 5, 'service', '<?xml version="1.0" encoding="UTF-8"?>
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('errorpage', 'service', 5, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Error page</property>
-<property key="it">Pagina di errore</property>
+<property key="en">System Error</property>
+<property key="it">Errore di Sistema</property>
 </properties>
 
-', 'free', 1, NULL);
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('municipality', 'homepage', 2, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Municipality</property>
@@ -170,18 +180,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 ', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>true</useextratitles>
-</config>
-
-');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('test', 'service', 6, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">t</property>
-<property key="it">t</property>
-</properties>
-
-', 'free', 0, '<?xml version="1.0" encoding="UTF-8"?>
-<config>
-  <useextratitles>false</useextratitles>
 </config>
 
 ');

@@ -116,13 +116,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('contents_read', 2, 'entando-showlet-search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('contents_read', 3, 'entando-showlet-login_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('contents_read', 5, 'content_viewer', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('test', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('test', 0, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage)</property>
-</properties>
-
-', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -315,3 +308,23 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 2, 'entando-showlet-search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 3, 'entando-showlet-login_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 7, 'login_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 0, 'entando-showlet-language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 2, 'entando-showlet-search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 7, 'messages_system', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 0, 'entando-showlet-language_choose', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage)</property>
+</properties>
+
+', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 2, 'entando-showlet-search_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 7, 'messages_system', NULL, NULL);

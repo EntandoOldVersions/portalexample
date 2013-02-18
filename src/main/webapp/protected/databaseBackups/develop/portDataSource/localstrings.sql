@@ -6,10 +6,6 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_TITLE', 
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_TITLE', 'it', 'titolo pagina');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('USER_NOT_ALLOWED', 'en', 'User not allowed');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('USER_NOT_ALLOWED', 'it', 'Utente non autorizzato');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_NOT_FOUND', 'en', 'Page not found');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_NOT_FOUND', 'it', 'Pagina non trovata');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GENERIC_ERROR', 'en', 'Generic Error');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GENERIC_ERROR', 'it', 'Errore Generico');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATION_BASIC', 'it', 'Normale');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATION_BASIC', 'en', 'Normal');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ADMINISTRATION_MINT', 'it', 'Avanzata');
@@ -220,3 +216,9 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PASSWORD', 'e
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PASSWORD', 'it', 'Password');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('SIGNIN', 'en', 'Sign in');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('SIGNIN', 'it', 'Entra');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_NOT_FOUND', 'en', 'Error 404: Page not found.<br />You could try that sporty search form up there in the navigation bar.');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_NOT_FOUND', 'it', 'Error 404: Pagina non trovata.<br />Prova a usare il form di ricerca lassù nella barra di navigazione.');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GENERIC_ERROR', 'en', '500: Generic Error.<br />
+This wasn''t supposed to happen. Try again in a few minutes.');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GENERIC_ERROR', 'it', '500: Errore Generico.<br />
+Questo non sarebbe dovuto accedere. Prova di nuovo tra qualche minuto.');
