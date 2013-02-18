@@ -291,3 +291,15 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('public_api', 'online_services', 4, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Public API</property>
+<property key="it">API Pubblica</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>true</useextratitles>
+</config>
+
+');
