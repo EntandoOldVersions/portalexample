@@ -177,3 +177,37 @@ INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUE
 #end
 <p class="text-right"><a class="btn" href="$content.contentLink">$i18n.getLabel("NWS_READ_MORE")</a></p>
 </article>', NULL);
+INSERT INTO contentmodels (modelid, contenttype, descr, model, stylesheet) VALUES (10014, 'CNG', 'Full - Picture Left', '<article>
+  <h1>$content.Title.text</h1>
+<div class="row"><div class="span4">
+#if ( $content.Picture.getImagePath("0") != "" )
+<figure class="text-center">
+  <img class="img-polaroid" src="$content.Picture.getImagePath("0")" alt="$content.Picture.text" />
+  #if ( $content.Caption.text != "" )
+  <figcaption><p class="margin-medium-all">$content.Caption.text</p></figcaption>
+  #end
+</figure>
+#end
+</div>
+<div class="span8 margin-medium-top">
+#if ( $content.MainBody.text != "" )
+$content.MainBody.text
+#end
+  </div></div>
+#if ($content.Attaches.size()>0)
+  <h2>$i18n.getLabel("CNG_ATTACHMENTS")</h2>
+  <ul>
+  #foreach ($item in $content.Attaches )
+    <li><a href="$item.attachPath">$item.text</a></li>
+  #end
+  </ul>
+#end
+#if ($content.Links.size()>0)
+  <h2>$i18n.getLabel("CNG_LINKS")</h2>
+  <ul>
+  #foreach ($item in $content.Links)
+    <li><a href="$item.destination">$item.text</a></li>
+  #end
+  </ul>
+#end
+</article>', NULL);

@@ -222,3 +222,9 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GENERIC_ERROR
 This wasn''t supposed to happen. Try again in a few minutes.');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('GENERIC_ERROR', 'it', '500: Errore Generico.<br />
 Questo non sarebbe dovuto accedere. Prova di nuovo tra qualche minuto.');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_GOTO_SERVICE_LIST', 'en', 'Service List');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_GOTO_SERVICE_LIST', 'it', 'Elenco Servizi API');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SERVICE', 'en', 'Service');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SERVICE', 'it', 'Servizio');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_NO_SERVICES', 'en', 'No API Services available.<br />The system administrator is able to create some.');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_NO_SERVICES', 'it', 'Non è disponibile alcun Servizio API.<br />L''amministratore di sistema può crearne.');
