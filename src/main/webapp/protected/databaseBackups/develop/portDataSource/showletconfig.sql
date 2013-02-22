@@ -1,7 +1,7 @@
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -23,7 +23,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -34,7 +34,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -48,7 +48,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('search_result', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('search_result', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -58,7 +58,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements_read', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('announcements_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -75,7 +75,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions_read', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -92,7 +92,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news_read', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -109,7 +109,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('contents_read', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('contents_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -119,7 +119,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('mayor', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -129,7 +129,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('council', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -146,7 +146,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -163,7 +163,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -198,7 +198,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('documents', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('documents', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -208,7 +208,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('download', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('download', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -230,7 +230,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('self_certifications', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -252,7 +252,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -270,7 +270,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -288,7 +288,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('login', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -298,7 +298,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('notfound', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -308,7 +308,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('errorpage', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -325,7 +325,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
@@ -334,7 +334,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 15, 'entando_apis', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
