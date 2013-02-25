@@ -207,7 +207,7 @@ INSERT INTO showletcatalog (code, titles, parameters, plugincode, parenttypecode
 <properties>
 <property key="maxElemForItem">10</property>
 <property key="title_it">Archivio Delibere</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Number)+(attributeFilter=false;key=category;categoryCode=resolutions)+(attributeFilter=true;key=Date)</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=false;key=category;categoryCode=resolutions)+(attributeFilter=true;key=Number)+(attributeFilter=true;key=Date)</property>
 <property key="filters">(attributeFilter=true;order=DESC;key=Number)+(order=DESC;attributeFilter=true;key=Date)</property>
 <property key="title_en">Resolutions Archive</property>
 <property key="contentType">RSL</property>

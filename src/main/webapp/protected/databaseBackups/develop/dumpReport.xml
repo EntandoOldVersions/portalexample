@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <backup>
-	<date>2013-02-21 15:34:02</date>
-	<requiredTime>414</requiredTime>
+	<date>2013-02-25 15:25:25</date>
+	<requiredTime>710</requiredTime>
 	<subfolder>develop</subfolder>
 	<componentsHistory>
-		<component code="entandoCore" date="2013-02-21 15:26:17" status="OK">
+		<component code="entandoCore" date="2013-02-25 11:11:30" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="OK">
 					<table name="authgroups" />
@@ -37,7 +37,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="portalexample_card" date="2013-02-21 15:26:36" status="OK">
+		<component code="portalexample_card" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="OK">
 					<table name="portalexample_cards" />
@@ -50,7 +50,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-less" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-misc-less" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -61,7 +61,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-announcement" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-content-announcement" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -72,7 +72,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-download" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-content-download" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -83,7 +83,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-news" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-content-news" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -94,7 +94,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-resolution" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-content-resolution" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -105,7 +105,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-search_form" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-showlet-search_form" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -116,7 +116,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-html5-essentials" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-misc-html5-essentials" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -127,7 +127,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-generic" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-content-generic" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -138,7 +138,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-page-bootstrap-hero" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-page-bootstrap-hero" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -149,7 +149,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-login_form" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-showlet-login_form" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -160,7 +160,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-language_choose" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-showlet-language_choose" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -171,7 +171,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-bootstrap" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-misc-bootstrap" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -182,7 +182,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-jquery" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-misc-jquery" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -193,7 +193,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-navigation_bar" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-showlet-navigation_bar" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -204,7 +204,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-page-2columns-left" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-page-2columns-left" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -215,7 +215,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-navigation_breadcrumbs" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-showlet-navigation_breadcrumbs" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -226,7 +226,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-navigation_menu" date="2013-02-21 15:26:36" status="OK">
+		<component code="entando-showlet-navigation_menu" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -237,7 +237,7 @@
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="jacms" date="2013-02-21 15:26:36" status="OK">
+		<component code="jacms" date="2013-02-25 11:11:47" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="OK">
@@ -259,37 +259,37 @@
 		</component>
 	</componentsHistory>
 	<datasource name="servDataSource">
-		<table name="api_oauth_consumers" requiredTime="9" rows="0" />
-		<table name="api_oauth_tokens" requiredTime="7" rows="0" />
-		<table name="apicatalog_methods" requiredTime="10" rows="0" />
-		<table name="apicatalog_services" requiredTime="14" rows="0" />
-		<table name="authgroups" requiredTime="4" rows="2" />
-		<table name="authpermissions" requiredTime="4" rows="7" />
-		<table name="authrolepermissions" requiredTime="4" rows="1" />
-		<table name="authroles" requiredTime="18" rows="1" />
-		<table name="authusergroups" requiredTime="3" rows="1" />
-		<table name="authuserroles" requiredTime="3" rows="1" />
-		<table name="authusers" requiredTime="4" rows="1" />
-		<table name="authusershortcuts" requiredTime="3" rows="1" />
-		<table name="portalexample_cards" requiredTime="6" rows="4" />
+		<table name="api_oauth_consumers" requiredTime="38" rows="0" />
+		<table name="api_oauth_tokens" requiredTime="55" rows="0" />
+		<table name="apicatalog_methods" requiredTime="5" rows="0" />
+		<table name="apicatalog_services" requiredTime="33" rows="0" />
+		<table name="authgroups" requiredTime="26" rows="2" />
+		<table name="authpermissions" requiredTime="11" rows="7" />
+		<table name="authrolepermissions" requiredTime="22" rows="1" />
+		<table name="authroles" requiredTime="13" rows="1" />
+		<table name="authusergroups" requiredTime="10" rows="1" />
+		<table name="authuserroles" requiredTime="28" rows="1" />
+		<table name="authusers" requiredTime="7" rows="1" />
+		<table name="authusershortcuts" requiredTime="7" rows="1" />
+		<table name="portalexample_cards" requiredTime="49" rows="4" />
 	</datasource>
 	<datasource name="portDataSource">
-		<table name="categories" requiredTime="9" rows="9" />
-		<table name="contentmodels" requiredTime="5" rows="13" />
-		<table name="contentrelations" requiredTime="31" rows="79" />
-		<table name="contents" requiredTime="11" rows="40" />
-		<table name="contentsearch" requiredTime="29" rows="90" />
-		<table name="localstrings" requiredTime="27" rows="228" />
-		<table name="pagemodels" requiredTime="8" rows="4" />
-		<table name="pages" requiredTime="18" rows="26" />
-		<table name="resourcerelations" requiredTime="17" rows="0" />
-		<table name="resources" requiredTime="5" rows="17" />
-		<table name="showletcatalog" requiredTime="23" rows="23" />
-		<table name="showletconfig" requiredTime="22" rows="136" />
-		<table name="sysconfig" requiredTime="5" rows="6" />
-		<table name="uniquekeys" requiredTime="5" rows="1" />
-		<table name="workcontentrelations" requiredTime="35" rows="20" />
-		<table name="workcontentsearch" requiredTime="33" rows="90" />
+		<table name="categories" requiredTime="7" rows="9" />
+		<table name="contentmodels" requiredTime="15" rows="13" />
+		<table name="contentrelations" requiredTime="20" rows="79" />
+		<table name="contents" requiredTime="25" rows="40" />
+		<table name="contentsearch" requiredTime="19" rows="90" />
+		<table name="localstrings" requiredTime="13" rows="254" />
+		<table name="pagemodels" requiredTime="6" rows="4" />
+		<table name="pages" requiredTime="7" rows="26" />
+		<table name="resourcerelations" requiredTime="39" rows="0" />
+		<table name="resources" requiredTime="26" rows="17" />
+		<table name="showletcatalog" requiredTime="6" rows="23" />
+		<table name="showletconfig" requiredTime="20" rows="136" />
+		<table name="sysconfig" requiredTime="19" rows="6" />
+		<table name="uniquekeys" requiredTime="11" rows="1" />
+		<table name="workcontentrelations" requiredTime="34" rows="20" />
+		<table name="workcontentsearch" requiredTime="50" rows="90" />
 	</datasource>
 </backup>
 
