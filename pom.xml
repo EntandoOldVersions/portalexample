@@ -7,32 +7,31 @@
 	<packaging>war</packaging>
 	<version>3.2.0-SNAPSHOT</version>
 	<name>portalexample</name>
-	<url>http://maven.apache.org/</url>
-	<repositories>
-		<repository>
-			<id>Apache Snapshots</id>
-			<url>https://repository.apache.org/content/groups/snapshots-group</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>Apache Snapshots</id>
-			<name>Apache Snapshots</name>
-			<url>https://repository.apache.org/content/groups/snapshots-group</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+	<description>A Portal Example for Entando</description>
+	<url>http://www.entando.com/</url>
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License, version 2.1</name>
+			<url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>e.santoboni</id>
+			<name>Eugenio Santoboni</name>
+			<email>e.santoboni@entando.com</email>
+		</developer>
+		<developer>
+			<id>w.ghelfi</id>
+			<name>William Ghelfi</name>
+			<email>w.ghelfi@entando.com</email>
+		</developer>
+	</developers>
+	<organization>
+		<name>Entando S.r.l.</name>
+		<url>http://www.entando.com/</url>
+	</organization>
 	<profiles>
 		<profile>
 			<id>production</id>
