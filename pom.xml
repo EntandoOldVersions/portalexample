@@ -207,6 +207,29 @@
 							<includes>WEB-INF/aps/jsp/internalservlet/api/**/*.jsp</includes>
 						</configuration>
 					</execution>
+					<execution>
+						<id>unpack-dependencies-bootstrap</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<verbose>true</verbose>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>false</overWriteIfNewer>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.entando.entando.bundles.misc</groupId>
+									<artifactId>entando-misc-bootstrap</artifactId>
+									<type>war</type>
+									<outputDirectory>${project.build.directory}/entando-misc-bootstrap</outputDirectory>
+									<overWrite>false</overWrite>
+								</artifactItem>
+							</artifactItems>
+							<includes>resources/static/entando-misc-bootstrap/bootstrap/bootstrap/**</includes>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
@@ -629,6 +652,13 @@
 			<artifactId>entando-misc-less</artifactId>
 			<version>${entando.version}</version>
 			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.entando.entando.bundles.misc</groupId>
+			<artifactId>entando-misc-bootstrap</artifactId>
+			<version>${entando.version}</version>
+			<type>war</type>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.entando.entando.bundles.contents</groupId>
