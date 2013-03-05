@@ -43,6 +43,7 @@
 			</activation>
 			<properties>
 				<env>production</env>
+				<env.db.environment>production</env.db.environment>
 			</properties>
 		</profile>
 		<profile>
@@ -56,6 +57,7 @@
 			</activation>
 			<properties>
 				<env>development-unix</env>
+				<env.db.environment>develop</env.db.environment>
 			</properties>
 		</profile>
 		<profile>
@@ -74,6 +76,7 @@
 			</activation>
 			<properties>
 				<env>standalone</env>
+				<env.db.environment>production</env.db.environment>
 			</properties>
 		</profile>
 		<profile>
@@ -85,6 +88,7 @@
 			</activation>
 			<properties>
 				<env>development-windows</env>
+				<env.db.environment>develop</env.db.environment>
 			</properties>
 		</profile>
 	</profiles>
