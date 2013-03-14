@@ -1,13 +1,3 @@
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL26', 'resolutions_council');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL26', 'resolutions');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'documents');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'resolutions');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'resolutions_giunta');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'downloads');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL30', 'resolutions_council');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL30', 'resolutions');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL32', 'resolutions');
-INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL32', 'resolutions_giunta');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD48', 'citizen_registry');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD48', 'documents');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD48', 'downloads');
@@ -18,3 +8,13 @@ INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD52', 'selc
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD52', 'downloads');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD54', 'selcf_certifications');
 INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('DLD54', 'downloads');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL30', 'resolutions_council');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL30', 'resolutions');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL32', 'resolutions');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL32', 'resolutions_giunta');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL26', 'resolutions_council');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL26', 'resolutions');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'documents');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'resolutions');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'resolutions_giunta');
+INSERT INTO workcontentrelations (contentid, refcategory) VALUES ('RSL28', 'downloads');

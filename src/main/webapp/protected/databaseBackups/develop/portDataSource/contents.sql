@@ -8,53 +8,6 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 ', '20121010154909', '20121010154909', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG9" typecode="CNG" typedescr="Generic Content"><descr>Sample - Lorem Ipsum</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Heading</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Entando.com</text></attribute><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.org/</urldest></link><text lang="en">Entando.org</text></attribute><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.github.com/entando/</urldest></link><text lang="en">Entando @GitHub</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20121010154909</created><lastModified>20121010154909</lastModified></content>
 ', 'free', '1.0', NULL);
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG18', 'CNG', 'Welcome', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG18" typecode="CNG" typedescr="Generic Content"><descr>Welcome</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Welcome!</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	Entando Town is a demo portal built with Entando.</p>
-<p>
-	What are you waiting for?<br />
-	Try the Administration Area!</p>
-<p>
-	Find out how many things you can customize, create a new content, a new page or even your own user.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	Entando Town is a demo portal built with Entando.</p>
-<p>
-	What are you waiting for?<br />
-	Try the Administration Area!</p>
-<p>
-	Find out how many things you can customize, create a new content, a new page or even your own user.</p>
-<p>
-	Use the <strong>Sign in</strong> drop-down up there in the top bar with the following account:</p>
-<p>
-	Username: <strong>admin&nbsp;</strong><br />
-	Password: <strong>adminadmin</strong></p>
-<p>
-	Enjoy Entando!</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="17" lang="en" /><text lang="en">Official plaque</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town has a very european look.</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Learn more</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>4.0</version><lastEditor>admin</lastEditor><created>20121010173248</created><lastModified>20121126102727</lastModified></content>
-', '20121010173248', '20121126102728', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG18" typecode="CNG" typedescr="Generic Content"><descr>Welcome</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Welcome!</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	Entando Town is a demo portal built with Entando.</p>
-<p>
-	What are you waiting for?<br />
-	Try the Administration Area!</p>
-<p>
-	Find out how many things you can customize, create a new content, a new page or even your own user.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	Entando Town is a demo portal built with Entando.</p>
-<p>
-	What are you waiting for?<br />
-	Try the Administration Area!</p>
-<p>
-	Find out how many things you can customize, create a new content, a new page or even your own user.</p>
-<p>
-	Use the <strong>Sign in</strong> drop-down up there in the top bar with the following account:</p>
-<p>
-	Username: <strong>admin&nbsp;</strong><br />
-	Password: <strong>adminadmin</strong></p>
-<p>
-	Enjoy Entando!</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="17" lang="en" /><text lang="en">Official plaque</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town has a very european look.</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Learn more</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>4.0</version><lastEditor>admin</lastEditor><created>20121010173248</created><lastModified>20121126102727</lastModified></content>
-', 'free', '4.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('ANN20', 'ANN', 'Announcement for special maintenance Nautical Institute', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="ANN20" typecode="ANN" typedescr="Announcement"><descr>Announcement for special maintenance Nautical Institute</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per l''esecuzione dei Lavori per la manutenzione dell''Istituto Nautico</text><text lang="en">Announcement for special maintenance Nautical Institute.</text></attribute><attribute name="StartDate" attributetype="Date"><date>20130303</date></attribute><attribute name="EndDate" attributetype="Date"><date>20131114</date></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Bando di gara per l&#39;esecuzione dei &quot;Lavori per la manutenzione straordinaria dell&#39;Istituto Nautico, per la realizzazione di laboratorio informatico&quot;.</p>
@@ -89,98 +42,34 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	Announcements for the supply of stationery and accessories for printers, copiers and fax machines to use in Villamarina offices and services.</p>
 ]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="21" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Announcements for stationery supply</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121017110649</created><lastModified>20121017110649</lastModified></content>
 ', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('ANN24', 'ANN', 'Announcement for participation in Civil Service', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="ANN24" typecode="ANN" typedescr="Announcement"><descr>Announcement for participation in Civil Service</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="StartDate" attributetype="Date"><date>20120501</date></attribute><attribute name="EndDate" attributetype="Date"><date>20121130</date></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Bando di gara per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Entando Town.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Announcement for the selection of 10 volunteers for civil service projects.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="23" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Civil Service Announcement</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121017110857</created><lastModified>20121017110857</lastModified></content>
-', '20121017110857', '20121017110857', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="ANN24" typecode="ANN" typedescr="Announcement"><descr>Announcement for participation in Civil Service</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="StartDate" attributetype="Date"><date>20120501</date></attribute><attribute name="EndDate" attributetype="Date"><date>20121130</date></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Bando di gara per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Entando Town.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Announcement for the selection of 10 volunteers for civil service projects.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="23" lang="en" /><text lang="it">Scarica il bando</text><text lang="en">Civil Service Announcement</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121017110857</created><lastModified>20121017110857</lastModified></content>
-', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL26', 'RSL', 'Resolution 15', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL26" typecode="RSL" typedescr="Resolution"><descr>Resolution 15</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>15</number></attribute><attribute name="Date" attributetype="Date"><date>20110716</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2011.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l&#39;anno 2011.</p>
+<content id="RSL26" typecode="RSL" typedescr="Resolution"><descr>Resolution 15</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>15</number></attribute><attribute name="Date" attributetype="Date"><date>20130716</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2013.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l&#39;anno 2013.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Approval for charge of consultant program in tourism sector for 2011.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Resolution 15</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153131</created><lastModified>20121018153131</lastModified></content>
-', '20121018153131', '20121018153131', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL26" typecode="RSL" typedescr="Resolution"><descr>Resolution 15</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>15</number></attribute><attribute name="Date" attributetype="Date"><date>20110716</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2011.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l&#39;anno 2011.</p>
+	Approval for charge of consultant program in tourism sector for 2013.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Resolution 15</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153131</created><lastModified>20130314131754</lastModified></content>
+', '20121018153131', '20130314131754', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL26" typecode="RSL" typedescr="Resolution"><descr>Resolution 15</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>15</number></attribute><attribute name="Date" attributetype="Date"><date>20130716</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Approvazione programma di incarichi di consulenza autonoma nel settore turistico</text><text lang="en">Approval for charge of consultant program in tourism sector for 2013.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Approvazione programma di&nbsp; incarichi di consulenza autonoma nel settore turistico &ndash; lavori pubblici &ndash; servizi tecnologici, per l&#39;anno 2013.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Approval for charge of consultant program in tourism sector for 2011.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Resolution 15</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153131</created><lastModified>20121018153131</lastModified></content>
-', 'free', '1.0', 'admin');
+	Approval for charge of consultant program in tourism sector for 2013.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="25" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 15 del 09 Luglio 2011</text><text lang="en">Resolution 15</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153131</created><lastModified>20130314131754</lastModified></content>
+', 'free', '2.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL28', 'RSL', 'Resolution 120', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL28" typecode="RSL" typedescr="Resolution"><descr>Resolution 120</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /><category id="documents" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20110701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
+<content id="RSL28" typecode="RSL" typedescr="Resolution"><descr>Resolution 120</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /><category id="documents" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20130701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2013.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Organization of the event &quot;Folk Music Festival&quot; III edition to be held in Villamarina in the months of August and September 2011.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="27" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2011</text><text lang="en">Resolution 120</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153416</created><lastModified>20121018153416</lastModified></content>
-', '20121018153416', '20121018153416', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL28" typecode="RSL" typedescr="Resolution"><descr>Resolution 120</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /><category id="documents" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20110701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2011.</p>
+	Organization of the event &quot;Folk Music Festival&quot; III edition to be held in Villamarina in the months of August and September 2013.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="27" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2013</text><text lang="en">Resolution 120</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153416</created><lastModified>20130314132121</lastModified></content>
+', '20121018153416', '20130314132121', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL28" typecode="RSL" typedescr="Resolution"><descr>Resolution 120</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /><category id="documents" /></categories><attributes><attribute name="Number" attributetype="Number"><number>120</number></attribute><attribute name="Date" attributetype="Date"><date>20130701</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Organizzazione della manifestazione "Festival della canzone popolare” III Edizione.</text><text lang="en">Organization of the event "Folk Music Festival" III Edition.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Organizzazione della manifestazione &quot;Festival della canzone popolare&rdquo; III Edizione che si terr&agrave; a Villamarina&nbsp; nei mesi di Agosto e Settembre 2013.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Organization of the event &quot;Folk Music Festival&quot; III edition to be held in Villamarina in the months of August and September 2011.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="27" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2011</text><text lang="en">Resolution 120</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153416</created><lastModified>20121018153416</lastModified></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL30', 'RSL', 'Resolution 20', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20111004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2011</text><text lang="en">Examination and approval of Villamarina Balance Sheet 2011</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Esame ed approvazione del Conto Consuntivo 2011</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Examination and approval of Villamarina Balance Sheet 2011</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20121018153618</lastModified></content>
-', '20121018153618', '20121018153618', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20111004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2011</text><text lang="en">Examination and approval of Villamarina Balance Sheet 2011</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Esame ed approvazione del Conto Consuntivo 2011</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Examination and approval of Villamarina Balance Sheet 2011</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2011</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20121018153618</lastModified></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL32', 'RSL', 'Resolution 133', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL32" typecode="RSL" typedescr="Resolution"><descr>Resolution 133</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /></categories><attributes><attribute name="Number" attributetype="Number"><number>133</number></attribute><attribute name="Date" attributetype="Date"><date>20110920</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell&#39;istituto.</p>
-<p>
-	Approvazione progetto definitivo - esecutivo.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>
-<p>
-	Approval of final project.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Resolution 133</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153757</created><lastModified>20121018153757</lastModified></content>
-', '20121018153757', '20121018153757', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL32" typecode="RSL" typedescr="Resolution"><descr>Resolution 133</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /></categories><attributes><attribute name="Number" attributetype="Number"><number>133</number></attribute><attribute name="Date" attributetype="Date"><date>20110920</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell&#39;istituto.</p>
-<p>
-	Approvazione progetto definitivo - esecutivo.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>
-<p>
-	Approval of final project.</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Resolution 133</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018153757</created><lastModified>20121018153757</lastModified></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS33', 'NWS', 'The portal embraces responsiveness', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS33" typecode="NWS" typedescr="News"><descr>The portal embraces responsiveness</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20120615</date></attribute><attribute name="Title" attributetype="Text"><text lang="en">The portal embraces responsiveness</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	From now on, mobile devices are welcome here!</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	From now on, mobile devices are welcome here!</p>
-<p>
-	Thanks to the joint powers of <strong>Entando</strong> and <strong>Twitter Bootstrap</strong>.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.mysite.com/</urldest></link><text lang="en">Learn more »</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018155423</created><lastModified>20121018155423</lastModified></content>
-', '20121018155423', '20121018155423', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS33" typecode="NWS" typedescr="News"><descr>The portal embraces responsiveness</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20120615</date></attribute><attribute name="Title" attributetype="Text"><text lang="en">The portal embraces responsiveness</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	From now on, mobile devices are welcome here!</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
-	From now on, mobile devices are welcome here!</p>
-<p>
-	Thanks to the joint powers of <strong>Entando</strong> and <strong>Twitter Bootstrap</strong>.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.mysite.com/</urldest></link><text lang="en">Learn more »</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018155423</created><lastModified>20121018155423</lastModified></content>
-', 'free', '1.0', 'admin');
+	Organization of the event &quot;Folk Music Festival&quot; III edition to be held in Villamarina in the months of August and September 2013.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="27" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2013</text><text lang="en">Resolution 120</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153416</created><lastModified>20130314132121</lastModified></content>
+', 'free', '2.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS34', 'NWS', 'Folk Music Festival', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20110720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot;</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
 	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
@@ -194,9 +83,9 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
 <p>
 	At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20121018155653</lastModified></content>
-', '20121018155653', '20121018155654', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20110720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20130314130841</lastModified></content>
+', '20121018155653', '20130314130841', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot;</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
 	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
@@ -210,175 +99,58 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
 <p>
 	At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20121018155653</lastModified></content>
-', 'free', '1.0', 'admin');
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20130314130841</lastModified></content>
+', 'free', '2.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL30', 'RSL', 'Resolution 20', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20131004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2013</text><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Esame ed approvazione del Conto Consuntivo 2013</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Examination and approval of Entando Town Balance Sheet 2013</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2012</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20130314131336</lastModified></content>
+', '20121018153618', '20130314131336', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20131004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2013</text><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Esame ed approvazione del Conto Consuntivo 2013</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Examination and approval of Entando Town Balance Sheet 2013</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2012</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20130314131336</lastModified></content>
+', 'free', '2.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS37', 'NWS', 'Ground Rent Contribution', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111021</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2011</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2011.</p>
+<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130327</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2013</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2013.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of Ground Rent Contribution 2011.</p>
+	It has been published the public notice for the allocation of Ground Rent Contribution 2013.</p>
 ]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2011, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2013, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
 <p>
 	&Egrave; possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
 <p>
-	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2011</strong>.</p>
+	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2013</strong>.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2011</strong>.</p>
+	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2013</strong>.</p>
 <p>
 	You can download the application forms and the notice in this section.</p>
 <p>
-	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2011</strong>.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="35" lang="en" /><text lang="it">Bando Locazione 2011</text><text lang="en">Notice</text></attribute><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20121018160159</lastModified></content>
-', '20121018160200', '20121018160200', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111021</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2011</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2011.</p>
+	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2013</strong>.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20130314135757</lastModified></content>
+', '20121018160200', '20130314135757', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130327</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2013</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2013.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of Ground Rent Contribution 2011.</p>
+	It has been published the public notice for the allocation of Ground Rent Contribution 2013.</p>
 ]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2011, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2013, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
 <p>
 	&Egrave; possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
 <p>
-	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2011</strong>.</p>
+	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2013</strong>.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2011</strong>.</p>
+	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2013</strong>.</p>
 <p>
 	You can download the application forms and the notice in this section.</p>
 <p>
-	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2011</strong>.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="35" lang="en" /><text lang="it">Bando Locazione 2011</text><text lang="en">Notice</text></attribute><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20121018160159</lastModified></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS39', 'NWS', 'Online the Portal of Entando Town', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS39" typecode="NWS" typedescr="News"><descr>Online the Portal of Entando Town</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111121</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale del Comune di Entando Town</text><text lang="en">Online the Portal of Entando Town</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
-<p>
-	Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
-<p>
-	Il nuovo portale &egrave; stato realizzato per dare una risposta all&#39;altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull&#39;amministrazione comunale.</p>
-<p>
-	Il sito si presenta con una veste grafica <strong>minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
-<p>
-	&nbsp;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
-<p>
-	In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
-<p>
-	The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="38" lang="en" /><text lang="it">Una spiaggia, e il mare smeraldino della Sardegna</text><text lang="en">A beach, the emerald sea of Sardinia</text></attribute><attribute name="Caption" attributetype="Text"><text lang="it">Uno scorcio incantevole di Entando Town</text><text lang="en">A beautiful view of Entando Town</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018160819</created><lastModified>20121018160819</lastModified></content>
-', '20121018160819', '20121018160819', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS39" typecode="NWS" typedescr="News"><descr>Online the Portal of Entando Town</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20111121</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale del Comune di Entando Town</text><text lang="en">Online the Portal of Entando Town</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
-<p>
-	Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
-<p>
-	Il nuovo portale &egrave; stato realizzato per dare una risposta all&#39;altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull&#39;amministrazione comunale.</p>
-<p>
-	Il sito si presenta con una veste grafica <strong>minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
-<p>
-	&nbsp;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
-<p>
-	In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
-<p>
-	The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="38" lang="en" /><text lang="it">Una spiaggia, e il mare smeraldino della Sardegna</text><text lang="en">A beach, the emerald sea of Sardinia</text></attribute><attribute name="Caption" attributetype="Text"><text lang="it">Uno scorcio incantevole di Entando Town</text><text lang="en">A beautiful view of Entando Town</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121018160819</created><lastModified>20121018160819</lastModified></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG40', 'CNG', 'Public Relations Office', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG40" typecode="CNG" typedescr="Generic Content"><descr>Public Relations Office</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Indirizzo: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Telefono: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Orario di Ricevimento:<br />
-	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle&nbsp;<strong>9.00 a.m.</strong>&nbsp;alle&nbsp;<strong>12.30 a.m.</strong><br />
-	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle&nbsp;<strong>4.00 p.m.</strong>&nbsp;alle&nbsp;<strong>17.00 p.m.</strong></p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Address: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Phone: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Open:<br />
-	<strong>Monday</strong> to <strong>Friday</strong>: <strong>9.00 a.m.</strong> to <strong>12.30 a.m.</strong><br />
-	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>4.00 p.m.</strong> to <strong>17.00 p.m.</strong></p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Indirizzo: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Telefono: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Orario di Ricevimento:<br />
-	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle&nbsp;<strong>9.00 a.m.</strong>&nbsp;alle&nbsp;<strong>12.30 a.m.</strong><br />
-	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle&nbsp;<strong>4.00 p.m.</strong>&nbsp;alle&nbsp;<strong>17.00 p.m.</strong></p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Address: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Phone: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Open:<br />
-	<strong>Monday</strong> to <strong>Friday</strong>: <strong>9.00 a.m.</strong> to <strong>12.30 a.m.</strong><br />
-	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>4.00 p.m.</strong> to <strong>17.00 p.m.</strong></p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121122184256</created><lastModified>20121122184256</lastModified></content>
-', '20121122184256', '20121122184256', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG40" typecode="CNG" typedescr="Generic Content"><descr>Public Relations Office</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Indirizzo: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Telefono: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Orario di Ricevimento:<br />
-	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle&nbsp;<strong>9.00 a.m.</strong>&nbsp;alle&nbsp;<strong>12.30 a.m.</strong><br />
-	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle&nbsp;<strong>4.00 p.m.</strong>&nbsp;alle&nbsp;<strong>17.00 p.m.</strong></p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Address: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Phone: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Open:<br />
-	<strong>Monday</strong> to <strong>Friday</strong>: <strong>9.00 a.m.</strong> to <strong>12.30 a.m.</strong><br />
-	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>4.00 p.m.</strong> to <strong>17.00 p.m.</strong></p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Indirizzo: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Telefono: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Orario di Ricevimento:<br />
-	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle&nbsp;<strong>9.00 a.m.</strong>&nbsp;alle&nbsp;<strong>12.30 a.m.</strong><br />
-	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle&nbsp;<strong>4.00 p.m.</strong>&nbsp;alle&nbsp;<strong>17.00 p.m.</strong></p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Address: <strong>Palazzo Municipale - Via Villamarina, 1, Entando Town</strong></p>
-<p>
-	Phone: <strong>000.000.000</strong><br />
-	Fax: <strong>00.0000.000</strong><br />
-	E-mail: <strong>urp@etown.com</strong></p>
-<p>
-	Open:<br />
-	<strong>Monday</strong> to <strong>Friday</strong>: <strong>9.00 a.m.</strong> to <strong>12.30 a.m.</strong><br />
-	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>4.00 p.m.</strong> to <strong>17.00 p.m.</strong></p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121122184256</created><lastModified>20121122184256</lastModified></content>
-', 'free', '1.0', 'admin');
+	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2013</strong>.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20130314135757</lastModified></content>
+', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG41', 'CNG', 'Mayor', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG41" typecode="CNG" typedescr="Generic Content"><descr>Mayor</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>
@@ -394,8 +166,8 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	<strong>Mayor</strong> is a modern title used in many countries for the highest ranking officer in a municipal government.</p>
 <p>
 	The mayor is an elected politician who serves as chief executive officer and/or ceremonial official of municipalities.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="42" lang="en" /><text lang="en">Walter Ambu in a suit, smiling.</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Walter Ambu, CEO of Entando</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>4.0</version><lastEditor>admin</lastEditor><created>20121205162345</created><lastModified>20121205172310</lastModified></content>
-', '20121205162345', '20121205172310', '<?xml version="1.0" encoding="UTF-8"?>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="42" lang="en" /><text lang="en">Entando Town Mayor</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town Mayor</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20121205162345</created><lastModified>20130314121315</lastModified></content>
+', '20121205162345', '20130314121315', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG41" typecode="CNG" typedescr="Generic Content"><descr>Mayor</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
@@ -410,8 +182,53 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	<strong>Mayor</strong> is a modern title used in many countries for the highest ranking officer in a municipal government.</p>
 <p>
 	The mayor is an elected politician who serves as chief executive officer and/or ceremonial official of municipalities.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="42" lang="en" /><text lang="en">Walter Ambu in a suit, smiling.</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Walter Ambu, CEO of Entando</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>4.0</version><lastEditor>admin</lastEditor><created>20121205162345</created><lastModified>20121205172310</lastModified></content>
-', 'free', '4.0', 'admin');
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="42" lang="en" /><text lang="en">Entando Town Mayor</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town Mayor</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>5.0</version><lastEditor>admin</lastEditor><created>20121205162345</created><lastModified>20130314121315</lastModified></content>
+', 'free', '5.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS39', 'NWS', 'Online the Portal of Entando Town', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS39" typecode="NWS" typedescr="News"><descr>Online the Portal of Entando Town</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130329</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale del Comune di Entando Town</text><text lang="en">Online the Portal of Entando Town</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
+<p>
+	Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
+<p>
+	Il nuovo portale &egrave; stato realizzato per dare una risposta all&#39;altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull&#39;amministrazione comunale.</p>
+<p>
+	Il sito si presenta con una veste grafica <strong>minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
+<p>
+	In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
+<p>
+	The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="38" lang="en" /><text lang="it">Una spiaggia, e il mare smeraldino della Sardegna</text><text lang="en">A beach, the emerald sea of Sardinia</text></attribute><attribute name="Caption" attributetype="Text"><text lang="it">Uno scorcio incantevole di Entando Town</text><text lang="en">A beautiful view of Entando Town</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018160819</created><lastModified>20130314130734</lastModified></content>
+', '20121018160819', '20130314130734', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS39" typecode="NWS" typedescr="News"><descr>Online the Portal of Entando Town</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130329</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Online il Portale del Comune di Entando Town</text><text lang="en">Online the Portal of Entando Town</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Online il Portale del Comune di Entando Town realizzato con la piattaforma <strong>Entando</strong>.</p>
+<p>
+	Nel portale istituzionale &egrave; possibile trovare tutte le informazioni relative al comune e alle sue attivit&agrave;: gli uffici, delibere e determine, bandi e concorsi e tanto altro.</p>
+<p>
+	Il nuovo portale &egrave; stato realizzato per dare una risposta all&#39;altezza delle aspettative dei cittadini che ogni giorno si collegano ad internet per avere notizie ed informazioni aggiornate sull&#39;amministrazione comunale.</p>
+<p>
+	Il sito si presenta con una veste grafica <strong>minimalista</strong> e molto leggera proprio per questo <strong>accattivante</strong> ed <strong>efficace</strong>.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Online the Portal of Entando Town, built with the <strong>Entando - Enterprise Portals Reinvented</strong>.</p>
+<p>
+	In the institutional portal you can find all the information relating to the municipality and its activities: the offices, decisions and results.</p>
+<p>
+	The new portal is designed to respond to the expectations of citizens who every day are connected to find news and updated information.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="38" lang="en" /><text lang="it">Una spiaggia, e il mare smeraldino della Sardegna</text><text lang="en">A beach, the emerald sea of Sardinia</text></attribute><attribute name="Caption" attributetype="Text"><text lang="it">Uno scorcio incantevole di Entando Town</text><text lang="en">A beautiful view of Entando Town</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018160819</created><lastModified>20130314130734</lastModified></content>
+', 'free', '2.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG43', 'CNG', 'Council', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG43" typecode="CNG" typedescr="Generic Content"><descr>Council</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Giunta Comunale</text><text lang="en">Council</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	La Giunta del Comune &egrave; l&#39;organo esecutivo composto dal Sindaco, che ne &egrave; anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</p>
@@ -425,8 +242,8 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	A <strong>Council</strong> is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</p>
 <p>
 	A municipality is often referred to as simply the Council without any further attempt by the speaker at making a size or scale designation, as in Council house. It is assumed the listener will already know the specific meaning of the word without further guidance.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121205170248</created><lastModified>20121205172151</lastModified></content>
-', '20121205170248', '20121205172151', '<?xml version="1.0" encoding="UTF-8"?>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="73" lang="en" /><text lang="en">Entando Town Council</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town Council</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121205170248</created><lastModified>20130314150506</lastModified></content>
+', '20121205170248', '20130314150506', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG43" typecode="CNG" typedescr="Generic Content"><descr>Council</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Giunta Comunale</text><text lang="en">Council</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	La Giunta del Comune &egrave; l&#39;organo esecutivo composto dal Sindaco, che ne &egrave; anche presidente, e da un numero di assessori, stabilito dallo statuto comunale, che non deve essere superiore a un terzo (arrotondato) del numero dei consiglieri comunali (computando a tale fine anche il sindaco) e comunque non superiore a sedici (art. 47 del d. lgs. 267/2000).</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
@@ -439,13 +256,13 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	A <strong>Council</strong> is a type of committee that is usually intended to lead or govern. Councils often serve several different functions.</p>
 <p>
 	A municipality is often referred to as simply the Council without any further attempt by the speaker at making a size or scale designation, as in Council house. It is assumed the listener will already know the specific meaning of the word without further guidance.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121205170248</created><lastModified>20121205172151</lastModified></content>
-', 'free', '2.0', 'admin');
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="73" lang="en" /><text lang="en">Entando Town Council</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town Council</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121205170248</created><lastModified>20130314150506</lastModified></content>
+', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG44', 'CNG', 'Municipal Council', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG44" typecode="CNG" typedescr="Generic Content"><descr>Municipal Council</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Consiglio Comunale</text><text lang="en">Municipal Council</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull&#39;ordinamento degli enti locali) &egrave; l&#39;assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall&#39;art. 114 della Costituzione della Repubblica Italiana.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	A <strong>Municipal Council</strong> is the local government of Villamarina municipality.</p>
+	A <strong>Municipal Council</strong> is the local government of Entando Town.</p>
 ]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull&#39;ordinamento degli enti locali) &egrave; l&#39;assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall&#39;art. 114 della <strong>Costituzione della Repubblica Italiana</strong>.</p>
 <p>
@@ -457,13 +274,13 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 <p>
 	&nbsp;</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	A <strong>Municipal Council</strong> is the local government of Villamarina municipality. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121205171127</created><lastModified>20121205171127</lastModified></content>
-', '20121205171128', '20121205171128', '<?xml version="1.0" encoding="UTF-8"?>
+	A <strong>Municipal Council</strong> is the local government of Entando Town. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="17" lang="en" /><text lang="en">Municipal Council</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Municipal Council</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121205171127</created><lastModified>20130314150712</lastModified></content>
+', '20121205171128', '20130314150712', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG44" typecode="CNG" typedescr="Generic Content"><descr>Municipal Council</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Consiglio Comunale</text><text lang="en">Municipal Council</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull&#39;ordinamento degli enti locali) &egrave; l&#39;assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall&#39;art. 114 della Costituzione della Repubblica Italiana.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	A <strong>Municipal Council</strong> is the local government of Villamarina municipality.</p>
+	A <strong>Municipal Council</strong> is the local government of Entando Town.</p>
 ]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Consiglio Comunale</strong>, secondo il D.Lgs. 267/2000 (Testo unico delle leggi sull&#39;ordinamento degli enti locali) &egrave; l&#39;assemblea pubblica rappresentativa di ogni Comune, ente locale previsto dall&#39;art. 114 della <strong>Costituzione della Repubblica Italiana</strong>.</p>
 <p>
@@ -475,56 +292,9 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 <p>
 	&nbsp;</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	A <strong>Municipal Council</strong> is the local government of Villamarina municipality. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121205171127</created><lastModified>20121205171127</lastModified></content>
-', 'free', '1.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG46', 'CNG', 'Statute', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG46" typecode="CNG" typedescr="Generic Content"><descr>Statute</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Statuto</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.<br />
-	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
-<p>
-	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
-<p>
-	In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Entando Town</strong>.</p>
-<p>
-	Scaricalo dagli <strong>Allegati&nbsp;</strong>qui di seguito.</p>
-<p>
-	&nbsp;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
-<p>
-	If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you&#39;ll find lots of interesting information in the official status.</p>
-<p>
-	In this section you can find the official text of <strong>Entando Town</strong> Municipality Statute.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="en" /><text lang="en">Statute</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121205172845</created><lastModified>20121205172845</lastModified></content>
-', '20121205172845', '20121205172845', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="CNG46" typecode="CNG" typedescr="Generic Content"><descr>Statute</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Statuto</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.<br />
-	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
-<p>
-	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
-<p>
-	In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Entando Town</strong>.</p>
-<p>
-	Scaricalo dagli <strong>Allegati&nbsp;</strong>qui di seguito.</p>
-<p>
-	&nbsp;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
-<p>
-	If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you&#39;ll find lots of interesting information in the official status.</p>
-<p>
-	In this section you can find the official text of <strong>Entando Town</strong> Municipality Statute.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="en" /><text lang="en">Statute</text></attribute></list></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121205172845</created><lastModified>20121205172845</lastModified></content>
-', 'free', '1.0', 'admin');
+	A <strong>Municipal Council</strong> is the local government of Entando Town. Specifically the term can refer to the institutions of various countries that can be translated by this term.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="17" lang="en" /><text lang="en">Municipal Council</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Municipal Council</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121205171127</created><lastModified>20130314150712</lastModified></content>
+', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('DLD48', 'DLD', 'Registry - Request Identity Card valid for foreign travel', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="DLD48" typecode="DLD" typedescr="Download Card"><descr>Registry - Request Identity Card valid for foreign travel</descr><groups mainGroup="free" /><categories><category id="documents" /><category id="citizen_registry" /></categories><attributes><attribute name="Title" attributetype="Text"><text lang="it">Anagrafe - Richiesta Carta Identità valida per espatrio</text><text lang="en">Registry - Request Identity Card valid for foreign travel</text></attribute><attribute name="File" attributetype="Attach"><resource resourcetype="Attach" id="47" lang="en" /><text lang="it">Modulo richiesta Carta Identità valida per espatrio</text><text lang="en">Identity Card Request Form</text></attribute><attribute name="ShortDescr" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Modulo per la richiesta della carta identit&agrave; valida per espatrio.</p>
@@ -859,19 +629,6 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 			
 			]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Entando.com</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20130115182928</created><lastModified>20130115182928</lastModified></content>
 ', 'free', '1.0', NULL);
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL69', 'RSL', 'Sample - Resolution 20', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL69" typecode="RSL" typedescr="Resolution"><descr>Sample - Resolution 20</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20120613</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="en">Examination and approval of Villamarina Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="en"><![CDATA[
-			
-			<p> Examination and approval of Villamarina Balance Sheet 2013</p>
-			
-			]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20130115182928</created><lastModified>20130115182928</lastModified></content>
-', '20130115182928', '20130115182928', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL69" typecode="RSL" typedescr="Resolution"><descr>Sample - Resolution 20</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20120613</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="en">Examination and approval of Villamarina Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="en"><![CDATA[
-			
-			<p> Examination and approval of Villamarina Balance Sheet 2013</p>
-			
-			]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20130115182928</created><lastModified>20130115182928</lastModified></content>
-', 'free', '1.0', NULL);
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG70', 'CNG', 'Sample - Hero Unit', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG70" typecode="CNG" typedescr="Generic Content"><descr>Sample - Hero Unit</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Hello, world!</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Learn more</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20130115182928</created><lastModified>20130115182928</lastModified></content>
 ', '20130115182928', '20130115182928', '<?xml version="1.0" encoding="UTF-8"?>
@@ -882,3 +639,249 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 ', '20130115182928', '20130115182928', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG71" typecode="CNG" typedescr="Generic Content"><descr>Sample - Lorem Ipsum</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Heading</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Entando.com</text></attribute><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.org/</urldest></link><text lang="en">Entando.org</text></attribute><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.github.com/entando/</urldest></link><text lang="en">Entando @GitHub</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20130115182928</created><lastModified>20130115182928</lastModified></content>
 ', 'free', '1.0', NULL);
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS33', 'NWS', 'The portal embraces responsiveness', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS33" typecode="NWS" typedescr="News"><descr>The portal embraces responsiveness</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130329</date></attribute><attribute name="Title" attributetype="Text"><text lang="en">The portal embraces responsiveness</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	From now on, mobile devices are welcome here!</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	From now on, mobile devices are welcome here!</p>
+<p>
+	Thanks to the joint powers of <strong>Entando</strong> and <strong>Twitter Bootstrap</strong>.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Links" attributetype="Link"><link type="external"><urldest>http://www.mysite.com/</urldest></link><text lang="en">Learn more »</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155423</created><lastModified>20130314130809</lastModified></content>
+', '20121018155423', '20130314130809', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS33" typecode="NWS" typedescr="News"><descr>The portal embraces responsiveness</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130329</date></attribute><attribute name="Title" attributetype="Text"><text lang="en">The portal embraces responsiveness</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	From now on, mobile devices are welcome here!</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	From now on, mobile devices are welcome here!</p>
+<p>
+	Thanks to the joint powers of <strong>Entando</strong> and <strong>Twitter Bootstrap</strong>.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Links" attributetype="Link"><link type="external"><urldest>http://www.mysite.com/</urldest></link><text lang="en">Learn more »</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155423</created><lastModified>20130314130809</lastModified></content>
+', 'free', '2.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG18', 'CNG', 'Welcome', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG18" typecode="CNG" typedescr="Generic Content"><descr>Welcome</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Welcome!</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	Entando Town is a demo portal built with Entando.</p>
+<p>
+	With this demo you can have a flavour of a bootstrap framework.<br />
+	In addition you will benefit from the responsive design feature....simply try to resize the window of your browser or to load this page from a mobile device to appreciate the responsive design capabilities.</p>
+<p>
+	What are you waiting for?<br />
+	Try the Administration Area using the <strong>Sign in</strong> drop-down up there in the top bar with the following account:</p>
+<p>
+	Username: <strong>admin</strong><br />
+	Password: <strong>adminadmin</strong></p>
+<p>
+	Enjoy Entando!</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	Entando Town is a demo portal built with Entando.</p>
+<p>
+	With this demo you can have a flavour of a bootstrap framework.<br />
+	In addition you will benefit from the responsive design feature....simply try to resize the window of your browser or to load this page from a mobile device to appreciate the responsive design capabilities.</p>
+<p>
+	What are you waiting for?<br />
+	Try the Administration Area!</p>
+<p>
+	Use the <strong>Sign in</strong> drop-down up there in the top bar with the following account:</p>
+<p>
+	Username: <strong>admin&nbsp;</strong><br />
+	Password: <strong>adminadmin</strong></p>
+<p>
+	Find out how many things you can customize, create a new content, a new page or even your own user.</p>
+<p>
+	Enjoy Entando!</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="17" lang="en" /><text lang="en">Official plaque</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town portal new look</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>7.0</version><lastEditor>admin</lastEditor><created>20121010173248</created><lastModified>20130314141043</lastModified></content>
+', '20121010173248', '20130314141043', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG18" typecode="CNG" typedescr="Generic Content"><descr>Welcome</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Welcome!</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	Entando Town is a demo portal built with Entando.</p>
+<p>
+	With this demo you can have a flavour of a bootstrap framework.<br />
+	In addition you will benefit from the responsive design feature....simply try to resize the window of your browser or to load this page from a mobile device to appreciate the responsive design capabilities.</p>
+<p>
+	What are you waiting for?<br />
+	Try the Administration Area using the <strong>Sign in</strong> drop-down up there in the top bar with the following account:</p>
+<p>
+	Username: <strong>admin</strong><br />
+	Password: <strong>adminadmin</strong></p>
+<p>
+	Enjoy Entando!</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	Entando Town is a demo portal built with Entando.</p>
+<p>
+	With this demo you can have a flavour of a bootstrap framework.<br />
+	In addition you will benefit from the responsive design feature....simply try to resize the window of your browser or to load this page from a mobile device to appreciate the responsive design capabilities.</p>
+<p>
+	What are you waiting for?<br />
+	Try the Administration Area!</p>
+<p>
+	Use the <strong>Sign in</strong> drop-down up there in the top bar with the following account:</p>
+<p>
+	Username: <strong>admin&nbsp;</strong><br />
+	Password: <strong>adminadmin</strong></p>
+<p>
+	Find out how many things you can customize, create a new content, a new page or even your own user.</p>
+<p>
+	Enjoy Entando!</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="17" lang="en" /><text lang="en">Official plaque</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town portal new look</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>7.0</version><lastEditor>admin</lastEditor><created>20121010173248</created><lastModified>20130314141043</lastModified></content>
+', 'free', '7.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG40', 'CNG', 'Public Relations Office', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG40" typecode="CNG" typedescr="Generic Content"><descr>Public Relations Office</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Telefono: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Orario di Ricevimento:<br />
+	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle <strong>8.00 </strong>alle&nbsp;<strong>13</strong>.<strong>00</strong><br />
+	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle <strong>15.00 </strong>alle&nbsp;<strong>17.00</strong></p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Phone: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Open:<br />
+	from <strong>Monday</strong> to <strong>Friday</strong>: <strong>8.00 a.m.</strong> to <strong>1.00 p.m.</strong><br />
+	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>4.00 p.m.</strong> to <strong>5.00 p.m.</strong></p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Telefono: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Orario di Ricevimento:<br />
+	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle <strong>8.00</strong> alle&nbsp;<strong>13.00</strong><br />
+	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle <strong>15.00</strong> alle&nbsp;<strong>17.00</strong></p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Phone: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Open:<br />
+	from <strong>Monday</strong> to <strong>Friday</strong>: <strong>8.00 a.m.</strong> to <strong>1.00 p.m.</strong><br />
+	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>3.00 p.m.</strong> to <strong>5.00 p.m.</strong></p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121122184256</created><lastModified>20130314145742</lastModified></content>
+', '20121122184256', '20130314145742', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG40" typecode="CNG" typedescr="Generic Content"><descr>Public Relations Office</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">URP - Ufficio Relazioni con il Pubblico</text><text lang="en">Public Relations Office</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Telefono: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Orario di Ricevimento:<br />
+	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle <strong>8.00 </strong>alle&nbsp;<strong>13</strong>.<strong>00</strong><br />
+	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle <strong>15.00 </strong>alle&nbsp;<strong>17.00</strong></p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Phone: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Open:<br />
+	from <strong>Monday</strong> to <strong>Friday</strong>: <strong>8.00 a.m.</strong> to <strong>1.00 p.m.</strong><br />
+	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>4.00 p.m.</strong> to <strong>5.00 p.m.</strong></p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Telefono: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Orario di Ricevimento:<br />
+	dal <strong>Luned&igrave;</strong>&nbsp;al&nbsp;<strong>Venerd&igrave;</strong>: dalle <strong>8.00</strong> alle&nbsp;<strong>13.00</strong><br />
+	<strong>Marted&igrave;</strong> e <strong>Mercoled&igrave;</strong>: dalle <strong>15.00</strong> alle&nbsp;<strong>17.00</strong></p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Phone: <strong>+39070240053</strong><br />
+	E-mail: <strong>info@entando.com</strong></p>
+<p>
+	Open:<br />
+	from <strong>Monday</strong> to <strong>Friday</strong>: <strong>8.00 a.m.</strong> to <strong>1.00 p.m.</strong><br />
+	<strong>Tuesday</strong>&nbsp;and&nbsp;<strong>Wednesday</strong>: <strong>3.00 p.m.</strong> to <strong>5.00 p.m.</strong></p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121122184256</created><lastModified>20130314145742</lastModified></content>
+', 'free', '3.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL32', 'RSL', 'Resolution 133', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL32" typecode="RSL" typedescr="Resolution"><descr>Resolution 133</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /></categories><attributes><attribute name="Number" attributetype="Number"><number>133</number></attribute><attribute name="Date" attributetype="Date"><date>20130130</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell&#39;istituto.</p>
+<p>
+	Approvazione progetto definitivo - esecutivo.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>
+<p>
+	Approval of final project.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Resolution 133</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153757</created><lastModified>20130314131648</lastModified></content>
+', '20121018153757', '20130314131648', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL32" typecode="RSL" typedescr="Resolution"><descr>Resolution 133</descr><groups mainGroup="free" /><categories><category id="resolutions_giunta" /></categories><attributes><attribute name="Number" attributetype="Number"><number>133</number></attribute><attribute name="Date" attributetype="Date"><date>20130130</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Manutenzione straordinaria Istituto Nautico - Lavori per la realizzazione di laboratorio informatico.</text><text lang="en">Special maintenance of Nautical Institute.</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Manutenzione straordinaria Istituto Nautico. Lavori per la realizzazione di un laboratorio informatico nel primo piano dell&#39;istituto.</p>
+<p>
+	Approvazione progetto definitivo - esecutivo.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Special maintenance of Nautical Institute. Realization of a computer lab on the first floor of the institute.</p>
+<p>
+	Approval of final project.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="31" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 133 del 20 Luglio 2011</text><text lang="en">Resolution 133</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153757</created><lastModified>20130314131648</lastModified></content>
+', 'free', '2.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG72', 'CNG', 'APIs', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG72" typecode="CNG" typedescr="Generic Content"><descr>APIs</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">APIs</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	The API Engine allows to expose information, contents of the CMS and platform services, through REST interfaces. Each resource can be exposed through the operations of research, creation, modification and deletion. Each API resource is also protected by an authorization check, through the use of OAuth protocol, whose policies are configurable by the administrator of the system.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	The API Engine allows to expose information, contents of the CMS and platform services, through REST interfaces. Each resource can be exposed through the operations of research, creation, modification and deletion. Each API resource is also protected by an authorization check, through the use of OAuth protocol, whose policies are configurable by the administrator of the system.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20130314132427</created><lastModified>20130314132427</lastModified></content>
+', '20130314132427', '20130314132427', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG72" typecode="CNG" typedescr="Generic Content"><descr>APIs</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">APIs</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	The API Engine allows to expose information, contents of the CMS and platform services, through REST interfaces. Each resource can be exposed through the operations of research, creation, modification and deletion. Each API resource is also protected by an authorization check, through the use of OAuth protocol, whose policies are configurable by the administrator of the system.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	The API Engine allows to expose information, contents of the CMS and platform services, through REST interfaces. Each resource can be exposed through the operations of research, creation, modification and deletion. Each API resource is also protected by an authorization check, through the use of OAuth protocol, whose policies are configurable by the administrator of the system.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20130314132427</created><lastModified>20130314132427</lastModified></content>
+', 'free', '1.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL69', 'RSL', 'Sample - Resolution 20', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL69" typecode="RSL" typedescr="Resolution"><descr>Sample - Resolution 20</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20130613</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	Examination and approval of Entando Town Balance Sheet 2013</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20130115182928</created><lastModified>20130314134726</lastModified></content>
+', '20130115182928', '20130314134726', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL69" typecode="RSL" typedescr="Resolution"><descr>Sample - Resolution 20</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20130613</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>
+	Examination and approval of Entando Town Balance Sheet 2013</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20130115182928</created><lastModified>20130314134726</lastModified></content>
+', 'free', '3.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('ANN24', 'ANN', 'Announcement for participation in Civil Service', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="ANN24" typecode="ANN" typedescr="Announcement"><descr>Announcement for participation in Civil Service</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="StartDate" attributetype="Date"><date>20130227</date></attribute><attribute name="EndDate" attributetype="Date"><date>20131130</date></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Bando di gara per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Entando Town.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Announcement for the selection of 10 volunteers for civil service projects.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121017110857</created><lastModified>20130314140024</lastModified></content>
+', '20121017110857', '20130314140024', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="ANN24" typecode="ANN" typedescr="Announcement"><descr>Announcement for participation in Civil Service</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per la partecipazione al Servizio Civile</text><text lang="en">Announcement for participation in Civil Service</text></attribute><attribute name="StartDate" attributetype="Date"><date>20130227</date></attribute><attribute name="EndDate" attributetype="Date"><date>20131130</date></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Bando di gara per la selezione di 10 volontari da impiegare in progetti di servizio civile nel Comune di Entando Town.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Announcement for the selection of 10 volunteers for civil service projects.</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121017110857</created><lastModified>20130314140024</lastModified></content>
+', 'free', '3.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG46', 'CNG', 'Statute', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG46" typecode="CNG" typedescr="Generic Content"><descr>Statute</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Statuto</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.<br />
+	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
+<p>
+	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
+<p>
+	In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Entando Town</strong>.</p>
+<p>
+	Scaricalo dagli <strong>Allegati&nbsp;</strong>qui di seguito.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
+<p>
+	If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you&#39;ll find lots of interesting information in the official status.</p>
+<p>
+	In this section you can find the official text of <strong>Entando Town</strong> Statute.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="74" lang="en" /><text lang="en">Entando Town Statute</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town Statute</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="en" /><text lang="en">Statute</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121205172845</created><lastModified>20130314151301</lastModified></content>
+', '20121205172845', '20130314151301', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="CNG46" typecode="CNG" typedescr="Generic Content"><descr>Statute</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Statuto</text><text lang="en">Statute</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.<br />
+	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Lo <strong>Statuto</strong> &egrave; il documento che definisce <strong>organi</strong>, <strong>compiti</strong> e <strong>modalit&agrave;</strong> di funzionamento dell&rsquo;Ente comunale.</p>
+<p>
+	Se desideri saperne di pi&ugrave; sulle funzioni svolte dall&rsquo;Ente Comune, sulle regole che ne governano il funzionamento e sulla rappresentativit&agrave; democratica esercitata dai cittadini tramite il voto elettorale, troverai nello statuto ufficiale molte informazioni interessanti.</p>
+<p>
+	In questa sezione puoi trovare, nella sua interezza, il testo ufficiale dello Statuto del Comune di <strong>Entando Town</strong>.</p>
+<p>
+	Scaricalo dagli <strong>Allegati&nbsp;</strong>qui di seguito.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	The <strong>Statute</strong> is the document that defines the Municipality council, functions and mode of operation.</p>
+<p>
+	If you want to learn more about the Municipality functions, basic rules and democratic representation exercised by citizens through the electoral vote, you&#39;ll find lots of interesting information in the official status.</p>
+<p>
+	In this section you can find the official text of <strong>Entando Town</strong> Statute.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image"><resource resourcetype="Image" id="74" lang="en" /><text lang="en">Entando Town Statute</text></attribute><attribute name="Caption" attributetype="Text"><text lang="en">Entando Town Statute</text></attribute><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="45" lang="en" /><text lang="en">Statute</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121205172845</created><lastModified>20130314151301</lastModified></content>
+', 'free', '2.0', 'admin');

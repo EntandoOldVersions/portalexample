@@ -51,18 +51,6 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
-INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('informations', 'homepage', 3, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Informations</property>
-<property key="it">Trasparenza</property>
-</properties>
-
-', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
-<config>
-  <useextratitles>false</useextratitles>
-</config>
-
-');
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('online_services', 'homepage', 4, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Online Services</property>
@@ -300,6 +288,18 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 ', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>true</useextratitles>
+</config>
+
+');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('informations', 'homepage', 3, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Info</property>
+<property key="it">Info</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
 </config>
 
 ');

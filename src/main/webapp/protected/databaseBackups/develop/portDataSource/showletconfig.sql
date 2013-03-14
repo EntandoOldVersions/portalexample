@@ -42,9 +42,7 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions', 3, 'entando-showlet-login_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('resolutions', 11, 'RSL_Archive', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 8, 'ANN_Latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 9, 'RSL_Latest', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 10, 'NWS_Latest', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('search_result', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('search_result', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -153,13 +151,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 2, 'entando-showlet-search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 3, 'entando-showlet-login_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG44</property>
-<property key="modelId">10001</property>
-</properties>
-
-', 'CNG44');
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 0, 'entando-showlet-language_choose', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -170,13 +161,6 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 2, 'entando-showlet-search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 3, 'entando-showlet-login_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG46</property>
-<property key="modelId">10001</property>
-</properties>
-
-', 'CNG46');
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('news', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(informations).subtree(1)</property>
@@ -331,10 +315,33 @@ INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcon
 ', NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 2, 'entando-showlet-search_form', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 15, 'entando_apis', NULL, NULL);
 INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 10, 'NWS_Latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('homepage', 8, 'ANN_Latest', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 16, 'entando_apis', NULL, NULL);
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('public_api', 15, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG72</property>
+<property key="modelId">10001</property>
+</properties>
+
+', 'CNG72');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('statute', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG46</property>
+<property key="modelId">10014</property>
+</properties>
+
+', 'CNG46');
+INSERT INTO showletconfig (pagecode, framepos, showletcode, config, publishedcontent) VALUES ('municipal_council', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG44</property>
+<property key="modelId">10014</property>
+</properties>
+
+', 'CNG44');
