@@ -1,6 +1,6 @@
 /*
 *
-* Copyright 2012 Entando S.r.l. (http://www.entando.com) All rights reserved.
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 * This file is part of Entando software.
 * Entando is a free software; 
@@ -12,7 +12,7 @@
 * 
 * 
 * 
-* Copyright 2012 Entando S.r.l. (http://www.entando.com) All rights reserved.
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 */
 package org.entando.entando.portalexample.apsadmin.card;
@@ -30,9 +30,8 @@ import com.agiletec.apsadmin.system.BaseAction;
  * Action per le operazioni sulle Card. Implementa le operazioni CRUD sulle schede.
  * @author E.Mezzano - E.Santoboni
  */
-public class CardAction extends BaseAction implements ICardAction {
+public class CardAction extends BaseAction {
 	
-	@Override
 	public String newCard() {
 		try {
 			this.setStrutsAction(ApsAdminSystemConstants.ADD);
@@ -43,7 +42,6 @@ public class CardAction extends BaseAction implements ICardAction {
 		return SUCCESS;
 	}
 	
-	@Override
 	public String edit() {
 		try {
 			this.setStrutsAction(ApsAdminSystemConstants.EDIT);
@@ -55,7 +53,6 @@ public class CardAction extends BaseAction implements ICardAction {
 		return SUCCESS;
 	}
 	
-	@Override
 	public String view() {
 		try {
 			this.valueForm();
@@ -75,7 +72,6 @@ public class CardAction extends BaseAction implements ICardAction {
 		this.setNote(card.getNote());
 	}
 	
-	@Override
 	public String delete() {
 		try {
 			this.getCardManager().deleteCard(this.getId());
@@ -86,7 +82,6 @@ public class CardAction extends BaseAction implements ICardAction {
 		return SUCCESS;
 	}
 	
-	@Override
 	public String save() {
 		try {
 			Card card = this.createCard();
@@ -188,7 +183,7 @@ public class CardAction extends BaseAction implements ICardAction {
 	
 	/**
 	 * Imposta la data di rilascio della scheda.
-	 * @param dataRilascio La data di rilascio della scheda.
+	 * @param date La data di rilascio della scheda.
 	 */
 	public void setDate(Date date) {
 		this._date = date;
@@ -204,7 +199,7 @@ public class CardAction extends BaseAction implements ICardAction {
 	
 	/**
 	 * Imposta le note della scheda.
-	 * @param dataRilascio Le note della scheda.
+	 * @param note Le note della scheda.
 	 */
 	public void setNote(String note) {
 		this._note = note;

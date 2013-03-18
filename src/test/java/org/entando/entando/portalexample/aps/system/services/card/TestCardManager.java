@@ -1,6 +1,6 @@
 /*
 *
-* Copyright 2012 Entando s.r.l. (http://www.entando.com) All rights reserved.
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 * This file is part of Entando software.
 * Entando is a free software; 
@@ -12,7 +12,7 @@
 * 
 * 
 * 
-* Copyright 2012 Entando s.r.l. (http://www.entando.com) All rights reserved.
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 */
 package org.entando.entando.portalexample.aps.system.services.card;
@@ -69,7 +69,9 @@ public class TestCardManager extends PortalexampleBaseTestCase {
 	 * Esegue il test sul corretto funzionamento dei metodi 'addCard' e 'deleteCard' per l'aggiunta e la cancellazione di una scheda.
 	 */
 	public void testAddDeleteCard() throws Throwable {
+		assertNull(this._cardManager.getCard(70));
 		Card newCard = new Card();
+		newCard.setId(70);
 		newCard.setHolder("Goofy Goof");
 		newCard.setDescr("I'm Mickey Mouse's best friend");
 		newCard.setDate(new Date());
@@ -125,7 +127,7 @@ public class TestCardManager extends PortalexampleBaseTestCase {
 		updatedCard = this._cardManager.getCard(3);
 		assertEquals("Verdi Nicola", updatedCard.getHolder());
 		assertEquals("Fair", updatedCard.getDescr());
-		assertNull(updatedCard.getNote());
+		assertEquals("Lorem ipsum.", updatedCard.getNote());
 	}
 	
 	/**

@@ -1,6 +1,6 @@
 /*
 *
-* Copyright 2012 Entando S.r.l. (http://www.entando.com) All rights reserved.
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 * This file is part of Entando software.
 * Entando is a free software; 
@@ -12,7 +12,7 @@
 * 
 * 
 * 
-* Copyright 2012 Entando S.r.l. (http://www.entando.com) All rights reserved.
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 */
 package org.entando.entando.portalexample.apsadmin.card;
@@ -29,9 +29,8 @@ import com.agiletec.apsadmin.system.BaseAction;
  * Classe Action per la gestione della ricerca e visualizzazione lista card.
  * @author E.Mezzano - E.Santoboni
  */
-public class CardFinderAction extends BaseAction implements ICardFinderAction {
+public class CardFinderAction extends BaseAction {
 	
-	@Override
 	public List<Card> getCards() {
 		List<Card> cards = null;
 		try {
