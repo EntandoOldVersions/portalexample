@@ -85,14 +85,7 @@
 		<Arg type="java.lang.String">${profile.index.path}</Arg>
 		<Arg type="boolean">false</Arg>
 	</New>	
-
-	<New class="org.eclipse.jetty.plus.jndi.EnvEntry">
-		<Arg></Arg>
-		<Arg>cacheDiskRootFolder</Arg>
-		<Arg type="java.lang.String">${profile.cache.path}</Arg>
-		<Arg type="boolean">false</Arg>
-	</New>												
-
+	
 <New id="portDataSource" class="org.eclipse.jetty.plus.jndi.Resource">
 		<Arg>java:comp/env/jdbc/portDataSource</Arg>
 		<Arg>
