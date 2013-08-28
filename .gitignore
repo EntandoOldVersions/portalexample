@@ -1,8 +1,12 @@
-target
 *.log
 .ant-targets-build.xml
-src/main/webapp/WEB-INF/*.tld
-nb-configuration.xml
 .classpath
+.DS_Store
 .project
 .settings/
+derby.log
+libpeerconnection.log
+nb-configuration.xml
+nbactions.xml
+src/main/webapp/WEB-INF/*.tld
+target
