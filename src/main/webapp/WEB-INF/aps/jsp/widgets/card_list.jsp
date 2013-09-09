@@ -8,7 +8,7 @@
 
 <%--
 optional CSS
-<wp:headInfo type="CSS" info="showlets/card_list.css" />
+<wp:headInfo type="CSS" info="widgets/card_list.css" />
 --%>
 
 <!-- search block //start -->
@@ -28,7 +28,7 @@ optional CSS
 	<wp:pager listName="cardList" objectName="groupCard" pagerIdFromFrame="true" max="10" advanced="true" offset="5" >
 	<c:set var="group" value="${groupCard}" scope="request" />
 
-	<c:import url="/WEB-INF/plugins/jacms/aps/jsp/showlets/inc/pagerBlock.jsp" />
+	<c:import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/pagerBlock.jsp" />
 
 	<h2>
 		<wp:i18n key="CARDS_NUMBER" /> : <c:out value="${groupCard.size}" />
@@ -52,7 +52,7 @@ optional CSS
 	<!-- output data //end -->
 
 	<!-- pager -->
-	<c:import url="/WEB-INF/plugins/jacms/aps/jsp/showlets/inc/pagerBlock.jsp" />
+	<c:import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/pagerBlock.jsp" />
 
 	</wp:pager>
 

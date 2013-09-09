@@ -5,7 +5,7 @@
 
 <%--
 optional CSS
-<wp:headInfo type="CSS" info="showlets/card_list.css" />
+<wp:headInfo type="CSS" info="widgets/card_list.css" />
 --%>
 
 <section class="card_list">

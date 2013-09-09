@@ -3,7 +3,7 @@
 <%@ taglib prefix="wpsf" uri="/apsadmin-form" %>
 <%@ taglib prefix="wpsa" uri="/apsadmin-core" %>
 <%@ taglib prefix="wp" uri="/aps-core" %>
-<wp:headInfo type="CSS" info="showlets/api.css"/>
+<wp:headInfo type="CSS" info="widgets/api.css"/>
 <s:set var="apiServiceVar" value="%{getApiService(serviceKey)}" />
 <div class="entando-api api-resource-detail">
 <h2><wp:i18n key="ENTANDO_API_SERVICE" />&#32;<s:property value="serviceKey" /></h2>
