@@ -1,60 +1,108 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib uri="/apsadmin-core" prefix="wpsa" %>
-<%@ taglib uri="/apsadmin-form" prefix="wpsf" %>
-<s:set var="targetNS" value="%{'/do/Card'}" />
-<h1><s:text name="title.cardManagement" /><s:include value="/WEB-INF/apsadmin/jsp/common/inc/operations-context-general.jsp" /></h1>
+<%@ taglib prefix="wp" uri="/aps-core" %>
+<%@ taglib prefix="wpsa" uri="/apsadmin-core" %>
+<%@ taglib prefix="wpsf" uri="/apsadmin-form" %>
+<h1 class="panel panel-default title-page">
+	<span class="panel-body display-block">
+		<a href="<s:url action="list" />"><s:text name="title.cardManagement" /></a>
+		&#32;/&#32;
+		<s:if test="getStrutsAction() == 1">
+			<s:text name="title.newCard" />
+		</s:if>
+		<s:if test="getStrutsAction() == 2">
+			<s:text name="title.editCard" />
+		</s:if>
+	</span>
+</h1>
 <div id="main">
-	<s:if test="getStrutsAction() == 1">
-		<h2><s:text name="title.newCard" /></h2>
-	</s:if>
-	<s:if test="getStrutsAction() == 2">
-		<h2><s:text name="title.editCard" /></h2>	
-	</s:if>
-	
-	<s:form action="save" >
+	<s:form action="save" cssClass="form-horizontal">
 		<s:if test="hasFieldErrors()">
-			<div class="message message_error">	
-				<h3><s:text name="message.title.FieldErrors" /></h3>
-				<ul>
+			<div class="alert alert-danger alert-dismissable fade in">
+				<button class="close" data-dismiss="alert"><span class="icon icon-remove"></span></button>
+				<h2 class="h4 margin-none"><s:text name="message.title.FieldErrors" /></h2>
+				<%--
+				<ul class="margin-base-top">
 					<s:iterator value="fieldErrors">
 						<s:iterator value="value">
-				            <li><s:property/></li>
+							<li><s:property escape="false" /></li>
 						</s:iterator>
+					</s:iterator>
+				</ul>
+				--%>
+			</div>
+		</s:if>
+		<s:if test="hasActionErrors()">
+			<div class="alert alert-danger alert-dismissable fade in">
+				<button class="close" data-dismiss="alert"><span class="icon icon-remove"></span></button>
+				<h2 class="h4 margin-none"><s:text name="message.title.ActionErrors" /></h2>
+				<ul class="margin-base-top">
+					<s:iterator value="actionErrors">
+						<li><s:property escape="false" /></li>
 					</s:iterator>
 				</ul>
 			</div>
 		</s:if>
-		<fieldset class="margin-more-top"> 
-			<legend><s:text name="label.info" /></legend>
-			<p class="noscreen">
-				<wpsf:hidden name="strutsAction" />
-				<s:if test="getStrutsAction() == 2">
-					<wpsf:hidden name="id" />
-				</s:if>
-			</p>
-			<p>
-				<label for="holder" class="basic-mint-label"><s:text name="label.cardHolder" />:</label>
-				<wpsf:textfield name="holder" id="holder" cssClass="text" />
-			</p>
-			
-			<p>
-				<label for="descr" class="basic-mint-label"><s:text name="label.cardDescr" />:</label>
-				<wpsf:textfield name="descr" id="descr" cssClass="text" />
-			</p>
-			
-			<p>
-				<label for="date_cal" class="basic-mint-label"><s:text name="label.cardDate" />:</label>
-				<wpsf:textfield name="date" id="date_cal" cssClass="text" />
-			</p>
-			
-			<p>
-				<label for="note" class="basic-mint-label"><s:text name="label.cardNote" />:</label>
-				<wpsf:textarea name="note" id="note" cssClass="text" cols="50" rows="3" />
-			</p>
-			
-		</fieldset>
-		<p class="centerText">
-			<wpsf:submit value="%{getText('label.save')}" cssClass="button" />
+		<p class="noscreen">
+			<wpsf:hidden name="strutsAction" />
+			<s:if test="getStrutsAction() == 2">
+				<wpsf:hidden name="id" />
+			</s:if>
 		</p>
+		<div class="col-xs-12">
+			<%-- holder --%>
+				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['holder']}" />
+				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
+				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
+				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
+					<label for="holder"><s:text name="label.cardHolder" /></label>
+					<s:textfield name="holder" id="holder" cssClass="form-control" />
+					<s:if test="#currentFieldHasFieldErrorVar">
+						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+					</s:if>
+				</div>
+			<%-- description --%>
+				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['descr']}" />
+				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
+				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
+				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
+					<label for="descr"><s:text name="label.cardDescr" /></label>
+					<s:textfield name="descr" id="descr" cssClass="form-control" />
+					<s:if test="#currentFieldHasFieldErrorVar">
+						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+					</s:if>
+				</div>
+			<%-- date --%>
+				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['date']}" />
+				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
+				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
+				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
+					<label for="date"><s:text name="label.cardDate" /></label>
+					<s:textfield name="date" id="date" cssClass="form-control" />
+					<span class="help help-block">dd/mm/yyyy</span>
+					<s:if test="#currentFieldHasFieldErrorVar">
+						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+					</s:if>
+				</div>
+			<%-- note --%>
+				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['note']}" />
+				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
+				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
+				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
+					<label for="note"><s:text name="label.cardNote" /></label>
+					<s:textarea cols="50" rows="3" name="note" id="note" cssClass="form-control" />
+					<s:if test="#currentFieldHasFieldErrorVar">
+						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+					</s:if>
+				</div>
+		</div>
+		<%-- save --%>
+			<div class="form-group">
+				<div class="col-xs-12 col-sm-4 col-md-3 margin-small-vertical">
+					<s:submit type="button" cssClass="btn btn-primary btn-block">
+						<span class="icon icon-save"></span>&#32;
+						<s:text name="label.save" />
+					</s:submit>
+				</div>
+			</div>
 	</s:form>
 </div>
