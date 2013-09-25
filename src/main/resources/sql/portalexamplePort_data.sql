@@ -252,7 +252,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-navigation_bar" date="2013-03-13 11:05:22" status="OK">
+		<component code="entando-widget-navigation_bar" date="2013-03-13 11:05:22" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -285,7 +285,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-language_choose" date="2013-03-13 11:05:22" status="OK">
+		<component code="entando-widget-language_choose" date="2013-03-13 11:05:22" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -329,7 +329,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-login_form" date="2013-03-13 11:05:22" status="OK">
+		<component code="entando-widget-login_form" date="2013-03-13 11:05:22" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -340,7 +340,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-navigation_breadcrumbs" date="2013-03-13 11:05:22" status="OK">
+		<component code="entando-widget-navigation_breadcrumbs" date="2013-03-13 11:05:22" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -351,7 +351,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-search_form" date="2013-03-13 11:05:22" status="OK">
+		<component code="entando-widget-search_form" date="2013-03-13 11:05:22" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -384,7 +384,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-showlet-navigation_menu" date="2013-03-13 11:05:22" status="OK">
+		<component code="entando-widget-navigation_menu" date="2013-03-13 11:05:22" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -859,11 +859,11 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('home', 'Home P
 INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-2columns-left', '2 Columns - Left', '<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
-		<defaultWidget code="entando-showlet-language_choose" />
+		<defaultWidget code="entando-widget-language_choose" />
 	</frame>
 	<frame pos="1">
 		<descr>Navbar 2</descr>
-		<defaultWidget code="entando-showlet-navigation_bar">
+		<defaultWidget code="entando-widget-navigation_bar">
 			<properties>
 				<property key="navSpec">code(homepage)</property>
 			</properties>
@@ -871,19 +871,19 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-2
 	</frame>
 	<frame pos="2">
 		<descr>Navbar 3</descr>
-		<defaultWidget code="entando-showlet-search_form" />
+		<defaultWidget code="entando-widget-search_form" />
 	</frame>
 	<frame pos="3">
 		<descr>Navbar 4</descr>
-		<defaultWidget code="entando-showlet-login_form" />
+		<defaultWidget code="entando-widget-login_form" />
 	</frame>
 	<frame pos="4">
 		<descr>Toolbar 1</descr>
-		<defaultWidget code="entando-showlet-navigation_breadcrumbs" />
+		<defaultWidget code="entando-widget-navigation_breadcrumbs" />
 	</frame>
 	<frame pos="5">
 		<descr>Left 1</descr>
-		<defaultWidget code="entando-showlet-navigation_menu">
+		<defaultWidget code="entando-widget-navigation_menu">
 			<properties>
 				<property key="navSpec">code(homepage).subtree(1)</property>
 			</properties>
@@ -974,11 +974,11 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-2
 INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
-		<defaultWidget code="entando-showlet-language_choose" />
+		<defaultWidget code="entando-widget-language_choose" />
 	</frame>
 	<frame pos="1">
 		<descr>Navbar 2</descr>
-		<defaultWidget code="entando-showlet-navigation_bar">
+		<defaultWidget code="entando-widget-navigation_bar">
 			<properties>
 				<property key="navSpec">code(homepage)</property>
 			</properties>
@@ -986,11 +986,11 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-b
 	</frame>
 	<frame pos="2">
 		<descr>Navbar 3</descr>
-		<defaultWidget code="entando-showlet-search_form" />
+		<defaultWidget code="entando-widget-search_form" />
 	</frame>
 	<frame pos="3">
 		<descr>Navbar 4</descr>
-		<defaultWidget code="entando-showlet-login_form" />
+		<defaultWidget code="entando-widget-login_form" />
 	</frame>
 	<frame pos="4">
 		<descr>Toolbar 1</descr>
@@ -1430,17 +1430,17 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="en">My API Token</property>
 <property key="it">My API Token</property>
 </properties>', NULL, 'jptokenapi', NULL, NULL, 1, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-showlet-language_choose', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-language_choose', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Choose a Language</property>
 <property key="it">Choose a Language</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-showlet-login_form', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-login_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Dropdown Sign In</property>
 <property key="it">Dropdown Sign In</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation - Bar</property>
 <property key="it">Navigazione - Barra Orizzontale</property>
@@ -1448,12 +1448,12 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
 </config>', NULL, NULL, NULL, 1, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-showlet-navigation_breadcrumbs', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-navigation_breadcrumbs', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation - Breadcrumbs</property>
 <property key="it">Navigazione - Briciole di Pane</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation - Vertical Menu</property>
 <property key="it">Navigazione - Menù Verticale</property>
@@ -1461,7 +1461,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
 </config>', NULL, NULL, NULL, 1, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-showlet-search_form', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-search_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Search Form</property>
 <property key="it">Search Form</property>
@@ -1623,20 +1623,20 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>', 1);
 
 
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 4, 'entando-widget-navigation_breadcrumbs', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 11, 'NWS_Archive', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 5, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentId">CNG18</property>
@@ -1645,119 +1645,119 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 
 ', 'CNG18');
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 4, 'entando-widget-navigation_breadcrumbs', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 11, 'ANN_Archive', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 4, 'entando-widget-navigation_breadcrumbs', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 11, 'RSL_Archive', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 9, 'RSL_Latest', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('search_result', 7, 'search_result', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 4, 'entando-widget-navigation_breadcrumbs', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(1)</property>
 </properties>
 
 ', NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements_read', 11, 'content_viewer', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 4, 'entando-widget-navigation_breadcrumbs', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(1)</property>
 </properties>
 
 ', NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions_read', 11, 'content_viewer', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 4, 'entando-showlet-navigation_breadcrumbs', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 4, 'entando-widget-navigation_breadcrumbs', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage).subtree(1)</property>
 </properties>
 
 ', NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news_read', 11, 'content_viewer', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('contents_read', 5, 'content_viewer', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 24, 'URP_Public_Relations_Office', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1766,63 +1766,63 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', 'CNG43');
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(informations).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(informations).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 5, 'entando-showlet-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(informations).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 7, 'content_viewer', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1836,15 +1836,15 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 24, 'URP_Public_Relations_Office', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1858,15 +1858,15 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 24, 'URP_Public_Relations_Office', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 15, 'card_list', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
@@ -1876,15 +1876,15 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', 'CNG55');
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 24, 'URP_Public_Relations_Office', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 15, 'card_list_detail', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass_intservl', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
@@ -1894,35 +1894,35 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', 'CNG56');
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('login', 7, 'login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('notfound', 7, 'messages_system', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 3, 'entando-showlet-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 7, 'messages_system', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1931,16 +1931,16 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', 'CNG41');
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 0, 'entando-showlet-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
 
 ', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 2, 'entando-showlet-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 3, 'entando-showlet-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 1, 'entando-showlet-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('homepage', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
 </properties>
