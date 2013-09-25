@@ -1480,7 +1480,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 	<parameter name="maxElemForItem">Contents for each page</parameter>
 	<parameter name="maxElements">Number of contents</parameter>
 	<parameter name="filters" />
-	<parameter name="title_{lang}">Showlet Title in lang {lang}</parameter>
+	<parameter name="title_{lang}">Widget Title in lang {lang}</parameter>
 	<parameter name="pageLink">The code of the Page to link</parameter>
 	<parameter name="linkDescr_{lang}">Link description in lang {lang}</parameter>
 	<action name="listViewerConfig"/>
@@ -2577,11 +2577,11 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 <p>
 	In front-end vengono presentate le funzioni di erogazione lista per i PASS attraverso l&#39;&#39;utilizzo di un custom tag (CardListTag) e il paginatore di sistema. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
 <p>
-	Il servizio &egrave; fruibile anche attraverso l&#39;utilizzo della Showlet &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_intservl!#">accedi al servizio</a>.</p>
+	Il servizio &egrave; fruibile anche attraverso l&#39;utilizzo della Widget &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_intservl!#">accedi al servizio</a>.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
 	This is a simple example of a service application (written under the &quot;Entando Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot;.</p>
 <p>
-	The service is also available through the use of the &quot;<a href="#!P;old_town_traffic_pass_intservl!#">Internal Servlet</a>&quot; Showlet.</p>
+	The service is also available through the use of the &quot;<a href="#!P;old_town_traffic_pass_intservl!#">Internal Servlet</a>&quot; Widget.</p>
 ]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121206182503</created><lastModified>20121206183133</lastModified></content>
 ', '20121206182504', '20121206183133', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG55" typecode="CNG" typedescr="Generic Content"><descr>Card Management</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Esempio Servizio Applicativo</text><text lang="en">Application Service Example</text></attribute><attribute name="Abstract" attributetype="Hypertext" /><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
@@ -2589,32 +2589,32 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 <p>
 	In front-end vengono presentate le funzioni di erogazione lista per i PASS attraverso l&#39;&#39;utilizzo di un custom tag (CardListTag) e il paginatore di sistema. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
 <p>
-	Il servizio &egrave; fruibile anche attraverso l&#39;utilizzo della Showlet &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_intservl!#">accedi al servizio</a>.</p>
+	Il servizio &egrave; fruibile anche attraverso l&#39;utilizzo della Widget &quot;Internal Servlet&quot;, <a href="#!P;old_town_traffic_pass_intservl!#">accedi al servizio</a>.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
 	This is a simple example of a service application (written under the &quot;Entando Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot;.</p>
 <p>
-	The service is also available through the use of the &quot;<a href="#!P;old_town_traffic_pass_intservl!#">Internal Servlet</a>&quot; Showlet.</p>
+	The service is also available through the use of the &quot;<a href="#!P;old_town_traffic_pass_intservl!#">Internal Servlet</a>&quot; Widget.</p>
 ]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121206182503</created><lastModified>20121206183133</lastModified></content>
 ', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG56', 'CNG', 'Card Management Internal Servlet', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG56" typecode="CNG" typedescr="Generic Content"><descr>Card Management Internal Servlet</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Internal Servlet</text><text lang="en">Internal Servlet</text></attribute><attribute name="Abstract" attributetype="Hypertext" /><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi di Entando&quot;) per la gestione dei &quot;Pass ZTL&quot; con l&#39;utilizzo della Showlet &quot;Internal Servlet&quot;.</p>
+	Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi di Entando&quot;) per la gestione dei &quot;Pass ZTL&quot; con l&#39;utilizzo della Widget &quot;Internal Servlet&quot;.</p>
 <p>
-	Tramite la showlet Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
+	Tramite la widget Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
 <p>
 	In questo esempio, nel front-end vengono presentate le funzioni di ricerca PASS e visione dati singolo PASS. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	This is a simple example of a service application (written under the &quot;Entando Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Showlet.</p>
+	This is a simple example of a service application (written under the &quot;Entando Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Widget.</p>
 ]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121206184512</created><lastModified>20121206184512</lastModified></content>
 ', '20121206184512', '20121206184512', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG56" typecode="CNG" typedescr="Generic Content"><descr>Card Management Internal Servlet</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Internal Servlet</text><text lang="en">Internal Servlet</text></attribute><attribute name="Abstract" attributetype="Hypertext" /><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi di Entando&quot;) per la gestione dei &quot;Pass ZTL&quot; con l&#39;utilizzo della Showlet &quot;Internal Servlet&quot;.</p>
+	Di seguito viene presentato un semplice esempio di erogazione di un servizio applicativo (scritto secondo il &quot;Pattern di integrazione Servizi Applicativi di Entando&quot;) per la gestione dei &quot;Pass ZTL&quot; con l&#39;utilizzo della Widget &quot;Internal Servlet&quot;.</p>
 <p>
-	Tramite la showlet Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
+	Tramite la widget Internal Servlet &egrave; possibile utilizzare il motore del servizio utilizzato per il back-office (le operazioni CRUD realizzate tramite le Action CardAction e CardFinderAction) integrando delle jsp apposite.</p>
 <p>
 	In questo esempio, nel front-end vengono presentate le funzioni di ricerca PASS e visione dati singolo PASS. Nel back-end &egrave; possibilie effettuare le semplici operazioni CRUD sugli oggetti.</p>
 ]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	This is a simple example of a service application (written under the &quot;Entando Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Showlet.</p>
+	This is a simple example of a service application (written under the &quot;Entando Services Integration Pattern&quot;) for the management of &quot;Limited Traffic Zone Pass&quot; with the use of &quot;Internal Servlet&quot; Widget.</p>
 ]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><lastEditor>admin</lastEditor><created>20121206184512</created><lastModified>20121206184512</lastModified></content>
 ', 'free', '1.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('ANN57', 'ANN', 'Sample - Announcement 1', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
