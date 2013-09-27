@@ -46,3 +46,136 @@ INSERT INTO portalexample_cards (id, holder, description, date, note) VALUES (2,
 INSERT INTO portalexample_cards (id, holder, description, date, note) VALUES (3, 'Verdi Nicola', 'Fair', '2011-01-25 00:00:00', 'Lorem ipsum.');
 INSERT INTO portalexample_cards (id, holder, description, date, note) VALUES (4, 'Verdi Anna', 'Old Town', '2010-11-05 00:00:00', 'Lorem ipsum.');
 INSERT INTO portalexample_cards (id, holder, description, date, note) VALUES (1, 'Bianchi Marco', 'Old Town', '2010-10-20 00:00:00', 'Lorem ipsum.');
+
+INSERT INTO actionlogrecords (id, username, actiondate, namespace, actionname, parameters, activitystreaminfo) VALUES (10000, 'admin', '2013-09-27 10:58:38', '/do/Page', 'save', 'selectedNode=service
+model=service
+strutsAction=1
+extraGroupName=free
+charset=
+parentPageCode=service
+defaultShowlet=true
+copyPageCode=
+langit=Accedi
+groupSelectLock=false
+langen=Sign In
+group=free
+mimeType=
+pageCode=sign_in
+', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activityStreamInfo>
+    <objectTitles>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">en</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Sign In</value>
+        </entry>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">it</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Accedi</value>
+        </entry>
+    </objectTitles>
+    <groups>
+        <group>free</group>
+    </groups>
+    <actionType>1</actionType>
+    <linkNamespace>/do/Page</linkNamespace>
+    <linkActionName>edit</linkActionName>
+    <linkParameters>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">selectedNode</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">sign_in</value>
+        </entry>
+    </linkParameters>
+    <linkAuthPermission>managePages</linkAuthPermission>
+    <linkAuthGroup>free</linkAuthGroup>
+</activityStreamInfo>
+');
+
+INSERT INTO actionlogrecords (id, username, actiondate, namespace, actionname, parameters, activitystreaminfo) VALUES (10001, 'admin', '2013-09-27 11:00:12', '/do/Page', 'save', 'selectedNode=service
+model=service
+strutsAction=1
+extraGroupName=free
+charset=
+parentPageCode=service
+defaultShowlet=true
+copyPageCode=
+langit=Pagina non trovata
+groupSelectLock=false
+langen=Page not found
+group=free
+mimeType=
+pageCode=notfound
+', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activityStreamInfo>
+    <objectTitles>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">en</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Page not found</value>
+        </entry>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">it</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Pagina non trovata</value>
+        </entry>
+    </objectTitles>
+    <groups>
+        <group>free</group>
+    </groups>
+    <actionType>1</actionType>
+    <linkNamespace>/do/Page</linkNamespace>
+    <linkActionName>edit</linkActionName>
+    <linkParameters>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">selectedNode</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">notfound</value>
+        </entry>
+    </linkParameters>
+    <linkAuthPermission>managePages</linkAuthPermission>
+    <linkAuthGroup>free</linkAuthGroup>
+</activityStreamInfo>
+');
+
+INSERT INTO actionlogrecords (id, username, actiondate, namespace, actionname, parameters, activitystreaminfo) VALUES (10002, 'admin', '2013-09-27 11:00:12', '/do/Page', 'save', 'selectedNode=service
+model=service
+strutsAction=1
+extraGroupName=free
+charset=
+parentPageCode=service
+defaultShowlet=true
+copyPageCode=
+langit=Errore di Sistema
+groupSelectLock=false
+langen=System Error
+group=free
+mimeType=
+pageCode=errorpage
+', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<activityStreamInfo>
+    <objectTitles>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">en</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">System Error</value>
+        </entry>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">it</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Errore di Sistema</value>
+        </entry>
+    </objectTitles>
+    <groups>
+        <group>free</group>
+    </groups>
+    <actionType>1</actionType>
+    <linkNamespace>/do/Page</linkNamespace>
+    <linkActionName>edit</linkActionName>
+    <linkParameters>
+        <entry>
+            <key xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">selectedNode</key>
+            <value xsi:type="xs:string" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">errorpage</value>
+        </entry>
+    </linkParameters>
+    <linkAuthPermission>managePages</linkAuthPermission>
+    <linkAuthGroup>free</linkAuthGroup>
+</activityStreamInfo>
+');
+
+INSERT INTO actionlogrelations (recordid, refgroup) VALUES (10000, 'free');
+INSERT INTO actionlogrelations (recordid, refgroup) VALUES (10001, 'free');
+INSERT INTO actionlogrelations (recordid, refgroup) VALUES (10002, 'free');
