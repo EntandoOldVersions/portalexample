@@ -48,53 +48,59 @@
 				<wpsf:hidden name="id" />
 			</s:if>
 		</p>
-		<div class="col-xs-12">
 			<%-- holder --%>
 				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['holder']}" />
 				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
 				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
 				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
-					<label for="holder"><s:text name="label.cardHolder" /></label>
-					<s:textfield name="holder" id="holder" cssClass="form-control" />
-					<s:if test="#currentFieldHasFieldErrorVar">
-						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
-					</s:if>
+					<div class="col-xs-12">
+						<label for="holder"><s:text name="label.cardHolder" /></label>
+						<s:textfield name="holder" id="holder" cssClass="form-control" />
+						<s:if test="#currentFieldHasFieldErrorVar">
+							<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+						</s:if>
+					</div>
 				</div>
 			<%-- description --%>
 				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['descr']}" />
 				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
 				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
 				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
-					<label for="descr"><s:text name="label.cardDescr" /></label>
-					<s:textfield name="descr" id="descr" cssClass="form-control" />
-					<s:if test="#currentFieldHasFieldErrorVar">
-						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
-					</s:if>
-				</div>
+					<div class="col-xs-12">
+						<label for="descr"><s:text name="label.cardDescr" /></label>
+						<s:textfield name="descr" id="descr" cssClass="form-control" />
+						<s:if test="#currentFieldHasFieldErrorVar">
+							<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+						</s:if>
+					</div>
+			</div>
 			<%-- date --%>
 				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['date']}" />
 				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
 				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
 				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
-					<label for="date"><s:text name="label.cardDate" /></label>
-					<s:textfield name="date" id="date" cssClass="form-control datepicker" />
-					<span class="help help-block">dd/mm/yyyy</span>
-					<s:if test="#currentFieldHasFieldErrorVar">
-						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
-					</s:if>
+					<div class="col-xs-12">
+						<label for="date"><s:text name="label.cardDate" /></label>
+						<s:textfield name="date" id="date" cssClass="form-control datepicker" />
+						<span class="help help-block">dd/mm/yyyy</span>
+						<s:if test="#currentFieldHasFieldErrorVar">
+							<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+						</s:if>
+					</div>
 				</div>
 			<%-- note --%>
 				<s:set var="currentFieldErrorsVar" value="%{fieldErrors['note']}" />
 				<s:set var="currentFieldHasFieldErrorVar" value="#currentFieldErrorsVar != null && !#currentFieldErrorsVar.isEmpty()" />
 				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
 				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
-					<label for="note"><s:text name="label.cardNote" /></label>
-					<s:textarea cols="50" rows="3" name="note" id="note" cssClass="form-control" />
-					<s:if test="#currentFieldHasFieldErrorVar">
-						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
-					</s:if>
+					<div class="col-xs-12">
+						<label for="note"><s:text name="label.cardNote" /></label>
+						<s:textarea cols="50" rows="3" name="note" id="note" cssClass="form-control" />
+						<s:if test="#currentFieldHasFieldErrorVar">
+							<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
+						</s:if>
+					</div>
 				</div>
-		</div>
 		<%-- save --%>
 			<div class="form-group">
 				<div class="col-xs-12 col-sm-4 col-md-3 margin-small-vertical">
