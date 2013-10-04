@@ -28,6 +28,7 @@ import org.entando.entando.aps.system.services.api.model.ApiException;
 import com.agiletec.aps.system.ApsSystemUtils;
 import com.agiletec.aps.system.common.AbstractService;
 import com.agiletec.aps.system.exception.ApsSystemException;
+import com.agiletec.aps.system.services.keygenerator.IKeyGeneratorManager;
 
 /**
  * Servizio gestore delle schede.
@@ -106,6 +107,8 @@ public class CardManager extends AbstractService implements ICardManager {
 	@Override
     public void addCard(Card card) throws ApsSystemException {
         try {
+        	int key = this.getKeyGeneratorManager().getUniqueKeyCurrentValue();
+        	card.setId(key);
             this.getCardDAO().addCard(card);
         } catch (Throwable t) {
             ApsSystemUtils.logThrowable(t, this, "addCard");
@@ -167,6 +170,14 @@ public class CardManager extends AbstractService implements ICardManager {
         this._cardDAO = cardDAO;
     }
     
-    private ICardDAO _cardDAO;
+    protected IKeyGeneratorManager getKeyGeneratorManager() {
+		return _keyGeneratorManager;
+	}
+	public void setKeyGeneratorManager(IKeyGeneratorManager keyGeneratorManager) {
+		this._keyGeneratorManager = keyGeneratorManager;
+	}
+
+	private ICardDAO _cardDAO;
+    private IKeyGeneratorManager _keyGeneratorManager;
 	
 }
