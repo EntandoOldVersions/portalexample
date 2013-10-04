@@ -39,13 +39,19 @@
 			<table class="table table-bordered table-hover">
 				<caption>Cards</caption>
 				<tr>
+					<th class="text-center"><abbr title="<s:text name="label.remove" />">&ndash;</abbr></th>
 					<th><s:text name="label.cardHolder" /></th>
 					<th><s:text name="label.cardDescr" /></th>
 					<th class="text-center"><s:text name="label.cardDate" /></th>
-					<th class="text-center"><abbr title="<s:text name="label.remove" />">&ndash;</abbr></th>
 				</tr>
 					<s:iterator var="card">
 					<tr>
+						<td class="text-center">
+							<a href="<s:url action="delete"><s:param name="id" value="#card.id"/></s:url>" title="<s:text name="label.remove" />: <s:property value="#card.holder" />" class="btn btn-warning btn-xs">
+								<span class="icon icon-remove-circle"></span>
+								<span class="sr-only"><s:text name="label.alt.clear" /></span>
+							</a>
+						</td>
 						<td>
 							<a href="<s:url action="edit"><s:param name="id" value="#card.id"/></s:url>" title="<s:text name="label.edit" />: <s:property value="#card.holder" />" >
 							<span class="icon icon-cog"></span>&#32;<s:property value="#card.holder" /></a></td>
@@ -55,12 +61,6 @@
 								<code><s:date name="#card.date" format="dd/MM/yyyy" /></code>
 							</abbr>
 							</td>
-						<td class="text-center">
-							<a href="<s:url action="delete"><s:param name="id" value="#card.id"/></s:url>" title="<s:text name="label.remove" />: <s:property value="#card.holder" />">
-								<span class="icon icon-remove-circle"></span>
-								<span class="sr-only"><s:text name="label.alt.clear" /></span>
-							</a>
-						</td>
 					</tr>
 					</s:iterator>
 			</table>
