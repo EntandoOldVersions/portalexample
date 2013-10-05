@@ -3,3 +3,6 @@ target
 .ant-targets-build.xml
 src/main/webapp/WEB-INF/*.tld
 nb-configuration.xml
+.classpath
+.project
+.settings/
