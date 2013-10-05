@@ -77,7 +77,7 @@
 				<s:set var="controlGroupErrorClassVar" value="%{#currentFieldHasFieldErrorVar ? ' has-error' : ''}" />
 				<div class="form-group<s:property value="#controlGroupErrorClassVar" />">
 					<label for="date"><s:text name="label.cardDate" /></label>
-					<s:textfield name="date" id="date" cssClass="form-control" />
+					<s:textfield name="date" id="date" cssClass="form-control datepicker" />
 					<span class="help help-block">dd/mm/yyyy</span>
 					<s:if test="#currentFieldHasFieldErrorVar">
 						<span class="text-danger padding-small-vertical"><s:iterator value="#currentFieldErrorsVar"><s:property />&#32;</s:iterator></span>
