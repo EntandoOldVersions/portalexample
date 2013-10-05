@@ -1493,9 +1493,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <properties>
 <property key="modelId">10001</property>
 <property key="contentId">CNG40</property>
-</properties>
-
-', 0, 'free');
+</properties>', 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('ANN_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Announcements - Archive</property>
@@ -1509,9 +1507,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="title_en">Announcements Archive</property>
 <property key="contentType">ANN</property>
 <property key="modelId">10051</property>
-</properties>
-
-', 0, 'free');
+</properties>', 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('ANN_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Announcements - Latest Announcements</property>
@@ -1527,9 +1523,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">ANN</property>
 <property key="modelId">10051</property>
 <property key="linkDescr_en">Archive</property>
-</properties>
-
-', 0, 'free');
+</properties>', 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('RSL_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Resolutions - Archive</property>
@@ -1543,9 +1537,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="title_en">Resolutions Archive</property>
 <property key="contentType">RSL</property>
 <property key="modelId">10041</property>
-</properties>
-
-', 0, 'free');
+</properties>', 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Archive</property>
@@ -1559,9 +1551,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="title_en">News Archive</property>
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
-</properties>
-
-', 0, 'free');
+</properties>', 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('card_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Personal Cards - List</property>
@@ -1574,9 +1564,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="actionPath">/ExtStr2/do/FrontEnd/Card/list.action</property>
-</properties>
-
-', 1, 'free');
+</properties>', 1, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Latest News</property>
@@ -1592,9 +1580,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
 <property key="linkDescr_en">Archive</property>
-</properties>
-
-', 0, 'free');
+</properties>', 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('RSL_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Resolutions - Latest Resolutions</property>
