@@ -24,7 +24,6 @@
 				</span>
 			</div>
 		</div>
-	</s:form>
 	<a class="btn btn-default" href="<s:url action="new" />">
 		<span class="icon icon-plus-sign" />
 		&#32;<s:text name="label.new" />
@@ -69,6 +68,7 @@
 			<s:include value="/WEB-INF/apsadmin/jsp/common/inc/pager_formBlock.jsp" />
 		</div>
 	</wpsa:subset>
+	</s:form>
 </div>
 
 <%--
