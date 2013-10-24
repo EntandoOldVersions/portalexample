@@ -12,7 +12,7 @@ optional CSS
 
 <h1><wp:i18n key="SEARCH_CARDS" /></h1>
 
-<form action="<wp:action path="/ExtStr2/do/FrontEnd/Card/search.action" />" method="post" class="form-search">
+<form action="<wp:action path="/ExtStr2/do/FrontEnd/Card/search.action" />" method="post" class="form-search" role="search">
 	<wpsf:textfield name="holder" id="holder" cssClass="input-medium search-query" />
 	<s:set name="searchLabel"><wp:i18n key="SEARCH" /></s:set>
 	<wpsf:submit value="%{#searchLabel}" cssClass="btn btn-primary" />

@@ -7,7 +7,7 @@
 <s:set var="targetNS" value="%{'/do/Card'}" />
 <h1><s:text name="title.cardManagement" /><s:include value="/WEB-INF/apsadmin/jsp/common/inc/operations-context-general.jsp" /></h1>
 
-<div id="main">
+<div id="main" role="main">
 	<div class="intro CARD">
 		<s:property value="%{getText('card.intro.html')}" escape="false"  />
 	</div>
