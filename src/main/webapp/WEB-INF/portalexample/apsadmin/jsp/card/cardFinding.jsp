@@ -7,9 +7,9 @@
 		<s:text name="title.cardManagement" />
 	</span>
 </h1>
-<div id="main">
+<div id="main" role="main">
 	<s:form action="search" cssClass="form-horizontal">
-		<div class="form-group">
+		<div class="form-group" role="search">
 			<label for="holder" class="sr-only"><s:text name="label.search.by"/>&#32;<s:text name="label.cardHolder" /></label>
 			<div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<span class="input-group-addon">
@@ -70,56 +70,3 @@
 	</wpsa:subset>
 	</s:form>
 </div>
-
-<%--
-
-<s:set var="targetNS" value="%{'/do/Card'}" />
-<h1><s:text name="title.cardManagement" /><s:include value="/WEB-INF/apsadmin/jsp/common/inc/operations-context-general.jsp" /></h1>
-<div id="main">
-	<s:form action="search">
-
-		<p>
-			<label for="holder" class="basic-mint-label label-search"><s:text name="label.search.by"/>&#32;<s:text name="label.cardHolder" />:</label>
-			<wpsf:textfield name="holder" id="holder" cssClass="text" />
-			&#32;
-			<wpsf:submit value="%{getText('label.search')}" cssClass="button" />
-		</p>
-		<div class="subsection-light">
-
-			<wpsa:subset source="cards" count="10" objectName="cardsGroup" advanced="true" offset="5">
-				<s:set name="group" value="#cardsGroup" />
-
-				<div class="pager">
-					<s:include value="/WEB-INF/apsadmin/jsp/common/inc/pagerInfo.jsp" />
-					<s:include value="/WEB-INF/apsadmin/jsp/common/inc/pager_formBlock.jsp" />
-				</div>
-
-				<s:if test="%{#group.size>0}">
-					<table class="generic" summary="TODO">
-						<caption><span>Cards</span></caption>
-						<tr>
-							<th><s:text name="label.cardHolder" /></th>
-							<th><s:text name="label.cardDescr" /></th>
-							<th><s:text name="label.cardDate" /></th>
-							<th class="icon"><abbr title="<s:text name="label.remove" />">&ndash;</abbr></th>
-						</tr>
-							<s:iterator var="card">
-							<tr>
-								<td><a href="<s:url action="edit"><s:param name="id" value="#card.id"/></s:url>" title="<s:text name="label.edit" />: <s:property value="#card.holder" />" ><s:property value="#card.holder" /></a></td>
-								<td><s:property value="#card.descr" /></td>
-								<td class="centerText"><s:date name="#card.date" format="dd/MM/yyyy" /></td>
-								<td class="icon"><a href="<s:url action="delete"><s:param name="id" value="#card.id"/></s:url>" title="<s:text name="label.remove" />: <s:property value="#card.holder" />"><img src="<wp:resourceURL />administration/common/img/icons/delete.png" alt="<s:text name="label.alt.clear" />" /></a></td>
-							</tr>
-							</s:iterator>
-					</table>
-				</s:if>
-
-				<div class="pager">
-					<s:include value="/WEB-INF/apsadmin/jsp/common/inc/pager_formBlock.jsp" />
-				</div>
-
-			</wpsa:subset>
-		</div>
-	</s:form>
-</div>
-	--%>
