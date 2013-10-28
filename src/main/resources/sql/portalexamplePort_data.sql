@@ -183,6 +183,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'para
 	<Param name="treeStyle_page">classic</Param>
 	<Param name="treeStyle_category">classic</Param>
 	<Param name="startLangFromBrowser">false</Param>
+	<Param name="firstTimeMessages">true</Param>
 	<SpecialPages>
 		<Param name="notFoundPageCode">notfound</Param>
 		<Param name="homePageCode">homepage</Param>
