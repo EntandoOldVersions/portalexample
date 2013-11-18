@@ -3,15 +3,15 @@
 * Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 * This file is part of Entando software.
-* Entando is a free software; 
+* Entando is a free software;
 * you can redistribute it and/or modify it
 * under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation; version 2.
-* 
-* See the file License for the specific language governing permissions   
+*
+* See the file License for the specific language governing permissions
 * and limitations under the License
-* 
-* 
-* 
+*
+*
+*
 * Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
 *
 */
@@ -28,23 +28,24 @@ import org.entando.entando.aps.system.services.api.model.ApiException;
 import com.agiletec.aps.system.ApsSystemUtils;
 import com.agiletec.aps.system.common.AbstractService;
 import com.agiletec.aps.system.exception.ApsSystemException;
+import com.agiletec.aps.system.services.keygenerator.IKeyGeneratorManager;
 
 /**
  * Servizio gestore delle schede.
  * @author E.Mezzano - E.Santoboni
  */
 public class CardManager extends AbstractService implements ICardManager {
-    
+
 	@Override
     public void init() throws Exception {
-        ApsSystemUtils.getLogger().config(this.getClass().getName() + ": initialized ");
+        ApsSystemUtils.getLogger().debug(this.getClass().getName() + ": initialized ");
     }
-    
+
     public List<Card> getCardsForApi(Properties properties) throws Throwable {
         String holder = properties.getProperty("holder");
         return this.searchCards(holder);
     }
-    
+
     public Card getCardForApi(Properties properties) throws Throwable {
         String idString = properties.getProperty("id");
         int id = 0;
@@ -59,7 +60,7 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         return card;
     }
-    
+
 	@Override
     public List<Card> getCards() throws ApsSystemException {
         List<Card> cards = null;
@@ -71,7 +72,7 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         return cards;
     }
-	
+
 	@Override
     public List<Card> searchCards(String holder) throws ApsSystemException {
         List<Card> cards = null;
@@ -83,7 +84,7 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         return cards;
     }
-	
+
 	@Override
     public Card getCard(Integer id) throws ApsSystemException {
         Card card = null;
@@ -95,31 +96,33 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         return card;
     }
-    
+
     public void addCardForApi(Card card) throws ApiException, ApsSystemException {
         if (null != this.getCard(card.getId())) {
             throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id " + card.getId() + " already exists", Response.Status.CONFLICT);
         }
         this.addCard(card);
     }
-    
+
 	@Override
     public void addCard(Card card) throws ApsSystemException {
         try {
+        	int key = this.getKeyGeneratorManager().getUniqueKeyCurrentValue();
+        	card.setId(key);
             this.getCardDAO().addCard(card);
         } catch (Throwable t) {
             ApsSystemUtils.logThrowable(t, this, "addCard");
             throw new ApsSystemException("Error adding card", t);
         }
     }
-    
+
     public void updateCardForApi(Card card) throws ApiException, ApsSystemException {
         if (null == this.getCard(card.getId())) {
             throw new ApiException(IApiErrorCodes.API_VALIDATION_ERROR, "Card with id " + card.getId() + " does not exist", Response.Status.CONFLICT);
         }
         this.updateCard(card);
     }
-    
+
 	@Override
     public void updateCard(Card card) throws ApsSystemException {
         try {
@@ -129,7 +132,7 @@ public class CardManager extends AbstractService implements ICardManager {
             throw new ApsSystemException("Error updating card", t);
         }
     }
-    
+
     public void deleteCardForApi(Properties properties) throws Throwable {
         String id = properties.getProperty("id");
         int idInteger = 0;
@@ -140,7 +143,7 @@ public class CardManager extends AbstractService implements ICardManager {
         }
         this.deleteCard(idInteger);
     }
-    
+
 	@Override
     public void deleteCard(Integer id) throws ApsSystemException {
         try {
@@ -150,7 +153,7 @@ public class CardManager extends AbstractService implements ICardManager {
             throw new ApsSystemException("Error deleting card by id " + id, t);
         }
     }
-    
+
     /**
      * Restituisce il dao delle schede.
      * @return Il dao delle schede.
@@ -166,7 +169,15 @@ public class CardManager extends AbstractService implements ICardManager {
     public void setCardDAO(ICardDAO cardDAO) {
         this._cardDAO = cardDAO;
     }
-    
-    private ICardDAO _cardDAO;
-	
+
+    protected IKeyGeneratorManager getKeyGeneratorManager() {
+		return _keyGeneratorManager;
+	}
+	public void setKeyGeneratorManager(IKeyGeneratorManager keyGeneratorManager) {
+		this._keyGeneratorManager = keyGeneratorManager;
+	}
+
+	private ICardDAO _cardDAO;
+    private IKeyGeneratorManager _keyGeneratorManager;
+
 }

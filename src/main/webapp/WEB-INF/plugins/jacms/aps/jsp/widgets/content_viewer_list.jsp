@@ -1,14 +1,8 @@
 <%@ taglib prefix="jacms" uri="/jacms-aps-core" %>
 <%@ taglib prefix="wp" uri="/aps-core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-/*
-	Author: William Ghelfi <william.ghelfi@elicriso.biz> - 2005/05/23
-	Author: Eugenio Santoboni <eugeniosant@tiscali.it>
-	Content list viewer
-*/
-%>
-<wp:headInfo type="CSS" info="showlets/jacms/content_viewer_list.css" />
+
+<wp:headInfo type="CSS" info="widgets/jacms/content_viewer_list.css" />
 
 <jacms:contentList listName="contentList" titleVar="titleVar"
 	pageLinkVar="pageLinkVar" pageLinkDescriptionVar="pageLinkDescriptionVar" userFilterOptionsVar="userFilterOptionsVar" />
@@ -20,17 +14,17 @@
 	</c:if>
 
 	<c:set var="userFilterOptionsVar" value="${userFilterOptionsVar}" scope="request" />
-	<c:import url="/WEB-INF/plugins/jacms/aps/jsp/showlets/inc/userFilter-module.jsp" />
+	<c:import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module.jsp" />
 
 	<c:choose>
 	<c:when test="${contentList != null && !empty contentList}">
 		<wp:pager listName="contentList" objectName="groupContent" pagerIdFromFrame="true" advanced="true" offset="5">
 			<c:set var="group" value="${groupContent}" scope="request" />
-			<c:import url="/WEB-INF/plugins/jacms/aps/jsp/showlets/inc/pagerBlock.jsp" />
+			<c:import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/pagerBlock.jsp" />
 			<c:forEach var="contentId" items="${contentList}" begin="${groupContent.begin}" end="${groupContent.end}">
 				<jacms:content contentId="${contentId}" />
 			</c:forEach>
-			<c:import url="/WEB-INF/plugins/jacms/aps/jsp/showlets/inc/pagerBlock.jsp" />
+			<c:import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/pagerBlock.jsp" />
 		</wp:pager>
 	</c:when>
 	<c:otherwise>
