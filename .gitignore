@@ -8,5 +8,5 @@ derby.log
 libpeerconnection.log
 nb-configuration.xml
 nbactions.xml
-src/main/webapp/WEB-INF/*.tld
+src/main/webapp/WEB-INF/**/*.tld
 target
