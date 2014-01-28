@@ -354,7 +354,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>src/main/webapp/WEB-INF</outputDirectory>
+							<outputDirectory>src/main/webapp/WEB-INF/tld</outputDirectory>
 							<encoding>UTF-8</encoding>
 							<resources>
 								<resource>
@@ -548,7 +548,7 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-					<packagingExcludes>WEB-INF/**.tld,resources/static/entando-misc-bootstrap/**</packagingExcludes>
+					<packagingExcludes>WEB-INF/classes/**/*.tld,resources/static/entando-misc-bootstrap/**</packagingExcludes>
 					<webResources>
 						<resource>
 							<directory>${project.build.directory}/entando-misc-bootstrap/resources/static/entando-misc-bootstrap/bootstrap</directory>
