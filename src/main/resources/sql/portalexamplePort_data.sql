@@ -399,12 +399,6 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NO', 'it', 'N
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('NO', 'en', 'No');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_GOTO_LIST', 'it', 'Lista delle Risorse API');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_GOTO_LIST', 'en', 'API Resource List');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jptokenapi_USERNAME', 'it', 'Utente');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jptokenapi_USERNAME', 'en', 'Username');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jptokenapi_TOKEN', 'it', 'Token');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jptokenapi_TOKEN', 'en', 'Token');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jptokenapi_NULL_TOKEN', 'it', 'Token Nullo');
-INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('jptokenapi_NULL_TOKEN', 'en', 'Null Token');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_FROM', 'en', 'from');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_FROM', 'it', 'da');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ANN_TO', 'en', 'to');
@@ -1206,11 +1200,6 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="actionPath">/ExtStr2/do/Front/Api/Resource/list.action</property>
 </properties>
 ', 1, 'free');
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('jptokenapi_myToken', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">My API Token</property>
-<property key="it">My API Token</property>
-</properties>', NULL, 'jptokenapi', NULL, NULL, 1, NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-language_choose', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Choose a Language</property>
