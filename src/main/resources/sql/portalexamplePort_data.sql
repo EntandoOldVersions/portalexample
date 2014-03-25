@@ -625,12 +625,12 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SE
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SERVICE_PARAMETERS','it','Parametri');
 
 
-INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('service', 'Service Page', '<frames>
+INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('service', 'Service Page', '<frames>
 	<frame pos="0">
 		<descr>Sample Frame</descr>
 	</frame>	
 </frames>', NULL, NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('entando-page-2columns-left', '2 Columns - Left', '<frames>
+INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('entando-page-2columns-left', '2 Columns - Left', '<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
 		<defaultWidget code="entando-widget-language_choose" />
@@ -745,8 +745,8 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('enta
 		<descr>Footer 5</descr>
 	</frame>
 </frames>', NULL, NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('home', 'Home Page', NULL, NULL, NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
+INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('home', 'Home Page', NULL, NULL, NULL);
+INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
 		<defaultWidget code="entando-widget-language_choose" />
