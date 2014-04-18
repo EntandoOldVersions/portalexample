@@ -119,7 +119,8 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 	</frame>
 </frames>', NULL, NULL);
 INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('home', 'Home Page', NULL, NULL, NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
+INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<?xml version="1.0" encoding="UTF-8"?>
+<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
 		<defaultWidget code="entando-widget-language_choose" />
@@ -130,7 +131,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 			<properties>
 				<property key="navSpec">code(homepage)</property>
 			</properties>
-		</defaultWidget>		
+		</defaultWidget>
 	</frame>
 	<frame pos="2">
 		<descr>Navbar 3</descr>
@@ -142,19 +143,19 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 	</frame>
 	<frame pos="4">
 		<descr>Toolbar 1</descr>
-	</frame>	
+	</frame>
 	<frame pos="5">
 		<descr>Hero Unit</descr>
 	</frame>
 	<frame pos="6">
 		<descr>Toolbar 2</descr>
-	</frame>	
-	<frame pos="7" main="true">
+	</frame>
+	<frame pos="7">
 		<descr>Top Story</descr>
 	</frame>
 	<frame pos="8">
 		<descr>Box 1</descr>
-	</frame>	
+	</frame>
 	<frame pos="9">
 		<descr>Box 2</descr>
 	</frame>
@@ -199,7 +200,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 	</frame>
 	<frame pos="23">
 		<descr>Side 8</descr>
-	</frame>	
+	</frame>
 	<frame pos="24">
 		<descr>Footer 1</descr>
 	</frame>
@@ -215,7 +216,9 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 	<frame pos="28">
 		<descr>Footer 5</descr>
 	</frame>
-</frames>', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+</frames>
+
+', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <!DOCTYPE html>
 <html lang="en">
