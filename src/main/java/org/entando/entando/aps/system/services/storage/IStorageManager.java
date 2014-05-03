@@ -1,0 +1,76 @@
+/*
+*
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
+*
+* This file is part of Entando Enterprise Edition software.
+* You can redistribute it and/or modify it
+* under the terms of the Entando's EULA
+* 
+* See the file License for the specific language governing permissions   
+* and limitations under the License
+* 
+* 
+* 
+* Copyright 2013 Entando S.r.l. (http://www.entando.com) All rights reserved.
+*
+*/
+package org.entando.entando.aps.system.services.storage;
+
+import java.io.InputStream;
+import java.io.Serializable;
+
+import com.agiletec.aps.system.exception.ApsSystemException;
+import java.io.File;
+import java.util.List;
+
+/**
+ * @author E.Santoboni
+ */
+public interface IStorageManager extends Serializable {
+	
+	public void saveFile(String subPath, boolean isProtectedResource, InputStream is) throws ApsSystemException;
+	
+	public boolean deleteFile(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public void createDirectory(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public void deleteDirectory(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public InputStream getStream(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public String getResourceUrl(String subPath, boolean isProtectedResource);
+	
+	public boolean exists(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public String[] list(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public String[] listDirectory(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public String[] listFile(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	
+	
+	
+	
+	
+	public boolean isFileRootResource(File file, boolean isProtectedResource);
+	
+	public String getSubPathFromFile(File file, boolean isProtectedResource);
+	
+	/**
+	 * this file list all files that exist in a subpath of resource
+	 * @param subPath
+	 * @param isProtectedResource
+	 * @return a collection of file
+	 */
+	public List<File> fileList(String subPath, boolean isProtectedResource);
+	
+	public File getFile(String subPath, boolean isProtectedResource);
+	
+	public String readFile(String subPath, boolean isProtectedResource) throws ApsSystemException;
+	
+	public void editFile(String subPath, boolean isProtectedResource, String text) throws ApsSystemException;
+	
+//	public String[] getAllowedEditExtensions();
+	
+}
