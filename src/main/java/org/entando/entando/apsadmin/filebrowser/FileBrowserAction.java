@@ -16,11 +16,13 @@
  */
 package org.entando.entando.apsadmin.filebrowser;
 
+import com.agiletec.aps.util.SelectItem;
 import com.agiletec.apsadmin.system.BaseAction;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -30,7 +32,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author S.Loru
+ * @author S.Loru - E.Santoboni
  */
 public class FileBrowserAction extends BaseAction implements IFileBrowserAction {
 
@@ -65,20 +67,19 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		}
 		return SUCCESS;
 	}
-
+	
 	@Override
 	public String delete() {
 		try {
-			File entry = this.getStorageManager().getFile(this.getCurrentPath() + this.getFilename(), false);
-			if (entry.exists()) {
-				if (entry.isDirectory()) {
-					this.getStorageManager().deleteDirectory(this.getCurrentPath() + this.getFilename(), false);
-				} else {
-					this.getStorageManager().deleteFile(this.getCurrentPath() + this.getFilename(), false);
-				}
-			} else {
-				this.addActionError(this.getText("filebrowser.error.delete.entryNotExists"));
+			if (null == this.isDeleteFile()) {
+				this.addActionError(this.getText("filebrowser.error.delete.missingInformation"));
 				return INPUT;
+			}
+			String subPath = this.getCurrentPath() + this.getFilename();
+			if (this.isDeleteFile()) {
+				this.getStorageManager().deleteFile(subPath, false);
+			} else {
+				this.getStorageManager().deleteDirectory(subPath, false);
 			}
 		} catch (Throwable t) {
 			_logger.error("error in delete", t);
@@ -108,27 +109,7 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		}
 		return SUCCESS;
 	}
-	
-	public boolean isRootResource(){
-		boolean path = false;
-		List<File> fileList = this.getFileList();
-		if(null != fileList && fileList.size() > 0){
-			File file = fileList.get(0);
-			path = this.getStorageManager().isFileRootResource(file, false);
-		} 
-		return path;
-	}
-	
-	public String getSubpathForParent(){
-		String path = "";
-		List<File> fileList = this.getFileList();
-		if(null != fileList && fileList.size() > 0){
-			File file = fileList.get(0);
-			path = this.getStorageManager().getSubPathFromFile(file, false);
-		} 
-		return path;
-	}
-	
+	/*
 	public String[] getDirectoryNames() {
 		try {
 			return this.getStorageManager().listDirectory(this.getCurrentPath(), true);
@@ -146,11 +127,29 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 			return new String[0];
 		}
 	}
+	*/
 	
-	public File getFile(String filename) {
-		StringBuilder subPath = new StringBuilder(this.getCurrentPath());
-		subPath.append(filename);
-		return this.getStorageManager().getFile(subPath.toString(), false);
+	public List<SelectItem> getBreadCrumbsTargets() {
+		String currentPath = this.getCurrentPath();
+		if (StringUtils.isEmpty(currentPath)) {
+			return null;
+		}
+		List<SelectItem> items = new ArrayList<SelectItem>();
+		String[] folders = currentPath.split(File.separator);
+		for (int i = 0; i < folders.length; i++) {
+			String folderName = folders[i];
+			String subpath = null;
+			if (i == 0) {
+				subpath = folderName + File.separator;
+			} else if (i == (folders.length-1)) {
+				subpath = currentPath;
+			} else {
+				int index = currentPath.indexOf(folderName) + folderName.length();
+				subpath = currentPath.substring(0, index) + File.separator;
+			}
+			items.add(new SelectItem(subpath, folderName));
+		}
+		return items;
 	}
 	
 	public String getCurrentPath() {
@@ -159,8 +158,18 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		} else if (!_currentPath.endsWith(File.separator)) {
 			_currentPath = _currentPath + File.separator;
 		}
+		if (this._currentPath.contains("../") 
+				|| this._currentPath.contains("%2e%2e%2f") 
+				|| this._currentPath.contains("..%2f") 
+				|| this._currentPath.contains(".."+File.separator) 
+				|| this._currentPath.contains("%2e%2e/") 
+				|| this._currentPath.contains("%2e%2e"+File.separator)) {
+			_logger.info("Attack avoided - requested path {}", this._currentPath);
+			_currentPath = "";
+		}
 		return _currentPath;
 	}
+	
 	public void setCurrentPath(String currentPath) {
 		this._currentPath = currentPath;
 	}
@@ -233,6 +242,13 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		this._dirname = dirname;
 	}
 	
+	public Boolean isDeleteFile() {
+		return _deleteFile;
+	}
+	public void setDeleteFile(Boolean deleteFile) {
+		this._deleteFile = deleteFile;
+	}
+	
 	protected IStorageManager getStorageManager() {
 		return _storageManager;
 	}
@@ -245,7 +261,8 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 	private String _fileText;
 	private String _filename;
 	private String _dirname;
-
+	private Boolean _deleteFile;
+	
 	//variables for file upload
 	private File _file;
 	private String _uploadFileName;
