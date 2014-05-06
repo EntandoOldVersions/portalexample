@@ -19,6 +19,7 @@ package org.entando.entando.apsadmin.filebrowser;
 import com.agiletec.aps.util.SelectItem;
 import com.agiletec.apsadmin.system.BaseAction;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.entando.entando.aps.system.services.storage.BasicFileAttributeView;
 import org.entando.entando.aps.system.services.storage.IStorageManager;
 
 import org.slf4j.Logger;
@@ -37,7 +39,16 @@ import org.slf4j.LoggerFactory;
 public class FileBrowserAction extends BaseAction implements IFileBrowserAction {
 
 	private static final Logger _logger = LoggerFactory.getLogger(FileBrowserAction.class);
-
+	
+	@Override
+	public String list() {
+		/*
+		List<File> fileList = this.getStorageManager().fileList(this.getCurrentPath(), false);
+		this.setFileList(fileList);
+		*/
+		return SUCCESS;
+	}
+	
 	@Override
 	public String edit() {
 		String text;
@@ -50,13 +61,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		return SUCCESS;
 	}
 	
-	@Override
-	public String list() {
-		List<File> fileList = this.getStorageManager().fileList(this.getCurrentPath(), false);
-		this.setFileList(fileList);
-		return SUCCESS;
-	}
-
 	@Override
 	public String upload() {
 		try {
@@ -91,7 +95,8 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 	@Override
 	public String save() {
 		try {
-			this.getStorageManager().editFile(this.getCurrentPath() + this.getFilename(), false, this.getFileText());
+			InputStream stream = new ByteArrayInputStream(this.getFileText().getBytes());
+			this.getStorageManager().editFile(this.getCurrentPath() + this.getFilename(), false, stream);
 		} catch (Throwable t) {
 			_logger.error("error saving file, fullPath: {} text:  {}", this.getCurrentPath(), this.getFileText(), t);
 			return FAILURE;
@@ -152,6 +157,15 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		return items;
 	}
 	
+	public BasicFileAttributeView[] getFilesAttributes() {
+		try {
+			return this.getStorageManager().listAttributes(this.getCurrentPath(), false);
+		} catch (Throwable t) {
+			_logger.error("error extraction file attributes, fullPath: {} ", this.getCurrentPath(), t);
+			return null;
+		}
+	}
+	
 	public String getCurrentPath() {
 		if (StringUtils.isBlank(_currentPath)) {
 			_currentPath = "";
@@ -173,13 +187,15 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 	public void setCurrentPath(String currentPath) {
 		this._currentPath = currentPath;
 	}
-	
+
+	/*
 	public List<File> getFileList() {
-		return _fileList;
+	return _fileList;
 	}
 	public void setFileList(List<File> fileList) {
-		this._fileList = fileList;
+	this._fileList = fileList;
 	}
+	 */
 	
 	public String getFileText() {
 		return _fileText;
@@ -257,7 +273,8 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 	}
 	
 	private String _currentPath;
-	private List<File> _fileList;
+	//private List<File> _fileList;
+	
 	private String _fileText;
 	private String _filename;
 	private String _dirname;

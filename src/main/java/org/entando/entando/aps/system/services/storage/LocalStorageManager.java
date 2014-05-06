@@ -26,9 +26,7 @@ import org.slf4j.LoggerFactory;
 
 import com.agiletec.aps.system.exception.ApsSystemException;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.CharEncoding;
@@ -131,10 +129,14 @@ public class LocalStorageManager implements IStorageManager {
 	
 	@Override
 	public boolean exists(String subPath, boolean isProtectedResource) throws ApsSystemException {
+		File file = this.getFile(subPath, isProtectedResource);
+		return file.exists();
+	}
+	
+	protected File getFile(String subPath, boolean isProtectedResource) throws ApsSystemException {
 		subPath = (null == subPath)? "" : subPath;
 		String fullPath = this.createFullPath(subPath, isProtectedResource);
-		File file = new File(fullPath);
-		return file.exists();
+		return new File(fullPath);
 	}
 	
 	@Override
@@ -143,7 +145,7 @@ public class LocalStorageManager implements IStorageManager {
 		String baseUrl = (!isProtectedResource) ? this.getBaseURL() : this.getProtectedBaseURL();
 		return this.createPath(baseUrl, subPath, true);
 	}
-	
+	/*
 	@Override
 	@Deprecated
 	public List<File> fileList(String subPath, boolean isProtectedResource) {
@@ -156,18 +158,7 @@ public class LocalStorageManager implements IStorageManager {
 		}
 		return listFiles;
 	}
-	
-	@Override
-	public String[] list(String subPath, boolean isProtectedResource) {
-		subPath = (null == subPath)? "" : subPath;
-		String fullPath = this.createFullPath(subPath, isProtectedResource);
-		File file = new File(fullPath);
-		if (file.exists() && file.isDirectory()) {
-			return file.list();
-		}
-		return null;
-	}
-	
+	*/
 	@Override
 	public String readFile(String subPath, boolean isProtectedResource) throws ApsSystemException {
 		subPath = (null == subPath)? "" : subPath;
@@ -182,16 +173,38 @@ public class LocalStorageManager implements IStorageManager {
 	}
 	
 	@Override
-	public void editFile(String subPath, boolean isProtectedResource, String text) throws ApsSystemException {
+	public void editFile(String subPath, boolean isProtectedResource, InputStream is) throws ApsSystemException {
 		subPath = (null == subPath)? "" : subPath;
 		String fullPath = this.createFullPath(subPath, isProtectedResource);
-		File file = new File(fullPath);
+		String tempFilePath = null;
 		try {
-			FileUtils.writeStringToFile(file, text, CharEncoding.UTF_8);
+			File oldFile = new File(fullPath);
+			if (oldFile.exists()) {
+				String tempDir = System.getProperty("java.io.tmpdir");
+				tempFilePath = tempDir + File.separator + subPath;
+				FileUtils.moveFile(oldFile, new File(tempFilePath));
+			}
+			this.saveFile(subPath, isProtectedResource, is);
 		} catch (Throwable t) {
+			try {
+				if (null != tempFilePath) {
+					FileUtils.moveFile(new File(tempFilePath), new File(fullPath));
+				}
+			} catch (Throwable tr) {
+				_logger.error("Error restoring File from path {} to path", tempFilePath, fullPath, tr);
+			}
 			_logger.error("Error writing File with path {}", subPath, t);
 			throw new ApsSystemException("Error editing file", t);
+		} finally {
+			if (null != tempFilePath) {
+				new File(tempFilePath).delete();
+			}
 		}
+	}
+	
+	@Override
+	public String[] list(String subPath, boolean isProtectedResource) throws ApsSystemException {
+		return this.list(subPath, isProtectedResource, null);
 	}
 	
 	@Override
@@ -204,7 +217,7 @@ public class LocalStorageManager implements IStorageManager {
 		return this.list(subPath, isProtectedResource, false);
 	}
 	
-	private String[] list(String subPath, boolean isProtectedResource, boolean searchDirectory) throws ApsSystemException {
+	private String[] list(String subPath, boolean isProtectedResource, Boolean searchDirectory) throws ApsSystemException {
 		subPath = (null == subPath)? "" : subPath;
 		String fullPath = this.createFullPath(subPath, isProtectedResource);
 		File directory = new File(fullPath);
@@ -215,13 +228,18 @@ public class LocalStorageManager implements IStorageManager {
 				folder += "/";
 			}
 			String[] contents = directory.list();
-			for (int i = 0; i < contents.length; i++) {
-				String string = contents[i];
-				File file = new File(folder + string);
-				if ((file.isDirectory() && searchDirectory) || (!file.isDirectory() && !searchDirectory)) {
-					objects = this.addChild(string, objects);
+			if (null == searchDirectory) {
+				objects = contents;
+			} else {
+				for (int i = 0; i < contents.length; i++) {
+					String string = contents[i];
+					File file = new File(folder + string);
+					if ((file.isDirectory() && searchDirectory) || (!file.isDirectory() && !searchDirectory)) {
+						objects = this.addChild(string, objects);
+					}
 				}
 			}
+			Arrays.sort(objects);
 			return objects;
 		}
 		return null;
@@ -255,6 +273,66 @@ public class LocalStorageManager implements IStorageManager {
 		} else {
 			String base = basePath.substring(0, basePath.length() - File.separator.length());
 			return base + subPath;
+		}
+	}
+	
+	@Override
+	public BasicFileAttributeView[] listAttributes(String subPath, boolean isProtectedResource) throws ApsSystemException {
+		return this.listAttributes(subPath, isProtectedResource, null);
+	}
+	
+	@Override
+	public BasicFileAttributeView[] listDirectoryAttributes(String subPath, boolean isProtectedResource) throws ApsSystemException {
+		return this.listAttributes(subPath, isProtectedResource, true);
+	}
+	
+	@Override
+	public BasicFileAttributeView[] listFileAttributes(String subPath, boolean isProtectedResource) throws ApsSystemException {
+		return this.listAttributes(subPath, isProtectedResource, false);
+	}
+	
+	private BasicFileAttributeView[] listAttributes(String subPath, boolean isProtectedResource, Boolean searchDirectory) throws ApsSystemException {
+		subPath = (null == subPath)? "" : subPath;
+		String fullPath = this.createFullPath(subPath, isProtectedResource);
+		File directory = new File(fullPath);
+		if (directory.exists() && directory.isDirectory()) {
+			BasicFileAttributeView[] objects = new BasicFileAttributeView[]{};
+			String folder = fullPath;
+			if (!folder.endsWith("/")) {
+				folder += "/";
+			}
+			String[] contents = directory.list();
+			for (int i = 0; i < contents.length; i++) {
+				String string = contents[i];
+				File file = new File(folder + string);
+				if (null == searchDirectory || (file.isDirectory() && searchDirectory) || (!file.isDirectory() && !searchDirectory)) {
+					BasicFileAttributeView bfav = new BasicFileAttributeView(file);
+					objects = this.addChild(bfav, objects);
+				}
+			}
+			Arrays.sort(objects);
+			return objects;
+		}
+		return null;
+	}
+	
+	protected BasicFileAttributeView[] addChild(BasicFileAttributeView elementToAdd, BasicFileAttributeView[] objects) {
+		int len = objects.length;
+		BasicFileAttributeView[] newArray = new BasicFileAttributeView[len + 1];
+		for (int i = 0; i < len; i++) {
+			newArray[i] = objects[i];
+		}
+		newArray[len] = elementToAdd;
+		return newArray;
+	}
+	
+	@Override
+	public BasicFileAttributeView getAttributes(String subPath, boolean isProtectedResource) throws ApsSystemException {
+		File file = this.getFile(subPath, isProtectedResource);
+		if (file.exists()) {
+			return null;
+		} else {
+			return new BasicFileAttributeView(file);
 		}
 	}
 	
