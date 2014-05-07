@@ -54,15 +54,6 @@ public interface IStorageManager extends Serializable {
 	
 	public BasicFileAttributeView[] listFileAttributes(String subPath, boolean isProtectedResource) throws ApsSystemException;
 	
-	/*
-	 * this file list all files that exist in a subpath of resource
-	 * @param subPath
-	 * @param isProtectedResource
-	 * @return a collection of file
-	 * @deprecated 
-	 */
-	//public List<File> fileList(String subPath, boolean isProtectedResource);
-	
 	public String readFile(String subPath, boolean isProtectedResource) throws ApsSystemException;
 	
 	public void editFile(String subPath, boolean isProtectedResource, InputStream is) throws ApsSystemException;

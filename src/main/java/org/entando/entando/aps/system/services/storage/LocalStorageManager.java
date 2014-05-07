@@ -145,20 +145,7 @@ public class LocalStorageManager implements IStorageManager {
 		String baseUrl = (!isProtectedResource) ? this.getBaseURL() : this.getProtectedBaseURL();
 		return this.createPath(baseUrl, subPath, true);
 	}
-	/*
-	@Override
-	@Deprecated
-	public List<File> fileList(String subPath, boolean isProtectedResource) {
-		subPath = (null == subPath)? "" : subPath; 
-		String fullPath = this.createFullPath(subPath, isProtectedResource);
-		List<File> listFiles = new ArrayList<File>();
-		File file = new File(fullPath);
-		if (file.exists() && file.isDirectory()) {
-			listFiles.addAll(Arrays.asList(file.listFiles()));
-		}
-		return listFiles;
-	}
-	*/
+	
 	@Override
 	public String readFile(String subPath, boolean isProtectedResource) throws ApsSystemException {
 		subPath = (null == subPath)? "" : subPath;

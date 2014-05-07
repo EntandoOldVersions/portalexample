@@ -36,20 +36,14 @@ import org.slf4j.LoggerFactory;
 /**
  * @author S.Loru - E.Santoboni
  */
-public class FileBrowserAction extends BaseAction implements IFileBrowserAction {
+public class FileBrowserAction extends BaseAction {
 
 	private static final Logger _logger = LoggerFactory.getLogger(FileBrowserAction.class);
 	
-	@Override
 	public String list() {
-		/*
-		List<File> fileList = this.getStorageManager().fileList(this.getCurrentPath(), false);
-		this.setFileList(fileList);
-		*/
 		return SUCCESS;
 	}
 	
-	@Override
 	public String edit() {
 		String text;
 		try {
@@ -61,7 +55,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		return SUCCESS;
 	}
 	
-	@Override
 	public String upload() {
 		try {
 			this.getStorageManager().saveFile(this.getCurrentPath() + this.getUploadFileName(), false, this.getInputStream());
@@ -72,7 +65,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		return SUCCESS;
 	}
 	
-	@Override
 	public String delete() {
 		try {
 			if (null == this.isDeleteFile()) {
@@ -92,7 +84,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		return SUCCESS;
 	}
 
-	@Override
 	public String save() {
 		try {
 			InputStream stream = new ByteArrayInputStream(this.getFileText().getBytes());
@@ -104,7 +95,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		return SUCCESS;
 	}
 
-	@Override
 	public String createDir() {
 		try {
 			this.getStorageManager().createDirectory(this.getCurrentPath() + this.getDirname(), false);
@@ -114,25 +104,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 		}
 		return SUCCESS;
 	}
-	/*
-	public String[] getDirectoryNames() {
-		try {
-			return this.getStorageManager().listDirectory(this.getCurrentPath(), true);
-		} catch (Throwable t) {
-			_logger.error("error listing directories, fullPath: {}", this.getCurrentPath(), t);
-			return new String[0];
-		}
-	}
-	
-	public String[] getFileNames() {
-		try {
-			return this.getStorageManager().listFile(this.getCurrentPath(), true);
-		} catch (Throwable t) {
-			_logger.error("error listing files, fullPath: {}", this.getCurrentPath(), t);
-			return new String[0];
-		}
-	}
-	*/
 	
 	public List<SelectItem> getBreadCrumbsTargets() {
 		String currentPath = this.getCurrentPath();
@@ -187,15 +158,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 	public void setCurrentPath(String currentPath) {
 		this._currentPath = currentPath;
 	}
-
-	/*
-	public List<File> getFileList() {
-	return _fileList;
-	}
-	public void setFileList(List<File> fileList) {
-	this._fileList = fileList;
-	}
-	 */
 	
 	public String getFileText() {
 		return _fileText;
@@ -273,7 +235,6 @@ public class FileBrowserAction extends BaseAction implements IFileBrowserAction 
 	}
 	
 	private String _currentPath;
-	//private List<File> _fileList;
 	
 	private String _fileText;
 	private String _filename;

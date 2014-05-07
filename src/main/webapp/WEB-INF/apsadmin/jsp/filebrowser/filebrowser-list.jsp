@@ -31,8 +31,6 @@
 <br />
 <br />
 
-
-
 <s:iterator value="filesAttributes" var="fileAttributesVar" status="fileStatus">
 	
 	<s:if test="#fileAttributesVar.directory">DIRECTORY</s:if><s:else>FILE</s:else>
@@ -70,7 +68,7 @@
 	<a href="<s:url namespace="/do/FileBrowser" action="deleteEntry" >
 			<s:param name="currentPath"><s:property escape="true" value="%{currentPath}"/></s:param>
 			<s:param name="filename"><s:property escape="false" value="#fileAttributesVar.name"/></s:param>
-			<s:param name="deleteFile" value="%{!#fileVar.directory}" />
+			<s:param name="deleteFile" value="%{!#fileAttributesVar.directory}" />
 		</s:url>">DELETE</a>
 	<br />
 	<br />
