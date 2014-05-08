@@ -64,7 +64,7 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 <link rel="stylesheet/less" href="<@wp.resourceURL />static/entando-misc-bootstrap/bootstrap/less/responsive.less" />
 <link rel="stylesheet/less" href="<@wp.resourceURL />static/less/portalexample.less" />
 <script src="<@wp.resourceURL />static/js/entando-misc-less/less-1.3.1.min.js"></script>', NULL, 0);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_cardFinding', NULL, NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_cardFinding', 'card_list_detail', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign wpsa=JspTaglibs["/apsadmin-core"]>
 <#assign wpsf=JspTaglibs["/apsadmin-form"]>
 <#assign s=JspTaglibs["/struts-tags"]>
@@ -114,7 +114,7 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 
 </form>
 </section>', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_cardView', NULL, NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_cardView', 'card_list_detail', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign s=JspTaglibs["/struts-tags"]>
 
 <h2><@wp.i18n key="VIEW_CARD" /></h2>
@@ -137,12 +137,12 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 
 <a href="<@wp.action path="/ExtStr2/do/FrontEnd/Card/list.action" />" class="btn"><@wp.i18n key="BACK_TO_CARDS_LIST" /></a>
 ', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_error', NULL, NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_error', 'card_list_detail', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.i18n key="GENERIC_ERROR" />', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_pagerInfo', NULL, NULL, NULL, '<#assign s=JspTaglibs["/struts-tags"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_pagerInfo', 'card_list_detail', NULL, NULL, '<#assign s=JspTaglibs["/struts-tags"]>
 <p><@s.text name="note.searchIntro" />&#32;<@s.property value="#group.size" />&#32;<@s.text name="note.searchOutro" />.<br />
 <@s.text name="label.page" />: [<@s.property value="#group.currItem" />/<@s.property value="#group.maxItem" />].</p>', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_pagerFormBlock', NULL, NULL, NULL, '<#assign wpsf=JspTaglibs["/apsadmin-form"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_is_pagerFormBlock', 'card_list_detail', NULL, NULL, '<#assign wpsf=JspTaglibs["/apsadmin-form"]>
 <#assign s=JspTaglibs["/struts-tags"]>
 
 <@s.if test="#group.size > #group.max">
