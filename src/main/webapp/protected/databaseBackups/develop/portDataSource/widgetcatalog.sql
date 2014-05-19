@@ -94,7 +94,9 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <properties>
 <property key="en">Contents - Publish a List of Contents</property>
 <property key="it">Contenuti - Pubblica una Lista di Contenuti</property>
-</properties>', '<config>
+</properties>
+
+', '<config>
 	<parameter name="contentType">Content Type (mandatory)</parameter>
 	<parameter name="modelId">Content Model</parameter>
 	<parameter name="userFilters">Front-End user filter options</parameter>
@@ -108,7 +110,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 	<parameter name="pageLink">The code of the Page to link</parameter>
 	<parameter name="linkDescr_{lang}">Link description in lang {lang}</parameter>
 	<action name="listViewerConfig"/>
-</config>', 'jacms', NULL, NULL, 1, NULL, NULL);
+</config>', 'jacms', NULL, NULL, 1, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('URP_Public_Relations_Office', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">URP - Public Relations Office</property>
@@ -136,7 +138,9 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <properties>
 <property key="en">Announcements - Latest Announcements</property>
 <property key="it">Bandi - Ultimi Bandi</property>
-</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+</properties>
+
+', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="maxElements">3</property>
 <property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
@@ -147,7 +151,9 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">ANN</property>
 <property key="modelId">10051</property>
 <property key="linkDescr_en">Archive</property>
-</properties>', 0, 'free', NULL);
+</properties>
+
+', 0, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('RSL_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Resolutions - Archive</property>

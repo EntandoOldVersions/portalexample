@@ -1,5 +1,62 @@
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('content_viewer', 'content_viewer', 'jacms', '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
-<@jacms.content publishExtraTitle=true />', NULL, 0);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer', 'content_viewer', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@jacms.contentInfo param="authToEdit" var="canEditThis" />
+<@jacms.contentInfo param="contentId" var="myContentId" />
+
+<#if (canEditThis)>
+	<div class="bar-content-edit">
+		<a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/jacms/Content/edit.action?contentId=<@jacms.contentInfo param="contentId" />" class="btn btn-info">
+			<@wp.i18n key="EDIT_THIS_CONTENT" /> <i class="icon-edit icon-white"></i></a>
+	</div>
+</#if>
+<@jacms.content publishExtraTitle=true />', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list', 'content_viewer_list', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.headInfo type="JS_EXT" info="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
+
+<@jacms.contentList listName="contentList" titleVar="titleVar"
+	pageLinkVar="pageLinkVar" pageLinkDescriptionVar="pageLinkDescriptionVar" userFilterOptionsVar="userFilterOptionsVar" />
+
+<#if (titleVar??)>
+	<h1><@c.out value="${titleVar}" /></h1>
+</#if>
+
+<#--
+<@c.set var="userFilterOptionsVar" value="${userFilterOptionsVar}" scope="request" />
+-->
+<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module.jsp" />
+<#if (contentList?size > 0)>
+	<@wp.pager listName="contentList" objectName="groupContent" pagerIdFromFrame=true advanced=true offset=5>
+		<@c.set var="group" value="${groupContent}" scope="request" />
+<#--
+		<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/pagerBlock.jsp" />
+-->
+<#list contentList as contentId>
+<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
+ <@jacms.content contentId="${contentId}" />
+</#if>
+</#list>
+<#--
+		<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/pagerBlock.jsp" />
+-->
+	</@wp.pager>
+<#else>
+	<#if (!userFilterOptionsVar.isEmpty())>
+		<p class="alert alert-info"><@wp.i18n key="LIST_VIEWER_EMPTY" /></p>
+	</#if>
+</#if>
+
+<#if (pageLinkVar??) && (pageLinkDescriptionVar??)>
+	<p class="text-right"><a class="btn btn-primary" href="<@wp.url page="${pageLinkVar}"/>"><@c.out value="${pageLinkDescriptionVar}" /></a></p>
+</#if>
+
+<@c.set var="userFilterOptionsVar" scope="request" />
+<@c.set var="contentList" scope="request" />
+<@c.set var="group" scope="request" />', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-search_form', 'entando-widget-search_form', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" />
 <form class="navbar-search pull-left" action="<@wp.url page="${searchResultPageVar.code}" />" method="get">
