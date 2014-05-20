@@ -1,1 +1,1 @@
-INSERT INTO uniquekeys (id, keyvalue) VALUES (1, 98);
+INSERT INTO uniquekeys (id, keyvalue) VALUES (1, 101);
