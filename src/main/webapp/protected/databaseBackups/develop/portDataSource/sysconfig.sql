@@ -240,10 +240,10 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'lice
 ');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'entandoComponentsReport', 'The component installation report', '<?xml version="1.0" encoding="UTF-8"?>
 <reports status="OK">
-	<creation>2014-05-19 15:57:20</creation>
-	<lastupdate>2014-05-19 15:57:51</lastupdate>
+	<creation>2014-05-20 09:44:57</creation>
+	<lastupdate>2014-05-20 09:45:19</lastupdate>
 	<components>
-		<component code="entandoCore" date="2014-05-19 15:57:20" status="OK">
+		<component code="entandoCore" date="2014-05-20 09:44:57" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="OK">
 					<table name="authgroups" />
@@ -284,7 +284,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="jacms" date="2014-05-19 15:57:41" status="OK">
+		<component code="jacms" date="2014-05-20 09:45:11" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="OK">
@@ -306,7 +306,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-html5-essentials" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-misc-html5-essentials" date="2014-05-20 09:45:14" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -317,7 +317,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-widget-login_form" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-widget-login_form" date="2014-05-20 09:45:14" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -328,7 +328,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-less" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-misc-less" date="2014-05-20 09:45:14" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -339,7 +339,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-jquery" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-misc-jquery" date="2014-05-20 09:45:14" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -350,7 +350,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-widget-navigation_menu" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-widget-navigation_menu" date="2014-05-20 09:45:14" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -361,7 +361,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="portalexample_card" date="2014-05-19 15:57:46" status="OK">
+		<component code="portalexample_card" date="2014-05-20 09:45:14" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="OK">
 					<table name="portalexample_cards" />
@@ -374,7 +374,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-widget-navigation_breadcrumbs" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-widget-navigation_breadcrumbs" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -385,7 +385,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-announcement" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-content-announcement" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -396,7 +396,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-news" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-content-news" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -407,7 +407,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-download" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-content-download" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -418,7 +418,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-widget-language_choose" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-widget-language_choose" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -429,7 +429,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-widget-search_form" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-widget-search_form" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -440,7 +440,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-misc-bootstrap" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-page-2columns-left" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -451,7 +451,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-page-2columns-left" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-content-resolution" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -462,7 +462,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-resolution" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-misc-bootstrap" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -473,7 +473,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-content-generic" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-content-generic" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -484,7 +484,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-widget-navigation_bar" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-widget-navigation_bar" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />
@@ -495,7 +495,7 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'enta
 			</data>
 			<postProcess status="NOT_AVAILABLE" />
 		</component>
-		<component code="entando-page-bootstrap-hero" date="2014-05-19 15:57:46" status="OK">
+		<component code="entando-page-bootstrap-hero" date="2014-05-20 09:45:15" status="OK">
 			<schema status="OK">
 				<datasource name="servDataSource" status="NOT_AVAILABLE" />
 				<datasource name="portDataSource" status="NOT_AVAILABLE" />

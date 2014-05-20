@@ -12,7 +12,45 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 	</div>
 </#if>
 <@jacms.content publishExtraTitle=true />', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list', 'content_viewer_list', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list', 'content_viewer_list', 'jacms', '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.headInfo type="JS_EXT" info="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
+
+<@jacms.contentList listName="contentList" titleVar="titleVar"
+	pageLinkVar="pageLinkVar" pageLinkDescriptionVar="pageLinkDescriptionVar" userFilterOptionsVar="userFilterOptionsVar" />
+
+<#if (titleVar??)>
+	<h1><@c.out value="${titleVar}" /></h1>
+</#if>
+<@wp.freemarkerTemplateParameter var="userFilterOptionsVar" valueName="userFilterOptionsVar" />
+<@wp.fragment code="jacms_content_viewer_list_userfilters" escapeXml=false />
+<#-- <@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module.jsp" /> -->
+<#if (contentList?size > 0)>
+	<@wp.pager listName="contentList" objectName="groupContent" pagerIdFromFrame=true advanced=true offset=5>
+		<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" />
+		<@wp.fragment code="default_pagerBlock" escapeXml=false />
+<#list contentList as contentId>
+<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
+ <@jacms.content contentId="${contentId}" />
+</#if>
+</#list>
+		<@wp.fragment code="default_pagerBlock" escapeXml=false />
+	</@wp.pager>
+<#else>
+	<#if (!userFilterOptionsVar.isEmpty())>
+		<p class="alert alert-info"><@wp.i18n key="LIST_VIEWER_EMPTY" /></p>
+	</#if>
+</#if>
+
+<#if (pageLinkVar??) && (pageLinkDescriptionVar??)>
+	<p class="text-right"><a class="btn btn-primary" href="<@wp.url page="${pageLinkVar}"/>"><@c.out value="${pageLinkDescriptionVar}" /></a></p>
+</#if>
+
+<@c.set var="userFilterOptionsVar" scope="request" />
+<@c.set var="contentList" scope="request" />
+<@c.set var="group" scope="request" />', '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <#assign wp=JspTaglibs["/aps-core"]>
 
@@ -264,3 +302,157 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 </ul>
 
 </@s.if>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_cardFinding', 'card_list', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+<#assign vmr=JspTaglibs["/WEB-INF/tld/portalexample-core.tld"]>
+
+<@vmr.cards listName="cardList" />
+
+<#--
+optional CSS
+<@wp.headInfo type="CSS" info="widgets/card_list.css" />
+-->
+<section class="card_list">
+
+<h1><@wp.i18n key="SEARCH_CARDS" /></h1>
+<form id="searchForm" method="get" action="<@wp.url />" class="form-search">
+	<input type="text" id="holder" name="holder" value="${holder?default("")}" placeholder="<@wp.i18n key="CARD_HOLDER" />" class="input-medium search-query" />
+	<input type="submit" class="btn btn-primary" value="<@wp.i18n key="SEARCH" />" />
+</form>
+<#if cardList??>
+	<@wp.pager listName="cardList" objectName="groupCard" pagerIdFromFrame=true max=5 advanced=true offset=5 >
+	<@wp.freemarkerTemplateParameter var="group" valueName="groupCard" />
+	<@wp.fragment code="default_pagerBlock" escapeXml=false />
+	<h2>
+		<@wp.i18n key="CARDS_NUMBER" /> : <@c.out value="${groupCard.size}" />
+	</h2>
+	<table class="table table-bordered table-condensed" summary="<@wp.i18n key="CARDS_LIST_SUMMARY" />">
+	<tr>
+		<th><@wp.i18n key="CARD_HOLDER" /></th>
+		<th><@wp.i18n key="CARD_DESCRIPTION" /></th>
+		<th><@wp.i18n key="CARD_CREATION_DATE" /></th>
+	</tr>
+<#list cardList as card>
+<#if (card_index >= groupCard.begin) && (card_index <= groupCard.end)>
+	<tr>
+		<td><@c.out value="${card.holder}" /></td>
+		<td><@c.out value="${card.descr}" /></td>
+		<td>${card.date?string("dd/MM/yyyy")}</td>
+	</tr>
+</#if>
+</#list>
+	</table>
+	<@wp.fragment code="default_pagerBlock" escapeXml=false />
+	</@wp.pager>
+</#if>
+</section>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('default_pagerBlock', NULL, NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#if (group.size > group.max)>
+	<div class="pagination pagination-centered">
+		<ul>
+		<#if (1 != group.currItem)>
+			<#if (group.advanced)>
+				<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" >1</@wp.parameter></@wp.url>" title="<@wp.i18n key="PAGER_FIRST" />"><i class="icon-fast-backward"></i></a></li>
+				<#if (1 != group.beginItemAnchor)>
+					<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" ><@c.out value="${group.currItem - group.offset}" /></@wp.parameter></@wp.url>" title="<@wp.i18n key="PAGER_STEP_BACKWARD" />&#32;<@c.out value="${group.offset}" />"><i class="icon-step-backward"></i></a></li>
+				</#if>
+			</#if>
+			<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" ><@c.out value="${group.prevItem}"/></@wp.parameter></@wp.url>"><@wp.i18n key="PAGER_PREV" /></a></li>
+		</#if>
+		<#list group.items as item>
+		<#if (item_index >= (group.beginItemAnchor-1)) && (item_index <= (group.endItemAnchor-1))>
+			<#if (item == group.currItem)>
+			<li class="active"><a href="#"><@c.out value="${item}"/></a></li>
+			<#else>
+			<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" ><@c.out value="${item}"/></@wp.parameter></@wp.url>"><@c.out value="${item}"/></a></li>
+			</#if>
+		</#if>
+		</#list>
+		<#if (group.maxItem != group.currItem)>
+			<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" ><@c.out value="${group.nextItem}"/></@wp.parameter></@wp.url>"><@wp.i18n key="PAGER_NEXT" /></a></li>
+			<#if (group.advanced)>
+				<#if (group.maxItem != group.endItemAnchor)>
+					<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" ><@c.out value="${group.currItem + group.offset}" /></@wp.parameter></@wp.url>" title="<@wp.i18n key="PAGER_STEP_FORWARD" />&#32;<@c.out value="${group.offset}" />"><i class="icon-step-forward"></i></a></li>
+				</#if>
+				<li><a href="<@wp.url paramRepeat=true ><@wp.parameter name="${group.paramItemName}" ><@c.out value="${group.maxItem}" /></@wp.parameter></@wp.url>" title="<@wp.i18n key="PAGER_LAST" />"><i class="icon-fast-forward"></i></a></li>
+			</#if>
+		</#if>
+		</ul>
+	</div>
+</#if>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilters', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<#if (userFilterOptionsVar??) && userFilterOptionsVar?has_content && (userFilterOptionsVar?size > 0)>
+<div class="row-fluid"><div class="span12 padding-medium-top">
+
+<#assign hasUserFilterError = false >
+<#-- <@c.set var="hasUserFilterError" value=false /> -->
+
+<#list userFilterOptionsVar as userFilterOptionVar>
+<#if (userFilterOptionVar.formFieldErrors??) && userFilterOptionVar.formFieldErrors?has_content && (userFilterOptionVar.formFieldErrors?size > 0)>
+<#assign hasUserFilterError = true >
+<#-- <@c.set var="hasUserFilterError" value=true /> -->
+</#if>
+</#list>
+
+<#if (hasUserFilterError)>
+<div class="alert alert-error">
+	<a class="close" data-dismiss="alert" href="#"><i class="icon-remove"></i></a>
+	<h2 class="alert-heading"><@wp.i18n key="ERRORS" /></h2>
+	<ul>
+		<#list userFilterOptionsVar as userFilterOptionVar>
+			<#if (userFilterOptionVar.formFieldErrors??)>
+			<#list userFilterOptionVar.formFieldErrors as formFieldError>
+			<li>
+			<@wp.i18n key="jacms_LIST_VIEWER_FIELD" />&#32;<em><@c.out value="${formFieldError.value.attributeName}" /></em><#if (formFieldError.value.rangeFieldType??)>:&#32;<em><@wp.i18n key="${formFieldError.value.rangeFieldType}" /></em></#if>&#32;<@wp.i18n key="${formFieldError.value.errorKey}" />
+			</li>
+			</#list>
+			</#if>
+		</#list>
+	</ul>
+</div>
+</#if>
+<@c.set var="hasUserFilterError" value=false />
+
+<p><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#content-viewer-list-filters"><@wp.i18n key="SEARCH_FILTERS_BUTTON" /> <i class="icon-zoom-in icon-white"></i></button></p>
+
+<form action="<@wp.url />" method="post" class="form-horizontal collapse" id="content-viewer-list-filters">
+	<#list userFilterOptionsVar as userFilterOptionVar>
+		<@wp.freemarkerTemplateParameter var="userFilterOptionVar" valueName="userFilterOptionVar" removeOnEndTag=true >
+		<#if !userFilterOptionVar.attributeFilter && (userFilterOptionVar.key == "fulltext" || userFilterOptionVar.key == "category")>
+			<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-${userFilterOptionVar.key}.jsp" />
+		</#if>
+		<#if userFilterOptionVar.attributeFilter >
+			<#if userFilterOptionVar.attribute.type == "Monotext" || userFilterOptionVar.attribute.type == "Text" || userFilterOptionVar.attribute.type == "Longtext" || userFilterOptionVar.attribute.type == "Hypertext">
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-Text.jsp" />
+			</#if>
+			<#if userFilterOptionVar.attribute.type == "Enumerator" >
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-Enumerator.jsp" />
+			</#if>
+			<#if userFilterOptionVar.attribute.type == "Number">
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-Number.jsp" />
+			</#if>
+			<#if userFilterOptionVar.attribute.type == "Date">
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-Date.jsp" />
+			</#if>
+			<#if userFilterOptionVar.attribute.type == "Boolean">
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-Boolean.jsp" />
+			</#if>
+			<#if userFilterOptionVar.attribute.type == "CheckBox">
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-CheckBox.jsp" />
+			</#if>
+			<#if userFilterOptionVar.attribute.type == "ThreeState">
+				<@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-ThreeState.jsp" />
+			</#if>
+		</#if>
+		</@wp.freemarkerTemplateParameter>
+	</#list>
+	<p class="form-actions">
+		<input type="submit" value="<@wp.i18n key="SEARCH" />" class="btn btn-primary" />
+	</p>
+</form>
+</div></div>
+</#if>', NULL, 0);
