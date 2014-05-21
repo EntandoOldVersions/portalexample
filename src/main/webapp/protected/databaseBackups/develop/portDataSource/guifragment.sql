@@ -362,9 +362,10 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 	<ul>
 		<#list userFilterOptionsVar as userFilterOptionVar>
 			<#if (userFilterOptionVar.formFieldErrors??) && (userFilterOptionVar.formFieldErrors?size > 0)>
-			<#list userFilterOptionVar.formFieldErrors as formFieldError>
+			<#assign formFieldErrorsVar = userFilterOptionVar.formFieldErrors >
+			<#list formFieldErrorsVar?keys as formFieldErrorKey>
 			<li>
-			<@wp.i18n key="jacms_LIST_VIEWER_FIELD" />&#32;<em>${formFieldError.value.attributeName}</em><#if (formFieldError.value.rangeFieldType??)>:&#32;<em><@wp.i18n key="${formFieldError.value.rangeFieldType}" /></em></#if>&#32;<@wp.i18n key="${formFieldError.value.errorKey}" />
+			<@wp.i18n key="jacms_LIST_VIEWER_FIELD" />&#32;<em>${formFieldErrorsVar[formFieldErrorKey].attributeName}</em><#if (formFieldErrorsVar[formFieldErrorKey].rangeFieldType??)>:&#32;<em><@wp.i18n key="${formFieldErrorsVar[formFieldErrorKey].rangeFieldType}" /></em></#if>&#32;<@wp.i18n key="${formFieldErrorsVar[formFieldErrorKey].errorKey}" />
 			</li>
 			</#list>
 			</#if>
