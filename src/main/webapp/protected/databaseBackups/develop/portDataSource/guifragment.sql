@@ -361,10 +361,10 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 	<h2 class="alert-heading"><@wp.i18n key="ERRORS" /></h2>
 	<ul>
 		<#list userFilterOptionsVar as userFilterOptionVar>
-			<#if (userFilterOptionVar.formFieldErrors??)>
+			<#if (userFilterOptionVar.formFieldErrors??) && (userFilterOptionVar.formFieldErrors?size > 0)>
 			<#list userFilterOptionVar.formFieldErrors as formFieldError>
 			<li>
-			<@wp.i18n key="jacms_LIST_VIEWER_FIELD" />&#32;<em><@c.out value="${formFieldError.value.attributeName}" /></em><#if (formFieldError.value.rangeFieldType??)>:&#32;<em><@wp.i18n key="${formFieldError.value.rangeFieldType}" /></em></#if>&#32;<@wp.i18n key="${formFieldError.value.errorKey}" />
+			<@wp.i18n key="jacms_LIST_VIEWER_FIELD" />&#32;<em>${formFieldError.value.attributeName}</em><#if (formFieldError.value.rangeFieldType??)>:&#32;<em><@wp.i18n key="${formFieldError.value.rangeFieldType}" /></em></#if>&#32;<@wp.i18n key="${formFieldError.value.errorKey}" />
 			</li>
 			</#list>
 			</#if>
@@ -463,8 +463,99 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 		<input name="${formFieldNameVar}" id="${formFieldNameVar}" value="${formFieldValue}" type="text" class="input-xlarge"/>
 	</div>
 </div>', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Enumer', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_Enumerator', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Date', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_Date', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Enumer', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#assign formFieldNameVar = userFilterOptionVar.formFieldNames[0] >
+<#assign formFieldValue = userFilterOptionVar.getFormFieldValue(formFieldNameVar) >
+
+<div class="control-group">
+	<@c.set var="i18n_Attribute_Key" value="${userFilterOptionVar.attribute.name}" />
+	<label for="${formFieldNameVar}" class="control-label"><@wp.i18n key="${i18n_Attribute_Key}" /></label>
+	<div class="controls">
+		<select name="${formFieldNameVar}" id="${formFieldNameVar}" class="input-xlarge">
+			<option value=""><@wp.i18n key="ALL" /></option>
+			<#list userFilterOptionVar.attribute.items as enumeratorItemVar>
+			<option value="${enumeratorItemVar}" <#if (formFieldValue??) && (enumeratorItemVar == formFieldValue)>selected="selected"</#if> ><@c.out value="${enumeratorItemVar}" /></option>
+			</#list>
+		</select>
+	</div>
+
+</div>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Date', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#assign currentLangVar ><@wp.info key="currentLang" /></#assign>
+
+<#assign js_for_datepicker="jQuery(function($){
+	$.datepicker.regional[''it''] = {
+		closeText: ''Chiudi'',
+		prevText: ''&#x3c;Prec'',
+		nextText: ''Succ&#x3e;'',
+		currentText: ''Oggi'',
+		monthNames: [''Gennaio'',''Febbraio'',''Marzo'',''Aprile'',''Maggio'',''Giugno'',
+			''Luglio'',''Agosto'',''Settembre'',''Ottobre'',''Novembre'',''Dicembre''],
+		monthNamesShort: [''Gen'',''Feb'',''Mar'',''Apr'',''Mag'',''Giu'',
+			''Lug'',''Ago'',''Set'',''Ott'',''Nov'',''Dic''],
+		dayNames: [''Domenica'',''Luned&#236'',''Marted&#236'',''Mercoled&#236'',''Gioved&#236'',''Venerd&#236'',''Sabato''],
+		dayNamesShort: [''Dom'',''Lun'',''Mar'',''Mer'',''Gio'',''Ven'',''Sab''],
+		dayNamesMin: [''Do'',''Lu'',''Ma'',''Me'',''Gi'',''Ve'',''Sa''],
+		weekHeader: ''Sm'',
+		dateFormat: ''yy-mm-dd'',
+		firstDay: 1,
+		isRTL: false,
+		showMonthAfterYear: false,
+		yearSuffix: ''''};
+});
+
+jQuery(function($){
+	if (Modernizr.touch && Modernizr.inputtypes.date) {
+		$.each(	$(\"input[data-isdate=true]\"), function(index, item) {
+			item.type = ''date'';
+		});
+	} else {
+		$.datepicker.setDefaults( $.datepicker.regional[ \"${currentLangVar}\" ] );
+		$(\"input[data-isdate=true]\").datepicker({
+      			changeMonth: true,
+      			changeYear: true,
+      			dateFormat: \"yy-mm-dd\"
+    		});
+	}
+});" >
+
+<@wp.headInfo type="JS" info="entando-misc-html5-essentials/modernizr-2.5.3-full.js" />
+<@wp.headInfo type="JS_EXT" info="http://code.jquery.com/ui/1.10.0/jquery-ui.min.js" />
+<@wp.headInfo type="CSS_EXT" info="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" />
+<@wp.headInfo type="JS_RAW" info="${js_for_datepicker}" />
+
+<fieldset>
+<legend>
+<@c.set var="i18n_Attribute_Key" value="${userFilterOptionVar.attribute.name}" />
+<@wp.i18n key="${i18n_Attribute_Key}" />
+</legend>
+
+<div class="control-group">
+	<#assign formFieldStartNameVar = userFilterOptionVar.formFieldNames[0] >
+	<#assign formFieldStartValueVar = userFilterOptionVar.getFormFieldValue(formFieldStartNameVar) >
+	<label for="${formFieldStartNameVar}" class="control-label">
+		<@wp.i18n key="DATE_FROM" />
+	</label>
+	<div class="controls">
+		<input id="formFieldStartNameVar}" name="${formFieldStartNameVar}" value="${formFieldStartValueVar?default("")}" type="text" data-isdate="true" class="input-xlarge" />
+	</div>
+</div>
+<div class="control-group">
+	<#assign formFieldEndNameVar = userFilterOptionVar.formFieldNames[1] >
+	<#assign formFieldEndValueVar = userFilterOptionVar.getFormFieldValue(formFieldEndNameVar) >
+	<label for="${formFieldEndNameVar}" class="control-label">
+		<@wp.i18n key="DATE_TO" />
+	</label>
+	<div class="controls">
+		<input id="${formFieldEndNameVar}" name="${formFieldEndNameVar}" value="${formFieldEndValueVar?default("")}" type="text" data-isdate="true" class="input-xlarge" />
+	</div>
+</div>
+
+</fieldset>', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Boolean', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 
@@ -547,6 +638,37 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 		<label for="both_${formFieldNameVar}" class="radio">
 		<input name="${formFieldNameVar}" id="both_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "both")>checked="checked"</#if> value="both" type="radio" />
 		<@wp.i18n key="BOTH"/></label>
+	</div>
+</div>
+
+</fieldset>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Number', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<fieldset>
+<legend>
+<@c.set var="i18n_Attribute_Key" value="${userFilterOptionVar.attribute.name}" />
+<@wp.i18n key="${i18n_Attribute_Key}" />
+</legend>
+
+<div class="control-group">
+	<#assign formFieldStartNameVar = userFilterOptionVar.formFieldNames[0] >
+	<#assign formFieldStartValueVar = userFilterOptionVar.getFormFieldValue(formFieldStartNameVar) >
+	<label for="${formFieldStartNameVar}" class="control-label">
+		<@wp.i18n key="NUMBER_FROM" />
+	</label>
+	<div class="controls">
+		<input id="${formFieldStartNameVar}" name="${formFieldStartNameVar}" value="${formFieldStartValueVar?default("")}" type="number" class="input-medium" />
+	</div>
+</div>
+<div class="control-group">
+	<#assign formFieldEndNameVar = userFilterOptionVar.formFieldNames[1] >
+	<#assign formFieldEndValueVar = userFilterOptionVar.getFormFieldValue(formFieldEndNameVar) >
+	<label for="${formFieldEndNameVar}" class="control-label">
+		<@wp.i18n key="NUMBER_TO" />
+	</label>
+	<div class="controls">
+		<input id="${formFieldEndNameVar}" name="${formFieldEndNameVar}" value="${formFieldEndValueVar?default("")}" type="number" class="input-medium" />
 	</div>
 </div>
 
