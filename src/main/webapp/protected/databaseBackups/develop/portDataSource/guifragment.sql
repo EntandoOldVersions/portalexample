@@ -465,7 +465,89 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 </div>', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Enumer', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_Enumerator', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Date', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_Date', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Boolean', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_Boolean', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Bool_io', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_Boolean ignore option', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_CheckBox', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_CheckBox', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_ThreeSt', NULL, 'jacms', NULL, 'jacms_content_viewer_list_userfilter_ent_ThreeState', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Boolean', NULL, 'jacms', '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#assign formFieldNameVar = userFilterOptionVar.formFieldNames[0] >
+<#assign formFieldValue = userFilterOptionVar.getFormFieldValue(formFieldNameVar) >
+<#assign i18n_Attribute_Key = userFilterOptionVar.attribute.name >
+
+<fieldset>
+<legend><@wp.i18n key="${i18n_Attribute_Key}" /></legend>
+<#-- <@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module-entity-Boolean-ignoreOption.jsp" /> -->
+<@wp.fragment code="jacms_content_viewer_list_userfilter_ent_Bool_io" escapeXml=false />
+
+<div class="control-group">
+	<div class="controls">
+		<label for="${formFieldNameVar}" class="radio">
+		<input name="${formFieldNameVar}" id="true_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "true")>checked="checked"</#if> value="true" type="radio" />
+		<@wp.i18n key="YES"/></label>
+	</div>
+	<div class="controls">
+		<label for="false_${formFieldNameVar}" class="radio">
+		<input name="${formFieldNameVar}" id="false_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "false")>checked="checked"</#if> value="false" type="radio" />
+		<@wp.i18n key="NO"/></label>
+	</div>
+</div>
+
+</fieldset>', 'jacms_content_viewer_list_userfilter_ent_Boolean', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Bool_io', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#assign formFieldNameControlVar = userFilterOptionVar.formFieldNames[2] >
+<input name="${formFieldNameControlVar}" type="hidden" value="true" />
+<#assign formFieldNameIgnoreVar = userFilterOptionVar.formFieldNames[1] >
+<#assign formFieldIgnoreValue = userFilterOptionVar.getFormFieldValue(formFieldNameIgnoreVar) >
+<#assign formFieldControlValue = userFilterOptionVar.getFormFieldValue(formFieldNameControlVar) >
+
+<div class="controls">
+	<label for="ignore_${formFieldNameIgnoreVar}" class="checkbox">
+	<input id="ignore_${formFieldNameIgnoreVar}" name="${formFieldNameIgnoreVar}" <#if (formFieldIgnoreValue?? && formFieldIgnoreValue == "true")>checked="checked"</#if> value="true" type="checkbox" />
+	<@wp.i18n key="IGNORE" /></label>
+</div>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_CheckBox', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#assign formFieldNameVar = userFilterOptionVar.formFieldNames[0] >
+<#assign formFieldValue = userFilterOptionVar.getFormFieldValue(formFieldNameVar) >
+<#assign i18n_Attribute_Key = userFilterOptionVar.attribute.name >
+
+<fieldset>
+<legend><@wp.i18n key="${i18n_Attribute_Key}" /></legend>
+<@wp.fragment code="jacms_content_viewer_list_userfilter_ent_Bool_io" escapeXml=false />
+
+<div class="control-group">
+	<div class="controls">
+		<label for="true_${formFieldNameVar}" class="checkbox">
+		<input name="${formFieldNameVar}" id="true_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "true")>checked="checked"</#if> value="true" type="checkbox" />
+		<@wp.i18n key="YES"/></label>
+	</div>
+</div>
+
+</fieldset>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_ThreeSt', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+
+<#assign formFieldNameVar = userFilterOptionVar.formFieldNames[0] >
+<#assign formFieldValue = userFilterOptionVar.getFormFieldValue(formFieldNameVar) >
+<#assign i18n_Attribute_Key = userFilterOptionVar.attribute.name >
+
+<fieldset>
+<legend><@wp.i18n key="${i18n_Attribute_Key}" /></legend>
+<@wp.fragment code="jacms_content_viewer_list_userfilter_ent_Bool_io" escapeXml=false />
+
+<div class="control-group">
+	<div class="controls">
+		<label for="true_${formFieldNameVar}" class="radio">
+		<input name="${formFieldNameVar}" id="true_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "true")>checked="checked"</#if> value="true" type="radio" />
+		<@wp.i18n key="YES"/></label>
+		<label for="false_${formFieldNameVar}" class="radio">
+		<input name="${formFieldNameVar}" id="false_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "false")>checked="checked"</#if> value="false" type="radio" />
+		<@wp.i18n key="NO"/></label>
+		<label for="both_${formFieldNameVar}" class="radio">
+		<input name="${formFieldNameVar}" id="both_${formFieldNameVar}" <#if (formFieldValue??) && (formFieldValue == "both")>checked="checked"</#if> value="both" type="radio" />
+		<@wp.i18n key="BOTH"/></label>
+	</div>
+</div>
+
+</fieldset>', 1);
