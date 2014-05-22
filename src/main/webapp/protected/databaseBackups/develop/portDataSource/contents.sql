@@ -1,3 +1,49 @@
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS34', 'NWS', 'Folk Music Festival', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot; che si svolger&agrave; durante i mesi di febbraio ed marzo nell&#39;anfiteatro del lungo mare di Villamarina.</p>
+<p>
+	Al centro della manifestazione &egrave; la canzone popolare. L&#39;evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
+<p>
+	At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20130314130841</lastModified></content>
+', '20121018155653', '20130314130841', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot; che si svolger&agrave; durante i mesi di febbraio ed marzo nell&#39;anfiteatro del lungo mare di Villamarina.</p>
+<p>
+	Al centro della manifestazione &egrave; la canzone popolare. L&#39;evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
+<p>
+	&nbsp;</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
+<p>
+	At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20130314130841</lastModified></content>
+', 'free', '2.0', 'admin');
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL30', 'RSL', 'Resolution 20', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20131004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2013</text><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Esame ed approvazione del Conto Consuntivo 2013</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Examination and approval of Entando Town Balance Sheet 2013</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2012</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20130314131336</lastModified></content>
+', '20121018153618', '20130314131336', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20131004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2013</text><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	Esame ed approvazione del Conto Consuntivo 2013</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	Examination and approval of Entando Town Balance Sheet 2013</p>
+]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2012</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20130314131336</lastModified></content>
+', 'free', '2.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG8', 'CNG', 'Sample - Hero Unit', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG8" typecode="CNG" typedescr="Generic Content"><descr>Sample - Hero Unit</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Hello, world!</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Learn more »</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20121010154909</created><lastModified>20121010154909</lastModified></content>
 ', '20121010154909', '20121010154909', '<?xml version="1.0" encoding="UTF-8"?>
@@ -8,6 +54,43 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 ', '20121010154909', '20121010154909', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG9" typecode="CNG" typedescr="Generic Content"><descr>Sample - Lorem Ipsum</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="en">Heading</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="en"><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link"><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.com/</urldest></link><text lang="en">Entando.com</text></attribute><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.entando.org/</urldest></link><text lang="en">Entando.org</text></attribute><attribute name="Link" attributetype="Link"><link type="external"><urldest>http://www.github.com/entando/</urldest></link><text lang="en">Entando @GitHub</text></attribute></list><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>1.0</version><created>20121010154909</created><lastModified>20121010154909</lastModified></content>
 ', 'free', '1.0', NULL);
+INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS37', 'NWS', 'Ground Rent Contribution', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130327</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2013</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2013.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been published the public notice for the allocation of Ground Rent Contribution 2013.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2013, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
+<p>
+	&Egrave; possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
+<p>
+	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2013</strong>.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2013</strong>.</p>
+<p>
+	You can download the application forms and the notice in this section.</p>
+<p>
+	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2013</strong>.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20130314135757</lastModified></content>
+', '20121018160200', '20130314135757', '<?xml version="1.0" encoding="UTF-8"?>
+<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130327</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2013</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2013.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been published the public notice for the allocation of Ground Rent Contribution 2013.</p>
+]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
+	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2013, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
+<p>
+	&Egrave; possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
+<p>
+	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2013</strong>.</p>
+]]></hypertext><hypertext lang="en"><![CDATA[<p>
+	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2013</strong>.</p>
+<p>
+	You can download the application forms and the notice in this section.</p>
+<p>
+	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2013</strong>.</p>
+]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20130314135757</lastModified></content>
+', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('ANN20', 'ANN', 'Announcement for special maintenance Nautical Institute', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="ANN20" typecode="ANN" typedescr="Announcement"><descr>Announcement for special maintenance Nautical Institute</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Longtext"><text lang="it">Bando di gara per l''esecuzione dei Lavori per la manutenzione dell''Istituto Nautico</text><text lang="en">Announcement for special maintenance Nautical Institute.</text></attribute><attribute name="StartDate" attributetype="Date"><date>20130303</date></attribute><attribute name="EndDate" attributetype="Date"><date>20131114</date></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Bando di gara per l&#39;esecuzione dei &quot;Lavori per la manutenzione straordinaria dell&#39;Istituto Nautico, per la realizzazione di laboratorio informatico&quot;.</p>
@@ -68,89 +151,6 @@ INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, l
 	Organization of the event &quot;Folk Music Festival&quot; III edition to be held in Villamarina in the months of August and September 2013.</p>
 ]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="27" lang="en" /><text lang="it">Delibera della Giunta Comunale numero 120 dell'' 8 Luglio 2013</text><text lang="en">Resolution 120</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153416</created><lastModified>20130314132121</lastModified></content>
 ', 'free', '2.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS34', 'NWS', 'Folk Music Festival', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot; che si svolger&agrave; durante i mesi di febbraio ed marzo nell&#39;anfiteatro del lungo mare di Villamarina.</p>
-<p>
-	Al centro della manifestazione &egrave; la canzone popolare. L&#39;evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
-<p>
-	&nbsp;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
-<p>
-	At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20130314130841</lastModified></content>
-', '20121018155653', '20130314130841', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS34" typecode="NWS" typedescr="News"><descr>Folk Music Festival</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130720</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Festival della canzone popolare</text><text lang="en">Folk Music Festival</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Si inaugura la III edizione del &quot;Festival della canzone popolare&quot; che si svolger&agrave; durante i mesi di febbraio ed marzo nell&#39;anfiteatro del lungo mare di Villamarina.</p>
-<p>
-	Al centro della manifestazione &egrave; la canzone popolare. L&#39;evento coinvolge <strong>artisti di fama nazionale</strong> e prevede un calendario ricco di incontri.</p>
-<p>
-	&nbsp;</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been inaugurated the third edition of the &quot;Folk Music Festival&quot; to be held on July and August in the amphitheater of Entando Town.</p>
-<p>
-	At the center of the event is the folk song. The event involves artists and provides a calendar full of meetings.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach" /></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018155653</created><lastModified>20130314130841</lastModified></content>
-', 'free', '2.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('RSL30', 'RSL', 'Resolution 20', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20131004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2013</text><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Esame ed approvazione del Conto Consuntivo 2013</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Examination and approval of Entando Town Balance Sheet 2013</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2012</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20130314131336</lastModified></content>
-', '20121018153618', '20130314131336', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="RSL30" typecode="RSL" typedescr="Resolution"><descr>Resolution 20</descr><groups mainGroup="free" /><categories><category id="resolutions_council" /></categories><attributes><attribute name="Number" attributetype="Number"><number>20</number></attribute><attribute name="Date" attributetype="Date"><date>20131004</date></attribute><attribute name="Title" attributetype="Longtext"><text lang="it">Esame ed approvazione del Conto Consuntivo 2013</text><text lang="en">Examination and approval of Entando Town Balance Sheet 2013</text></attribute><attribute name="Summary" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	Esame ed approvazione del Conto Consuntivo 2013</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	Examination and approval of Entando Town Balance Sheet 2013</p>
-]]></hypertext></attribute><list attributetype="Monolist" name="Documents" nestedtype="Attach"><attribute name="Documents" attributetype="Attach"><resource resourcetype="Attach" id="29" lang="en" /><text lang="it">Delibera del Consiglio Comunale numero 20 del 13 Luglio 2012</text><text lang="en">Resolution 20</text></attribute></list></attributes><status>PUBLIC</status><version>2.0</version><lastEditor>admin</lastEditor><created>20121018153618</created><lastModified>20130314131336</lastModified></content>
-', 'free', '2.0', 'admin');
-INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('NWS37', 'NWS', 'Ground Rent Contribution', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130327</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2013</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2013.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of Ground Rent Contribution 2013.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2013, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
-<p>
-	&Egrave; possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
-<p>
-	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2013</strong>.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2013</strong>.</p>
-<p>
-	You can download the application forms and the notice in this section.</p>
-<p>
-	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2013</strong>.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20130314135757</lastModified></content>
-', '20121018160200', '20130314135757', '<?xml version="1.0" encoding="UTF-8"?>
-<content id="NWS37" typecode="NWS" typedescr="News"><descr>Ground Rent Contribution</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Date" attributetype="Date"><date>20130327</date></attribute><attribute name="Title" attributetype="Text"><text lang="it">Contributo canone di locazione 2013</text><text lang="en">Ground Rent Contribution</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per l&rsquo;attribuzione del contributo ad integrazione dei canoni di locazione 2013.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of Ground Rent Contribution 2013.</p>
-]]></hypertext></attribute><attribute name="MainBody" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
-	&Egrave; stato pubblicato l&#39;avviso pubblico per la presentazione delle domande per l&rsquo;<strong>attribuzione del contributo ad integrazione dei canoni di locazione</strong> relativo all&rsquo;annualit&agrave; 2013, di cui all&rsquo;art. 11 L. 431/98 per chi sia residente nel Comune di Villamarina.</p>
-<p>
-	&Egrave; possibile scaricare i moduli per la domanda, e il relativo Bando in questa sezione o ritirarli presso gli uffici del Comune di Villamarina.</p>
-<p>
-	Le relative domande per accedere al bando devono essere presentate o spedite all&#39;Ufficio Protocollo entro il <strong>giorno 11.12.2013</strong>.</p>
-]]></hypertext><hypertext lang="en"><![CDATA[<p>
-	It has been published the public notice for the allocation of <strong>Ground Rent Contribution 2013</strong>.</p>
-<p>
-	You can download the application forms and the notice in this section.</p>
-<p>
-	The applications to access the notice must be submitted to Protocol Office until <strong>11/12/2013</strong>.</p>
-]]></hypertext></attribute><attribute name="Picture" attributetype="Image" /><attribute name="Caption" attributetype="Text" /><list attributetype="Monolist" name="Links" nestedtype="Link" /><list attributetype="Monolist" name="Attaches" nestedtype="Attach"><attribute name="Attaches" attributetype="Attach"><resource resourcetype="Attach" id="36" lang="en" /><text lang="it">Modulo domanda Locazione 2011</text><text lang="en">Application Form</text></attribute></list></attributes><status>PUBLIC</status><version>3.0</version><lastEditor>admin</lastEditor><created>20121018160159</created><lastModified>20130314135757</lastModified></content>
-', 'free', '3.0', 'admin');
 INSERT INTO contents (contentid, contenttype, descr, status, workxml, created, lastmodified, onlinexml, maingroup, currentversion, lasteditor) VALUES ('CNG41', 'CNG', 'Mayor', 'PUBLIC', '<?xml version="1.0" encoding="UTF-8"?>
 <content id="CNG41" typecode="CNG" typedescr="Generic Content"><descr>Mayor</descr><groups mainGroup="free" /><categories /><attributes><attribute name="Title" attributetype="Text"><text lang="it">Sindaco</text><text lang="en">Mayor</text></attribute><attribute name="Abstract" attributetype="Hypertext"><hypertext lang="it"><![CDATA[<p>
 	Il <strong>Sindaco</strong> &egrave; eletto direttamente dai cittadini ed &egrave; membro del <strong>Consiglio Comunale</strong>. &Egrave; capo dell&rsquo;amministrazione, ha la rappresentanza legale dell&rsquo;ente ed &egrave;, nel contempo, Ufficiale di Governo per i servizi di competenza statale.</p>

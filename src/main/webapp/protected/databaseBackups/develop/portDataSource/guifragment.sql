@@ -1,61 +1,70 @@
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer', 'content_viewer', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-login_form', 'entando-widget-login_form', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
-<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.headInfo type="JS" info="entando-misc-jquery/jquery-1.10.0.min.js" />
+<@wp.headInfo type="JS" info="entando-misc-bootstrap/bootstrap.min.js" />
 
-<@jacms.contentInfo param="authToEdit" var="canEditThis" />
-<@jacms.contentInfo param="contentId" var="myContentId" />
+<ul class="nav pull-right">
+	<li class="span2 dropdown
+<#if (accountExpired?? && accountExpired == true) || (wrongAccountCredential?? && wrongAccountCredential == true)>open</#if>
+">
 
-<#if (canEditThis)>
-	<div class="bar-content-edit">
-		<a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/jacms/Content/edit.action?contentId=<@jacms.contentInfo param="contentId" />" class="btn btn-info">
-			<@wp.i18n key="EDIT_THIS_CONTENT" /> <i class="icon-edit icon-white"></i></a>
-	</div>
-</#if>
-<@jacms.content publishExtraTitle=true />', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list', 'content_viewer_list', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
-<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
-<#assign wp=JspTaglibs["/aps-core"]>
+	<#if (Session.currentUser != "guest")>
+	<!-- caso 1 -->
+			<div class="btn-group">
+				<button class="btn span2 text-left dropdown-toggle" data-toggle="dropdown">
+					<@c.out value="${Session.currentUser}" />
+					<span class="caret pull-right"></span>
+				</button>
+				<ul class="dropdown-menu pull-right well-small">
+					<li class="padding-medium-vertical">
 
-<@wp.headInfo type="JS_EXT" info="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
-
-<@jacms.contentList listName="contentList" titleVar="titleVar"
-	pageLinkVar="pageLinkVar" pageLinkDescriptionVar="pageLinkDescriptionVar" userFilterOptionsVar="userFilterOptionsVar" />
-
-<#if (titleVar??)>
-	<h1><@c.out value="${titleVar}" /></h1>
-</#if>
-<@wp.freemarkerTemplateParameter var="userFilterOptionsVar" valueName="userFilterOptionsVar" removeOnEndTag=true >
-<@wp.fragment code="jacms_content_viewer_list_userfilters" escapeXml=false />
-</@wp.freemarkerTemplateParameter>
-<#-- <@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module.jsp" /> -->
-<#if (contentList??) && (contentList?has_content) && (contentList?size > 0)>
-	<@wp.pager listName="contentList" objectName="groupContent" pagerIdFromFrame=true advanced=true offset=5>
-		<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" removeOnEndTag=true >
-		<@wp.fragment code="default_pagerBlock" escapeXml=false />
-<#list contentList as contentId>
-<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
- <@jacms.content contentId="${contentId}" />
-</#if>
-</#list>
-		<@wp.fragment code="default_pagerBlock" escapeXml=false />
-		</@wp.freemarkerTemplateParameter>
-	</@wp.pager>
-<#else>
-	<#if (userFilterOptionsVar?size > 0)>
-		<p class="alert alert-info"><@wp.i18n key="LIST_VIEWER_EMPTY" /></p>
-	</#if>
-</#if>
-
-<#if (pageLinkVar??) && (pageLinkDescriptionVar??)>
-	<p class="text-right"><a class="btn btn-primary" href="<@wp.url page="${pageLinkVar}"/>"><@c.out value="${pageLinkDescriptionVar}" /></a></p>
-</#if>
-
-<@c.set var="contentList" scope="request" />', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-search_form', 'entando-widget-search_form', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
-<@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" />
-<form class="navbar-search pull-left" action="<@wp.url page="${searchResultPageVar.code}" />" method="get">
-<input type="text" name="search" class="search-query span2" placeholder="<@wp.i18n key="ESSF_SEARCH" />" x-webkit-speech="x-webkit-speech" />
-</form> ', 1);
+						<@wp.ifauthorized permission="enterBackend">
+						<p>
+							<a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/main.action?request_locale=<@wp.info key="currentLang" />><span class="icon-wrench"></span> <@wp.i18n key="ESLF_ADMINISTRATION" /></a>
+						</p>
+						</@wp.ifauthorized>
+						<div class="divider"></div>
+						<p class="help-block text-right">
+							<a class="btn" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/logout.action"><@wp.i18n key="ESLF_SIGNOUT" /></a>
+						</p>
+						<@wp.pageWithWidget var="editProfilePageVar" widgetTypeCode="userprofile_editCurrentUser" />
+						<#if (editProfilePageVar??) >
+						<p class="help-block text-right">
+							<a href="<@wp.url page="${editProfilePageVar.code}" />" ><@wp.i18n key="ESLF_PROFILE_CONFIGURATION" /></a>
+						</p>
+						</#if>
+					</li>
+				</ul>
+			</div>	
+		<#else>
+			<!-- caso 2 -->
+			<a class="dropdown-toggle text-right" data-toggle="dropdown" href="#"><@wp.i18n key="ESLF_SIGNIN" /> <span class="caret"></span></a>
+			<ul class="dropdown-menu well-small">
+				<li>
+					<form class="form-vertical" method="POST">
+						<#if (accountExpired?? && accountExpired == true)>
+						<div class="alert alert-error">
+							<button class="close" data-dismiss="alert">x</button>
+							<@wp.i18n key="ESLF_USER_STATUS_EXPIRED" />
+						</div>
+						</#if>
+						<#if (wrongAccountCredential?? && wrongAccountCredential == true)>
+						<div class="alert alert-error">
+							<button class="close" data-dismiss="alert">x</button>
+							<@wp.i18n key="ESLF_USER_STATUS_CREDENTIALS_INVALID" />
+						</div>
+						</#if>
+						<input type="text" name="username" class="input-large" placeholder="<@wp.i18n key="ESLF_USERNAME" />">
+						<input type="password" name="password" class="input-large" placeholder="<@wp.i18n key="ESLF_PASSWORD" />">
+						<p class="text-right">
+							<input type="submit" class="btn btn-primary" value="<@wp.i18n key="ESLF_SIGNIN" />" />
+						</p>
+					</form>
+				</li>
+			</ul>
+		</#if>
+	</li>
+</ul>', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('models-common-utils', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#-- css -->
 <@wp.outputHeadInfo type="CSS">
@@ -258,6 +267,64 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 </ul>
 
 </@s.if>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer', 'content_viewer', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@jacms.contentInfo param="authToEdit" var="canEditThis" />
+<@jacms.contentInfo param="contentId" var="myContentId" />
+
+<#if (canEditThis)>
+	<div class="bar-content-edit">
+		<a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/jacms/Content/edit.action?contentId=<@jacms.contentInfo param="contentId" />" class="btn btn-info">
+			<@wp.i18n key="EDIT_THIS_CONTENT" /> <i class="icon-edit icon-white"></i></a>
+	</div>
+</#if>
+<@jacms.content publishExtraTitle=true />', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list', 'content_viewer_list', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.headInfo type="JS_EXT" info="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" />
+
+<@jacms.contentList listName="contentList" titleVar="titleVar"
+	pageLinkVar="pageLinkVar" pageLinkDescriptionVar="pageLinkDescriptionVar" userFilterOptionsVar="userFilterOptionsVar" />
+
+<#if (titleVar??)>
+	<h1><@c.out value="${titleVar}" /></h1>
+</#if>
+<@wp.freemarkerTemplateParameter var="userFilterOptionsVar" valueName="userFilterOptionsVar" removeOnEndTag=true >
+<@wp.fragment code="jacms_content_viewer_list_userfilters" escapeXml=false />
+</@wp.freemarkerTemplateParameter>
+<#-- <@c.import url="/WEB-INF/plugins/jacms/aps/jsp/widgets/inc/userFilter-module.jsp" /> -->
+<#if (contentList??) && (contentList?has_content) && (contentList?size > 0)>
+	<@wp.pager listName="contentList" objectName="groupContent" pagerIdFromFrame=true advanced=true offset=5>
+		<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" removeOnEndTag=true >
+		<@wp.fragment code="default_pagerBlock" escapeXml=false />
+<#list contentList as contentId>
+<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
+ <@jacms.content contentId="${contentId}" />
+</#if>
+</#list>
+		<@wp.fragment code="default_pagerBlock" escapeXml=false />
+		</@wp.freemarkerTemplateParameter>
+	</@wp.pager>
+<#else>
+	<#if (userFilterOptionsVar?size > 0)>
+		<p class="alert alert-info"><@wp.i18n key="LIST_VIEWER_EMPTY" /></p>
+	</#if>
+</#if>
+
+<#if (pageLinkVar??) && (pageLinkDescriptionVar??)>
+	<p class="text-right"><a class="btn btn-primary" href="<@wp.url page="${pageLinkVar}"/>"><@c.out value="${pageLinkDescriptionVar}" /></a></p>
+</#if>
+
+<@c.set var="contentList" scope="request" />', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-search_form', 'entando-widget-search_form', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" />
+<form class="navbar-search pull-left" action="<@wp.url page="${searchResultPageVar.code}" />" method="get">
+<input type="text" name="search" class="search-query span2" placeholder="<@wp.i18n key="ESSF_SEARCH" />" x-webkit-speech="x-webkit-speech" />
+</form> ', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_cardFinding', 'card_list', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <#assign wp=JspTaglibs["/aps-core"]>
 <#assign vmr=JspTaglibs["/WEB-INF/tld/portalexample-core.tld"]>
@@ -674,3 +741,30 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 </div>
 
 </fieldset>', 1);
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-language_choose', 'entando-widget-language_choose', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.headInfo type="JS" info="entando-misc-jquery/jquery-1.10.0.min.js" />
+<@wp.headInfo type="JS" info="entando-misc-bootstrap/bootstrap.min.js" />
+<@wp.info key="langs" var="langsVar" />
+<@wp.info key="currentLang" var="currentLangVar" />
+
+<ul class="nav">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-flag"></span> <@wp.i18n key="ESLC_LANGUAGE" /> <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+				<@wp.freemarkerTemplateParameter var="langsListVar" valueName="langsVar" removeOnEndTag=true >
+				
+				<#list langsListVar as curLangVar>
+				<li
+							<#if (curLangVar.code == currentLangVar)>class="active" </#if>>
+							<a href=<@wp.url lang="${curLangVar.code}" paramRepeat=true />">
+								<@wp.i18n key="ESLC_LANG_${curLangVar.code}" />
+							</a>
+				</li>
+				</#list>
+				
+				</@wp.freemarkerTemplateParameter>
+      </ul>
+  </li>
+</ul>', 1);

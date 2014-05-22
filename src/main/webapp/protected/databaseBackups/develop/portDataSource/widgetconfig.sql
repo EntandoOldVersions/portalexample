@@ -142,108 +142,6 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 
 ', 'CNG43');
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 0, 'entando-widget-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 2, 'entando-widget-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 0, 'entando-widget-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 2, 'entando-widget-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(informations).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(informations).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(informations).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 0, 'entando-widget-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 2, 'entando-widget-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 0, 'entando-widget-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 2, 'entando-widget-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 7, 'content_viewer', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="title_it">Documenti</property>
-<property key="categories">documents</property>
-<property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
-<property key="title_en">Documents</property>
-<property key="contentType">DLD</property>
-<property key="modelId">10031</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 0, 'entando-widget-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 2, 'entando-widget-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">15</property>
-<property key="title_it">Autocertificazioni</property>
-<property key="categories">selcf_certifications</property>
-<property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
-<property key="title_en">Self Certifications</property>
-<property key="contentType">DLD</property>
-<property key="modelId">10031</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 0, 'entando-widget-language_choose', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
-</properties>
-
-', NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 2, 'entando-widget-search_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 24, 'URP_Public_Relations_Office', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 15, 'card_list', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentId">CNG55</property>
@@ -361,3 +259,105 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 </properties>
 
 ', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('municipal_council', 24, 'URP_Public_Relations_Office', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('statute', 24, 'URP_Public_Relations_Office', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(informations).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('announcements', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(informations).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('resolutions', 5, 'entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(informations).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 24, 'URP_Public_Relations_Office', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('download', 7, 'content_viewer', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('documents', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="title_it">Documenti</property>
+<property key="categories">documents</property>
+<property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
+<property key="title_en">Documents</property>
+<property key="contentType">DLD</property>
+<property key="modelId">10031</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 24, 'URP_Public_Relations_Office', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('self_certifications', 7, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">15</property>
+<property key="title_it">Autocertificazioni</property>
+<property key="categories">selcf_certifications</property>
+<property key="filters">(order=ASC;attributeFilter=true;key=Title)</property>
+<property key="title_en">Self Certifications</property>
+<property key="contentType">DLD</property>
+<property key="modelId">10031</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 24, 'URP_Public_Relations_Office', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 15, 'card_list', NULL, NULL);

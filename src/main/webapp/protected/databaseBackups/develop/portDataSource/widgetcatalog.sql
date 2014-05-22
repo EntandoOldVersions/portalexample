@@ -1,3 +1,88 @@
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News - Archive</property>
+<property key="it">Notizie - Archivio</property>
+</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="title_it">Archivio Notizie</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Date)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="title_en">News Archive</property>
+<property key="contentType">NWS</property>
+<property key="modelId">10021</property>
+</properties>', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('card_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Personal Cards - List</property>
+<property key="it">Personal Card - Lista</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 1, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('card_list_detail', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Personal Cards - List and Detail</property>
+<property key="it">Personal Card - Lista e Dettagio</property>
+</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="actionPath">/ExtStr2/do/FrontEnd/Card/list.action</property>
+</properties>', 1, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News - Latest News</property>
+<property key="it">Notizie - Ultime Notizie</property>
+</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElements">3</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="title_it">Notizie</property>
+<property key="linkDescr_it">Archivio</property>
+<property key="pageLink">news</property>
+<property key="title_en">News</property>
+<property key="contentType">NWS</property>
+<property key="modelId">10021</property>
+<property key="linkDescr_en">Archive</property>
+</properties>', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('RSL_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Resolutions - Latest Resolutions</property>
+<property key="it">Delibere - Ultime Delibere</property>
+</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElements">3</property>
+<property key="filters">(attributeFilter=true;order=DESC;key=Date)+(order=DESC;attributeFilter=true;key=Number)</property>
+<property key="title_it">Delibere</property>
+<property key="linkDescr_it">Archivio</property>
+<property key="pageLink">resolutions</property>
+<property key="title_en">Resolutions</property>
+<property key="contentType">RSL</property>
+<property key="modelId">10041</property>
+<property key="linkDescr_en">Archive</property>
+</properties>', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('userprofile_editCurrentUser', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Edit Current User</property>
+<property key="it">Edita Utente Corrente</property>
+</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="actionPath">/ExtStr2/do/Front/CurrentUser/edit.action</property>
+</properties>', 1, NULL, NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('userprofile_editCurrentUser_password', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Edit Current User Password</property>
+<property key="it">Edita Password Utente Corrente</property>
+</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="actionPath">/ExtStr2/do/Front/CurrentUser/editPassword.action</property>
+</properties>', 1, NULL, NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('userprofile_editCurrentUser_profile', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Edit Current User Profile</property>
+<property key="it">Edita Profilo Utente Corrente</property>
+</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="actionPath">/ExtStr2/do/Front/CurrentUser/Profile/edit.action</property>
+</properties>', 1, NULL, NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Contents - Publish a Content</property>
@@ -54,11 +139,6 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <properties>
 <property key="en">Choose a Language</property>
 <property key="it">Choose a Language</property>
-</properties>', NULL, NULL, NULL, NULL, 1, NULL, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-login_form', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Dropdown Sign In</property>
-<property key="it">Dropdown Sign In</property>
 </properties>
 
 ', NULL, NULL, NULL, NULL, 1, 'free', NULL);
@@ -168,88 +248,10 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">RSL</property>
 <property key="modelId">10041</property>
 </properties>', 0, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-login_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">News - Archive</property>
-<property key="it">Notizie - Archivio</property>
-</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="title_it">Archivio Notizie</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Date)</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
-<property key="title_en">News Archive</property>
-<property key="contentType">NWS</property>
-<property key="modelId">10021</property>
-</properties>', 0, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('card_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Personal Cards - List</property>
-<property key="it">Personal Card - Lista</property>
+<property key="en">Dropdown Sign In</property>
+<property key="it">Dropdown Sign In</property>
 </properties>
 
 ', NULL, NULL, NULL, NULL, 1, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('card_list_detail', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Personal Cards - List and Detail</property>
-<property key="it">Personal Card - Lista e Dettagio</property>
-</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="actionPath">/ExtStr2/do/FrontEnd/Card/list.action</property>
-</properties>', 1, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">News - Latest News</property>
-<property key="it">Notizie - Ultime Notizie</property>
-</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElements">3</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
-<property key="title_it">Notizie</property>
-<property key="linkDescr_it">Archivio</property>
-<property key="pageLink">news</property>
-<property key="title_en">News</property>
-<property key="contentType">NWS</property>
-<property key="modelId">10021</property>
-<property key="linkDescr_en">Archive</property>
-</properties>', 0, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('RSL_Latest', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Resolutions - Latest Resolutions</property>
-<property key="it">Delibere - Ultime Delibere</property>
-</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElements">3</property>
-<property key="filters">(attributeFilter=true;order=DESC;key=Date)+(order=DESC;attributeFilter=true;key=Number)</property>
-<property key="title_it">Delibere</property>
-<property key="linkDescr_it">Archivio</property>
-<property key="pageLink">resolutions</property>
-<property key="title_en">Resolutions</property>
-<property key="contentType">RSL</property>
-<property key="modelId">10041</property>
-<property key="linkDescr_en">Archive</property>
-</properties>', 0, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('userprofile_editCurrentUser', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Edit Current User</property>
-<property key="it">Edita Utente Corrente</property>
-</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="actionPath">/ExtStr2/do/Front/CurrentUser/edit.action</property>
-</properties>', 1, NULL, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('userprofile_editCurrentUser_password', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Edit Current User Password</property>
-<property key="it">Edita Password Utente Corrente</property>
-</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="actionPath">/ExtStr2/do/Front/CurrentUser/editPassword.action</property>
-</properties>', 1, NULL, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('userprofile_editCurrentUser_profile', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Edit Current User Profile</property>
-<property key="it">Edita Profilo Utente Corrente</property>
-</properties>', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="actionPath">/ExtStr2/do/Front/CurrentUser/Profile/edit.action</property>
-</properties>', 1, NULL, NULL);
