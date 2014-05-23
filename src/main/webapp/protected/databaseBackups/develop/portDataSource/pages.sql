@@ -315,3 +315,15 @@ INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinme
 </config>
 
 ');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('oth', 'test', 1, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Other tests</property>
+<property key="it">Other tests</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');

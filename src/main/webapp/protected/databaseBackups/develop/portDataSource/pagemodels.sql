@@ -411,8 +411,13 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 		<!--[if lt IE 9]>
 			<script src="<@wp.resourceURL />static/js/entando-misc-html5-essentials/html5shiv.js"></script>
 		<![endif]-->
+
 		<@wp.fragment code="models-lesscss-active" escapeXml=false />
                 <@wp.fragment code="models-common-utils" escapeXml=false />
+<#--
+                <jsp:include page="inc/lesscss-active/lesscss.jsp" />
+		<jsp:include page="inc/models-common-utils.jsp" />
+-->
                 
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans|Rambla|Calligraffitti" rel="stylesheet" type="text/css" />
 
