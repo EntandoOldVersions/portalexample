@@ -1,3 +1,14 @@
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_list', 'en', 'list');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_boolean', 'en', 'Boolean');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_cbox', 'en', 'Checkbox');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_hytext', 'en', 'Hypertext');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_threesta', 'en', 'Threestate attribute');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_monolist', 'en', 'monolist');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_cposite', 'en', 'composite');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_ltext', 'en', 'Longtext');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_mlist', 'en', 'monolist');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_date', 'en', 'Exact Date');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_number', 'en', 'Number');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE', 'en', 'page');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE', 'it', 'pagina');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('PAGE_MODEL', 'en', 'page model');
@@ -324,3 +335,4 @@ INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_S
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SERVICE_PARAMETERS', 'it', 'Parametri');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_fullname', 'en', 'Full Name');
 INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_email', 'en', 'Email');
+INSERT INTO localstrings (keycode, langcode, stringvalue) VALUES ('userprofile_PFL_enum', 'en', 'Enumerator');

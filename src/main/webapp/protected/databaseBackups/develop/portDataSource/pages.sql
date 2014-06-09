@@ -1,3 +1,27 @@
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('bundles', 'test', 2, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">bundles</property>
+<property key="it">bundles</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
+INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('navigation', 'bundles', 1, 'entando-page-bootstrap-hero', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">navigation</property>
+<property key="it">navigation</property>
+</properties>
+
+', 'free', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+</config>
+
+');
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('service', 'homepage', 5, 'service', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="it">Pagine di Servizio</property>

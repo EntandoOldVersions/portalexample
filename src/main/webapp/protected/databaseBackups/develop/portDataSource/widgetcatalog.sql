@@ -1,3 +1,94 @@
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-navigation_breadcrumbs', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Navigation - Breadcrumbs</property>
+<property key="it">Navigazione - Briciole di Pane</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 1, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Navigation - Bar</property>
+<property key="it">Navigazione - Barra Orizzontale</property>
+</properties>
+
+', '<config>
+	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
+	<action name="navigatorConfig" />
+</config>', NULL, NULL, NULL, 1, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Navigation - Vertical Menu</property>
+<property key="it">Navigazione - Menù Verticale</property>
+</properties>
+
+', '<config>
+	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
+	<action name="navigatorConfig" />
+</config>', NULL, NULL, NULL, 1, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Contents - Publish a List of Contents</property>
+<property key="it">Contenuti - Pubblica una Lista di Contenuti</property>
+</properties>
+
+', '<config>
+	<parameter name="contentType">Content Type (mandatory)</parameter>
+	<parameter name="modelId">Content Model</parameter>
+	<parameter name="userFilters">Front-End user filter options</parameter>
+	<parameter name="category">Content Category **deprecated**</parameter>
+	<parameter name="categories">Content Category codes (comma separeted)</parameter>
+	<parameter name="orClauseCategoryFilter" />
+	<parameter name="maxElemForItem">Contents for each page</parameter>
+	<parameter name="maxElements">Number of contents</parameter>
+	<parameter name="filters" />
+	<parameter name="title_{lang}">Widget Title in lang {lang}</parameter>
+	<parameter name="pageLink">The code of the Page to link</parameter>
+	<parameter name="linkDescr_{lang}">Link description in lang {lang}</parameter>
+	<action name="listViewerConfig"/>
+</config>', 'jacms', NULL, NULL, 1, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('URP_Public_Relations_Office', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">URP - Public Relations Office</property>
+<property key="it">URP - Ufficio Relazioni con il Pubblico</property>
+</properties>', NULL, NULL, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="modelId">10001</property>
+<property key="contentId">CNG40</property>
+</properties>', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('ANN_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Announcements - Archive</property>
+<property key="it">Bandi - Archivio</property>
+</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElemForItem">10</property>
+<property key="title_it">Archivio Bandi</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=StartDate)+(attributeFilter=true;key=EndDate)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
+<property key="title_en">Announcements Archive</property>
+<property key="contentType">ANN</property>
+<property key="modelId">10051</property>
+</properties>', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('ANN_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Announcements - Latest Announcements</property>
+<property key="it">Bandi - Ultimi Bandi</property>
+</properties>
+
+', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElements">3</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
+<property key="title_it">Bandi</property>
+<property key="linkDescr_it">Archivio</property>
+<property key="pageLink">announcements</property>
+<property key="title_en">Announcements</property>
+<property key="contentType">ANN</property>
+<property key="modelId">10051</property>
+<property key="linkDescr_en">Archive</property>
+</properties>
+
+', 0, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Archive</property>
@@ -142,27 +233,6 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>
 
 ', NULL, NULL, NULL, NULL, 1, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Navigation - Bar</property>
-<property key="it">Navigazione - Barra Orizzontale</property>
-</properties>', '<config>
-	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
-	<action name="navigatorConfig" />
-</config>', NULL, NULL, NULL, 1, NULL, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-navigation_breadcrumbs', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Navigation - Breadcrumbs</property>
-<property key="it">Navigazione - Briciole di Pane</property>
-</properties>', NULL, NULL, NULL, NULL, 1, NULL, NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-navigation_menu', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Navigation - Vertical Menu</property>
-<property key="it">Navigazione - Menù Verticale</property>
-</properties>', '<config>
-	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
-	<action name="navigatorConfig" />
-</config>', NULL, NULL, NULL, 1, NULL, NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-search_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Search Form</property>
@@ -170,70 +240,6 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>
 
 ', NULL, NULL, NULL, NULL, 1, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Contents - Publish a List of Contents</property>
-<property key="it">Contenuti - Pubblica una Lista di Contenuti</property>
-</properties>
-
-', '<config>
-	<parameter name="contentType">Content Type (mandatory)</parameter>
-	<parameter name="modelId">Content Model</parameter>
-	<parameter name="userFilters">Front-End user filter options</parameter>
-	<parameter name="category">Content Category **deprecated**</parameter>
-	<parameter name="categories">Content Category codes (comma separeted)</parameter>
-	<parameter name="orClauseCategoryFilter" />
-	<parameter name="maxElemForItem">Contents for each page</parameter>
-	<parameter name="maxElements">Number of contents</parameter>
-	<parameter name="filters" />
-	<parameter name="title_{lang}">Widget Title in lang {lang}</parameter>
-	<parameter name="pageLink">The code of the Page to link</parameter>
-	<parameter name="linkDescr_{lang}">Link description in lang {lang}</parameter>
-	<action name="listViewerConfig"/>
-</config>', 'jacms', NULL, NULL, 1, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('URP_Public_Relations_Office', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">URP - Public Relations Office</property>
-<property key="it">URP - Ufficio Relazioni con il Pubblico</property>
-</properties>', NULL, NULL, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="modelId">10001</property>
-<property key="contentId">CNG40</property>
-</properties>', 0, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('ANN_Archive', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Announcements - Archive</property>
-<property key="it">Bandi - Archivio</property>
-</properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElemForItem">10</property>
-<property key="title_it">Archivio Bandi</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=StartDate)+(attributeFilter=true;key=EndDate)</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
-<property key="title_en">Announcements Archive</property>
-<property key="contentType">ANN</property>
-<property key="modelId">10051</property>
-</properties>', 0, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('ANN_Latest', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Announcements - Latest Announcements</property>
-<property key="it">Bandi - Ultimi Bandi</property>
-</properties>
-
-', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="maxElements">3</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=StartDate)</property>
-<property key="title_it">Bandi</property>
-<property key="linkDescr_it">Archivio</property>
-<property key="pageLink">announcements</property>
-<property key="title_en">Announcements</property>
-<property key="contentType">ANN</property>
-<property key="modelId">10051</property>
-<property key="linkDescr_en">Archive</property>
-</properties>
-
-', 0, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('RSL_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Resolutions - Archive</property>
@@ -248,6 +254,13 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">RSL</property>
 <property key="modelId">10041</property>
 </properties>', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('mia_view', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">mia_view</property>
+<property key="it">mia_view</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 0, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-login_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Dropdown Sign In</property>

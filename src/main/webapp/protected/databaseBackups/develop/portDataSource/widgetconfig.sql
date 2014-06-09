@@ -1,3 +1,21 @@
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('bundles', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('bundles', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('bundles', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('bundles', 3, 'entando-widget-login_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('navigation', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('navigation', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage)</property>
+</properties>
+
+', NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('navigation', 2, 'entando-widget-search_form', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('navigation', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 0, 'entando-widget-language_choose', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('news', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -151,7 +169,6 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 ', NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('oth', 2, 'entando-widget-search_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('oth', 3, 'entando-widget-login_form', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('oth', 15, 'userprofile_editCurrentUser_password', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentId">CNG55</property>
@@ -371,3 +388,4 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 24, 'URP_Public_Relations_Office', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('old_town_traffic_pass', 15, 'card_list', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('oth', 8, 'userprofile_editCurrentUser_profile', NULL, NULL);

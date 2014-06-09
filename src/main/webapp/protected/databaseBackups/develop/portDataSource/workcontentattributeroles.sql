@@ -11,9 +11,9 @@ INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('C
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('CNG40', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('CNG72', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('CNG46', 'Title', 'jacms:title');
+INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('RSL30', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('RSL26', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('RSL28', 'Title', 'jacms:title');
-INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('RSL30', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('RSL32', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('RSL69', 'Title', 'jacms:title');
 INSERT INTO workcontentattributeroles (contentid, attrname, rolename) VALUES ('DLD48', 'Title', 'jacms:title');
