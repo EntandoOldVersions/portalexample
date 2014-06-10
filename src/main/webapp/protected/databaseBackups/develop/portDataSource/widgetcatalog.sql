@@ -89,6 +89,13 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>
 
 ', 0, 'free', NULL);
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-language_choose', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Choose a Language</property>
+<property key="it">Choose a Language</property>
+</properties>
+
+', NULL, NULL, NULL, NULL, 1, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Archive</property>
@@ -226,13 +233,6 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="actionPath">/ExtStr2/do/Front/Api/Resource/list.action</property>
 </properties>
 ', 1, 'free', NULL);
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-language_choose', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Choose a Language</property>
-<property key="it">Choose a Language</property>
-</properties>
-
-', NULL, NULL, NULL, NULL, 1, 'free', NULL);
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, template) VALUES ('entando-widget-search_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Search Form</property>

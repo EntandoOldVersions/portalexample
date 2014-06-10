@@ -1,3 +1,30 @@
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-language_choose', 'entando-widget-language_choose', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.headInfo type="JS" info="entando-misc-jquery/jquery-1.10.0.min.js" />
+<@wp.headInfo type="JS" info="entando-misc-bootstrap/bootstrap.min.js" />
+<@wp.info key="langs" var="langsVar" />
+<@wp.info key="currentLang" var="currentLangVar" />
+
+<ul class="nav">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-flag"></span> <@wp.i18n key="ESLC_LANGUAGE" /> <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+				<@wp.freemarkerTemplateParameter var="langsListVar" valueName="langsVar" removeOnEndTag=true >
+				
+				<#list langsListVar as curLangVar>
+				<li
+							<#if (curLangVar.code == currentLangVar)>class="active" </#if>>
+							<a href="<@wp.url lang="${curLangVar.code}" paramRepeat=true />">
+								<@wp.i18n key="ESLC_LANG_${curLangVar.code}" />
+							</a>
+				</li>
+				</#list>
+				
+				</@wp.freemarkerTemplateParameter>
+      </ul>
+  </li>
+</ul>', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('jacms_content_viewer_list_userfilter_ent_Enumer', NULL, 'jacms', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 
@@ -84,33 +111,6 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 </div>
 
 </fieldset>', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-language_choose', 'entando-widget-language_choose', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
-<#assign wp=JspTaglibs["/aps-core"]>
-
-<@wp.headInfo type="JS" info="entando-misc-jquery/jquery-1.10.0.min.js" />
-<@wp.headInfo type="JS" info="entando-misc-bootstrap/bootstrap.min.js" />
-<@wp.info key="langs" var="langsVar" />
-<@wp.info key="currentLang" var="currentLangVar" />
-
-<ul class="nav">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-flag"></span> <@wp.i18n key="ESLC_LANGUAGE" /> <span class="caret"></span></a>
-      <ul class="dropdown-menu">
-				<@wp.freemarkerTemplateParameter var="langsListVar" valueName="langsVar" removeOnEndTag=true >
-				
-				<#list langsListVar as curLangVar>
-				<li
-							<#if (curLangVar.code == currentLangVar)>class="active" </#if>>
-							<a href=<@wp.url lang="${curLangVar.code}" paramRepeat=true />">
-								<@wp.i18n key="ESLC_LANG_${curLangVar.code}" />
-							</a>
-				</li>
-				</#list>
-				
-				</@wp.freemarkerTemplateParameter>
-      </ul>
-  </li>
-</ul>', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('user-profile_is_front-DateAttribute', NULL, NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <#assign s=JspTaglibs["/struts-tags"]>
 <#assign wp=JspTaglibs["/aps-core"]>
