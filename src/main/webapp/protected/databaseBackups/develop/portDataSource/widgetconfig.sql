@@ -143,6 +143,13 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 24, 'URP_Public_Relations_Office', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 0, 'entando-widget-language_choose', NULL, NULL);
+INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentId">CNG41</property>
+<property key="modelId">10014</property>
+</properties>
+
+', 'CNG41');
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('council', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage) + code(municipality).subtree(1) + code(informations).subtree(1) + code(online_services).subtree(1)</property>
@@ -224,13 +231,6 @@ INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedconte
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 2, 'entando-widget-search_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 3, 'entando-widget-login_form', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('errorpage', 7, 'messages_system', NULL, NULL);
-INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('mayor', 7, 'content_viewer', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="contentId">CNG41</property>
-<property key="modelId">10014</property>
-</properties>
-
-', 'CNG41');
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 0, 'entando-widget-language_choose', NULL, NULL);
 INSERT INTO widgetconfig (pagecode, framepos, widgetcode, config, publishedcontent) VALUES ('public_api', 1, 'entando-widget-navigation_bar', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>

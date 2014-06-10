@@ -1,3 +1,114 @@
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'userProfileTypes', 'User Profile Types Definitions', '<?xml version="1.0" encoding="UTF-8"?>
+<profiletypes>
+	<profiletype typecode="PFL" typedescr="Default user profile">
+		<attributes>
+			<attribute name="fullname" attributetype="Monotext" description="Full Name" searchable="true">
+				<validations>
+					<required>true</required>
+					<expression evalOnValuedAttribute="true">
+						<ognlexpression><![CDATA[(#attribute.getText().length() > 8)]]></ognlexpression>
+						<errormessage><![CDATA[salvarì]]></errormessage>
+						<helpmessage><![CDATA[Messaggio d''aiuto]]></helpmessage>
+					</expression>
+				</validations>
+				<roles>
+					<role>userprofile:fullname</role>
+				</roles>
+			</attribute>
+			<attribute name="email" attributetype="Monotext" description="Email" searchable="true">
+				<validations>
+					<required>true</required>
+					<regexp><![CDATA[.+@.+.[a-z]+]]></regexp>
+				</validations>
+				<roles>
+					<role>userprofile:email</role>
+				</roles>
+			</attribute>
+			<attribute name="boolean" attributetype="Boolean" description="Boolean" searchable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="cbox" attributetype="CheckBox" description="Checkbox" searchable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="cposite" attributetype="Composite" description="composite">
+				<attributes>
+					<attribute name="cpsbool" attributetype="Boolean" description="composite - boolean" />
+				</attributes>
+			</attribute>
+			<attribute name="date" attributetype="Date" description="Exact Date" searchable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="enum" attributetype="Enumerator" description="Enumerator" searchable="true" separator=";">
+				<validations>
+					<required>true</required>
+				</validations>
+				<![CDATA[Elia;Eugenio;Renzi;Bossi;Giraudo]]>
+			</attribute>
+			<attribute name="hytext" attributetype="Hypertext" description="Hypertext">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="ltext" attributetype="Longtext" description="Longtext" searchable="true">
+				<validations>
+					<required>true</required>
+					<expression evalOnValuedAttribute="false">
+						<ognlexpression><![CDATA[(#attribute.getText().length() > 8)]]></ognlexpression>
+						<errormessage><![CDATA[Error message]]></errormessage>
+						<helpmessage><![CDATA[Help message]]></helpmessage>
+					</expression>
+				</validations>
+			</attribute>
+			<attribute name="number" attributetype="Number" description="Number" searchable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<attribute name="threesta" attributetype="ThreeState" description="Threestate attribute" searchable="true">
+				<validations>
+					<required>true</required>
+				</validations>
+			</attribute>
+			<list name="list" attributetype="List" description="list">
+				<validations>
+					<required>true</required>
+				</validations>
+				<nestedtype>
+					<attribute name="list" attributetype="ThreeState" />
+				</nestedtype>
+			</list>
+			<list name="monolist" attributetype="Monolist" description="Monolist">
+				<validations>
+					<required>true</required>
+				</validations>
+				<nestedtype>
+					<attribute name="monolist" attributetype="Composite">
+						<attributes>
+							<attribute name="number" attributetype="Number" description="Number of composito of a list element">
+								<validations>
+									<required>true</required>
+								</validations>
+							</attribute>
+							<attribute name="date" attributetype="Date" description="Date of the composite of a list">
+								<validations>
+									<required>true</required>
+								</validations>
+							</attribute>
+						</attributes>
+					</attribute>
+				</nestedtype>
+			</list>
+		</attributes>
+	</profiletype>
+</profiletypes>
+
+');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'entandoComponentsReport', 'The component installation report', '<?xml version="1.0" encoding="UTF-8"?>
 <reports status="OK">
 	<creation>2014-05-20 09:44:57</creation>
@@ -497,116 +608,3 @@ INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'lice
 </license>
 ');
 INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'subIndexDir', 'Name of the sub-directory containing content indexing files', 'indexdir20140527125133');
-INSERT INTO sysconfig (version, item, descr, config) VALUES ('production', 'userProfileTypes', 'User Profile Types Definitions', '<?xml version="1.0" encoding="UTF-8"?>
-<profiletypes>
-	<profiletype typecode="PFL" typedescr="Default user profile">
-		<attributes>
-			<attribute name="fullname" attributetype="Monotext" description="Full Name" searchable="true">
-				<validations>
-					<required>true</required>
-					<expression evalOnValuedAttribute="true">
-						<ognlexpression><![CDATA[(#attribute.getText().length() > 8)]]></ognlexpression>
-						<errormessage><![CDATA[salvarì]]></errormessage>
-						<helpmessage><![CDATA[Messaggio d''aiuto]]></helpmessage>
-					</expression>
-				</validations>
-				<roles>
-					<role>userprofile:fullname</role>
-				</roles>
-			</attribute>
-			<attribute name="email" attributetype="Monotext" description="Email" searchable="true">
-				<validations>
-					<required>true</required>
-					<regexp><![CDATA[.+@.+.[a-z]+]]></regexp>
-				</validations>
-				<roles>
-					<role>userprofile:email</role>
-				</roles>
-			</attribute>
-			<attribute name="boolean" attributetype="Boolean" description="Boolean" searchable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="cbox" attributetype="CheckBox" description="Checkbox" searchable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="cposite" attributetype="Composite" description="composite">
-				<attributes>
-					<attribute name="cpsbool" attributetype="Boolean" description="composite - boolean" />
-				</attributes>
-			</attribute>
-			<attribute name="date" attributetype="Date" description="Exact Date" searchable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="enum" attributetype="Enumerator" description="Enumerator" searchable="true" separator=";">
-				<validations>
-					<required>true</required>
-				</validations>
-				<![CDATA[Elia;Eugenio;Renzi;Bossi;Giraudo]]>
-			</attribute>
-			<attribute name="hytext" attributetype="Hypertext" description="Hypertext">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="ltext" attributetype="Longtext" description="Longtext" searchable="true">
-				<validations>
-					<required>true</required>
-					<expression evalOnValuedAttribute="false">
-						<ognlexpression><![CDATA[(#attribute.getText().length() > 8)]]></ognlexpression>
-						<errormessage><![CDATA[Error message]]></errormessage>
-						<helpmessage><![CDATA[Help message]]></helpmessage>
-					</expression>
-				</validations>
-			</attribute>
-			<attribute name="number" attributetype="Number" description="Number" searchable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<attribute name="threesta" attributetype="ThreeState" description="Threestate attribute" searchable="true">
-				<validations>
-					<required>true</required>
-				</validations>
-			</attribute>
-			<list name="list" attributetype="List" description="list">
-				<validations>
-					<required>true</required>
-				</validations>
-				<nestedtype>
-					<attribute name="list" attributetype="ThreeState">
-						<validations />
-					</attribute>
-				</nestedtype>
-			</list>
-			<list name="monolist" attributetype="Monolist" description="Monolist">
-				<validations>
-					<required>true</required>
-				</validations>
-				<nestedtype>
-					<attribute name="monolist" attributetype="Composite">
-						<attributes>
-							<attribute name="number" attributetype="Number" description="Number of composito of a list element">
-								<validations>
-									<required>true</required>
-								</validations>
-							</attribute>
-							<attribute name="date" attributetype="Date" description="Date of the composite of a list">
-								<validations>
-									<required>true</required>
-								</validations>
-							</attribute>
-						</attributes>
-					</attribute>
-				</nestedtype>
-			</list>
-		</attributes>
-	</profiletype>
-</profiletypes>
-
-');
