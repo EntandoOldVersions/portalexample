@@ -625,13 +625,12 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SE
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ENTANDO_API_SERVICE_PARAMETERS','it','Parametri');
 
 
-INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('service', 'Service Page', '<frames>
+INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('service', 'Service Page', '<frames>
 	<frame pos="0">
 		<descr>Sample Frame</descr>
 	</frame>	
-</frames>', NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('home', 'Home Page', NULL, NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-2columns-left', '2 Columns - Left', '<frames>
+</frames>', NULL, NULL);
+INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('entando-page-2columns-left', '2 Columns - Left', '<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
 		<defaultWidget code="entando-widget-language_choose" />
@@ -745,8 +744,9 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-2
 	<frame pos="32">
 		<descr>Footer 5</descr>
 	</frame>
-</frames>', NULL);
-INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
+</frames>', NULL, NULL);
+INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('home', 'Home Page', NULL, NULL, NULL);
+INSERT INTO pagemodels (code, descr, frames, plugincode, template) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
 	<frame pos="0">
 		<descr>Navbar 1</descr>
 		<defaultWidget code="entando-widget-language_choose" />
@@ -842,7 +842,183 @@ INSERT INTO pagemodels (code, descr, frames, plugincode) VALUES ('entando-page-b
 	<frame pos="28">
 		<descr>Footer 5</descr>
 	</frame>
-</frames>', NULL);
+</frames>', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>
+		<@wp.currentPage param="title" /> - <@wp.i18n key="PORTAL_TITLE" />
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+		<link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="<@wp.resourceURL />static/js/entando-misc-html5-essentials/html5shiv.js"></script>
+		<![endif]-->
+		<@c.import url="/WEB-INF/aps/jsp/models/inc/lesscss-active/lesscss.jsp" />
+		<@c.import url="/WEB-INF/aps/jsp/models/inc/models-common-utils.jsp" />
+		<#--
+		<jsp:include page="inc/lesscss-active/lesscss.jsp" />
+		<jsp:include page="inc/models-common-utils.jsp" />
+		-->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans|Rambla|Calligraffitti" rel="stylesheet" type="text/css" />
+
+	</head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#"><img src="<@wp.imgURL />entando-logo.png" alt="Entando - Simplifying Enterprise Portals" /></a>
+				<div class="nav-collapse collapse">
+					<@wp.show frame=0 />
+					<@wp.show frame=1 />
+					<@wp.show frame=2 />
+					<@wp.show frame=3 />
+				</div><!-- /.nav-collapse -->
+			</div>
+		</div><!-- /navbar-inner -->
+	</div>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=4 />
+			</div>
+		</div>
+
+		<!-- Main hero unit for a primary marketing message or call to action -->
+		<div class="row">
+			<@wp.show frame=5 />
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=6 />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=7 />
+			</div>
+		</div>
+
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="span4">
+				<@wp.show frame=8 />
+			</div>
+			<div class="span4">
+				<@wp.show frame=9 />
+			</div>
+			<div class="span4">
+				<@wp.show frame=10 />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span6">
+				<@wp.show frame=11 />
+			</div>
+			<div class="span6">
+				<@wp.show frame=12 />
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<@wp.show frame=13 />
+			</div>
+			<div class="span6">
+				<@wp.show frame=14 />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=15 />
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=16 />
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=17 />
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=18 />
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<@wp.show frame=19 />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span6">
+				<@wp.show frame=20 />
+			</div>
+			<div class="span6">
+				<@wp.show frame=21 />
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<@wp.show frame=22 />
+			</div>
+			<div class="span6">
+				<@wp.show frame=23 />
+			</div>
+		</div>
+
+	</div> <!-- /container -->
+
+		<footer class="padding-medium-top">
+
+			<div class="container">
+				<div class="row margin-medium-bottom">
+					<div class="span12">
+						<@wp.show frame=24 />
+						<@wp.show frame=25 />
+					</div>
+				</div>
+				<div class="row margin-medium-bottom">
+					<div class="span4">
+						<@wp.show frame=26 />
+					</div>
+					<div class="span4">
+						<@wp.show frame=27 />
+					</div>
+					<div class="span4">
+						<@wp.show frame=28 />
+					</div>
+				</div>
+				<div class="row">
+					<p class="span12 text-center margin-medium-top"><@wp.i18n key="COPYRIGHT" escapeXml=false /> - Powered by <a href="http://www.entando.com/">Entando - Simplifying Enterprise Portals</a></p>
+				</div>
+			</div>
+		</footer>
+</body>
+</html>');
 
 
 INSERT INTO pages (code, parentcode, pos, modelcode, titles, groupcode, showinmenu, extraconfig) VALUES ('service', 'homepage', 5, 'service', '<?xml version="1.0" encoding="UTF-8"?>
