@@ -8,7 +8,7 @@
 	<package name="portalexample_do/FrontEnd/Card" namespace="/do/FrontEnd/Card" extends="entando-front-default">
     	
 		<global-results>
-			<result name="guiFragment">
+			<result name="failure" type="guiFragment">
 				<param name="code">portalexample_card_is_error</param>
 				<param name="jspLocation">/WEB-INF/portalexample/aps/jsp/internalservlet/card/error.jsp</param>
 			</result>
