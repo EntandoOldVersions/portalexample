@@ -228,10 +228,12 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="en">APIs</property>
 <property key="it">APIs</property>
 </properties>
+
 ', NULL, NULL, 'formAction', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="actionPath">/ExtStr2/do/Front/Api/Resource/list.action</property>
 </properties>
+
 ', 1, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-search_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -254,13 +256,6 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">RSL</property>
 <property key="modelId">10041</property>
 </properties>', 0, 'free');
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('mia_view', '<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">mia_view</property>
-<property key="it">mia_view</property>
-</properties>
-
-', NULL, NULL, NULL, NULL, 0, 'free');
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-login_form', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Dropdown Sign In</property>

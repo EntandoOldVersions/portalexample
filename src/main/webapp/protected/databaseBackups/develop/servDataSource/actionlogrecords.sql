@@ -1,4 +1,4 @@
-INSERT INTO actionlogrecords (id, username, actiondate, updatedate, namespace, actionname, parameters, activitystreaminfo) VALUES (1, 'admin', '2013-09-27 10:58:38', '2013-09-27 10:58:38', '/do/Page', 'save', 'selectedNode=service
+INSERT INTO actionlogrecords (id, username, actiondate, namespace, actionname, parameters, activitystreaminfo, updatedate) VALUES (1, 'admin', '2013-09-27 10:58:38', '/do/Page', 'save', 'selectedNode=service
 model=service
 strutsAction=1
 extraGroupName=free
@@ -39,9 +39,8 @@ pageCode=sign_in
     <linkAuthPermission>managePages</linkAuthPermission>
     <linkAuthGroup>free</linkAuthGroup>
 </activityStreamInfo>
-');
-
-INSERT INTO actionlogrecords (id, username, actiondate, updatedate, namespace, actionname, parameters, activitystreaminfo) VALUES (2, 'admin', '2013-09-27 11:00:12', '2013-09-27 11:00:12', '/do/Page', 'save', 'selectedNode=service
+', '2013-09-27 10:58:38');
+INSERT INTO actionlogrecords (id, username, actiondate, namespace, actionname, parameters, activitystreaminfo, updatedate) VALUES (2, 'admin', '2013-09-27 11:00:12', '/do/Page', 'save', 'selectedNode=service
 model=service
 strutsAction=1
 extraGroupName=free
@@ -82,9 +81,8 @@ pageCode=notfound
     <linkAuthPermission>managePages</linkAuthPermission>
     <linkAuthGroup>free</linkAuthGroup>
 </activityStreamInfo>
-');
-
-INSERT INTO actionlogrecords (id, username, actiondate, updatedate, namespace, actionname, parameters, activitystreaminfo) VALUES (3, 'admin', '2013-09-27 11:00:12', '2013-09-27 11:00:12', '/do/Page', 'save', 'selectedNode=service
+', '2013-09-27 11:00:12');
+INSERT INTO actionlogrecords (id, username, actiondate, namespace, actionname, parameters, activitystreaminfo, updatedate) VALUES (3, 'admin', '2013-09-27 11:00:12', '/do/Page', 'save', 'selectedNode=service
 model=service
 strutsAction=1
 extraGroupName=free
@@ -125,4 +123,4 @@ pageCode=errorpage
     <linkAuthPermission>managePages</linkAuthPermission>
     <linkAuthGroup>free</linkAuthGroup>
 </activityStreamInfo>
-');
+', '2013-09-27 11:00:12');
