@@ -1,8 +1,22 @@
-INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('service', 'Service Page', '<frames>
+INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('service', 'Service Page', '<?xml version="1.0" encoding="UTF-8"?>
+<frames>
 	<frame pos="0">
 		<descr>Sample Frame</descr>
-	</frame>	
-</frames>', NULL, NULL);
+	</frame>
+</frames>
+
+', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title><@wp.currentPage param="title" /></title>
+</head>
+<body>
+<h1><@wp.currentPage param="title" /></h1>
+<a href="<@wp.url page="homepage" />" >Home</a><br>
+<div><@wp.show frame=0 /></div>
+</body>
+</html>');
 INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('entando-page-2columns-left', '2 Columns - Left', '<?xml version="1.0" encoding="UTF-8"?>
 <frames>
 	<frame pos="0">
