@@ -1160,10 +1160,10 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 
 <@c.set var="contentList" scope="request" />', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-search_form', 'entando-widget-search_form', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
-<@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" />
-<form class="navbar-search pull-left" action="<@wp.url page="${searchResultPageVar.code}" />" method="get">
+<@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" listResult=false />
+<form class="navbar-search pull-left" action="<#if (searchResultPageVar??) ><@wp.url page="${searchResultPageVar.code}" /></#if>" method="get">
 <input type="text" name="search" class="search-query span2" placeholder="<@wp.i18n key="ESSF_SEARCH" />" x-webkit-speech="x-webkit-speech" />
-</form> ', 1);
+</form>', 1);
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('portalexample_card_cardFinding', 'card_list', NULL, NULL, '<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <#assign wp=JspTaglibs["/aps-core"]>
 <#assign vmr=JspTaglibs["/WEB-INF/tld/portalexample-core.tld"]>
@@ -2296,13 +2296,16 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 	<h1 class="alert-heading"><@wp.i18n key="GENERIC_ERROR" escapeXml=false /></h1>
 </div>
 </#if>', 1);
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('search_result', 'search_result', 'jacms', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('search_result', 'search_result', 'jacms', '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 <#assign wp=JspTaglibs["/aps-core"]>
+
 <h1><@wp.i18n key="SEARCH_RESULTS" /></h1>
 <@jacms.searcher listName="contentListResult" />
 <p><@wp.i18n key="SEARCHED_FOR" />: <em><strong>${RequestParameters.search}</strong></em></p>
+
 <#if (contentListResult??) && (contentListResult?has_content) && (contentListResult?size > 0)>
+
 <@wp.pager listName="contentListResult" objectName="groupContent" max=10 pagerIdFromFrame=true advanced=true offset=5>
 	<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" removeOnEndTag=true >
 	<p><em><@wp.i18n key="SEARCH_RESULTS_INTRO" /> <!-- infamous whitespace hack -->
@@ -2317,6 +2320,7 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 	<@wp.fragment code="default_pagerBlock" escapeXml=false />
 	</@wp.freemarkerTemplateParameter>
 </@wp.pager>
+
 <#else>
 <p class="alert alert-info"><@wp.i18n key="SEARCH_NOTHING_FOUND" /></p>
-</#if>', 1);
+</#if>', NULL, 0);
